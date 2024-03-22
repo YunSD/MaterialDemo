@@ -3,7 +3,13 @@
 // Copyright (C) Leszek Pomianowski and WPF UI Contributors.
 // All Rights Reserved.
 
+using MaterialDemo.Views.Pages.Login;
+using MaterialDemo.Views.Windows;
+using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.Hosting;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Media;
 
 
 namespace MaterialDemo.Services
@@ -45,9 +51,9 @@ namespace MaterialDemo.Services
                 _mainWindow = (
                     _serviceProvider.GetService(typeof(MainWindow)) as MainWindow
                 )!;
+                //_mainWindow.Navigate(_serviceProvider.GetService(typeof(LoginView)) as Page);
                 _mainWindow!.ShowWindow();
 
-                //_mainwindow.navigate(typeof(views.pages.dashboardpage));
             }
 
             await Task.CompletedTask;

@@ -5,6 +5,9 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Threading;
 using MaterialDemo.Services;
+using MaterialDemo.Views.Pages.Login;
+using MaterialDemo.Views.Windows;
+using MaterialDemo.ViewModels.Windows;
 
 
 namespace MaterialDemo
@@ -17,18 +20,22 @@ namespace MaterialDemo
 
         private static readonly IHost _host = Host
             .CreateDefaultBuilder()
-            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)); })
+            .ConfigureAppConfiguration(c => c.SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)))
             .ConfigureServices((context, services) =>
             {
                 services.AddHostedService<ApplicationHostService>();
 
                 // Main window with navigation
                 services.AddSingleton<MainWindow>();
+                services.AddSingleton<LoginView>();
+
+                // Model
+                services.AddSingleton<MainWindowViewModel>();
 
             }).Build();
 
 
-        public static T GetService<T>()
+        public static T? GetService<T>()
          where T : class
         {
             return _host.Services.GetService(typeof(T)) as T;

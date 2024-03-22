@@ -45,33 +45,42 @@
 
     <Style x:Key="ButtonCircle" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="Width" Value="45"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Margin" Value="8 0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" CornerRadius="30" BorderThickness="1" BorderBrush="DimGray" Padding="15">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="15" BorderThickness="1" BorderBrush="LightGray" >
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource ThemeBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#d9d9d9"/>
+                <Setter Property="Foreground" Value="{DynamicResource ThemeBrush}"/>
             </Trigger>
             <Trigger Property="IsMouseCaptured" Value="True">
-                <Setter Property="Background" Value="DimGray"/>
+                <Setter Property="Background" Value="LightGray"/>
             </Trigger>
         </Style.Triggers>
     </Style>
+
+   
 
     <Style x:Key="TextHint" TargetType="TextBlock">
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Grid.Column" Value="1"/>
         <Setter Property="Panel.ZIndex" Value="1"/>
         <Setter Property="Margin" Value="10 0 0 0"/>
-        <Setter Property="Foreground" Value="DimGray"/>
+        <Setter Property="Foreground" Value="{DynamicResource ThemeBrush}"/>
     </Style>
 
     <Style x:Key="TextBox" TargetType="Control">
@@ -87,27 +96,42 @@
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Width" Value="200"/>
         <Setter Property="Margin" Value="0 20 0 0"/>
-        <Setter Property="Background" Value="#3AB19B"/>
+        <Setter Property="Background" Value="{DynamicResource ThemeBrush}"/>
         <Setter Property="Foreground" Value="#fdfefe"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderThickness="1" BorderBrush="#49B7A3" Padding="15">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderThickness="0" BorderBrush="{DynamicResource ThemeBrush}" Padding="15">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#339685"/>
-                <Setter Property="Foreground" Value="White"/>
-            </Trigger>
-            <Trigger Property="IsMouseCaptured" Value="True">
-                <Setter Property="Background" Value="#2d7a6c"/>
-                <Setter Property="Foreground" Value="White"/>
-            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsPressed" Value="False"/>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                To="{StaticResource ThemeForeColor}" Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiTrigger.EnterActions>
+                <MultiTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                To="{StaticResource ThemeColor}" Duration="0:0:0.1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiTrigger.ExitActions>
+            </MultiTrigger>
         </Style.Triggers>
     </Style>
 

@@ -2,6 +2,7 @@
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
+/.vs
 /bin/Debug/net8.0-windows
 /obj
 /obj/Debug/net8.0-windows/ref/MaterialDemo.dll

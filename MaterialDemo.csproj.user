@@ -7,7 +7,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\Pages\Login\LoginCSS.xaml">
+    <Compile Update="Views\Pages\Login\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Update="Resources\LoginViewRes.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Update="Resources\Themes\Dark.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Update="Resources\Themes\Light.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Page Update="Views\Pages\Login\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Windows\MainWindow.xaml">

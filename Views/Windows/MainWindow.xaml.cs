@@ -1,20 +1,40 @@
-﻿namespace MaterialDemo
+﻿using MaterialDemo.ViewModels.Windows;
+using MaterialDemo.Views.Pages.Login;
+using System.Windows.Controls;
+
+namespace MaterialDemo.Views.Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        #region ViewModel
+        public MainWindowViewModel ViewModel { get; }
+        #endregion
+
+        #region Fields
+        private LoginView LoginViewPage;
+        #endregion
+
+        public MainWindow(MainWindowViewModel viewModel, LoginView loginView)
         {
+            this.ViewModel = viewModel;
+            this.LoginViewPage = loginView;
+
+            this.DataContext = this;
+
             InitializeComponent();
+
+            // default
+            this.Navigate(LoginViewPage);
         }
 
         #region Window methods
 
         //public INavigationView GetNavigation() => RootNavigation;
 
-        //public bool Navigate(Type pageType) => RootNavigation.Navigate(pageType);
+        public bool Navigate(Page page) => mainFrame.Navigate(page);
 
         //public void SetPageService(IPageService pageService) => RootNavigation.SetPageService(pageService);
 
@@ -38,37 +58,6 @@
             throw new NotImplementedException();
         }
 
-        private void username_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            usernameBox.Focus();
-        }
-
-        private void usernameBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(usernameBox.Text))
-            {
-                username.Visibility = Visibility.Collapsed;
-            } else {
-                username.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void password_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            passwordBox.Focus();
-        }
-
-        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(passwordBox.Password))
-            {
-                password.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                password.Visibility = Visibility.Visible;
-            }
-        }
     }
 
 }

@@ -14,9 +14,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Remove="Resources\LoginViewRes.xaml" />
+    <Page Remove="Resources\Themes\Dark.xaml" />
+    <Page Remove="Resources\Themes\Light.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="HandyControl" Version="3.5.1" />
-    <PackageReference Include="LiteDB" Version="5.0.19" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="1.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
@@ -25,7 +30,6 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="System.Globalization.Extensions" Version="4.3.0" />
     <PackageReference Include="System.IO" Version="4.3.0" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
     <PackageReference Include="System.Security.SecureString" Version="4.3.0" />
@@ -34,6 +38,9 @@
   <ItemGroup>
     <Resource Include="Assets\background.png" />
     <Resource Include="Assets\icon.png" />
+    <Resource Include="Resources\LoginViewRes.xaml" />
+    <Resource Include="Resources\Themes\Dark.xaml" />
+    <Resource Include="Resources\Themes\Light.xaml" />
   </ItemGroup>
 
 </Project>
