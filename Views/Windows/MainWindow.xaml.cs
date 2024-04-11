@@ -17,6 +17,10 @@ namespace MaterialDemo.Views.Windows
         private LoginView LoginViewPage;
         #endregion
 
+        #region
+
+        #endregion
+
         public MainWindow(MainWindowViewModel viewModel, LoginView loginView)
         {
             this.ViewModel = viewModel;
@@ -34,7 +38,7 @@ namespace MaterialDemo.Views.Windows
 
         //public INavigationView GetNavigation() => RootNavigation;
 
-        public bool Navigate(Page page) => mainFrame.Navigate(page);
+        public bool Navigate(Page page) => MainFrame.Navigate(page);
 
         //public void SetPageService(IPageService pageService) => RootNavigation.SetPageService(pageService);
 

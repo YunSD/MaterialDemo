@@ -48,7 +48,7 @@
 
                 <StackPanel Grid.Row="0" Margin="45 30 0 0" Orientation="Horizontal" VerticalAlignment="Center" IsHitTestVisible="False">
                     <Image Width="30" Height="30" Source="pack://application:,,,/Assets/icon.png" />
-                    <TextBlock Margin="15,0,0,0" Text="{Binding ViewModel.ApplicationTitle, Mode=OneWay}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" />
+                    <TextBlock Margin="15,0,0,0" Text="{Binding MainViewModel.ApplicationTitle, Mode=OneWay}" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" />
                 </StackPanel>
                    
                 <StackPanel Grid.Row="1" VerticalAlignment="Center">
@@ -76,7 +76,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0"/>
-                            <TextBox x:Name="username" hc:InfoElement.Placeholder="请输入用户名." Style="{StaticResource LoginBoxControl}" />
+                            <TextBox x:Name="username" hc:InfoElement.Placeholder="请输入用户名." Text="{Binding LoginViewModel.Username}" Style="{StaticResource LoginBoxControl}" />
                         </Grid>
                     </Border>
 
@@ -91,17 +91,17 @@
                     </Border>
 
                     <Button Content="Sign In" Style="{StaticResource submitButton}"
-                            Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
+                            Command="{Binding SubmitCommand}">
                         <Button.CommandParameter>
                             <StackPanel Margin="16">
                                 <ProgressBar Margin="16"
                                     HorizontalAlignment="Center" IsIndeterminate="True"
                                     Style="{StaticResource MaterialDesignCircularProgressBar}" Value="0" />
                                 <TextBlock Text="正在登录..." HorizontalAlignment="Center" Margin=" 0 0 0 5"/>
+                                <!-- -Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"-->
                                 <Button HorizontalAlignment="Center"
                                     Style="{StaticResource MaterialDesignFlatButton}"
-                                    Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                                    CommandParameter="Sample2Cancel" Content="CANCEL"
+                                    Content="CANCEL"
                                     IsCancel="True"/>
                             </StackPanel>           
                         </Button.CommandParameter>

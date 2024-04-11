@@ -8,6 +8,14 @@ using MaterialDemo.Services;
 using MaterialDemo.Views.Pages.Login;
 using MaterialDemo.Views.Windows;
 using MaterialDemo.ViewModels.Windows;
+using Microsoft.Extensions.Logging;
+using MaterialDemo.Config.EFDB;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using MaterialDemo.Config;
+using MaterialDemo.Models.Entity;
+using MaterialDemo.Config.UnitOfWork;
+using MaterialDemo.ViewModels.Pages;
 
 
 namespace MaterialDemo
@@ -17,6 +25,8 @@ namespace MaterialDemo
     /// </summary>
     public partial class App : Application
     {
+       
+        private static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder.AddProvider(new Log4NetProvider()));
 
         private static readonly IHost _host = Host
             .CreateDefaultBuilder()
@@ -24,6 +34,21 @@ namespace MaterialDemo
             .ConfigureServices((context, services) =>
             {
                 services.AddHostedService<ApplicationHostService>();
+                // logging
+                services.AddLogging((builder)=>{ 
+                    builder.AddConsole();
+                    builder.AddLog4Net();
+                });
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["mysql"].ConnectionString;
+                // Db
+                services.AddDbContextPool<BaseDbContext>((options) => options
+                    .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution)
+                    .EnableDetailedErrors()
+                    .EnableSensitiveDataLogging()
+                    .LogTo(Console.WriteLine, LogLevel.Debug));
+                services.AddUnitOfWork<BaseDbContext>();
+                //services.AddCustomRepository<SysUser,Repository<SysUser>>();
 
                 // Main window with navigation
                 services.AddSingleton<MainWindow>();
@@ -31,6 +56,7 @@ namespace MaterialDemo
 
                 // Model
                 services.AddSingleton<MainWindowViewModel>();
+                services.AddSingleton<LoginViewModel>();
 
             }).Build();
 
@@ -64,6 +90,8 @@ namespace MaterialDemo
         /// </summary>
         private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
+            Console.Write(e.Exception);
+            e.Handled = true;
             // For more info see https://docs.microsoft.com/en-us/dotnet/api/system.windows.application.dispatcherunhandledexception?view=windowsdesktop-6.0
         }
     }

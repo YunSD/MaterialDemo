@@ -24,7 +24,7 @@
         <BitmapImage UriSource="pack://application:,,,/Assets/icon.png" />
     </Window.Icon>
     <!-- WindowStyle="None" AllowsTransparency="True"  WindowState="Maximized"-->
-    <materialDesign:DialogHost DialogTheme="Inherit" Identifier="RootDialog">
-        <Frame x:Name="mainFrame" BorderThickness="0"/>
+    <materialDesign:DialogHost Name="dialoghost" DialogTheme="Inherit" Identifier="RootDialog">
+        <Frame x:Name="MainFrame" BorderThickness="0"/>
     </materialDesign:DialogHost>
 </Window>
