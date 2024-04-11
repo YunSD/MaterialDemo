@@ -1,6 +1,8 @@
-﻿using log4net;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using log4net;
 using MahApps.Metro.Controls;
 using MaterialDemo.Models.Entity;
+using MaterialDemo.Security.Messages;
 using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages;
 using MaterialDemo.ViewModels.Windows;
@@ -51,7 +53,14 @@ namespace MaterialDemo.Views.Pages.Login
             { 
                 ((dynamic)this.DataContext).LoginViewModel.password = password.SecurePassword; 
             }
-            //DialogHost.CloseDialogCommand.Execute(param, this);
+            SysUser user = new SysUser();
+            user.Username = "admin";
+            user.Name = "admin";
+            user.Avatar = "admin_avatar";
+            user.Email = "admin email";
+            user.Phone = "admin phone";
+            WeakReferenceMessenger.Default.Send(new LoginCompletedMessage(user));
+            DialogHost.CloseDialogCommand.Execute(param, this);
         }
     }
 }

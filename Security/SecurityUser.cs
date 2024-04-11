@@ -9,23 +9,39 @@ using System.Threading.Tasks;
 
 namespace MaterialDemo.Security
 {
+
     public partial class SecurityUser : ObservableRecipient, IRecipient<LoginCompletedMessage>, IRecipient<LogoutMessage>
     {
-
-
-        public SecurityUser(SysUser sysUser) {
-            UserInfo info = new UserInfo( sysUser.UserId, sysUser.Username, sysUser.Name, sysUser.Avatar, sysUser.Phone, sysUser.Email);
+        public SecurityUser() {
+            this.IsActive = true;
         }
 
         #region field
         [ObservableProperty]
         public volatile UserInfo? info = null;
         // is sign 是否登录
-        [ObservableProperty]
         public volatile bool is_Sign = false;
         #endregion
 
 
+        private bool recycleStatement(SysUser sysUser) {
+            lock (this)
+            {
+                if (is_Sign != false) return false;
+                UserInfo info = new UserInfo(sysUser.UserId, sysUser.Username, sysUser.Name, sysUser.Avatar, sysUser.Phone, sysUser.Email);
+                this.is_Sign = true;
+                this.Info = info;
+                return true;
+            }
+        }
+
+        private void logout() {
+            lock (this) { 
+                if (is_Sign == false) return;
+                this.is_Sign = false;
+                this.Info = null ;
+            }
+        }
 
 
         public record UserInfo
@@ -50,13 +66,15 @@ namespace MaterialDemo.Security
 
         public void Receive(LoginCompletedMessage message)
         {
-            UserInfo info = new UserInfo(sysUser.UserId, sysUser.Username, sysUser.Name, sysUser.Avatar, sysUser.Phone, sysUser.Email);
-            throw new NotImplementedException();
+            if (recycleStatement(message.SysUser)) { 
+                // 通知跳转
+               WeakReferenceMessenger.Default.Send(LoginCompletedRedirectionMessage.instance);
+            };
         }
 
         public void Receive(LogoutMessage message)
         {
-            throw new NotImplementedException();
+            this.logout();
         }
     }
 }

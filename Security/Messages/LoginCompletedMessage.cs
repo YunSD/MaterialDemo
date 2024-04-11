@@ -9,6 +9,9 @@ namespace MaterialDemo.Security.Messages
 {
     public sealed class LoginCompletedMessage
     {
-        public SysUser? SysUser { get; set; }
+        public LoginCompletedMessage(SysUser user) => (SysUser) = (user);
+
+
+        public SysUser SysUser { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using MaterialDemo.ViewModels.Windows;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using MaterialDemo.Security.Messages;
+using MaterialDemo.ViewModels.Windows;
 using MaterialDemo.Views.Pages.Login;
 using System.Windows.Controls;
 
@@ -7,7 +9,7 @@ namespace MaterialDemo.Views.Windows
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window,IRecipient<LoginCompletedRedirectionMessage>
     {
         #region ViewModel
         public MainWindowViewModel ViewModel { get; }
@@ -62,6 +64,10 @@ namespace MaterialDemo.Views.Windows
             throw new NotImplementedException();
         }
 
+        public void Receive(LoginCompletedRedirectionMessage message)
+        {
+            this.Navigate(null);
+        }
     }
 
 }

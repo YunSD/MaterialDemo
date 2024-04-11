@@ -16,6 +16,10 @@ using MaterialDemo.Config;
 using MaterialDemo.Models.Entity;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.ViewModels.Pages;
+using MahApps.Metro.Controls.Dialogs;
+using HandyControl.Controls;
+using MessageBox = System.Windows.MessageBox;
+using MaterialDemo.Security;
 
 
 namespace MaterialDemo
@@ -50,10 +54,11 @@ namespace MaterialDemo
                 services.AddUnitOfWork<BaseDbContext>();
                 //services.AddCustomRepository<SysUser,Repository<SysUser>>();
 
+
                 // Main window with navigation
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<LoginView>();
-
+                services.AddSingleton(new SecurityUser());
                 // Model
                 services.AddSingleton<MainWindowViewModel>();
                 services.AddSingleton<LoginViewModel>();
@@ -92,6 +97,10 @@ namespace MaterialDemo
         {
             Console.Write(e.Exception);
             e.Handled = true;
+            MessageBox.Show(e.Exception.Message);
+            if (e.Exception is MySqlConnector.MySqlException) {
+                Application.Current.Shutdown();
+            }
             // For more info see https://docs.microsoft.com/en-us/dotnet/api/system.windows.application.dispatcherunhandledexception?view=windowsdesktop-6.0
         }
     }
