@@ -33,7 +33,6 @@ namespace MaterialDemo.Views.Pages.Login
             this.LoginViewModel = loginViewModel;
             this.DataContext = this;
             InitializeComponent();
-            logger.Error("发生什么事了，发生什么事了，发生什么事了，发生什么事了");
         }
 
 
@@ -45,22 +44,5 @@ namespace MaterialDemo.Views.Pages.Login
             => Debug.WriteLine($"SAMPLE 2: Closed dialog with parameter: {eventArgs.Parameter ?? string.Empty}");
 
 
-        [RelayCommand]
-        public void Submit(Object param)
-        {
-            DialogHost.OpenDialogCommand.Execute(param, this);
-            if (this.DataContext != null)
-            { 
-                ((dynamic)this.DataContext).LoginViewModel.password = password.SecurePassword; 
-            }
-            SysUser user = new SysUser();
-            user.Username = "admin";
-            user.Name = "admin";
-            user.Avatar = "admin_avatar";
-            user.Email = "admin email";
-            user.Phone = "admin phone";
-            WeakReferenceMessenger.Default.Send(new LoginCompletedMessage(user));
-            DialogHost.CloseDialogCommand.Execute(param, this);
-        }
     }
 }

@@ -12,6 +12,8 @@ namespace MaterialDemo.Security
 
     public partial class SecurityUser : ObservableRecipient, IRecipient<LoginCompletedMessage>, IRecipient<LogoutMessage>
     {
+
+        public static readonly SecurityUser SECURITY_USER = new SecurityUser();
         public SecurityUser() {
             this.IsActive = true;
         }
@@ -68,7 +70,7 @@ namespace MaterialDemo.Security
         {
             if (recycleStatement(message.SysUser)) { 
                 // 通知跳转
-               WeakReferenceMessenger.Default.Send(LoginCompletedRedirectionMessage.instance);
+               WeakReferenceMessenger.Default.Send<LoginCompletedRedirectionMessage>();
             };
         }
 

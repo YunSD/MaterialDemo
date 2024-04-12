@@ -20,6 +20,7 @@ using MahApps.Metro.Controls.Dialogs;
 using HandyControl.Controls;
 using MessageBox = System.Windows.MessageBox;
 using MaterialDemo.Security;
+using MaterialDemo.Views.Pages;
 
 
 namespace MaterialDemo
@@ -58,10 +59,12 @@ namespace MaterialDemo
                 // Main window with navigation
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<LoginView>();
-                services.AddSingleton(new SecurityUser());
+                services.AddSingleton<HomeView>();
+                services.AddSingleton(SecurityUser.SECURITY_USER);
                 // Model
                 services.AddSingleton<MainWindowViewModel>();
                 services.AddSingleton<LoginViewModel>();
+
 
             }).Build();
 

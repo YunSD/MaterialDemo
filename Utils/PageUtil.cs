@@ -22,5 +22,15 @@ namespace MaterialDemo.Utils
             return element as DialogHost;
         }
 
+        private static readonly string Identifier = "RootDialog";
+
+        public static void ShowHostDialog(object param) {
+            DialogHost.Show(param, Identifier);
+        }
+
+        public static void CloseHostDialog() {
+            DialogHost.Close(Identifier);
+        }
+
     }
 }

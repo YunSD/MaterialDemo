@@ -9,8 +9,5 @@ namespace MaterialDemo.Security.Messages
 {
     public sealed class LoginCompletedRedirectionMessage
     {
-        private static readonly LoginCompletedRedirectionMessage CUR_INSTANCE = new LoginCompletedRedirectionMessage();
-        private LoginCompletedRedirectionMessage() { }
-        public static LoginCompletedRedirectionMessage instance() { return CUR_INSTANCE; }
     }
 }

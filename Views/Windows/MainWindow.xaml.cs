@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
 using MaterialDemo.Security.Messages;
 using MaterialDemo.ViewModels.Windows;
+using MaterialDemo.Views.Pages;
 using MaterialDemo.Views.Pages.Login;
 using System.Windows.Controls;
 
@@ -9,7 +10,7 @@ namespace MaterialDemo.Views.Windows
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window,IRecipient<LoginCompletedRedirectionMessage>
+    public partial class MainWindow : Window, IRecipient<LoginCompletedRedirectionMessage>, IRecipient<LogoutMessage>
     {
         #region ViewModel
         public MainWindowViewModel ViewModel { get; }
@@ -17,16 +18,14 @@ namespace MaterialDemo.Views.Windows
 
         #region Fields
         private LoginView LoginViewPage;
+        private HomeView HomeViewPage;
         #endregion
 
-        #region
-
-        #endregion
-
-        public MainWindow(MainWindowViewModel viewModel, LoginView loginView)
+        public MainWindow(MainWindowViewModel viewModel, LoginView loginView, HomeView HomeView)
         {
             this.ViewModel = viewModel;
             this.LoginViewPage = loginView;
+            this.HomeViewPage = HomeView;
 
             this.DataContext = this;
 
@@ -34,6 +33,10 @@ namespace MaterialDemo.Views.Windows
 
             // default
             this.Navigate(LoginViewPage);
+
+            // register message
+            WeakReferenceMessenger.Default.Register<LoginCompletedRedirectionMessage>(this);
+            WeakReferenceMessenger.Default.Register<LogoutMessage>(this);
         }
 
         #region Window methods
@@ -66,7 +69,12 @@ namespace MaterialDemo.Views.Windows
 
         public void Receive(LoginCompletedRedirectionMessage message)
         {
-            this.Navigate(null);
+            this.Navigate(HomeViewPage);
+        }
+
+        public void Receive(LogoutMessage message)
+        {
+            this.Navigate(LoginViewPage);
         }
     }
 

@@ -15,8 +15,7 @@
 
   <ItemGroup>
     <Page Remove="Resources\LoginViewRes.xaml" />
-    <Page Remove="Resources\Themes\Dark.xaml" />
-    <Page Remove="Resources\Themes\Light.xaml" />
+    <Page Remove="Resources\Themes\Themes.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,8 +48,11 @@
     <Resource Include="Assets\background.png" />
     <Resource Include="Assets\icon.png" />
     <Resource Include="Resources\LoginViewRes.xaml" />
-    <Resource Include="Resources\Themes\Dark.xaml" />
-    <Resource Include="Resources\Themes\Light.xaml" />
+    <Resource Include="Resources\Themes\Themes.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Pages\Context\" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:hc="https://handyorg.github.io/handycontrol" 
+      xmlns:pages="clr-namespace:MaterialDemo.ViewModels.Pages" 
+      Background="{DynamicResource WindowBackground}"
+      d:DataContext="{d:DesignInstance Type=pages:LoginViewModel}"
       mc:Ignorable="d" 
       Title="LOGIN">
     
@@ -91,7 +94,7 @@
                     </Border>
 
                     <Button Content="Sign In" Style="{StaticResource submitButton}"
-                            Command="{Binding SubmitCommand}">
+                            Command="{Binding LoginViewModel.SubmitByPasswordCommand}" >
                         <Button.CommandParameter>
                             <StackPanel Margin="16">
                                 <ProgressBar Margin="16"

@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\Pages\HomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Login\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -15,12 +18,12 @@
     <Resource Update="Resources\LoginViewRes.xaml">
       <SubType>Designer</SubType>
     </Resource>
-    <Resource Update="Resources\Themes\Dark.xaml">
+    <Resource Update="Resources\Themes\Themes.xaml">
       <SubType>Designer</SubType>
     </Resource>
-    <Resource Update="Resources\Themes\Light.xaml">
+    <Page Update="Views\Pages\HomeView.xaml">
       <SubType>Designer</SubType>
-    </Resource>
+    </Page>
     <Page Update="Views\Pages\Login\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -3,6 +3,7 @@
 // Copyright (C) Leszek Pomianowski and WPF UI Contributors.
 // All Rights Reserved.
 
+using HandyControl.Tools.Extension;
 using System.Collections.ObjectModel;
 
 namespace MaterialDemo.ViewModels.Windows
@@ -10,7 +11,7 @@ namespace MaterialDemo.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "Material Demo";
+        private string _applicationTitle = System.Configuration.ConfigurationManager.AppSettings["name"];
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()

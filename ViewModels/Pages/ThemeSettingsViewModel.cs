@@ -1,6 +1,4 @@
-﻿using MaterialDesignThemes.Wpf;
-
-namespace MaterialDesignDemo.Domain;
+﻿namespace MaterialDesignDemo.Domain;
 
 public class ThemeSettingsViewModel : ViewModelBase
 {

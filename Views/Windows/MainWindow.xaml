@@ -8,14 +8,13 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
-
         TextOptions.TextFormattingMode="Display"
         TextOptions.TextRenderingMode="ClearType"
         UseLayoutRounding="True" 
         SnapsToDevicePixels="True"
         WindowState="Normal"
         WindowStartupLocation="CenterScreen"
-        Background="Transparent"
+        Background="{DynamicResource WindowBackground}"
         FontFamily="Lucida Sans Unicode"
         Title="{Binding ViewModel.ApplicationTitle, Mode=OneWay}"
         Height="700" Width="1200"
@@ -24,7 +23,7 @@
         <BitmapImage UriSource="pack://application:,,,/Assets/icon.png" />
     </Window.Icon>
     <!-- WindowStyle="None" AllowsTransparency="True"  WindowState="Maximized"-->
-    <materialDesign:DialogHost Name="dialoghost" DialogTheme="Inherit" Identifier="RootDialog">
-        <Frame x:Name="MainFrame" BorderThickness="0"/>
+    <materialDesign:DialogHost Name="HostDialog" DialogTheme="Inherit" Identifier="RootDialog">
+        <Frame x:Name="MainFrame" BorderThickness="0" NavigationUIVisibility="Hidden"/>
     </materialDesign:DialogHost>
 </Window>
