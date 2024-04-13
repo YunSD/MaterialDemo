@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
 using log4net;
 using MahApps.Metro.Controls;
-using MaterialDemo.Models.Entity;
 using MaterialDemo.Security.Messages;
 using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages;

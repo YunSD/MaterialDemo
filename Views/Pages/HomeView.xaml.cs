@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDemo.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,54 @@ namespace MaterialDemo.Views.Pages
     /// </summary>
     public partial class HomeView : Page
     {
+
+        public List<NavigationItem> NavigationItems { get; set; }
+
         public HomeView()
         {
             InitializeComponent();
+            DataContext = this;
+
+            NavigationItems = new()
+            {
+                new NavigationItem
+                {
+                    Title = "Payment",
+                    SelectedIcon = PackIconKind.CreditCard,
+                    UnselectedIcon = PackIconKind.CreditCardOutline,
+                    Notification = 1
+                },
+                new NavigationItem
+                {
+                    Title = "Home",
+                    SelectedIcon = PackIconKind.Home,
+                    UnselectedIcon = PackIconKind.HomeOutline,
+                },
+                new NavigationItem
+                {
+                    Title = "Special",
+                    SelectedIcon = PackIconKind.Star,
+                    UnselectedIcon = PackIconKind.StarOutline,
+                },
+                new NavigationItem
+                {
+                    Title = "Shared",
+                    SelectedIcon = PackIconKind.Users,
+                    UnselectedIcon = PackIconKind.UsersOutline,
+                },
+                new NavigationItem
+                {
+                    Title = "Files",
+                    SelectedIcon = PackIconKind.Folder,
+                    UnselectedIcon = PackIconKind.FolderOutline,
+                },
+                new NavigationItem
+                {
+                    Title = "Library",
+                    SelectedIcon = PackIconKind.Bookshelf,
+                    UnselectedIcon = PackIconKind.Bookshelf,
+                },
+            };
         }
     }
 }

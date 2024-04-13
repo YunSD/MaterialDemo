@@ -1,4 +1,4 @@
-﻿using MaterialDemo.Models.Entity;
+﻿using MaterialDemo.Domain.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

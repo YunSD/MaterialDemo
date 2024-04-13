@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaterialDemo.Models.Entity
+namespace MaterialDemo.Domain.Models.Entity
 {
     [Table("sys_user")]
     public class SysUser:BaseEntity

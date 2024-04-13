@@ -2,7 +2,7 @@
 {
     using CommunityToolkit.Mvvm.Messaging;
     using MaterialDemo.Config.UnitOfWork;
-    using MaterialDemo.Models.Entity;
+    using MaterialDemo.Domain.Models.Entity;
     using MaterialDemo.Security.Messages;
     using MaterialDemo.Utils;
     using System;

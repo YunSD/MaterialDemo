@@ -52,6 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ViewModels\Pages\Home\" />
     <Folder Include="Views\Pages\Context\" />
   </ItemGroup>
 
