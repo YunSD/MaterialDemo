@@ -32,6 +32,9 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         public void OnNavigatedTo()
         {
+            dataList.Add(new SysUser() { Name = "123" });
+            dataList.Add(new SysUser() { Name = "456" });
+            dataList.Add(new SysUser() { Name = "789" });
         }
     }
 }

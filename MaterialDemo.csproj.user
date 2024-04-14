@@ -21,9 +21,36 @@
     <Resource Update="Resources\LoginViewRes.xaml">
       <SubType>Designer</SubType>
     </Resource>
-    <Resource Update="Resources\Themes\Themes.xaml">
+    <Page Update="Resources\Themes\Basic\Basic.xaml">
       <SubType>Designer</SubType>
-    </Resource>
+    </Page>
+    <Page Update="Resources\Themes\Basic\Brushes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\Basic\Colors\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\Basic\Colors\ColorsDark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\Basic\Fonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\Basic\Geometries.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\SkinDark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\SkinDefault.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\Styles\Style.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\Theme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -9,20 +9,24 @@ namespace MaterialDemo.Domain.Models
     public partial class PageViewModelBase<T> : ObservableObject
     {
         [ObservableProperty]
-        public IList<T>? dataList;
+        public IList<T> dataList;
 
         // 每页显示多少条
-        public int? pageSize;
+        public int pageSize = 20;
 
         // 总条目数
-        public int? totalCount;
+        public int totalCount = 0;
         
         // 当前页
-        public int? pageIndex;
+        public int pageIndex = 0;
 
         // 页面总数
-        public int? totalPage;
+        public int totalPage = 0;
 
+        public PageViewModelBase()
+        {
+            dataList = new List<T>();
+        }
 
     }
 }

@@ -13,9 +13,12 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Resources/Themes/Themes.xaml" />
+                <!--  HandyControl  -->
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
+                <ResourceDictionary Source="Resources/Themes/Theme.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
+                <ResourceDictionary Source="Resources/Themes/SkinDefault.xaml" />
+                <!--  MaterialDesignThemes  -->
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
@@ -24,6 +27,8 @@
                     BaseTheme="Light"
                     PrimaryColor="{StaticResource ThemeColor}"
                     SecondaryColor="{StaticResource ThemeForeColor}" />
+
+                <!--  wpf-ui  -->
                 <ui:ThemesDictionary Theme="Dark" />
                 <ui:ControlsDictionary />
             </ResourceDictionary.MergedDictionaries>
