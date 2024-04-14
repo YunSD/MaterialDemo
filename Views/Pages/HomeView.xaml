@@ -9,6 +9,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:MaterialDemo.ViewModels.Pages"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     Title="HomeView"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -24,69 +25,52 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <StackPanel>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <materialDesign:ColorZone
+            Grid.Row="0"
             Padding="8"
             materialDesign:ElevationAssist.Elevation="Dp4"
             Mode="SecondaryMid"
             Style="{DynamicResource TopBar}">
             <StackPanel Orientation="Horizontal">
-                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                <ToggleButton Click="NavigationToggle" Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
                 <TextBlock
                     Margin="16,0,0,0"
                     VerticalAlignment="Center"
                     Text="Material Design In XAML Toolkit" />
             </StackPanel>
         </materialDesign:ColorZone>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <Grid Width="80" Background="{DynamicResource MaterialDesignCardBackground}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <ToggleButton Margin="0,32,0,0" Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
-                <Button
-                    Grid.Row="1"
-                    Width="56"
-                    Height="56"
-                    Margin="0,10,0,40"
-                    materialDesign:ButtonAssist.CornerRadius="16"
-                    Background="{DynamicResource SecondaryHueMidBrush}"
-                    BorderThickness="0"
-                    Foreground="{DynamicResource SecondaryHueMidBrushForeground}"
-                    Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                    <materialDesign:PackIcon
-                        Width="24"
-                        Height="24"
-                        Kind="PencilOutline" />
-                </Button>
-                <ListBox
-                    Grid.Row="2"
-                    VerticalAlignment="Top"
-                    ItemsSource="{Binding NavigationItems}"
-                    SelectedIndex="0">
-                    <ListBox.ItemContainerStyle>
-                        <Style BasedOn="{StaticResource MaterialDesign3.NavigationRailListBoxItem}" TargetType="ListBoxItem">
-                            <Setter Property="materialDesign:BadgedAssist.Badge" Value="{Binding Notification}" />
-                            <Setter Property="materialDesign:NavigationRailAssist.IsTextVisible" Value="True" />
-                            <Setter Property="materialDesign:NavigationRailAssist.SelectedIcon" Value="{Binding SelectedIcon}" />
-                            <Setter Property="materialDesign:NavigationRailAssist.UnselectedIcon" Value="{Binding UnselectedIcon}" />
-                        </Style>
-                    </ListBox.ItemContainerStyle>
-                    <ListBox.Resources>
-                        <DataTemplate DataType="{x:Type domin:NavigationItem}">
-                            <TextBlock Text="{Binding Title}" />
-                        </DataTemplate>
-                    </ListBox.Resources>
-                </ListBox>
-            </Grid>
-        </Grid>
-    </StackPanel>
+        <ui:NavigationView
+            x:Name="RootNavigation"
+            Grid.Row="1"
+            Padding="42,0,42,0"
+            BreadcrumbBar="{Binding ElementName=BreadcrumbBar}"
+            FooterMenuItemsSource="{Binding NavigationItems.FooterMenuItems, Mode=OneWay}"
+            FrameMargin="0"
+            IsBackButtonVisible="Collapsed"
+            IsPaneToggleVisible="False"
+            IsPaneVisible="False"
+            MenuItemsSource="{Binding NavigationItems.MenuItems, Mode=OneWay}"
+            PaneDisplayMode="Left">
+            <ui:NavigationView.Header>
+                <ui:BreadcrumbBar x:Name="BreadcrumbBar" Margin="42,32,42,20" />
+            </ui:NavigationView.Header>
+            <ui:NavigationView.ContentOverlay>
+                <Grid>
+                    <ui:SnackbarPresenter x:Name="SnackbarPresenter" />
+                </Grid>
+            </ui:NavigationView.ContentOverlay>
+        </ui:NavigationView>
+        <ContentPresenter
+            x:Name="RootContentDialog"
+            Grid.Row="0"
+            Grid.RowSpan="2" />
+    </Grid>
 
 
 </Page>

@@ -16,6 +16,12 @@ using MaterialDemo.ViewModels.Pages;
 using MessageBox = System.Windows.MessageBox;
 using MaterialDemo.Security;
 using MaterialDemo.Views.Pages;
+using MaterialDemo.ViewModels.Pages.Home;
+using MaterialDemo.ViewModels.Pages.Upms;
+using Wpf.Ui;
+using UiDesktopApp1.Services;
+using MaterialDemo.Views.Pages.Upms;
+using MaterialDemo.Config.DependencyModel;
 
 
 namespace MaterialDemo
@@ -34,13 +40,17 @@ namespace MaterialDemo
             .ConfigureServices((context, services) =>
             {
                 services.AddHostedService<ApplicationHostService>();
+                services.AddSingleton<IPageService, PageService>();
+                services.AddSingleton<INavigationService, NavigationService>();
+
                 // logging
                 services.AddLogging((builder)=>{ 
                     builder.AddConsole();
                     builder.AddLog4Net();
                 });
-                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["mysql"].ConnectionString;
+
                 // Db
+                string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["mysql"].ConnectionString;
                 services.AddDbContextPool<BaseDbContext>((options) => options
                     .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution)
@@ -53,19 +63,23 @@ namespace MaterialDemo
 
                 // Main window with navigation
                 services.AddSingleton<MainWindow>();
-                services.AddSingleton<LoginView>();
-                services.AddSingleton<HomeView>();
-                services.AddSingleton(SecurityUser.SECURITY_USER);
-                // Model
                 services.AddSingleton<MainWindowViewModel>();
+                services.AddSingleton(SecurityUser.SECURITY_USER);
+
+                services.AddSingleton<LoginView>();
                 services.AddSingleton<LoginViewModel>();
+
+                services.AddSingleton<HomeView>();
+                services.AddSingleton<HomeViewModel>();
+                
+                services.AddTransientFromNamespace("MaterialDemo.ViewModels", Assembly.GetExecutingAssembly());
+                services.AddTransientFromNamespace("MaterialDemo.Views", Assembly.GetExecutingAssembly());
 
 
             }).Build();
 
 
-        public static T? GetService<T>()
-         where T : class
+        public static T? GetService<T>() where T : class
         {
             return _host.Services.GetService(typeof(T)) as T;
         }
