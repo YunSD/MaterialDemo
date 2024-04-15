@@ -70,7 +70,7 @@ namespace MaterialDemo.Security
         {
             if (recycleStatement(message.SysUser)) { 
                 // 通知跳转
-               WeakReferenceMessenger.Default.Send<LoginCompletedRedirectionMessage>();
+               Messenger.Send<LoginCompletedRedirectionMessage>();
             };
         }
 
