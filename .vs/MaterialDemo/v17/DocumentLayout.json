@@ -1,100 +1,145 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\",
+  "WorkspaceRootPath": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\security\\securityuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:security\\securityuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\login\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\login\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zzz\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0f3226c4-d7ee-15ae-028a-7d814e8b574e\\MaterialDemo.Domain.Models.PageViewModelBase\u00601.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\login\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\login\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\domain\\models\\entity\\sysuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\models\\entity\\sysuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\config\\db\\basedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:config\\db\\basedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\security\\messages\\logincompletedredirectionmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:security\\messages\\logincompletedredirectionmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\homeview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\homeview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\security\\messages\\logincompletedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:security\\messages\\logincompletedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\domain\\navigationitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\navigationitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\materialdemo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:materialdemo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\pages\\login\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\login\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\pages\\login\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\login\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\themes\\basic\\basic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\basic\\basic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\loginviewres.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\themes\\basic\\brushes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\basic\\brushes.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\themes\\basic\\colors\\colorsdark.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\basic\\colors\\colorsdark.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\themes\\basic\\colors\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\basic\\colors\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\themes\\skindefault.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\skindefault.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\loginviewres.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\loginviewres.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\utils\\pageutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\themes\\skindark.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\skindark.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\themes\\styles\\style.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\styles\\style.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\viewmodels\\pages\\home\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\home\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\viewmodels\\pages\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\domain\\models\\entity\\sysuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\models\\entity\\sysuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\config\\dependencymodel\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:config\\dependencymodel\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\pages\\homeview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\homeview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\services\\pageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:services\\pageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\viewmodels\\pages\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\security\\messages\\logincompletedredirectionmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:security\\messages\\logincompletedredirectionmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\config\\db\\basedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:config\\db\\basedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\security\\messages\\logincompletedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:security\\messages\\logincompletedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\domain\\navigationitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\navigationitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\materialdemo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:materialdemo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\utils\\pageutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:utils\\pageutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -105,122 +150,265 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 31,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserView.xaml.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml.cs",
-              "RelativeToolTip": "Views\\Pages\\Upms\\UserView.xaml.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABgAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T08:55:43.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PageViewModelBase.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\PageViewModelBase.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs*",
-              "RelativeToolTip": "Domain\\Models\\PageViewModelBase.cs*",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T08:47:47.174Z",
+              "DocumentIndex": 8,
+              "Title": "Brushes.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Basic\\Brushes.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\Basic\\Brushes.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Basic\\Brushes.xaml",
+              "RelativeToolTip": "Resources\\Themes\\Basic\\Brushes.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T16:21:10.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MaterialDemo.Domain.Models.PageViewModelBase\u00601.g.cs [\u5DF2\u751F\u6210]",
-              "DocumentMoniker": "C:\\Users\\zzz\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0f3226c4-d7ee-15ae-028a-7d814e8b574e\\MaterialDemo.Domain.Models.PageViewModelBase\u00601.g.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0f3226c4-d7ee-15ae-028a-7d814e8b574e\\MaterialDemo.Domain.Models.PageViewModelBase\u00601.g.cs",
-              "ToolTip": "MaterialDemo.Domain.Models.PageViewModelBase\u00601.g.cs [\u7531 CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator \u751F\u6210]",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "OverriddenToolTip": "MaterialDemo.Domain.Models.PageViewModelBase\u00601.g.cs [\u7531 CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator \u751F\u6210]",
-              "WhenOpened": "2024-04-15T08:47:46.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserView.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml",
-              "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserView.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml",
-              "RelativeToolTip": "Views\\Pages\\Upms\\UserView.xaml",
+              "Title": "Basic.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Basic\\Basic.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\Basic\\Basic.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Basic\\Basic.xaml",
+              "RelativeToolTip": "Resources\\Themes\\Basic\\Basic.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-15T08:40:25.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs*",
-              "RelativeToolTip": "ViewModels\\Pages\\Upms\\UserViewModel.cs*",
-              "ViewState": "AQIAAAYAAAAAAAAAAIAzwBMAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T07:48:42.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginCompletedRedirectionMessage.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Security\\Messages\\LoginCompletedRedirectionMessage.cs",
-              "RelativeDocumentMoniker": "Security\\Messages\\LoginCompletedRedirectionMessage.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Security\\Messages\\LoginCompletedRedirectionMessage.cs",
-              "RelativeToolTip": "Security\\Messages\\LoginCompletedRedirectionMessage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T15:26:51.377Z",
+              "WhenOpened": "2024-04-14T16:21:08.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "BaseDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\Db\\BaseDbContext.cs",
-              "RelativeDocumentMoniker": "Config\\Db\\BaseDbContext.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\Db\\BaseDbContext.cs",
-              "RelativeToolTip": "Config\\Db\\BaseDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T15:26:24.273Z",
+              "Title": "ColorsDark.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Basic\\Colors\\ColorsDark.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\Basic\\Colors\\ColorsDark.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Basic\\Colors\\ColorsDark.xaml",
+              "RelativeToolTip": "Resources\\Themes\\Basic\\Colors\\ColorsDark.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T16:21:05.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Basic\\Colors\\Colors.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\Basic\\Colors\\Colors.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Basic\\Colors\\Colors.xaml",
+              "RelativeToolTip": "Resources\\Themes\\Basic\\Colors\\Colors.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T16:21:04.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SecurityUser.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Security\\SecurityUser.cs",
-              "RelativeDocumentMoniker": "Security\\SecurityUser.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Security\\SecurityUser.cs",
-              "RelativeToolTip": "Security\\SecurityUser.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAA5wEUAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T15:25:58.219Z",
+              "DocumentIndex": 13,
+              "Title": "SkinDark.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\SkinDark.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\SkinDark.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\SkinDark.xaml",
+              "RelativeToolTip": "Resources\\Themes\\SkinDark.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T16:20:33.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SkinDefault.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\SkinDefault.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\SkinDefault.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\SkinDefault.xaml",
+              "RelativeToolTip": "Resources\\Themes\\SkinDefault.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T16:20:32.075Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Style.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Styles\\Style.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\Styles\\Style.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Styles\\Style.xaml",
+              "RelativeToolTip": "Resources\\Themes\\Styles\\Style.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T16:18:40.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Theme.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Theme.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\Theme.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Themes\\Theme.xaml",
+              "RelativeToolTip": "Resources\\Themes\\Theme.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T16:15:25.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PageViewModelBase.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\PageViewModelBase.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs",
+              "RelativeToolTip": "Domain\\Models\\PageViewModelBase.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T16:07:06.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Pages\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\LoginViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Pages\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T16:02:47.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Config\\DependencyModel\\ServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "Config\\DependencyModel\\ServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Config\\DependencyModel\\ServiceCollectionExtensions.cs",
+              "RelativeToolTip": "Config\\DependencyModel\\ServiceCollectionExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T13:12:51.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PageService.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Services\\PageService.cs",
+              "RelativeDocumentMoniker": "Services\\PageService.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Services\\PageService.cs",
+              "RelativeToolTip": "Services\\PageService.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAIwCkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T12:06:35.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SysUser.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Domain\\Models\\Entity\\SysUser.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Entity\\SysUser.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Domain\\Models\\Entity\\SysUser.cs",
+              "RelativeToolTip": "Domain\\Models\\Entity\\SysUser.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwA0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T11:23:03.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "app.config",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\app.config",
+              "RelativeDocumentMoniker": "app.config",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\app.config",
+              "RelativeToolTip": "app.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwgAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-14T11:21:49.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAYwCYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T10:30:14.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserView.xaml.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml.cs",
+              "RelativeToolTip": "Views\\Pages\\Upms\\UserView.xaml.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAArwB4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T10:16:30.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserView.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserView.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml",
+              "RelativeToolTip": "Views\\Pages\\Upms\\UserView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-14T10:16:09.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Windows\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Views\\Windows\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Windows\\MainWindow.xaml",
+              "RelativeToolTip": "Views\\Windows\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-13T17:16:17.417Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Home\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Pages\\Home\\HomeViewModel.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Home\\HomeViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Pages\\Home\\HomeViewModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:47:13.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "LoginCompletedRedirectionMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Security\\Messages\\LoginCompletedRedirectionMessage.cs",
+              "RelativeDocumentMoniker": "Security\\Messages\\LoginCompletedRedirectionMessage.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Security\\Messages\\LoginCompletedRedirectionMessage.cs",
+              "RelativeToolTip": "Security\\Messages\\LoginCompletedRedirectionMessage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T15:26:51.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "BaseDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Config\\Db\\BaseDbContext.cs",
+              "RelativeDocumentMoniker": "Config\\Db\\BaseDbContext.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Config\\Db\\BaseDbContext.cs",
+              "RelativeToolTip": "Config\\Db\\BaseDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T15:26:24.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "MaterialDemo.csproj",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\MaterialDemo.csproj",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\MaterialDemo.csproj",
               "RelativeDocumentMoniker": "MaterialDemo.csproj",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\MaterialDemo.csproj",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\MaterialDemo.csproj",
               "RelativeToolTip": "MaterialDemo.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvxAAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -228,23 +416,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 23,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Windows\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Windows\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Windows\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Windows\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Windows\\MainWindow.xaml.cs",
               "RelativeToolTip": "Views\\Windows\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAABgAAABfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-12T15:17:16.93Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 25,
               "Title": "MainWindowViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Windows\\MainWindowViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Windows\\MainWindowViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\Windows\\MainWindowViewModel.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Windows\\MainWindowViewModel.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Windows\\MainWindowViewModel.cs",
               "RelativeToolTip": "ViewModels\\Windows\\MainWindowViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -252,24 +440,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SysUser.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\Entity\\SysUser.cs",
-              "RelativeDocumentMoniker": "Domain\\Models\\Entity\\SysUser.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\Entity\\SysUser.cs",
-              "RelativeToolTip": "Domain\\Models\\Entity\\SysUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T15:06:26.889Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 32,
               "Title": "NavigationItem.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\NavigationItem.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Domain\\NavigationItem.cs",
               "RelativeDocumentMoniker": "Domain\\NavigationItem.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\NavigationItem.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Domain\\NavigationItem.cs",
               "RelativeToolTip": "Domain\\NavigationItem.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -277,23 +452,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Pages\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\LoginViewModel.cs",
-              "RelativeToolTip": "ViewModels\\Pages\\LoginViewModel.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAIwDgAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T08:02:00.076Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "DashboardViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\DashboardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\Pages\\DashboardViewModel.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\DashboardViewModel.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\DashboardViewModel.cs",
               "RelativeToolTip": "ViewModels\\Pages\\DashboardViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -301,13 +464,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "HomeView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\HomeView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\HomeView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Pages\\HomeView.xaml.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\HomeView.xaml.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\HomeView.xaml.cs",
               "RelativeToolTip": "Views\\Pages\\HomeView.xaml.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAIwBMAAAAbAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAA7wCUAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-12T07:09:41.085Z"
             },
@@ -315,70 +478,67 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "LoginView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Pages\\Login\\LoginView.xaml.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml.cs",
               "RelativeToolTip": "Views\\Pages\\Login\\LoginView.xaml.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAkwAMAAAAhAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAswCEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T07:09:38.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-12T07:09:38.571Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 12,
               "Title": "LoginViewRes.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\LoginViewRes.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\LoginViewRes.xaml",
               "RelativeDocumentMoniker": "Resources\\LoginViewRes.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\LoginViewRes.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\LoginViewRes.xaml",
               "RelativeToolTip": "Resources\\LoginViewRes.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-12T06:58:46.816Z",
+              "WhenOpened": "2024-04-12T06:58:46.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\Login\\LoginView.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml",
+              "RelativeToolTip": "Views\\Pages\\Login\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-12T06:58:36.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HomeView.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\HomeView.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\HomeView.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\HomeView.xaml",
+              "RelativeToolTip": "Views\\Pages\\HomeView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-12T06:57:38.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAowF8AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T06:56:34.221Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "LoginView.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml",
-              "RelativeDocumentMoniker": "Views\\Pages\\Login\\LoginView.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml",
-              "RelativeToolTip": "Views\\Pages\\Login\\LoginView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-12T06:58:36.349Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "HomeView.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\HomeView.xaml",
-              "RelativeDocumentMoniker": "Views\\Pages\\HomeView.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\HomeView.xaml",
-              "RelativeToolTip": "Views\\Pages\\HomeView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-12T06:57:38.601Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAA4AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T06:56:34.221Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\App.xaml",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\App.xaml",
               "RelativeToolTip": "App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-04-12T06:55:46.888Z",
@@ -386,11 +546,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 34,
               "Title": "PageUtil.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Utils\\PageUtil.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Utils\\PageUtil.cs",
               "RelativeDocumentMoniker": "Utils\\PageUtil.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Utils\\PageUtil.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Utils\\PageUtil.cs",
               "RelativeToolTip": "Utils\\PageUtil.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -398,29 +558,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 31,
               "Title": "LoginCompletedMessage.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Security\\Messages\\LoginCompletedMessage.cs",
+              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Security\\Messages\\LoginCompletedMessage.cs",
               "RelativeDocumentMoniker": "Security\\Messages\\LoginCompletedMessage.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Security\\Messages\\LoginCompletedMessage.cs",
+              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Security\\Messages\\LoginCompletedMessage.cs",
               "RelativeToolTip": "Security\\Messages\\LoginCompletedMessage.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-12T06:45:59.081Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 174,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{2d7728c2-de0a-45b5-99aa-89b609dfde73}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
