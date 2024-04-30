@@ -17,10 +17,8 @@ using MessageBox = System.Windows.MessageBox;
 using MaterialDemo.Security;
 using MaterialDemo.Views.Pages;
 using MaterialDemo.ViewModels.Pages.Home;
-using MaterialDemo.ViewModels.Pages.Upms;
 using Wpf.Ui;
 using UiDesktopApp1.Services;
-using MaterialDemo.Views.Pages.Upms;
 using MaterialDemo.Config.DependencyModel;
 
 
@@ -89,7 +87,15 @@ namespace MaterialDemo
         /// </summary>
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            _host.Start();
+            try
+            {
+                _host.Start();
+            }catch (Exception ex)
+            {
+                MessageBox.Show("程序初始化失败，即将退出。" + "\ncause:" + ex.Message);
+                Application.Current.Shutdown();
+            }
+            
         }
 
         /// <summary>
@@ -110,9 +116,6 @@ namespace MaterialDemo
             Console.Write(e.Exception);
             e.Handled = true;
             MessageBox.Show(e.Exception.Message);
-            if (e.Exception is MySqlConnector.MySqlException) {
-                Application.Current.Shutdown();
-            }
             // For more info see https://docs.microsoft.com/en-us/dotnet/api/system.windows.application.dispatcherunhandledexception?view=windowsdesktop-6.0
         }
     }
