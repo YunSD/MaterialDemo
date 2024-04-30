@@ -21,6 +21,129 @@
     <Resource Update="Resources\LoginViewRes.xaml">
       <SubType>Designer</SubType>
     </Resource>
+    <Page Update="Component\Controls\WPFUI\AutoSuggestBox\AutoSuggestBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\Button\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\DynamicScrollBar\DynamicScrollBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\DynamicScrollViewer\DynamicScrollViewer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\InfoBadge\InfoBadge.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\ListView\ListView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\ListView\ListViewItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\Menu\Menu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\Menu\MenuItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\Menu\MenuLoader.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationLeftFluent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewBasePaneButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewBottom.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewBreadcrumbItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewCompact.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewConstants.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewContentPresenter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewItemDefaultStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewItemHeader.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewItemSeparator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewLeftMinimalCompact.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewTop.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\Snackbar\Snackbar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\TitleBar\TitleBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Accent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\DefaultContextMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\DefaultFocusVisualStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\DefaultTextBoxScrollViewerStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Fonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Palette.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\StaticColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Theme\Dark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Theme\HC1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Theme\HC2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Theme\HCBlack.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Theme\HCWhite.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Theme\Light.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Typography.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Variables.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Resources\Wpf.Ui.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\Themes\Basic\Basic.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,6 +160,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\Themes\Basic\Geometries.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Themes\Common\CommonGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\Themes\SkinDark.xaml">

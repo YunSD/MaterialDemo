@@ -1,36 +1,29 @@
-﻿<Page
-    x:Class="MaterialDemo.Views.Pages.Login.LoginView"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:hc="https://handyorg.github.io/handycontrol"
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:pages="clr-namespace:MaterialDemo.ViewModels.Pages"
-    Title="LOGIN"
-    d:DataContext="{d:DesignInstance Type=pages:LoginViewModel}"
-    Background="{DynamicResource WindowBackground}"
-    mc:Ignorable="d">
+﻿<Page x:Class="MaterialDemo.Views.Pages.Login.LoginView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:pages="clr-namespace:MaterialDemo.ViewModels.Pages"
+      Title="LOGIN"
+      d:DataContext="{d:DesignInstance Type=pages:LoginViewModel}"
+      Background="{DynamicResource WindowBackground}"
+      mc:Ignorable="d">
 
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Resources/LoginViewRes.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style
-                x:Key="LoginBoxControl"
-                BasedOn="{StaticResource TextBoxExtend}"
-                TargetType="TextBox">
+            <Style x:Key="LoginBoxControl" BasedOn="{StaticResource TextBoxExtend}" TargetType="TextBox">
                 <Setter Property="Height" Value="30" />
                 <Setter Property="BorderThickness" Value="0" />
                 <Setter Property="Margin" Value="30,0,0,0" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="Foreground" Value="{DynamicResource InputForeground}" />
             </Style>
-            <Style
-                x:Key="PasswordBoxControl"
-                BasedOn="{StaticResource PasswordBoxExtend}"
-                TargetType="PasswordBox">
+            <Style x:Key="PasswordBoxControl" BasedOn="{StaticResource PasswordBoxExtend}" TargetType="PasswordBox">
                 <Setter Property="Height" Value="30" />
                 <Setter Property="BorderThickness" Value="0" />
                 <Setter Property="Margin" Value="30,0,0,0" />
@@ -56,123 +49,87 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <StackPanel
-                    Grid.Row="0"
-                    Margin="45,30,0,0"
-                    VerticalAlignment="Center"
-                    IsHitTestVisible="False"
-                    Orientation="Horizontal">
-                    <Image
-                        Width="30"
-                        Height="30"
-                        Source="pack://application:,,,/Assets/icon.png" />
-                    <TextBlock
-                        Margin="15,0,0,0"
-                        VerticalAlignment="Center"
-                        FontSize="20"
-                        FontWeight="SemiBold"
-                        Text="{Binding MainViewModel.ApplicationTitle, Mode=OneWay}" />
+                <StackPanel Grid.Row="0"
+                            Margin="45,30,0,0"
+                            VerticalAlignment="Center"
+                            IsHitTestVisible="False"
+                            Orientation="Horizontal">
+                    <Image Width="30" Height="30" Source="pack://application:,,,/Assets/icon.png" />
+                    <TextBlock Margin="15,0,0,0"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="SemiBold"
+                               Text="{Binding MainViewModel.ApplicationTitle, Mode=OneWay}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Center">
-                    <TextBlock
-                        Foreground="{DynamicResource ThemeBrush}"
-                        Style="{StaticResource TitleText}"
-                        Text="登录到 APP" />
-                    <StackPanel
-                        Margin="0,30,0,50"
-                        HorizontalAlignment="Center"
-                        Orientation="Horizontal">
+                    <TextBlock Foreground="{DynamicResource ThemeBrush}" Style="{StaticResource TitleText}" Text="登录到 APP" />
+                    <StackPanel Margin="0,30,0,50" HorizontalAlignment="Center" Orientation="Horizontal">
 
                         <Button Style="{StaticResource ButtonCircle}">
-                            <materialDesign:PackIcon
-                                Width="25"
-                                Height="25"
-                                Kind="KeyOutline" />
+                            <materialDesign:PackIcon Width="25" Height="25" Kind="KeyOutline" />
                         </Button>
 
                         <Button Style="{StaticResource ButtonCircle}">
-                            <materialDesign:PackIcon
-                                Width="25"
-                                Height="25"
-                                Kind="CardAccountDetailsOutline" />
+                            <materialDesign:PackIcon Width="25" Height="25" Kind="CardAccountDetailsOutline" />
                         </Button>
 
                         <Button Style="{StaticResource ButtonCircle}">
-                            <materialDesign:PackIcon
-                                Width="25"
-                                Height="25"
-                                Kind="FaceRecognition" />
+                            <materialDesign:PackIcon Width="25" Height="25" Kind="FaceRecognition" />
                         </Button>
                     </StackPanel>
 
                     <!--<TextBlock Text="" Style="{StaticResource NormalText}" Foreground="DimGray" Margin="0 30 0 10"></TextBlock>-->
 
-                    <Border
-                        Margin="80,7"
-                        BorderBrush="{StaticResource InputBorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="5">
+                    <Border Margin="80,7"
+                            BorderBrush="{StaticResource InputBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="5">
                         <Grid Margin="1,1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <materialDesign:PackIcon
-                                Margin="5,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                Kind="Account" />
-                            <TextBox
-                                x:Name="username"
-                                hc:InfoElement.Placeholder="请输入用户名."
-                                Style="{StaticResource LoginBoxControl}"
-                                Text="{Binding LoginViewModel.Username}" />
+                            <materialDesign:PackIcon Margin="5,0"
+                                                     HorizontalAlignment="Left"
+                                                     VerticalAlignment="Center"
+                                                     Kind="Account" />
+                            <TextBox x:Name="username"
+                                     hc:InfoElement.Placeholder="请输入用户名."
+                                     Style="{StaticResource LoginBoxControl}"
+                                     Text="{Binding LoginViewModel.Username}" />
                         </Grid>
                     </Border>
 
-                    <Border
-                        Margin="80,7"
-                        BorderBrush="{StaticResource InputBorderBrush}"
-                        BorderThickness="1"
-                        CornerRadius="5">
+                    <Border Margin="80,7"
+                            BorderBrush="{StaticResource InputBorderBrush}"
+                            BorderThickness="1"
+                            CornerRadius="5">
                         <Grid Margin="1,1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <materialDesign:PackIcon
-                                Margin="5,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                Kind="LockPlusOutline" />
-                            <PasswordBox
-                                x:Name="password"
-                                hc:InfoElement.Placeholder="请输入密码."
-                                Style="{StaticResource PasswordBoxControl}" />
+                            <materialDesign:PackIcon Margin="5,0"
+                                                     HorizontalAlignment="Left"
+                                                     VerticalAlignment="Center"
+                                                     Kind="LockPlusOutline" />
+                            <PasswordBox x:Name="password" hc:InfoElement.Placeholder="请输入密码." Style="{StaticResource PasswordBoxControl}" />
                         </Grid>
                     </Border>
 
-                    <Button
-                        Command="{Binding LoginViewModel.SubmitByPasswordCommand}"
-                        Content="Sign In"
-                        Style="{StaticResource submitButton}">
+                    <Button Command="{Binding LoginViewModel.SubmitByPasswordCommand}" Content="Sign In" Style="{StaticResource submitButton}">
                         <Button.CommandParameter>
                             <StackPanel Margin="16">
-                                <ProgressBar
-                                    Margin="16"
-                                    HorizontalAlignment="Center"
-                                    IsIndeterminate="True"
-                                    Style="{StaticResource MaterialDesignCircularProgressBar}"
-                                    Value="0" />
-                                <TextBlock
-                                    Margin="0,0,0,5"
-                                    HorizontalAlignment="Center"
-                                    Text="正在登录..." />
+                                <ProgressBar Margin="16"
+                                             HorizontalAlignment="Center"
+                                             IsIndeterminate="True"
+                                             Style="{StaticResource MaterialDesignCircularProgressBar}"
+                                             Value="0" />
+                                <TextBlock Margin="0,0,0,5" HorizontalAlignment="Center" Text="正在登录..." />
                                 <!--  -Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"  -->
-                                <Button
-                                    HorizontalAlignment="Center"
-                                    Content="CANCEL"
-                                    IsCancel="True"
-                                    Style="{StaticResource MaterialDesignFlatButton}" />
+                                <Button HorizontalAlignment="Center"
+                                        Content="CANCEL"
+                                        IsCancel="True"
+                                        Style="{StaticResource MaterialDesignFlatButton}" />
                             </StackPanel>
                         </Button.CommandParameter>
                     </Button>

@@ -30,13 +30,15 @@ namespace MaterialDemo.Views.Pages
 
         public HomeViewModel NavigationItems { get; set; }
 
-        public HomeView(IPageService pageService, IServiceProvider serviceProvider, INavigationService navigationService, HomeViewModel viewModel)
+        public HomeView(IPageService pageService, INavigationService navigationService, HomeViewModel viewModel)
         {
             this.NavigationItems = viewModel;
-            InitializeComponent();
             DataContext = this;
+            InitializeComponent();
+            
             SetPageService(pageService);
             navigationService.SetNavigationControl(RootNavigation);
+
             Loaded += NavigationToggle;
         }
 

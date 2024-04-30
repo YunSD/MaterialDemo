@@ -33,6 +33,7 @@ namespace MaterialDemo.Views.Windows
             InitializeComponent();
 
             // default
+            //MainFrame += (sender, e) { while (MainFrame.NavigationService.RemoveBackEntry() != null) };
             this.Navigate(LoginViewPage);
 
             // register message
@@ -44,7 +45,9 @@ namespace MaterialDemo.Views.Windows
 
         //public INavigationView GetNavigation() => RootNavigation;
 
-        public bool Navigate(Page page) => MainFrame.Navigate(page);
+        public void Navigate(Page page) {
+            MainFrame.Navigate(page);
+        }
 
         //public void SetPageService(IPageService pageService) => RootNavigation.SetPageService(pageService);
 

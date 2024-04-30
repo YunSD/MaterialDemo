@@ -41,12 +41,13 @@
     <PackageReference Include="System.IO" Version="4.3.0" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
     <PackageReference Include="System.Security.SecureString" Version="4.3.0" />
-    <PackageReference Include="WPF-UI" Version="3.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\background.png" />
     <Resource Include="Assets\icon.png" />
+    <Resource Include="Component\Resources\Fonts\FluentSystemIcons-Filled.ttf"/>
+    <Resource Include="Component\Resources\Fonts\FluentSystemIcons-Regular.ttf"/>
     <Resource Include="Resources\LoginViewRes.xaml" />
   </ItemGroup>
 

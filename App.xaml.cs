@@ -71,7 +71,7 @@ namespace MaterialDemo
 
                 services.AddSingleton<HomeView>();
                 services.AddSingleton<HomeViewModel>();
-                
+
                 services.AddTransientFromNamespace("MaterialDemo.ViewModels", Assembly.GetExecutingAssembly());
                 services.AddTransientFromNamespace("MaterialDemo.Views", Assembly.GetExecutingAssembly());
 
