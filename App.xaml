@@ -12,11 +12,8 @@
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--  HandyControl  -->
-                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
+
                 <ResourceDictionary Source="Resources/Themes/Theme.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
-                <ResourceDictionary Source="Resources/Themes/SkinDefault.xaml" />
 
                 <!--  MaterialDesignThemes  -->
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
@@ -24,6 +21,10 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Lime.xaml" />
                 <materialDesign:CustomColorTheme BaseTheme="Light" PrimaryColor="{StaticResource ThemeColor}" SecondaryColor="{StaticResource ThemeForeColor}" />
+
+                <!--  HandyControl  -->
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
 
                 <wpfui:ThemesDictionary Theme="Light" />
                 <wpfui:ControlsDictionary />

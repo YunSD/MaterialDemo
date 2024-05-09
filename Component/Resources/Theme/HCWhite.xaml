@@ -23,7 +23,7 @@
 
     <!--  Highcontrast theme: DESERT  -->
     <Color x:Key="SystemColorWindowTextColor">#3D3D3D</Color>
-    <Color x:Key="SystemColorWindowColor">#FFFAEF</Color>
+    <Color x:Key="SystemColorWindowColor">#FFFFFA</Color>
     <Color x:Key="SystemColorHighlightTextColor">#FFF5E3</Color>
     <Color x:Key="SystemColorHighlightColor">#903909</Color>
     <Color x:Key="SystemColorButtonTextColor">#202020</Color>
@@ -161,12 +161,11 @@
     <SolidColorBrush x:Key="SystemColorHotlightColorBrush" Color="{StaticResource SystemColorHotlightColor}" />
     <SolidColorBrush x:Key="SystemColorGrayTextColorBrush" Color="{StaticResource SystemColorGrayTextColor}" />
 
-    <DrawingBrush
-        x:Key="StripedBackgroundBrush"
-        Stretch="UniformToFill"
-        TileMode="Tile"
-        Viewport="0,0,10,10"
-        ViewportUnits="Absolute">
+    <DrawingBrush x:Key="StripedBackgroundBrush"
+                  Stretch="UniformToFill"
+                  TileMode="Tile"
+                  Viewport="0,0,10,10"
+                  ViewportUnits="Absolute">
         <DrawingBrush.Drawing>
             <DrawingGroup>
                 <DrawingGroup.Children>
@@ -298,10 +297,7 @@
     <SolidColorBrush x:Key="ComboBoxItemForegroundSelected" Color="{StaticResource SystemColorHighlightColor}" />
 
     <!--  ContentDialog  -->
-    <SolidColorBrush
-        x:Key="ContentDialogSmokeFill"
-        Opacity="0.8"
-        Color="{StaticResource SystemColorWindowColor}" />
+    <SolidColorBrush x:Key="ContentDialogSmokeFill" Opacity="0.8" Color="{StaticResource SystemColorWindowColor}" />
     <SolidColorBrush x:Key="ContentDialogBackground" Color="{StaticResource SystemColorWindowColor}" />
     <SolidColorBrush x:Key="ContentDialogTopOverlay" Color="Transparent" />
     <SolidColorBrush x:Key="ContentDialogBorderBrush" Color="{StaticResource SystemColorWindowTextColor}" />

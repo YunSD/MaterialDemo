@@ -25,6 +25,6 @@
     </Window.Icon>
     <!--  WindowStyle="None" AllowsTransparency="True"  WindowState="Maximized"  -->
     <materialDesign:DialogHost Name="HostDialog" DialogTheme="Inherit" Identifier="RootDialog">
-        <Frame x:Name="MainFrame" BorderThickness="0" />
+        <Frame x:Name="MainFrame" BorderThickness="0" NavigationUIVisibility="Hidden" />
     </materialDesign:DialogHost>
 </Window>

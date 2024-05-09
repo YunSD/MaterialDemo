@@ -1,21 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Basic/Basic.xaml" />
-        <ResourceDictionary Source="Styles/Style.xaml" />
-    </ResourceDictionary.MergedDictionaries>
 
+    <Color x:Key="ThemeColor">#0076F6</Color>
+    <Color x:Key="ThemeForeColor">#51A2F9</Color>
+    <Color x:Key="ThemeButtonForeground">#FFFFFF</Color>
+
+    <SolidColorBrush x:Key="ThemeBrush" Color="{DynamicResource ThemeColor}" />
+    <SolidColorBrush x:Key="ThemeForeBrush" Color="{DynamicResource ThemeForeColor}" />
+
+    <SolidColorBrush x:Key="ButtonForegroundBrush" Color="{DynamicResource ThemeButtonForeground}" />
 
     <SolidColorBrush x:Key="WindowBackground">#FFFFFF</SolidColorBrush>
     <SolidColorBrush x:Key="InputBorderBrush">#CACACA</SolidColorBrush>
     <SolidColorBrush x:Key="InputForeground">#0D062D</SolidColorBrush>
-
-    <SolidColorBrush x:Key="ThemeBrush">#0076F6</SolidColorBrush>
-    <SolidColorBrush x:Key="ThemeForeBrush">#51A2F9</SolidColorBrush>
-
-    <Color x:Key="ThemeColor">#0076F6</Color>
-    <Color x:Key="ThemeForeColor">#51A2F9</Color>
-
-    <SolidColorBrush x:Key="ThemeBackground">#F3F3F3</SolidColorBrush>
+    <SolidColorBrush x:Key="ThemeBackground">#F2F2F2</SolidColorBrush>
 
 </ResourceDictionary>

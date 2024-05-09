@@ -42,7 +42,7 @@
         </materialDesign:ColorZone>
         <ui:NavigationView x:Name="RootNavigation"
                            Grid.Row="1"
-                           Padding="42,0,42,0"
+                           Padding="5,5,5,0"
                            FooterMenuItemsSource="{Binding NavigationItems.FooterMenuItems, Mode=OneWay}"
                            FrameMargin="0"
                            IsBackButtonVisible="Collapsed"

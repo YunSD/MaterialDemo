@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "MaterialDemo": {
+      "commandName": "Project",
+      "nativeDebugging": false,
+      "jsWebView2Debugging": false
+    }
+  }
+}
