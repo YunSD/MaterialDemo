@@ -12,12 +12,12 @@
       Title="HomeView"
       d:DesignHeight="450"
       d:DesignWidth="800"
-      Background="{DynamicResource WindowBackground}"
+      Background="{DynamicResource PageBackgroundBrush}"
       mc:Ignorable="d">
     <Page.Resources>
         <ResourceDictionary>
             <Style x:Key="TopBar" TargetType="Control">
-                <Setter Property="Background" Value="{DynamicResource ThemeBackground}" />
+                <Setter Property="Background" Value="Transparent" />
                 <Setter Property="Foreground" Value="{DynamicResource ThemeBrush}" />
                 <Setter Property="FontWeight" Value="Bold" />
             </Style>
@@ -30,6 +30,16 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
+        <hc:Watermark Grid.Row="0"
+                      Angle="35"
+                      FontSize="15"
+                      Mark="{Binding WindowViewModel.ApplicationTitle}"
+                      MarkBrush="{DynamicResource ThemeWatermarkBrush}"
+                      MarkMargin="10,5">
+            <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,2" />
+        </hc:Watermark>
+
         <materialDesign:ColorZone Grid.Row="0"
                                   Padding="8"
                                   materialDesign:ElevationAssist.Elevation="Dp4"
@@ -40,22 +50,18 @@
                 <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="Material Design In XAML Toolkit" />
             </StackPanel>
         </materialDesign:ColorZone>
+
         <ui:NavigationView x:Name="RootNavigation"
                            Grid.Row="1"
-                           Padding="5,5,5,0"
+                           Padding="10,5,10,0"
                            FooterMenuItemsSource="{Binding NavigationItems.FooterMenuItems, Mode=OneWay}"
                            FrameMargin="0"
                            IsBackButtonVisible="Collapsed"
+                           IsPaneOpen="False"
                            IsPaneToggleVisible="False"
-                           IsPaneVisible="False"
+                           IsPaneVisible="True"
                            MenuItemsSource="{Binding NavigationItems.MenuItems, Mode=OneWay}"
                            PaneDisplayMode="Left">
-            <ui:NavigationView.Header>
-                <Grid>
-                    <TextBlock Foreground="Blue" Text="hahah" />
-                </Grid>
-
-            </ui:NavigationView.Header>
             <ui:NavigationView.ContentOverlay>
                 <Grid>
                     <ui:SnackbarPresenter x:Name="SnackbarPresenter" />

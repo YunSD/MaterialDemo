@@ -3,72 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\loginviewres.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\loginviewres.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\common\\commongrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\common\\commongrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\login\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\login\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\component\\resources\\theme\\hcwhite.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:component\\resources\\theme\\hcwhite.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\component\\resources\\theme\\hc1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:component\\resources\\theme\\hc1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\component\\controls\\wpfui\\navigationview\\navigationviewcompact.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:component\\controls\\wpfui\\navigationview\\navigationviewcompact.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\skindark.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\skindark.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\styles\\style.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\styles\\style.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\component\\controls\\wpfui\\navigationview\\navigationview.navigation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:component\\controls\\wpfui\\navigationview\\navigationview.navigation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\windows\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,55 +46,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HCWhite.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Component\\Resources\\Theme\\HCWhite.xaml",
-              "RelativeDocumentMoniker": "Component\\Resources\\Theme\\HCWhite.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Component\\Resources\\Theme\\HCWhite.xaml",
-              "RelativeToolTip": "Component\\Resources\\Theme\\HCWhite.xaml",
+              "DocumentIndex": 1,
+              "Title": "PageViewModelBase.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\PageViewModelBase.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs",
+              "RelativeToolTip": "Domain\\Models\\PageViewModelBase.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T09:02:44.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CommonGrid.xaml",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\Common\\CommonGrid.xaml",
+              "RelativeDocumentMoniker": "Resources\\Themes\\Common\\CommonGrid.xaml",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\Common\\CommonGrid.xaml",
+              "RelativeToolTip": "Resources\\Themes\\Common\\CommonGrid.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-09T06:10:55.02Z",
+              "WhenOpened": "2024-05-11T02:16:56.515Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HC1.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Component\\Resources\\Theme\\HC1.xaml",
-              "RelativeDocumentMoniker": "Component\\Resources\\Theme\\HC1.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Component\\Resources\\Theme\\HC1.xaml",
-              "RelativeToolTip": "Component\\Resources\\Theme\\HC1.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-09T06:10:05.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "NavigationViewCompact.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Component\\Controls\\WPFUI\\NavigationView\\NavigationViewCompact.xaml",
-              "RelativeDocumentMoniker": "Component\\Controls\\WPFUI\\NavigationView\\NavigationViewCompact.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Component\\Controls\\WPFUI\\NavigationView\\NavigationViewCompact.xaml",
-              "RelativeToolTip": "Component\\Controls\\WPFUI\\NavigationView\\NavigationViewCompact.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-09T06:09:46.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HomeView.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\HomeView.xaml",
-              "RelativeDocumentMoniker": "Views\\Pages\\HomeView.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\HomeView.xaml",
-              "RelativeToolTip": "Views\\Pages\\HomeView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-08T09:17:42.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -146,81 +83,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "UserView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserView.xaml.cs",
               "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml.cs",
               "RelativeToolTip": "Views\\Pages\\Upms\\UserView.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABgAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-08T08:42:53.304Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginViewRes.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\LoginViewRes.xaml",
-              "RelativeDocumentMoniker": "Resources\\LoginViewRes.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\LoginViewRes.xaml",
-              "RelativeToolTip": "Resources\\LoginViewRes.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-08T08:36:47.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginView.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml",
-              "RelativeDocumentMoniker": "Views\\Pages\\Login\\LoginView.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml",
-              "RelativeToolTip": "Views\\Pages\\Login\\LoginView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-08T08:36:37.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "NavigationView.Navigation.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Component\\Controls\\WPFUI\\NavigationView\\NavigationView.Navigation.cs",
-              "RelativeDocumentMoniker": "Component\\Controls\\WPFUI\\NavigationView\\NavigationView.Navigation.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Component\\Controls\\WPFUI\\NavigationView\\NavigationView.Navigation.cs",
-              "RelativeToolTip": "Component\\Controls\\WPFUI\\NavigationView\\NavigationView.Navigation.cs",
-              "ViewState": "AQIAANMAAAAAAAAAAIAxwNwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T08:13:37.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Style.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\Styles\\Style.xaml",
-              "RelativeDocumentMoniker": "Resources\\Themes\\Styles\\Style.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\Styles\\Style.xaml",
-              "RelativeToolTip": "Resources\\Themes\\Styles\\Style.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-08T03:22:10.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SkinDark.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\SkinDark.xaml",
-              "RelativeDocumentMoniker": "Resources\\Themes\\SkinDark.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\SkinDark.xaml",
-              "RelativeToolTip": "Resources\\Themes\\SkinDark.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-08T03:20:10.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Theme.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\Theme.xaml",
               "RelativeDocumentMoniker": "Resources\\Themes\\Theme.xaml",
@@ -232,19 +108,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "UserView.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml",
               "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserView.xaml",
               "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml",
               "RelativeToolTip": "Views\\Pages\\Upms\\UserView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-07T08:56:02.779Z",
+              "WhenOpened": "2024-05-11T05:44:11.111Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 6,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -252,46 +128,7 @@
               "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AQIAAFQAAAAAAAAAAAAWwFsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T03:03:57.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UserViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "RelativeToolTip": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAApwCYAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T02:59:56.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Windows\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\Windows\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Windows\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Views\\Windows\\MainWindow.xaml.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAuwCcAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T08:57:36.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Windows\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Views\\Windows\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Windows\\MainWindow.xaml",
-              "RelativeToolTip": "Views\\Windows\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-29T08:21:47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T03:03:57.547Z"
             }
           ]
         },

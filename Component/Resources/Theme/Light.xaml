@@ -275,12 +275,11 @@
         </LinearGradientBrush.GradientStops>
     </LinearGradientBrush>
 
-    <DrawingBrush
-        x:Key="StripedBackgroundBrush"
-        Stretch="UniformToFill"
-        TileMode="Tile"
-        Viewport="0,0,10,10"
-        ViewportUnits="Absolute">
+    <DrawingBrush x:Key="StripedBackgroundBrush"
+                  Stretch="UniformToFill"
+                  TileMode="Tile"
+                  Viewport="0,0,10,10"
+                  ViewportUnits="Absolute">
         <DrawingBrush.Drawing>
             <DrawingGroup>
                 <DrawingGroup.Children>

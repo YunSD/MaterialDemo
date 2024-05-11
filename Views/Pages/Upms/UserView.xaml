@@ -12,7 +12,7 @@
       d:DataContext="{d:DesignInstance Type=upms:UserViewModel}"
       d:DesignHeight="450"
       d:DesignWidth="1000"
-      Background="{DynamicResource RegionBrush}"
+      Background="Transparent"
       mc:Ignorable="d">
 
     <Page.Resources>
@@ -25,14 +25,13 @@
 
     <hc:TransitioningContentControl>
         <hc:ScrollViewer IsInertiaEnabled="True">
-            <Grid Background="Aqua">
+            <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
-                <Border Grid.Row="0" Background="{DynamicResource ThemeBackground}" BorderThickness="1">
+                <Border Grid.Row="0" Background="{DynamicResource TableHeadBrush}" BorderThickness="1">
                     <StackPanel Grid.Column="0" Orientation="Horizontal">
                         <hc:TextBox Width="260"
                                     Margin="30,18,0,15"
@@ -53,33 +52,52 @@
                                     hc:InfoElement.TitleWidth="50" />
 
                         <GridSplitter Margin="20,0,50,0" />
-                        <Button Foreground="{DynamicResource ButtonForegroundBrush}"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                Style="{StaticResource MaterialDesignFlatMidBgButton}"
-                                ToolTip="Resource name: MaterialDesignRaisedButton">
+                        <Button Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="Resource name: MaterialDesignRaisedButton">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Width="16"
-                                                         Height="16"
-                                                         VerticalAlignment="Center"
-                                                         Kind="MagnifyExpand" />
+                                <materialDesign:PackIcon Width="16" Height="16" VerticalAlignment="Center" Kind="MagnifyExpand" />
                                 <TextBlock Margin="10,0,0,0" FontSize="14" Text="查询" />
                             </StackPanel>
                         </Button>
                         <GridSplitter Margin="10,0,10,0" />
-                        <Button Foreground="{DynamicResource ButtonForegroundBrush}"
-                                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                                Style="{StaticResource MaterialDesignFlatMidBgButton}"
-                                ToolTip="Resource name: MaterialDesignRaisedButton">
+                        <Button Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="Resource name: MaterialDesignRaisedButton">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Width="16"
-                                                         Height="16"
-                                                         VerticalAlignment="Center"
-                                                         Kind="Refresh" />
+                                <materialDesign:PackIcon Width="16" Height="16" VerticalAlignment="Center" Kind="Refresh" />
                                 <TextBlock Margin="10,0,0,0" FontSize="14" Text="重置" />
                             </StackPanel>
                         </Button>
                     </StackPanel>
                 </Border>
+
+                <DataGrid Grid.Row="1"
+                          HorizontalAlignment="Stretch"
+                          AutoGenerateColumns="False"
+                          HeadersVisibility="All"
+                          IsReadOnly="True"
+                          ItemsSource="{Binding ViewModel.DataList}"
+                          RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}"
+                          RowHeaderWidth="60"
+                          RowStyle="{StaticResource DataGridRowStyle}"
+                          SelectionUnit="FullRow">
+                    <DataGrid.RowHeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
+                        </DataTemplate>
+                    </DataGrid.RowHeaderTemplate>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*" Binding="{Binding Name}" CanUserSort="False" Header="名称" />
+                        <DataGridTextColumn Width="*" Binding="{Binding Remark}" CanUserSort="False" Header="备注" />
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Grid Grid.Row="2" Margin="0,20,30,30" HorizontalAlignment="Right">
+                    <hc:Pagination DataCountPerPage="{Binding ViewModel.PageSize}" IsJumpEnabled="True" MaxPageCount="{Binding ViewModel.TotalPage}" PageIndex="{Binding ViewModel.PageIndex}">
+                        <hc:Interaction.Triggers>
+                            <hc:EventTrigger EventName="PageUpdated">
+                                <hc:EventToCommand PassEventArgsToCommand="True" />
+                            </hc:EventTrigger>
+                        </hc:Interaction.Triggers>
+                    </hc:Pagination>
+                </Grid>
             </Grid>
         </hc:ScrollViewer>
     </hc:TransitioningContentControl>

@@ -20,15 +20,15 @@ namespace MaterialDemo.Domain.Models
 
         // 总条目数
         [ObservableProperty]
-        public int totalCount = 0;
+        public int totalCount = 10;
 
         // 当前页
         [ObservableProperty]
-        public int pageIndex = 0;
+        public int pageIndex = 1;
 
         // 页面总数
         [ObservableProperty]
-        public int totalPage = 0;
+        public int totalPage = 10;
 
         public PageViewModelBase()
         {

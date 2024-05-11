@@ -28,18 +28,18 @@ namespace MaterialDemo.Views.Pages
     public partial class HomeView : Page, INavigationWindow
     {
 
+        public MainWindowViewModel WindowViewModel { get; set; }
         public HomeViewModel NavigationItems { get; set; }
 
-        public HomeView(IPageService pageService, INavigationService navigationService, HomeViewModel viewModel)
+        public HomeView(IPageService pageService, INavigationService navigationService, MainWindowViewModel windowViewModel, HomeViewModel homeViewModel)
         {
-            this.NavigationItems = viewModel;
+            this.WindowViewModel = windowViewModel;
+            this.NavigationItems = homeViewModel;
             DataContext = this;
             InitializeComponent();
             
             SetPageService(pageService);
             navigationService.SetNavigationControl(RootNavigation);
-
-            Loaded += NavigationToggle;
         }
 
         #region INavigationWindow methods

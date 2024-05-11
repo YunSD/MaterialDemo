@@ -357,3 +357,705 @@ FROM `sys_user` AS `s`
 2024-05-09 16:39:38,467 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
 2024-05-09 16:39:38,483 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
 2024-05-09 16:39:38,487 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 10:49:06,366 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 10:49:06,380 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 10:49:06,384 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 10:49:14,950 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 10:49:15,469 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 10:55:45,479 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 10:55:45,505 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 10:55:45,510 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 11:12:30,745 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 11:12:31,258 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 11:12:32,611 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 11:12:33,824 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 11:12:36,074 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 11:12:37,020 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 11:16:24,751 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 11:16:24,767 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 11:16:24,770 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 11:16:29,039 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 11:16:29,474 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 11:16:53,515 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-10 11:17:00,286 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 11:17:00,298 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 11:17:00,302 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 11:21:52,707 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 11:21:53,155 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 11:23:49,023 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 11:23:49,038 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 11:23:49,042 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 11:24:44,014 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 11:24:44,473 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:07:56,566 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:07:57,405 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:19:36,514 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:19:36,526 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:19:36,529 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:20:17,824 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:20:17,842 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:20:17,845 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:26:42,380 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:26:42,396 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:26:42,399 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:28:41,158 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:28:41,178 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:28:41,182 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:30:04,037 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-10 15:30:50,279 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:30:50,293 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:30:50,295 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:31:18,544 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:31:18,560 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:31:18,562 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:32:56,196 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:32:56,223 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:32:56,226 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:42:55,786 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 15:42:56,171 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:42:58,706 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:42:59,296 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:43:03,961 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:43:04,726 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:43:06,145 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:43:07,180 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:43:51,689 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:43:53,895 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:43:56,049 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:43:57,565 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-10 15:44:18,757 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:44:18,771 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:44:18,776 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:44:23,638 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 15:44:24,036 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:44:24,953 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:44:25,534 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:46:57,126 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:47:05,132 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:47:09,606 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:47:19,763 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:49:46,134 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:49:46,149 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:49:46,153 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:49:53,608 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 15:49:54,040 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:51:57,175 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:51:57,188 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:51:57,192 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:52:03,645 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 15:52:04,072 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:52:25,323 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:52:26,021 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:52:27,082 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:52:27,909 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:52:35,795 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 15:52:36,620 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 15:57:17,601 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:57:17,612 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:57:17,615 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:57:46,625 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:57:46,641 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:57:46,644 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 15:58:27,486 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 15:58:27,498 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 15:58:27,501 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:11:07,999 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:11:08,014 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:11:08,016 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:14:11,478 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:14:11,490 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:14:11,493 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:25:35,704 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:25:35,720 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:25:35,723 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:26:26,846 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:26:26,865 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:26:26,867 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:26:36,237 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-10 16:26:55,197 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:26:55,209 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:26:55,212 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:28:50,423 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:28:50,441 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:28:50,444 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:29:23,167 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:29:23,183 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:29:23,185 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:29:26,916 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-10 16:31:09,894 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:31:09,910 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:31:09,912 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:32:00,260 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:32:00,279 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:32:00,283 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:32:31,670 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:32:31,686 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:32:31,689 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:32:39,256 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 16:32:39,694 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 16:32:42,901 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-10 16:33:00,602 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:33:00,619 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:33:00,622 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:35:30,424 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:35:30,438 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:35:30,441 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:44:53,192 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:44:53,204 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:44:53,206 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:54:14,578 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:54:14,596 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:54:14,599 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:54:48,404 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:54:48,418 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:54:48,421 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:55:28,427 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 16:55:28,440 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 16:55:28,442 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 16:55:34,013 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 16:55:34,421 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 17:03:30,273 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 17:03:30,287 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 17:03:30,290 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 17:04:57,768 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 17:04:57,780 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 17:04:57,784 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 17:06:26,691 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 17:06:26,704 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 17:06:26,706 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 17:08:03,254 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 17:08:03,268 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 17:08:03,270 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 17:09:26,393 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 17:09:26,404 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 17:09:26,407 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 17:09:55,643 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 17:09:55,659 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 17:09:55,663 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 17:10:49,145 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 17:10:49,573 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 17:15:38,942 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 17:15:40,263 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 17:15:44,198 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 17:15:45,029 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 17:15:47,885 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 17:15:53,910 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 17:15:55,524 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 17:15:55,902 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 17:18:39,139 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 17:18:39,953 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 17:18:41,106 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-10 17:20:03,974 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 18:43:49,502 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 18:43:49,519 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 18:43:49,522 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 18:46:11,910 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 18:47:09,336 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 18:47:09,356 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 18:47:09,362 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 18:47:11,766 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 18:47:12,426 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 18:53:27,969 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 18:53:27,988 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 18:53:28,006 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 18:53:41,169 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 18:53:41,760 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-10 19:03:38,733 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-10 19:03:38,751 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-10 19:03:38,755 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-10 19:03:41,490 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-10 19:03:42,069 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 08:59:51,640 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 08:59:51,654 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 08:59:51,657 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 08:59:57,442 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 08:59:58,035 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 09:00:30,667 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 09:00:30,678 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 09:00:30,681 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 09:00:34,109 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 09:00:34,703 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 10:27:30,128 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 10:27:30,148 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 10:27:30,151 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 10:27:34,146 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 10:27:34,774 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 10:29:17,221 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-11 10:29:29,159 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 10:29:29,170 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 10:29:29,173 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 10:29:32,787 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 10:29:33,394 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 10:30:24,537 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-11 10:30:34,606 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 10:30:34,620 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 10:30:34,625 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 10:30:37,414 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 10:30:37,978 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 10:30:44,733 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-11 10:37:06,287 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 10:37:06,303 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 10:37:06,309 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 10:37:08,797 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 10:37:09,391 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 10:40:01,575 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 10:40:01,587 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 10:40:01,589 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 10:40:03,896 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 10:40:04,482 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 10:56:33,295 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 10:56:33,314 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 10:56:33,321 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 10:56:39,596 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 10:56:40,194 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 10:58:11,552 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 10:58:11,564 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 10:58:11,567 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 10:58:14,173 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 10:58:14,762 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:01:43,223 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:01:43,237 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:01:43,240 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:02:02,538 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:02:03,107 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:05:25,957 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:05:25,977 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:05:25,986 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:05:31,542 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:05:32,090 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:06:51,008 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:06:51,021 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:06:51,024 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:06:53,153 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:06:53,731 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:07:13,875 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:07:13,888 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:07:13,890 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:07:16,291 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:07:16,824 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:07:23,859 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-11 11:09:05,360 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:09:05,374 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:09:05,377 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:09:07,683 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:09:08,255 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:12:43,579 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:12:43,589 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:12:43,592 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:12:45,834 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:12:46,430 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:20:47,231 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:20:47,242 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:20:47,245 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:20:49,399 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:20:49,969 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:22:06,069 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:22:06,082 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:22:06,087 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:22:08,153 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:22:08,709 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:25:45,945 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:25:45,956 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:25:45,958 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:25:48,489 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:25:49,066 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 11:29:41,058 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 11:29:41,075 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 11:29:41,079 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 11:29:44,000 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 11:29:44,557 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 13:21:03,227 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 13:21:03,243 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 13:21:03,247 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 13:21:08,615 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 13:21:09,243 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 13:22:10,129 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 13:22:10,146 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 13:22:10,149 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 13:22:16,479 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 13:22:17,071 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 13:44:19,033 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 13:44:19,046 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 13:44:19,049 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 13:44:21,391 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 13:44:22,052 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 13:45:18,798 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 13:45:18,817 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 13:45:18,820 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 13:45:21,209 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 13:45:21,803 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 14:18:01,039 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 14:18:01,052 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 14:18:01,054 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 14:18:03,925 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 14:18:04,588 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 14:18:44,090 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 14:18:44,103 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 14:18:44,106 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 14:18:46,252 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 14:18:46,824 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 14:27:58,757 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 14:27:58,781 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 14:27:58,806 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 14:28:04,235 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 14:28:05,495 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 14:29:26,771 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 14:29:26,790 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 14:29:26,794 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 14:29:29,432 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 14:29:29,953 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 14:30:08,353 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 14:30:08,363 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 14:30:08,367 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 14:30:11,365 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 14:30:12,435 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 14:46:47,811 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 14:46:47,824 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 14:46:47,826 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 14:46:49,998 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 14:46:50,574 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 14:49:19,364 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 14:49:19,377 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 14:49:19,380 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 14:49:21,388 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 14:49:21,967 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 15:35:02,824 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 15:35:02,843 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 15:35:02,848 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 15:35:05,990 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 15:35:06,625 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 15:40:24,960 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-11 15:41:09,979 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 15:41:09,994 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 15:41:09,998 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 15:41:13,067 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 15:41:13,780 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:01:37,098 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:01:37,110 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:01:37,113 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:01:48,237 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:01:49,001 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:04:06,466 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-11 16:04:17,951 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:04:17,969 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:04:17,972 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:04:20,717 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:04:21,326 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:19:55,421 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:19:55,436 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:19:55,438 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:20:03,385 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:20:03,980 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:27:18,123 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:27:18,140 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:27:18,144 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:27:21,335 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:27:21,945 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:28:52,668 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:28:52,693 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:28:52,702 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:29:14,493 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:29:15,049 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:30:17,109 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:30:17,128 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:30:17,130 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:30:33,309 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:30:33,861 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:32:56,220 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:32:56,236 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:32:56,239 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:32:58,994 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:32:59,617 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:34:58,726 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:34:58,744 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:34:58,747 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:35:02,436 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:35:03,022 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:39:07,263 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:39:07,278 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:39:07,280 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:39:09,701 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:39:10,294 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:40:08,105 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:40:08,125 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:40:08,128 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:40:10,943 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:40:11,545 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:41:15,218 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:41:15,230 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:41:15,233 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:41:17,788 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:41:18,330 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:54:21,884 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-11 16:54:21,934 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-11 16:54:47,691 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 16:54:47,705 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 16:54:47,707 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 16:54:50,648 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 16:54:51,360 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:56:02,607 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-11 16:56:03,284 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 16:58:11,781 [1] DEBUG UserViewModel - dasdasdasdsadad
+2024-05-11 16:58:12,304 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:11:26,038 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:11:26,052 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:11:26,056 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:11:36,191 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:11:36,707 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:12:06,044 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:12:06,064 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:12:06,068 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:12:08,481 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:12:08,941 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:12:50,564 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:12:50,579 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:12:50,582 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:12:52,682 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:12:53,186 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:13:17,861 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:13:17,893 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:13:17,897 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:13:23,979 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:13:24,440 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:13:57,787 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:13:57,801 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:13:57,804 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:14:00,283 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:14:00,780 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:14:56,296 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:14:56,307 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:14:56,309 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:14:58,539 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:14:59,033 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:15:45,508 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:15:45,519 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:15:45,522 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:15:48,320 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:15:48,834 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:16:37,129 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:16:37,142 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:16:37,145 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:16:39,942 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:16:40,407 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:17:45,886 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:17:45,900 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:17:45,903 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:17:49,533 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:17:50,073 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:18:29,788 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:18:29,807 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:18:29,811 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:18:58,320 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:18:58,880 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:20:10,488 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:20:10,505 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:20:10,509 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:20:12,989 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:20:13,481 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:20:52,765 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:20:52,778 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:20:52,781 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:20:54,675 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:20:55,170 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:23:10,033 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:23:10,051 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:23:10,057 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:23:13,232 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:23:13,738 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+2024-05-11 17:24:27,272 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:24:27,291 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:24:27,294 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:24:37,579 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:25:27,745 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-11 17:25:27,758 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-11 17:25:27,760 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-11 17:25:42,470 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-11 17:25:42,928 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`

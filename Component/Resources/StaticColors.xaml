@@ -31,7 +31,7 @@
     <SolidColorBrush x:Key="TextFillColorDarkDisabledBrush" Color="{StaticResource TextFillColorDarkDisabled}" />
     <SolidColorBrush x:Key="TextFillColorDarkInverseBrush" Color="{StaticResource TextFillColorDarkInverse}" />
 
-    <Color x:Key="ApplicationBackgroundColorLight">#FFFAFAFA</Color>
+    <Color x:Key="ApplicationBackgroundColorLight">#FFF5F5F5</Color>
     <SolidColorBrush x:Key="ApplicationBackgroundColorLightBrush" Color="{StaticResource ApplicationBackgroundColorLight}" />
 
     <Color x:Key="ApplicationBackgroundColorDark">#FF202020</Color>

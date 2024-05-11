@@ -4,15 +4,21 @@
     <Color x:Key="ThemeColor">#0076F6</Color>
     <Color x:Key="ThemeForeColor">#51A2F9</Color>
     <Color x:Key="ThemeButtonForeground">#FFFFFF</Color>
+    <Color x:Key="ThemeWatermark">#FFFFFF</Color>
 
     <SolidColorBrush x:Key="ThemeBrush" Color="{DynamicResource ThemeColor}" />
     <SolidColorBrush x:Key="ThemeForeBrush" Color="{DynamicResource ThemeForeColor}" />
-
+    <SolidColorBrush x:Key="ThemeWatermarkBrush" Color="{DynamicResource ThemeWatermark}" />
     <SolidColorBrush x:Key="ButtonForegroundBrush" Color="{DynamicResource ThemeButtonForeground}" />
 
-    <SolidColorBrush x:Key="WindowBackground">#FFFFFF</SolidColorBrush>
+    <SolidColorBrush x:Key="PageBackgroundBrush">#F5F5F5</SolidColorBrush>
+
+    <SolidColorBrush x:Key="TableHeadBrush">#FFFFFF</SolidColorBrush>
+
+
     <SolidColorBrush x:Key="InputBorderBrush">#CACACA</SolidColorBrush>
     <SolidColorBrush x:Key="InputForeground">#0D062D</SolidColorBrush>
     <SolidColorBrush x:Key="ThemeBackground">#F2F2F2</SolidColorBrush>
+
 
 </ResourceDictionary>

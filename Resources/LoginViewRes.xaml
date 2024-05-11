@@ -130,20 +130,14 @@
                 <MultiTrigger.EnterActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource AncestorType=Button}}"
-                                            Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                            To="{StaticResource ThemeForeColor}"
-                                            Duration="0:0:0.1" />
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="{StaticResource ThemeForeColor}" Duration="0:0:0.1" />
                         </Storyboard>
                     </BeginStoryboard>
                 </MultiTrigger.EnterActions>
                 <MultiTrigger.ExitActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource AncestorType=Button}}"
-                                            Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
-                                            To="{StaticResource ThemeColor}"
-                                            Duration="0:0:0.1" />
+                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="{StaticResource ThemeColor}" Duration="0:0:0.1" />
                         </Storyboard>
                     </BeginStoryboard>
                 </MultiTrigger.ExitActions>

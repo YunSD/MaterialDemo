@@ -125,7 +125,7 @@ public partial class NavigationView
         nameof(IsPaneOpen),
         typeof(bool),
         typeof(NavigationView),
-        new FrameworkPropertyMetadata(true, OnIsPaneOpenChanged)
+        new FrameworkPropertyMetadata(OnIsPaneOpenChanged)
     );
 
     /// <summary>Identifies the <see cref="IsPaneVisible"/> dependency property.</summary>
