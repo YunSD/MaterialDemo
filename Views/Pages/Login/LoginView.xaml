@@ -49,17 +49,9 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0"
-                            Margin="45,30,0,0"
-                            VerticalAlignment="Center"
-                            IsHitTestVisible="False"
-                            Orientation="Horizontal">
+                <StackPanel Grid.Row="0" Margin="45,30,0,0" VerticalAlignment="Center" IsHitTestVisible="False" Orientation="Horizontal">
                     <Image Width="30" Height="30" Source="pack://application:,,,/Assets/icon.png" />
-                    <TextBlock Margin="15,0,0,0"
-                               VerticalAlignment="Center"
-                               FontSize="20"
-                               FontWeight="SemiBold"
-                               Text="{Binding MainViewModel.ApplicationTitle, Mode=OneWay}" />
+                    <TextBlock Margin="15,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="SemiBold" Text="{Binding MainViewModel.ApplicationTitle, Mode=OneWay}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Center">
@@ -81,37 +73,22 @@
 
                     <!--<TextBlock Text="" Style="{StaticResource NormalText}" Foreground="DimGray" Margin="0 30 0 10"></TextBlock>-->
 
-                    <Border Margin="80,7"
-                            BorderBrush="{StaticResource InputBorderBrush}"
-                            BorderThickness="1"
-                            CornerRadius="5">
+                    <Border Margin="80,7" BorderBrush="{StaticResource InputBorderBrush}" BorderThickness="1" CornerRadius="5">
                         <Grid Margin="1,1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <materialDesign:PackIcon Margin="5,0"
-                                                     HorizontalAlignment="Left"
-                                                     VerticalAlignment="Center"
-                                                     Kind="Account" />
-                            <TextBox x:Name="username"
-                                     hc:InfoElement.Placeholder="请输入用户名."
-                                     Style="{StaticResource LoginBoxControl}"
-                                     Text="{Binding LoginViewModel.Username}" />
+                            <materialDesign:PackIcon Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Kind="Account" />
+                            <TextBox x:Name="username" hc:InfoElement.Placeholder="请输入用户名." Style="{StaticResource LoginBoxControl}" Text="{Binding LoginViewModel.Username}" />
                         </Grid>
                     </Border>
 
-                    <Border Margin="80,7"
-                            BorderBrush="{StaticResource InputBorderBrush}"
-                            BorderThickness="1"
-                            CornerRadius="5">
+                    <Border Margin="80,7" BorderBrush="{StaticResource InputBorderBrush}" BorderThickness="1" CornerRadius="5">
                         <Grid Margin="1,1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <materialDesign:PackIcon Margin="5,0"
-                                                     HorizontalAlignment="Left"
-                                                     VerticalAlignment="Center"
-                                                     Kind="LockPlusOutline" />
+                            <materialDesign:PackIcon Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Kind="LockPlusOutline" />
                             <PasswordBox x:Name="password" hc:InfoElement.Placeholder="请输入密码." Style="{StaticResource PasswordBoxControl}" />
                         </Grid>
                     </Border>
@@ -119,17 +96,10 @@
                     <Button Command="{Binding LoginViewModel.SubmitByPasswordCommand}" Content="Sign In" Style="{StaticResource submitButton}">
                         <Button.CommandParameter>
                             <StackPanel Margin="16">
-                                <ProgressBar Margin="16"
-                                             HorizontalAlignment="Center"
-                                             IsIndeterminate="True"
-                                             Style="{StaticResource MaterialDesignCircularProgressBar}"
-                                             Value="0" />
+                                <ProgressBar Margin="16" HorizontalAlignment="Center" IsIndeterminate="True" Style="{StaticResource MaterialDesignCircularProgressBar}" Value="0" />
                                 <TextBlock Margin="0,0,0,5" HorizontalAlignment="Center" Text="正在登录..." />
                                 <!--  -Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"  -->
-                                <Button HorizontalAlignment="Center"
-                                        Content="CANCEL"
-                                        IsCancel="True"
-                                        Style="{StaticResource MaterialDesignFlatButton}" />
+                                <Button HorizontalAlignment="Center" Content="CANCEL" IsCancel="True" Style="{StaticResource MaterialDesignFlatButton}" />
                             </StackPanel>
                         </Button.CommandParameter>
                     </Button>

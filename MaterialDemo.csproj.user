@@ -13,6 +13,9 @@
     <Compile Update="Views\Pages\Login\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Upms\UserEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Upms\UserView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -162,6 +165,9 @@
     <Page Update="Resources\Themes\Basic\Geometries.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resources\Themes\Common\CommonForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\Themes\Common\CommonGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -181,6 +187,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Login\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Upms\UserEditor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Upms\UserView.xaml">

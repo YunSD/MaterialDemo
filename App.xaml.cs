@@ -20,6 +20,8 @@ using MaterialDemo.ViewModels.Pages.Home;
 using Wpf.Ui;
 using UiDesktopApp1.Services;
 using MaterialDemo.Config.DependencyModel;
+using log4net;
+using MaterialDemo.ViewModels.Pages.Upms;
 
 
 namespace MaterialDemo
@@ -31,6 +33,7 @@ namespace MaterialDemo
     {
        
         private static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder.AddProvider(new Log4NetProvider()));
+        private ILog logger = LogManager.GetLogger(nameof(App));
 
         private static readonly IHost _host = Host
             .CreateDefaultBuilder()
@@ -92,6 +95,7 @@ namespace MaterialDemo
                 _host.Start();
             }catch (Exception ex)
             {
+                logger.Error(ex);
                 MessageBox.Show("程序初始化失败，即将退出。" + "\ncause:" + ex.Message);
                 Application.Current.Shutdown();
             }
@@ -108,13 +112,16 @@ namespace MaterialDemo
             _host.Dispose();
         }
 
+
+       
+
         /// <summary>
         /// Occurs when an exception is thrown by an application but not handled.
         /// </summary>
         private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
-            Console.Write(e.Exception);
             e.Handled = true;
+            logger.Error(e);
             MessageBox.Show(e.Exception.Message);
             // For more info see https://docs.microsoft.com/en-us/dotnet/api/system.windows.application.dispatcherunhandledexception?view=windowsdesktop-6.0
         }

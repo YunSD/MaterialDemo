@@ -1,4 +1,5 @@
-﻿using MaterialDemo.Domain.Models.Entity;
+﻿using MaterialDemo.Config.UnitOfWork.Collections;
+using MaterialDemo.Domain.Models.Entity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,19 +21,26 @@ namespace MaterialDemo.Domain.Models
 
         // 总条目数
         [ObservableProperty]
-        public int totalCount = 10;
+        public int totalCount = 0;
 
         // 当前页
         [ObservableProperty]
-        public int pageIndex = 1;
+        public int pageIndex = 0;
 
         // 页面总数
         [ObservableProperty]
-        public int totalPage = 10;
+        public int totalPage = 0;
 
         public PageViewModelBase()
         {
             dataList = new List<T>();
+        }
+
+        protected void RefreshPageInfo(IPagedList<T> pagedList) {
+            this.DataList = pagedList.Items;
+            this.TotalCount = pagedList.TotalCount;
+            this.PageIndex = pagedList.PageIndex;
+            this.TotalPage = pagedList.TotalPages;
         }
 
     }

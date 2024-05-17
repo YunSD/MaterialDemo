@@ -9,7 +9,6 @@
         Width="1200"
         Height="700"
         Background="{DynamicResource WindowBackground}"
-        FontFamily="Lucida Sans Unicode"
         SnapsToDevicePixels="True"
         TextElement.FontSize="13"
         TextElement.FontWeight="Regular"
