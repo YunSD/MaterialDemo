@@ -103,6 +103,7 @@
                     <DataGrid Grid.Row="1"
                               HorizontalAlignment="Stretch"
                               AutoGenerateColumns="False"
+                              CellStyle="{StaticResource DataGridCellStyle}"
                               HeadersVisibility="All"
                               IsReadOnly="True"
                               ItemsSource="{Binding ViewModel.DataList}"
@@ -120,7 +121,7 @@
                             <DataGridTemplateColumn Width="*" CanUserResize="False" Header="状态">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">
+                                        <Border Width="Auto" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">
                                             <TextBlock Padding="10,2,10,2" FontSize="12" Foreground="white">
                                                 <TextBlock.Style>
                                                     <Style TargetType="TextBlock">
@@ -147,12 +148,12 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button Padding="5,0,5,0" Background="White" BorderThickness="1" Foreground="DarkGreen" ToolTip="编辑">
+                                            <Button Padding="5,0,5,0" Background="Transparent" BorderThickness="0" Foreground="green" ToolTip="编辑">
                                                 <materialDesign:PackIcon Width="20" Height="20" Kind="FileDocumentEditOutline" />
                                             </Button>
-                                            <GridSplitter Margin="5,0,0,0" />
-                                            <Button Padding="5,0,5,0" Background="White" BorderThickness="1" ToolTip="删除">
-                                                <materialDesign:PackIcon Width="20" Height="20" Foreground="DarkRed" Kind="FileDocumentRemoveOutline" />
+                                            <GridSplitter Width="3" Height="16" VerticalAlignment="Center" Background="LightGray" BorderBrush="White" BorderThickness="1" />
+                                            <Button Padding="5,0,5,0" Background="Transparent" BorderThickness="0" ToolTip="删除">
+                                                <materialDesign:PackIcon Width="20" Height="20" Foreground="red" Kind="FileDocumentRemoveOutline" />
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
