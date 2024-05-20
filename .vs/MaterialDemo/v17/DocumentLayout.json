@@ -3,16 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\upms\\usereditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\upms\\usereditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\usereditor.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\usereditor.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\usereditor.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\usereditor.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\domain\\formsubmiteventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\formsubmiteventhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\common\\commongrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\common\\commongrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\theme.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\common\\commonform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\common\\commonform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\login\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -21,26 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\resources\\themes\\common\\commonform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\themes\\common\\commonform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\usereditor.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\usereditor.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\usereditor.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\usereditor.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\homeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:utils\\pageutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\upms\\userview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -78,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,7 +94,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormSubmitEventHandler.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\FormSubmitEventHandler.cs",
+              "RelativeDocumentMoniker": "Domain\\FormSubmitEventHandler.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\FormSubmitEventHandler.cs",
+              "RelativeToolTip": "Domain\\FormSubmitEventHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T09:08:59.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UserEditorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserEditorViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Pages\\Upms\\UserEditorViewModel.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserEditorViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Pages\\Upms\\UserEditorViewModel.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAADwvx4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T08:48:02.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "CommonGrid.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\Common\\CommonGrid.xaml",
               "RelativeDocumentMoniker": "Resources\\Themes\\Common\\CommonGrid.xaml",
@@ -98,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UserView.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml",
               "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserView.xaml",
@@ -110,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "HomeView.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\HomeView.xaml",
               "RelativeDocumentMoniker": "Views\\Pages\\HomeView.xaml",
@@ -122,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Login\\LoginView.xaml",
               "RelativeDocumentMoniker": "Views\\Pages\\Login\\LoginView.xaml",
@@ -134,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Windows\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Views\\Windows\\MainWindow.xaml",
@@ -146,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "Theme.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\Theme.xaml",
               "RelativeDocumentMoniker": "Resources\\Themes\\Theme.xaml",
@@ -158,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "CommonForm.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Resources\\Themes\\Common\\CommonForm.xaml",
               "RelativeDocumentMoniker": "Resources\\Themes\\Common\\CommonForm.xaml",
@@ -170,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "SystemConstant.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Utils\\SystemConstant.cs",
               "RelativeDocumentMoniker": "Utils\\SystemConstant.cs",
@@ -183,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "PageUtil.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Utils\\PageUtil.cs",
               "RelativeDocumentMoniker": "Utils\\PageUtil.cs",
@@ -196,20 +230,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "UserEditor.xaml.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserEditor.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserEditor.xaml.cs",
               "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserEditor.xaml.cs",
               "RelativeToolTip": "Views\\Pages\\Upms\\UserEditor.xaml.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwBYAAAAbAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBwAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-14T08:28:48.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "UserEditor.xaml",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserEditor.xaml",
               "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserEditor.xaml",
@@ -221,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -234,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\UnitOfWork\\Repository.cs",
               "RelativeDocumentMoniker": "Config\\UnitOfWork\\Repository.cs",
@@ -246,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "DashboardViewModel.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\Pages\\DashboardViewModel.cs",
@@ -259,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "PageViewModelBase.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs",
               "RelativeDocumentMoniker": "Domain\\Models\\PageViewModelBase.cs",
@@ -271,28 +305,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "UserViewModel.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
               "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
               "RelativeToolTip": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAUwEoAAAA0AAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAIAxwFsAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T04:30:38.342Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 6,
               "Title": "UserView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Pages\\Upms\\UserView.xaml.cs",
               "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Views\\Pages\\Upms\\UserView.xaml.cs",
               "RelativeToolTip": "Views\\Pages\\Upms\\UserView.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T04:29:44.262Z"
+              "WhenOpened": "2024-05-13T04:29:44.262Z",
+              "EditorCaption": ""
             }
           ]
         },

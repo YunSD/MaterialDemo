@@ -22,6 +22,10 @@
     <!--  PAGE  -->
     <SolidColorBrush x:Key="PageBackgroundBrush" Color="#F5F5F5" />
     <SolidColorBrush x:Key="TableHeadBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="TableHeadAddBrush" Color="#2E7D32" />
+
+    <SolidColorBrush x:Key="TableRowEditBrush" Color="#2E7D32" />
+    <SolidColorBrush x:Key="TableRowDeleteBrush" Color="red" />
 
     <!--  FORM  -->
     <SolidColorBrush x:Key="FormBackgroundBrush" Color="#FFFFFF" />

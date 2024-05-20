@@ -74,17 +74,23 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [RelayCommand]
         private async Task OpenFormWindow(object? _)
         {
-            var form = new UserEditor();
-            var result = await DialogHost.Show(form, SystemConstant.RootDialog,null, ClosingEventHandler, ClosedEventHandler);
+            UserEditorViewModel editorViewModel = new UserEditorViewModel(new SysUser(), SubmitEventHandler);
+            var form = new UserEditor(editorViewModel);
+            var result = await DialogHost.Show(form, SystemConstant.RootDialog, null, ClosingEventHandler, ClosedEventHandler);
             logger.Debug(result);
         }
 
         private void ClosingEventHandler(object sender, DialogClosingEventArgs eventArgs)
-        => Debug.WriteLine("You can intercept the closing event, and cancel here.");
+            => Debug.WriteLine("You can intercept the closing event, and cancel here.");
 
         private void ClosedEventHandler(object sender, DialogClosedEventArgs eventArgs)
             => Debug.WriteLine("You can intercept the closed event here (1).");
 
+
+        private void SubmitEventHandler(SysUser sysUser) {
+            sys_db.Insert(sysUser);
+            _unitOfWork.SaveChanges();
+        }
 
         #endregion
 

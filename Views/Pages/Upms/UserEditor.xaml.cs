@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDemo.ViewModels.Pages.Upms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace MaterialDemo.Views.Pages.Upms
     /// </summary>
     public partial class UserEditor : UserControl
     {
-        public UserEditor()
+        public UserEditorViewModel ViewModel { get; }
+
+        public UserEditor(UserEditorViewModel viewModel)
         {
+            this.ViewModel = viewModel;
+            this.DataContext = this;
             InitializeComponent();
         }
+
+        
     }
 }
