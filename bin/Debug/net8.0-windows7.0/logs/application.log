@@ -4478,3 +4478,378 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
 2024-05-20 17:27:51,655 [1] ERROR App - System.Windows.Threading.DispatcherUnhandledExceptionEventArgs
 2024-05-20 17:27:54,084 [1] DEBUG UserViewModel - false
 2024-05-20 17:27:54,768 [1] INFO  Microsoft.Hosting.Lifetime - Application is shutting down...
+2024-05-20 19:35:31,380 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 19:35:31,426 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 19:35:31,438 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 19:36:12,833 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 19:36:13,371 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 19:36:13,404 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 19:36:13,407 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 19:36:13,499 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (31ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 19:36:15,873 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (4ms) [Parameters=[@p0=NULL (Size = 4000), @p1=NULL (Size = 4000), @p2=NULL (DbType = DateTime), @p3=NULL (Size = 4000), @p4=NULL (Size = 4000), @p5=NULL (Size = 4000), @p6=NULL (Size = 4000), @p7=NULL (Size = 4000), @p8=NULL (Size = 4000), @p9=NULL (Size = 4000), @p10=NULL (Size = 4000), @p11=NULL (Size = 4000), @p12=NULL (Size = 4000), @p13=NULL (DbType = DateTime), @p14=NULL (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `sys_user` (`Avatar`, `create_by`, `create_time`, `Email`, `info_card`, `info_face`, `info_touch`, `lock_flag`, `Name`, `Password`, `Phone`, `Remark`, `update_by`, `update_time`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT `user_id`
+FROM `sys_user`
+WHERE ROW_COUNT() = 1 AND `user_id` = LAST_INSERT_ID();
+2024-05-20 19:36:15,933 [1] ERROR Microsoft.EntityFrameworkCore.Update - An exception occurred in the database while saving changes for context type 'MaterialDemo.Config.EFDB.BaseDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Column 'create_by' cannot be null
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Column 'create_by' cannot be null
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2024-05-20 19:36:18,078 [1] ERROR App - System.Windows.Threading.DispatcherUnhandledExceptionEventArgs
+2024-05-20 21:10:18,667 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 21:10:18,691 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 21:10:18,705 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 21:10:21,104 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 21:10:21,625 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 21:10:21,658 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:10:21,662 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:10:21,742 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 21:11:13,547 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 21:11:13,559 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 21:11:13,561 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 21:11:16,150 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 21:11:16,654 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 21:11:16,685 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:11:16,688 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:11:16,769 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 21:11:56,481 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 21:11:56,491 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 21:11:56,494 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 21:11:59,162 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 21:11:59,685 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 21:11:59,716 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:11:59,719 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:11:59,798 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 21:12:30,354 [1] DEBUG UserViewModel - false
+2024-05-20 21:12:50,322 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 21:12:50,332 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 21:12:50,334 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 21:13:00,766 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 21:13:01,284 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 21:13:01,316 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:13:01,318 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:13:01,397 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 21:13:07,700 [1] DEBUG UserViewModel - false
+2024-05-20 21:13:52,675 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 21:13:52,686 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 21:13:52,689 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 21:13:55,047 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 21:13:55,556 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 21:13:55,587 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:13:55,590 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:13:55,671 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (29ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 21:36:55,050 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 21:36:55,065 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 21:36:55,070 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 21:36:57,217 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 21:36:57,790 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 21:36:57,823 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:36:57,825 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 21:36:57,916 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (31ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:04:25,010 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:04:25,021 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:04:25,024 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:04:27,483 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:04:28,012 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:04:28,042 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:04:28,047 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:04:28,129 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (28ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:06:04,647 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:06:04,657 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:06:04,659 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:06:19,600 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:06:20,121 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:06:20,154 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:06:20,156 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:06:20,236 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:07:54,146 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:07:54,157 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:07:54,160 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:07:57,979 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:07:58,506 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:07:58,542 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:07:58,545 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:07:58,627 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (25ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:09:31,412 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:09:31,457 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:09:31,459 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:09:34,082 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:09:34,635 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:09:34,667 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:09:34,669 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:09:34,752 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:10:40,341 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:10:40,352 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:10:40,354 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:10:46,344 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:10:46,871 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:10:46,905 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:10:46,908 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:10:46,992 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:18:20,996 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:18:21,007 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:18:21,009 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:18:23,357 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:18:23,879 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:18:23,913 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:18:23,915 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:18:23,998 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:25:30,475 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:25:30,485 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:25:30,487 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:25:32,667 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:25:33,213 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:25:33,245 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:25:33,248 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:25:33,337 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (27ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:25:46,622 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (4ms) [Parameters=[@p0=NULL (Size = 4000), @p1=NULL (Size = 4000), @p2=NULL (DbType = DateTime), @p3='1@区区' (Size = 4000), @p4=NULL (Size = 4000), @p5=NULL (Size = 4000), @p6=NULL (Size = 4000), @p7='1' (Size = 4000), @p8='1' (Size = 4000), @p9=NULL (Size = 4000), @p10='1' (Size = 4000), @p11=NULL (Size = 4000), @p12=NULL (Size = 4000), @p13=NULL (DbType = DateTime), @p14='1' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `sys_user` (`Avatar`, `create_by`, `create_time`, `Email`, `info_card`, `info_face`, `info_touch`, `lock_flag`, `Name`, `Password`, `Phone`, `Remark`, `update_by`, `update_time`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT `user_id`
+FROM `sys_user`
+WHERE ROW_COUNT() = 1 AND `user_id` = LAST_INSERT_ID();
+2024-05-20 22:25:46,676 [1] ERROR Microsoft.EntityFrameworkCore.Update - An exception occurred in the database while saving changes for context type 'MaterialDemo.Config.EFDB.BaseDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Field 'user_id' doesn't have a default value
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Field 'user_id' doesn't have a default value
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2024-05-20 22:26:00,269 [1] ERROR App - System.Windows.Threading.DispatcherUnhandledExceptionEventArgs
+2024-05-20 22:32:54,933 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:32:54,957 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:32:54,959 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:32:57,299 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:32:57,876 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:32:57,911 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:32:57,915 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:32:58,011 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (33ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:33:22,653 [1] ERROR Microsoft.EntityFrameworkCore.Database.Command - Failed executing DbCommand (4ms) [Parameters=[@p0=NULL (Size = 4000), @p1=NULL (Size = 4000), @p2=NULL (DbType = DateTime), @p3='1111@11.com' (Size = 4000), @p4=NULL (Size = 4000), @p5=NULL (Size = 4000), @p6=NULL (Size = 4000), @p7='1' (Size = 4000), @p8='1' (Size = 4000), @p9=NULL (Size = 4000), @p10='1' (Size = 4000), @p11=NULL (Size = 4000), @p12=NULL (Size = 4000), @p13=NULL (DbType = DateTime), @p14='1' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `sys_user` (`Avatar`, `create_by`, `create_time`, `Email`, `info_card`, `info_face`, `info_touch`, `lock_flag`, `Name`, `Password`, `Phone`, `Remark`, `update_by`, `update_time`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+SELECT `user_id`
+FROM `sys_user`
+WHERE ROW_COUNT() = 1 AND `user_id` = LAST_INSERT_ID();
+2024-05-20 22:33:22,709 [1] ERROR Microsoft.EntityFrameworkCore.Update - An exception occurred in the database while saving changes for context type 'MaterialDemo.Config.EFDB.BaseDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Field 'user_id' doesn't have a default value
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> MySqlConnector.MySqlException (0x80004005): Field 'user_id' doesn't have a default value
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__112_0(DbContext _, ValueTuple`2 t)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2024-05-20 22:48:09,498 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-20 22:48:09,519 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-20 22:48:09,529 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\Yun\Desktop\code\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-20 22:48:12,952 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-20 22:48:13,523 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:48:13,560 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:48:13,563 [.NET TP Worker] WARN  Microsoft.EntityFrameworkCore.Query - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-20 22:48:13,649 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-20 22:48:29,755 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (7ms) [Parameters=[@p0='990065643665625088', @p1=NULL (Size = 4000), @p2=NULL (Size = 4000), @p3=NULL (DbType = DateTime), @p4='1@ssd.com' (Size = 4000), @p5=NULL (Size = 4000), @p6=NULL (Size = 4000), @p7=NULL (Size = 4000), @p8='1' (Size = 4000), @p9='1' (Size = 4000), @p10=NULL (Size = 4000), @p11='1' (Size = 4000), @p12=NULL (Size = 4000), @p13=NULL (Size = 4000), @p14=NULL (DbType = DateTime), @p15='1' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `sys_user` (`user_id`, `Avatar`, `create_by`, `create_time`, `Email`, `info_card`, `info_face`, `info_touch`, `lock_flag`, `Name`, `Password`, `Phone`, `Remark`, `update_by`, `update_time`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-05-20 22:48:32,115 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (5ms) [Parameters=[@p0='990065654126219264', @p1=NULL (Size = 4000), @p2=NULL (Size = 4000), @p3=NULL (DbType = DateTime), @p4='1@ssd.com' (Size = 4000), @p5=NULL (Size = 4000), @p6=NULL (Size = 4000), @p7=NULL (Size = 4000), @p8='1' (Size = 4000), @p9='1' (Size = 4000), @p10=NULL (Size = 4000), @p11='1' (Size = 4000), @p12=NULL (Size = 4000), @p13=NULL (Size = 4000), @p14=NULL (DbType = DateTime), @p15='1' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `sys_user` (`user_id`, `Avatar`, `create_by`, `create_time`, `Email`, `info_card`, `info_face`, `info_touch`, `lock_flag`, `Name`, `Password`, `Phone`, `Remark`, `update_by`, `update_time`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-05-20 22:48:50,927 [1] DEBUG UserViewModel - false
+2024-05-20 22:48:52,509 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-20 22:48:52,513 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+LIMIT @__p_1 OFFSET @__p_0

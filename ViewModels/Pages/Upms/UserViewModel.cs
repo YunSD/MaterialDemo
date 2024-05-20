@@ -88,9 +88,21 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
 
         private void SubmitEventHandler(SysUser sysUser) {
-            sys_db.Insert(sysUser);
+            if (sysUser.UserId == null)
+            {
+                Expression<Func<SysUser, bool>> pre = p => p.Username == sysUser.Username;
+                if (sys_db.Exists(pre)) {
+                    return;
+                }
+                sysUser.UserId = SnowflakeIdWorker.Singleton.nextId();
+                sys_db.Insert(sysUser);
+            }
+            else {
+                sys_db.Update(sysUser);
+            }
             _unitOfWork.SaveChanges();
         }
+
 
         #endregion
 

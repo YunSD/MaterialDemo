@@ -4,5 +4,7 @@
 
 /.vs
 /bin/Debug/net8.0-windows
+/bin
+/bin/
 /obj
 /obj/Debug/net8.0-windows/ref/MaterialDemo.dll
