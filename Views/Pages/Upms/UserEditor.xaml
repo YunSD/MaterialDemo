@@ -43,26 +43,26 @@
 
                 <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="登录名:" />
-                    <TextBox Width="210"  Text="{Binding ViewModel.Username}" materialDesign:HintAssist.Hint="请输入登陆名" Style="{StaticResource BaseFormTextBox}" />
+                    <TextBox IsEnabled="{Binding ViewModel.EditModel}" Width="210" materialDesign:HintAssist.Hint="请输入登陆名" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Username}" />
 
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="姓名:" />
-                    <TextBox Width="210" Text="{Binding ViewModel.Name}" materialDesign:HintAssist.Hint="请输入姓名" Style="{StaticResource BaseFormTextBox}" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入姓名" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Name}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="员工卡号:" />
-                    <TextBox Width="210" Text="{Binding ViewModel.InfoCard}" materialDesign:HintAssist.Hint="请输入员工卡号" Style="{StaticResource BaseFormTextBox}" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入员工卡号" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.InfoCard}" />
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="电话号码:" />
-                    <TextBox Width="210" Text="{Binding ViewModel.Phone}" materialDesign:HintAssist.Hint="请输入电话号码" Style="{StaticResource BaseFormTextBox}" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入电话号码" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Phone}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="电子邮件:" />
-                    <TextBox Width="210" Text="{Binding ViewModel.Email}" materialDesign:HintAssist.Hint="请输入电子邮件" Style="{StaticResource BaseFormTextBox}" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入电子邮件" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Email}" />
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="状态:" />
@@ -71,21 +71,21 @@
 
                 <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Padding="10,0,10,0" Style="{StaticResource BaseFormTextBlock}" Text="备注:" />
-                    <TextBox Width="510" materialDesign:HintAssist.Hint="请输入备注..." Style="{StaticResource BaseFormTextBox}" />
+                    <TextBox Width="510" materialDesign:HintAssist.Hint="请输入备注..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Remark}" />
                 </StackPanel>
             </Grid>
         </GroupBox>
 
         <StackPanel Grid.Row="1" Margin="0,10,35,25" HorizontalAlignment="Right" Orientation="Horizontal">
 
-            <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandParameter="false" Style="{StaticResource MaterialDesignOutlinedDarkButton}" ToolTip="重置查询条件">
+            <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandParameter="false" Style="{StaticResource MaterialDesignOutlinedDarkButton}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="0,0,0,0" Padding="5,0,5,0" FontSize="14" FontWeight="Bold" Text="取消" />
                 </StackPanel>
             </Button>
             <GridSplitter Margin="5,0,5,0" />
             <!--<Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandParameter="true" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="通过查询条件检索">-->
-            <Button Command="{Binding ViewModel.submitCommand}" CommandParameter="true" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="通过查询条件检索">
+            <Button Command="{Binding ViewModel.submitCommand}" CommandParameter="true" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="0,0,0,0" Padding="5,0,5,0" FontSize="14" FontWeight="Bold" Text="确定" />
                 </StackPanel>

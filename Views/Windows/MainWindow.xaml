@@ -5,6 +5,7 @@
         xmlns:local="clr-namespace:MaterialDemo.Views.Windows"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="clr-namespace:Wpf.Ui.Controls"
         Title="{Binding ViewModel.ApplicationTitle, Mode=OneWay}"
         Width="1200"
         Height="700"
@@ -23,7 +24,11 @@
         <BitmapImage UriSource="pack://application:,,,/Assets/icon.png" />
     </Window.Icon>
     <!--  WindowStyle="None" AllowsTransparency="True"  WindowState="Maximized"  -->
-    <materialDesign:DialogHost Name="HostDialog" DialogTheme="Inherit" Identifier="RootDialog">
-        <Frame x:Name="MainFrame" BorderThickness="0" NavigationUIVisibility="Hidden" />
-    </materialDesign:DialogHost>
+    <Grid>
+        <materialDesign:DialogHost Name="HostDialog" DialogTheme="Inherit" Identifier="RootDialog">
+            <Frame x:Name="MainFrame" BorderThickness="0" NavigationUIVisibility="Hidden" />
+        </materialDesign:DialogHost>
+        <ui:SnackbarPresenter x:Name="SnackbarPresenter" />
+    </Grid>
+
 </Window>

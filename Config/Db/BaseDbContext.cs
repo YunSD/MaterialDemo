@@ -20,7 +20,6 @@ namespace MaterialDemo.Config.EFDB
 
         public BaseDbContext(DbContextOptions options) : base(options)
         {
-
         }
 
         

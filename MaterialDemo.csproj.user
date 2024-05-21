@@ -24,6 +24,9 @@
     <Resource Update="Resources\LoginViewRes.xaml">
       <SubType>Designer</SubType>
     </Resource>
+    <Page Update="Component\Controls\Common\ConfirmDialog\ConfirmDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Component\Controls\WPFUI\AutoSuggestBox\AutoSuggestBox.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Controls\WPFUI\Menu\MenuLoader.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\MessageBox\MessageBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Controls\WPFUI\NavigationView\NavigationLeftFluent.xaml">

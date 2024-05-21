@@ -1,26 +1,14 @@
-﻿using CommunityToolkit.Mvvm.Messaging;
-using HandyControl.Controls;
-using HandyControl.Interactivity;
-using HandyControl.Properties.Langs;
-using HandyControl.Tools.Extension;
+﻿using HandyControl.Data;
 using log4net;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Config.UnitOfWork.Collections;
+using MaterialDemo.Controls;
 using MaterialDemo.Domain.Models;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Utils;
-using MaterialDemo.Views.Pages.Login;
 using MaterialDemo.Views.Pages.Upms;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Threading;
+using Wpf.Ui;
 using Wpf.Ui.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
@@ -55,7 +43,9 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             if(!String.IsNullOrEmpty(Username)) pre = p => p.Username != null && p.Username.Contains(Username);
             if(!String.IsNullOrEmpty(Name)) pre = p => p.Name != null && p.Name.Contains(Name);
 
-            IPagedList<SysUser> pageList = sys_db.GetPagedList(predicate: pre, pageSize: PageSize);
+            Func<IQueryable<SysUser>, IOrderedQueryable<SysUser>> orderBy = q => q.OrderBy(u => u.CreateTime);
+
+            IPagedList<SysUser> pageList = sys_db.GetPagedList(predicate: pre, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);
         }
 
@@ -67,31 +57,49 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             this.OnSearch();
         }
 
+        /// <summary>
+        ///     页码改变
+        /// </summary>
+        [RelayCommand]
+        private void PageUpdated(FunctionEventArgs<int> info)
+        {
+            this.PageIndex = info.Info - 1;
+            this.OnSearch();
+        }
+
+
         #endregion
 
         #region From Command
 
+        /// <summary>
+        /// edit form command
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [RelayCommand]
-        private async Task OpenFormWindow(object? _)
+        private async Task OpenEditForm(SysUser? user)
         {
-            UserEditorViewModel editorViewModel = new UserEditorViewModel(new SysUser(), SubmitEventHandler);
+            SysUser data = new SysUser();
+            if (user != null) data = user; 
+            UserEditorViewModel editorViewModel = new UserEditorViewModel(data, SubmitEventHandler);
             var form = new UserEditor(editorViewModel);
-            var result = await DialogHost.Show(form, SystemConstant.RootDialog, null, ClosingEventHandler, ClosedEventHandler);
+            var result = await DialogHost.Show(form, SystemConstant.RootDialog);
             logger.Debug(result);
         }
 
-        private void ClosingEventHandler(object sender, DialogClosingEventArgs eventArgs)
-            => Debug.WriteLine("You can intercept the closing event, and cancel here.");
 
-        private void ClosedEventHandler(object sender, DialogClosedEventArgs eventArgs)
-            => Debug.WriteLine("You can intercept the closed event here (1).");
-
-
+        /// <summary>
+        /// form save command
+        /// </summary>
+        /// <param name="sysUser"></param>
         private void SubmitEventHandler(SysUser sysUser) {
             if (sysUser.UserId == null)
             {
                 Expression<Func<SysUser, bool>> pre = p => p.Username == sysUser.Username;
-                if (sys_db.Exists(pre)) {
+                if (sys_db.Exists(pre))
+                {
+                    SnackbarService.ShowError("用户登录名：" + sysUser.Username + " 不能重复");
                     return;
                 }
                 sysUser.UserId = SnowflakeIdWorker.Singleton.nextId();
@@ -101,8 +109,39 @@ namespace MaterialDemo.ViewModels.Pages.Upms
                 sys_db.Update(sysUser);
             }
             _unitOfWork.SaveChanges();
+            sys_db.ChangeEntityState(sysUser, Microsoft.EntityFrameworkCore.EntityState.Detached);
+            this.OnSearch();
+            DialogHost.Close(SystemConstant.RootDialog);
         }
 
+
+        /// <summary>
+        ///  删除 command
+        /// </summary>
+        /// <param name="sys"></param>
+        /// <returns></returns>
+        [RelayCommand]
+        private async Task DelConfirm(SysUser sys) {
+            if (!sys.UserId.HasValue) return;
+            var confirm = new ConfirmDialog("确认删除？");
+            this.rowId = sys.UserId;
+            var result = await DialogHost.Show(confirm, SystemConstant.RootDialog, DeleteRowData);
+        }
+
+        // key
+        private long? rowId;
+
+        // reference method
+        private void DeleteRowData(object sender, DialogClosingEventArgs eventArgs)
+        {
+            if (Equals(eventArgs.Parameter, "false")) return;
+            if (rowId == null) return;
+            sys_db.Delete(rowId);
+            _unitOfWork.SaveChanges();
+
+            // 刷新
+            this.OnSearch();
+        }
 
         #endregion
 
@@ -115,8 +154,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         {
             Task.Run(() =>
             {
-                IPagedList<SysUser> pageList = sys_db.GetPagedList();
-                base.RefreshPageInfo(pageList);
+                this.OnSearch();
             });
         }
     }

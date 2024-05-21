@@ -33,5 +33,7 @@
         <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/NavigationView/NavigationViewItemSeparator.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/Snackbar/Snackbar.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/TitleBar/TitleBar.xaml" />
+
+        <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/MessageBox/MessageBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

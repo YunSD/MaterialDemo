@@ -8,12 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Wpf.Ui.Controls;
+using Wpf.Ui;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
     public partial class UserEditorViewModel:ObservableValidator
     {
-        
+        [ObservableProperty]
+        private bool editModel = true;
+
+        private SysUser sysUser;
+
         private long? userId;
 
         [Required(ErrorMessage ="该字段不能为空")]
@@ -31,21 +37,20 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         public string? infoCard;
 
-        [Required(ErrorMessage = "该字段不能为空")]
-        [EmailAddress(ErrorMessage = "该字段只能为邮箱格式")]
         [ObservableProperty]
         private string? email;
 
-        partial void OnEmailChanged(string? value) => ValidateProperty(value, nameof(Email));
+        //partial void OnEmailChanged(string? value) => ValidateProperty(value, nameof(Email));
 
-        [Required(ErrorMessage = "该字段不能为空")]
-        [Phone(ErrorMessage = "该字段只能为电话格式")]
         [ObservableProperty]
         private string? phone;
-        partial void OnPhoneChanged(string? value) => ValidateProperty(value, nameof(Phone));
+        //partial void OnPhoneChanged(string? value) => ValidateProperty(value, nameof(Phone));
 
         [ObservableProperty]
-        private string? lockFlag = "1";
+        private string? lockFlag = "0";
+
+        [ObservableProperty]
+        private string? remark;
 
 
         public delegate bool SaveEventHandler(object sender, DialogOpenedEventArgs eventArgs);
@@ -53,29 +58,43 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         private FormSubmitEventHandler<SysUser> SubmitEvent;
 
         public UserEditorViewModel(SysUser sysUser, FormSubmitEventHandler<SysUser> submitEvent) { 
-            this.userId = sysUser.UserId;
+            this.sysUser = sysUser;
+
+            if (sysUser.UserId != null) {
+                this.userId = sysUser.UserId;
+                editModel = false;
+            }
+            
             this.username = sysUser.Username;
+            this.infoCard = sysUser.InfoCard;
             this.name = sysUser.Name;
             this.email = sysUser.Email;
             this.phone = sysUser.Phone;
+
             if (!String.IsNullOrEmpty(sysUser.LockFlag)) this.lockFlag = sysUser.LockFlag;
+
+            this.remark = sysUser.Remark;
             this.SubmitEvent = submitEvent;
         }
 
         [RelayCommand]
         private void submit() {
+
             ValidateAllProperties();
             if (HasErrors) return;
 
-            SysUser sysUser = new SysUser();
             sysUser.UserId = userId;
             sysUser.Username = Username;
             sysUser.Name = Name;
             sysUser.Phone = Phone;
+            sysUser.InfoCard = InfoCard;
             sysUser.Email = Email;
+            sysUser.Remark = Remark;
             sysUser.LockFlag = LockFlag;
 
             SubmitEvent(sysUser);
+
+           
         }
 
     }

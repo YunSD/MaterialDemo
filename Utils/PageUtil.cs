@@ -32,5 +32,9 @@ namespace MaterialDemo.Utils
             DialogHost.Close(Identifier);
         }
 
+        public static void DelConfirm() { 
+            
+        }
+
     }
 }

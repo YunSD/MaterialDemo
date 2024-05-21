@@ -5,6 +5,7 @@ using MaterialDemo.Views.Pages;
 using MaterialDemo.Views.Pages.Login;
 using MaterialDemo.Views.Pages.Upms;
 using System.Windows.Controls;
+using Wpf.Ui;
 
 namespace MaterialDemo.Views.Windows
 {
@@ -40,6 +41,9 @@ namespace MaterialDemo.Views.Windows
             // register message
             WeakReferenceMessenger.Default.Register<LoginCompletedRedirectionMessage>(this);
             WeakReferenceMessenger.Default.Register<LogoutMessage>(this);
+
+            // 初始化 SnackbarPresenter
+            SnackbarService.Singleton.SetSnackbarPresenter(SnackbarPresenter);
         }
 
         #region Window methods

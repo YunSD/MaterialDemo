@@ -152,14 +152,24 @@
     </Style>
 
 
-    <Style x:Key="BaseTableGirdRowButton" TargetType="Button">
+    <Style x:Key="BaseTableGirdRowButton" BasedOn="{StaticResource MaterialDesignFlatLightBgButton}" TargetType="Button">
         <Setter Property="Padding" Value="5,0,5,0" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Margin="3,3,3,3" Background="Transparent">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="BaseTableGirdRowButtonPackIcon" TargetType="materialDesign:PackIcon">
         <Setter Property="Width" Value="20" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="Height" Value="20" />
     </Style>
 

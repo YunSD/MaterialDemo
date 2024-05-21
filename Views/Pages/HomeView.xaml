@@ -31,20 +31,11 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <hc:Watermark Grid.Row="0"
-                      Angle="35"
-                      FontSize="15"
-                      Mark="{Binding WindowViewModel.ApplicationTitle}"
-                      MarkBrush="{DynamicResource ThemeWatermarkBrush}"
-                      MarkMargin="10,5">
+        <hc:Watermark Grid.Row="0" Angle="35" FontSize="15" Mark="{Binding WindowViewModel.ApplicationTitle}" MarkBrush="{DynamicResource ThemeWatermarkBrush}" MarkMargin="10,5">
             <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,2" />
         </hc:Watermark>
 
-        <materialDesign:ColorZone Grid.Row="0"
-                                  Padding="8"
-                                  materialDesign:ElevationAssist.Elevation="Dp4"
-                                  Mode="SecondaryMid"
-                                  Style="{DynamicResource TopBar}">
+        <materialDesign:ColorZone Grid.Row="0" Padding="8" materialDesign:ElevationAssist.Elevation="Dp4" Mode="SecondaryMid" Style="{DynamicResource TopBar}">
             <StackPanel Orientation="Horizontal">
                 <ToggleButton Click="NavigationToggle" Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
                 <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="Material Design In XAML Toolkit" />
@@ -61,13 +52,7 @@
                            IsPaneToggleVisible="False"
                            IsPaneVisible="True"
                            MenuItemsSource="{Binding NavigationItems.MenuItems, Mode=OneWay}"
-                           PaneDisplayMode="Left">
-            <ui:NavigationView.ContentOverlay>
-                <Grid>
-                    <ui:SnackbarPresenter x:Name="SnackbarPresenter" />
-                </Grid>
-            </ui:NavigationView.ContentOverlay>
-        </ui:NavigationView>
+                           PaneDisplayMode="Left" />
         <ContentPresenter x:Name="RootContentDialog" Grid.Row="0" Grid.RowSpan="2" />
     </Grid>
 

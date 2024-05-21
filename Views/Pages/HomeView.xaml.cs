@@ -40,6 +40,8 @@ namespace MaterialDemo.Views.Pages
             
             SetPageService(pageService);
             navigationService.SetNavigationControl(RootNavigation);
+
+           
         }
 
         #region INavigationWindow methods
