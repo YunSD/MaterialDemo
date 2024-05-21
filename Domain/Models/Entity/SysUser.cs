@@ -1,4 +1,5 @@
 ﻿using MaterialDemo.Config.Db;
+using MaterialDemo.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,6 @@ namespace MaterialDemo.Domain.Models.Entity
         public string? InfoTouch { get; set; }
 
         [Column("lock_flag")]
-        public string? LockFlag { get; set; }
+        public BaseStatusEnum LockFlag { get; set; }
     }
 }

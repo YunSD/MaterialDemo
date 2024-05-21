@@ -4,7 +4,7 @@
    xmlns:converters="clr-namespace:MaterialDemo.Utils.Converters"
    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
 
-    <converters:BaseBoolConverter x:Key="BaseBoolConverter" />
+    <converters:BaseStatusEnumConverter x:Key="BaseStatusEnumConverter" />
 
     <Style
        x:Key="BaseFormTitle"

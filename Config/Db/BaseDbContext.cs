@@ -1,4 +1,5 @@
 ﻿using log4net;
+using MaterialDemo.Domain.Enums;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Views.Pages.Login;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +31,8 @@ namespace MaterialDemo.Config.EFDB
                 e.ToTable("sys_user");
                 e.HasKey(e=>e.UserId);
                 e.HasIndex(e => e.UserId);
+                e.Property(e => e.LockFlag)
+                .HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));
             } 
             );
             base.OnModelCreating(modelBuilder);

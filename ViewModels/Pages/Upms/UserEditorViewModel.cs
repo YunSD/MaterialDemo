@@ -1,15 +1,7 @@
 ﻿using MaterialDemo.Domain;
 using MaterialDemo.Domain.Models.Entity;
-using MaterialDemo.Utils;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Wpf.Ui.Controls;
-using Wpf.Ui;
+using MaterialDemo.Domain.Enums;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
@@ -47,7 +39,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         //partial void OnPhoneChanged(string? value) => ValidateProperty(value, nameof(Phone));
 
         [ObservableProperty]
-        private string? lockFlag = "0";
+        private BaseStatusEnum lockFlag;
 
         [ObservableProperty]
         private string? remark;
@@ -71,7 +63,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             this.email = sysUser.Email;
             this.phone = sysUser.Phone;
 
-            if (!String.IsNullOrEmpty(sysUser.LockFlag)) this.lockFlag = sysUser.LockFlag;
+            this.lockFlag = sysUser.LockFlag;
 
             this.remark = sysUser.Remark;
             this.SubmitEvent = submitEvent;
