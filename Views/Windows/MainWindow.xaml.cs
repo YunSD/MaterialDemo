@@ -1,9 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
 using MaterialDemo.Security.Messages;
 using MaterialDemo.ViewModels.Windows;
-using MaterialDemo.Views.Pages;
+using MaterialDemo.Views.Pages.Base;
 using MaterialDemo.Views.Pages.Login;
-using MaterialDemo.Views.Pages.Upms;
 using System.Windows.Controls;
 using Wpf.Ui;
 

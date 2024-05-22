@@ -7,6 +7,8 @@
     <Color x:Key="ThemeWatermark">#FFFFFF</Color>
 
     <!--  主题色  -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource ThemeColor}" />
+
     <SolidColorBrush x:Key="ThemeBrush" Color="{DynamicResource ThemeColor}" />
     <SolidColorBrush x:Key="ThemeForeBrush" Color="{DynamicResource ThemeForeColor}" />
     <SolidColorBrush x:Key="ThemeTableSelectedBrush" Opacity=".15" Color="{DynamicResource ThemeColor}" />

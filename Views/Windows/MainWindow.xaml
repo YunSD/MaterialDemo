@@ -25,7 +25,7 @@
     </Window.Icon>
     <!--  WindowStyle="None" AllowsTransparency="True"  WindowState="Maximized"  -->
     <Grid>
-        <materialDesign:DialogHost Name="HostDialog" DialogTheme="Inherit" Identifier="RootDialog">
+        <materialDesign:DialogHost Name="HostDialog" DialogTheme="Inherit" Identifier="RootDialog" Style="{StaticResource MaterialDesignEmbeddedDialogHost}">
             <Frame x:Name="MainFrame" BorderThickness="0" NavigationUIVisibility="Hidden" />
         </materialDesign:DialogHost>
         <ui:SnackbarPresenter x:Name="SnackbarPresenter" />

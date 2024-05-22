@@ -1,15 +1,8 @@
-﻿using CommunityToolkit.Mvvm.Messaging;
-using log4net;
-using MahApps.Metro.Controls;
-using MaterialDemo.Security.Messages;
-using MaterialDemo.Utils;
-using MaterialDemo.ViewModels.Pages;
+﻿using log4net;
+using MaterialDemo.ViewModels.Pages.Base;
 using MaterialDemo.ViewModels.Windows;
-using MaterialDesignThemes.Wpf;
-using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace MaterialDemo.Views.Pages.Login
 {

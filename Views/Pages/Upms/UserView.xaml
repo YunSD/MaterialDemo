@@ -3,10 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:hc="https://handyorg.github.io/handycontrol"
-      xmlns:local="clr-namespace:MaterialDemo.Views.Pages.Upms"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       xmlns:upms="clr-namespace:MaterialDemo.ViewModels.Pages.Upms"
       Title="UserView"
       d:DataContext="{d:DesignInstance Type=upms:UserViewModel}"
@@ -39,7 +37,7 @@
                             hc:InfoElement.ShowClearButton="True"
                             hc:InfoElement.Title="登录名"
                             hc:InfoElement.TitlePlacement="Left"
-                            hc:InfoElement.TitleWidth="50"
+                            hc:InfoElement.TitleWidth="60"
                             Foreground="{DynamicResource InputForeground}"
                             Text="{Binding ViewModel.Username}" />
                 <hc:TextBox Width="260"
@@ -49,7 +47,7 @@
                             hc:InfoElement.ShowClearButton="True"
                             hc:InfoElement.Title="姓名"
                             hc:InfoElement.TitlePlacement="Left"
-                            hc:InfoElement.TitleWidth="50"
+                            hc:InfoElement.TitleWidth="60"
                             Foreground="{DynamicResource InputForeground}"
                             Text="{Binding ViewModel.Name}" />
 
@@ -154,7 +152,7 @@
                                     </Button>
                                     <GridSplitter Style="{StaticResource BaseTableGirdRowGridSplitter}" />
                                     <Button Command="{Binding DataContext.ViewModel.DelConfirmCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="{StaticResource TableRowDeleteBrush}" Style="{StaticResource BaseTableGirdRowButton}" ToolTip="删除">
-                                        <materialDesign:PackIcon Kind="FileDocumentRemoveOutline" Style="{StaticResource BaseTableGirdRowButtonPackIcon}" />
+                                        <materialDesign:PackIcon Kind="DeleteSweepOutline" Style="{StaticResource BaseTableGirdRowButtonPackIcon}" />
                                     </Button>
                                 </StackPanel>
                             </DataTemplate>

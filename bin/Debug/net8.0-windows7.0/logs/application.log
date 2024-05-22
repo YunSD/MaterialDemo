@@ -8190,3 +8190,49 @@ LIMIT @__p_1 OFFSET @__p_0
 2024-05-22 00:41:47,777 [1] DEBUG UserViewModel - false
 2024-05-22 00:42:00,682 [1] DEBUG UserViewModel - false
 2024-05-22 00:42:16,641 [1] DEBUG UserViewModel - false
+2024-05-22 13:53:27,937 [1] INFO  Microsoft.Hosting.Lifetime - Application started. Press Ctrl+C to shut down.
+2024-05-22 13:53:27,974 [1] INFO  Microsoft.Hosting.Lifetime - Hosting environment: Production
+2024-05-22 13:53:27,978 [1] INFO  Microsoft.Hosting.Lifetime - Content root path: C:\Users\zzz\Desktop\code\win\C#\MaterialDemo\bin\Debug\net8.0-windows7.0
+2024-05-22 13:53:30,523 [1] WARN  Microsoft.EntityFrameworkCore.Model.Validation - Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-22 13:53:31,023 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-22 13:53:31,136 [.NET TP Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (26ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+ORDER BY `s`.`create_time`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-22 13:53:35,082 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (31ms) [Parameters=[@p15='990340152817750016', @p0=NULL (Size = 4000), @p1=NULL (Size = 4000), @p2='2023-06-12T14:50:28.0000000' (Nullable = true) (DbType = DateTime), @p3='312' (Size = 4000), @p4='111' (Size = 4000), @p5=NULL (Size = 4000), @p6=NULL (Size = 4000), @p7='NORMAL' (Nullable = false) (Size = 4000), @p8='313' (Size = 4000), @p9=NULL (Size = 4000), @p10='3123' (Size = 4000), @p11='3121' (Size = 4000), @p12=NULL (Size = 4000), @p13='2024-05-21T17:06:03.0000000' (Nullable = true) (DbType = DateTime), @p14='3231' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `sys_user` SET `Avatar` = @p0, `create_by` = @p1, `create_time` = @p2, `Email` = @p3, `info_card` = @p4, `info_face` = @p5, `info_touch` = @p6, `lock_flag` = @p7, `Name` = @p8, `Password` = @p9, `Phone` = @p10, `Remark` = @p11, `update_by` = @p12, `update_time` = @p13, `Username` = @p14
+WHERE `user_id` = @p15;
+SELECT ROW_COUNT();
+2024-05-22 13:53:35,110 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-22 13:53:35,116 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+ORDER BY `s`.`create_time`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-22 13:53:35,168 [1] DEBUG UserViewModel - 
+2024-05-22 13:54:34,635 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (3ms) [Parameters=[@__sysUser_Username_0='喜羊羊' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `sys_user` AS `s`
+    WHERE `s`.`Username` = @__sysUser_Username_0)
+2024-05-22 13:54:34,663 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (8ms) [Parameters=[@p0='990656054981431296', @p1=NULL (Size = 4000), @p2=NULL (Size = 4000), @p3=NULL (DbType = DateTime), @p4='？？' (Size = 4000), @p5='什么鬼' (Size = 4000), @p6=NULL (Size = 4000), @p7=NULL (Size = 4000), @p8='NORMAL' (Nullable = false) (Size = 4000), @p9='喜羊羊' (Size = 4000), @p10=NULL (Size = 4000), @p11=NULL (Size = 4000), @p12='啥' (Size = 4000), @p13=NULL (Size = 4000), @p14=NULL (DbType = DateTime), @p15='喜羊羊' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `sys_user` (`user_id`, `Avatar`, `create_by`, `create_time`, `Email`, `info_card`, `info_face`, `info_touch`, `lock_flag`, `Name`, `Password`, `Phone`, `Remark`, `update_by`, `update_time`, `Username`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2024-05-22 13:54:34,667 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM `sys_user` AS `s`
+2024-05-22 13:54:34,672 [1] INFO  Microsoft.EntityFrameworkCore.Database.Command - Executed DbCommand (1ms) [Parameters=[@__p_1='20', @__p_0='0'], CommandType='Text', CommandTimeout='30']
+SELECT `s`.`user_id`, `s`.`Avatar`, `s`.`create_by`, `s`.`create_time`, `s`.`Email`, `s`.`info_card`, `s`.`info_face`, `s`.`info_touch`, `s`.`lock_flag`, `s`.`Name`, `s`.`Password`, `s`.`Phone`, `s`.`Remark`, `s`.`update_by`, `s`.`update_time`, `s`.`Username`
+FROM `sys_user` AS `s`
+ORDER BY `s`.`create_time`
+LIMIT @__p_1 OFFSET @__p_0
+2024-05-22 13:54:34,692 [1] DEBUG UserViewModel - 
+2024-05-22 13:54:44,007 [1] DEBUG UserViewModel - false
+2024-05-22 13:55:26,814 [1] DEBUG UserViewModel - false

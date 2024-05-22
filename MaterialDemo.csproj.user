@@ -7,13 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\Pages\HomeView.xaml.cs">
+    <Compile Update="Views\Pages\Base\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\Login\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Upms\UserEditor.xaml.cs">
+    <Compile Update="Views\Pages\Upms\UserEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\Upms\UserView.xaml.cs">
@@ -189,13 +189,19 @@
     <Page Update="Resources\Themes\Theme.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\HomeView.xaml">
+    <Page Update="Views\Pages\Base\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Business\StockMaterialView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Business\StockMaterialEditorView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Login\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Upms\UserEditor.xaml">
+    <Page Update="Views\Pages\Upms\UserEditorView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Upms\UserView.xaml">

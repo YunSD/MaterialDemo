@@ -12,16 +12,14 @@ using Microsoft.Extensions.Logging;
 using MaterialDemo.Config.EFDB;
 using Microsoft.EntityFrameworkCore;
 using MaterialDemo.Config;
-using MaterialDemo.ViewModels.Pages;
-using MessageBox = System.Windows.MessageBox;
 using MaterialDemo.Security;
-using MaterialDemo.Views.Pages;
+using MaterialDemo.Views.Pages.Base;
 using MaterialDemo.ViewModels.Pages.Home;
 using Wpf.Ui;
 using UiDesktopApp1.Services;
 using MaterialDemo.Config.DependencyModel;
 using log4net;
-using MaterialDemo.ViewModels.Pages.Upms;
+using MaterialDemo.ViewModels.Pages.Base;
 
 
 namespace MaterialDemo
@@ -59,12 +57,11 @@ namespace MaterialDemo
                     .EnableSensitiveDataLogging()
                     .LogTo(Console.WriteLine, LogLevel.Debug));
                 services.AddUnitOfWork<BaseDbContext>();
-                //services.AddCustomRepository<SysUser,Repository<SysUser>>();
-
 
                 // Main window with navigation
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainWindowViewModel>();
+
                 services.AddSingleton(SecurityUser.SECURITY_USER);
 
                 services.AddSingleton<LoginView>();
@@ -123,7 +120,6 @@ namespace MaterialDemo
             e.Handled = true;
             logger.Error(e);
             MessageBox.Show(e.Exception.Message);
-            // For more info see https://docs.microsoft.com/en-us/dotnet/api/system.windows.application.dispatcherunhandledexception?view=windowsdesktop-6.0
         }
     }
 

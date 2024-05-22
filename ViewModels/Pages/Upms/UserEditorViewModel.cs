@@ -10,8 +10,6 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private bool editModel = true;
 
-        private SysUser sysUser;
-
         private long? userId;
 
         [Required(ErrorMessage ="该字段不能为空")]
@@ -19,7 +17,6 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         private string? username;
 
         partial void OnUsernameChanged(string? value)=>ValidateProperty(value,nameof(Username));
-
 
         [Required(ErrorMessage = "该字段不能为空")]
         [ObservableProperty]
@@ -32,11 +29,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private string? email;
 
-        //partial void OnEmailChanged(string? value) => ValidateProperty(value, nameof(Email));
-
         [ObservableProperty]
         private string? phone;
-        //partial void OnPhoneChanged(string? value) => ValidateProperty(value, nameof(Phone));
 
         [ObservableProperty]
         private BaseStatusEnum lockFlag;
@@ -49,24 +43,21 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         private FormSubmitEventHandler<SysUser> SubmitEvent;
 
-        public UserEditorViewModel(SysUser sysUser, FormSubmitEventHandler<SysUser> submitEvent) { 
-            this.sysUser = sysUser;
+        public UserEditorViewModel(SysUser sysUser, FormSubmitEventHandler<SysUser> submitEvent) {
+            this.SubmitEvent = submitEvent;
 
-            if (sysUser.UserId != null) {
+            if (sysUser.UserId.HasValue) {
                 this.userId = sysUser.UserId;
                 editModel = false;
             }
             
-            this.username = sysUser.Username;
-            this.infoCard = sysUser.InfoCard;
-            this.name = sysUser.Name;
-            this.email = sysUser.Email;
-            this.phone = sysUser.Phone;
-
-            this.lockFlag = sysUser.LockFlag;
-
-            this.remark = sysUser.Remark;
-            this.SubmitEvent = submitEvent;
+            this.Username = sysUser.Username;
+            this.InfoCard = sysUser.InfoCard;
+            this.Name = sysUser.Name;
+            this.Email = sysUser.Email;
+            this.Phone = sysUser.Phone;
+            this.LockFlag = sysUser.LockFlag;
+            this.Remark = sysUser.Remark;
         }
 
         [RelayCommand]
@@ -74,18 +65,19 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
             ValidateAllProperties();
             if (HasErrors) return;
+            SysUser entity = new()
+            {
+                UserId = userId,
+                Username = Username,
+                Name = Name,
+                Phone = Phone,
+                InfoCard = InfoCard,
+                Email = Email,
+                Remark = Remark,
+                LockFlag = LockFlag
+            };
 
-            sysUser.UserId = userId;
-            sysUser.Username = Username;
-            sysUser.Name = Name;
-            sysUser.Phone = Phone;
-            sysUser.InfoCard = InfoCard;
-            sysUser.Email = Email;
-            sysUser.Remark = Remark;
-            sysUser.LockFlag = LockFlag;
-
-            SubmitEvent(sysUser);
-
+            SubmitEvent(entity);
            
         }
 

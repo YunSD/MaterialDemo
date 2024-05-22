@@ -24,6 +24,12 @@ namespace MaterialDemo.ViewModels.Pages.Home
                 Content = "User",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Person24 },
                 TargetPageType = typeof(Views.Pages.Upms.UserView),
+            },
+            new NavigationViewItem()
+            {
+                Content = "物料管理",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.BoxMultipleSearch24 },
+                TargetPageType = typeof(Views.Pages.Business.StockMaterialView),
             }
         };
 

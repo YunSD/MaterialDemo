@@ -5,9 +5,8 @@
       xmlns:hc="https://handyorg.github.io/handycontrol"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:pages="clr-namespace:MaterialDemo.ViewModels.Pages"
+      xmlns:pages="clr-namespace:MaterialDemo.ViewModels.Pages.Base"
       Title="LOGIN"
-      d:DataContext="{d:DesignInstance Type=pages:LoginViewModel}"
       Background="{DynamicResource WindowBackground}"
       mc:Ignorable="d">
 

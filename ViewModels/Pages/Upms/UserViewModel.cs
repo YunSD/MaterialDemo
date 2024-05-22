@@ -83,7 +83,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             SysUser data = new SysUser();
             if (user != null) data = user; 
             UserEditorViewModel editorViewModel = new UserEditorViewModel(data, SubmitEventHandler);
-            var form = new UserEditor(editorViewModel);
+            var form = new UserEditorView(editorViewModel);
             var result = await DialogHost.Show(form, SystemConstant.RootDialog);
             logger.Debug(result);
         }
@@ -94,7 +94,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         /// </summary>
         /// <param name="sysUser"></param>
         private void SubmitEventHandler(SysUser sysUser) {
-            if (sysUser.UserId == null)
+            if (!sysUser.UserId.HasValue)
             {
                 Expression<Func<SysUser, bool>> pre = p => p.Username == sysUser.Username;
                 if (sys_db.Exists(pre))
