@@ -85,7 +85,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (entity != null) data = entity;
             StockMaterialEditorViewModel editorViewModel = new StockMaterialEditorViewModel(data, SubmitEventHandler);
             var form = new StockMaterialEditorView(editorViewModel);
-            var result = await DialogHost.Show(form, SystemConstant.RootDialog);
+            var result = await DialogHost.Show(form, BaseConstant.RootDialog);
             logger.Debug(result);
         }
 
@@ -94,24 +94,27 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// form save command
         /// </summary>
         private void SubmitEventHandler(StockMaterial entity) {
+            Expression<Func<StockMaterial, bool>> pre = p => p.Code == entity.Code;
+            if (entity.MaterialId.HasValue) pre = p => p.MaterialId != entity.MaterialId;
+            if (repository.Exists(pre))
+            {
+                SnackbarService.ShowError("物料编码：" + entity.Code + " 不能重复");
+                return;
+            }
+
             if (!entity.MaterialId.HasValue)
             {
-                Expression<Func<StockMaterial, bool>> pre = p => p.Code == entity.Code;
-                if (repository.Exists(pre))
-                {
-                    SnackbarService.ShowError("物料编码：" + entity.Code + " 不能重复");
-                    return;
-                }
                 entity.MaterialId = SnowflakeIdWorker.Singleton.nextId();
                 repository.Insert(entity);
             }
             else {
                 repository.Update(entity);
             }
+
             _unitOfWork.SaveChanges();
             repository.ChangeEntityState(entity, Microsoft.EntityFrameworkCore.EntityState.Detached);
             this.OnSearch();
-            DialogHost.Close(SystemConstant.RootDialog);
+            DialogHost.Close(BaseConstant.RootDialog);
         }
 
 
@@ -124,7 +127,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (!entity.MaterialId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.MaterialId;
-            var result = await DialogHost.Show(confirm, SystemConstant.RootDialog, DeleteRowData);
+            var result = await DialogHost.Show(confirm, BaseConstant.RootDialog, DeleteRowData);
         }
 
         // key

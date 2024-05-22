@@ -1,5 +1,6 @@
 ﻿using MaterialDemo.Domain;
 using MaterialDemo.Domain.Models.Entity;
+using MaterialDemo.Utils;
 using System.ComponentModel.DataAnnotations;
 
 namespace MaterialDemo.ViewModels.Pages.Business
@@ -75,9 +76,12 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         [RelayCommand]
         private void submit() {
-
             ValidateAllProperties();
             if (HasErrors) return;
+
+            // image copy
+            Image = BaseFileUtil.UpdateFile(Image);
+
             StockMaterial entity = new()
             {
                 MaterialId = this.key,
@@ -92,8 +96,6 @@ namespace MaterialDemo.ViewModels.Pages.Business
             };
 
             SubmitEvent(entity);
-
-
         }
 
     }

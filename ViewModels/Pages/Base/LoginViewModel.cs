@@ -56,7 +56,7 @@
         [RelayCommand]
         public void SubmitByPassword(Object param)
         {
-            PageUtil.ShowHostDialog(param);
+            BasePageUtil.ShowHostDialog(param);
             SysUser user = new SysUser();
             user.Username = "admin";
             user.Name = "admin";
@@ -64,7 +64,7 @@
             user.Email = "admin email";
             user.Phone = "admin phone";
             WeakReferenceMessenger.Default.Send(new LoginCompletedMessage(user));
-            PageUtil.CloseHostDialog();
+            BasePageUtil.CloseHostDialog();
         }
     }
 }
