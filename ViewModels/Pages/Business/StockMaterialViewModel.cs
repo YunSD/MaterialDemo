@@ -1,6 +1,7 @@
 ﻿using HandyControl.Data;
 using Linq.PredicateBuilder;
 using log4net;
+using MaterialDemo.Config.Extensions;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Config.UnitOfWork.Collections;
 using MaterialDemo.Controls;
@@ -40,12 +41,10 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         [RelayCommand]
         private void OnSearch() {
-            IQueryable<StockMaterial> Persons = repository.GetAll();
-            Expression<Func<StockMaterial, bool>> expression = (Expression<Func<StockMaterial, bool>>)Persons.Build(e => e.Equals(x => x.Code, "11")).Expression;
-            Expression<Func<StockMaterial, bool>> pre = p => p.Name != null && p.Name.Contains(SearchName);
-            if (!String.IsNullOrEmpty(SearchName)) pre = p => p.Name != null && p.Name.Contains(SearchName);
-            if(!String.IsNullOrEmpty(SearchCode)) pre = p => p.Name != null && p.Name.Contains(SearchCode);
-            
+
+            Expression<Func<StockMaterial, bool>> expression = ex => true;
+            if (!string.IsNullOrWhiteSpace(SearchName)) { expression = expression.MergeAnd(expression, exp => exp.Name != null && exp.Name.Contains(SearchName)); }
+            if (!string.IsNullOrWhiteSpace(SearchCode)) { expression = expression.MergeAnd(expression, exp => exp.Code != null && exp.Code.Contains(SearchCode)); }
 
             Func<IQueryable<StockMaterial>, IOrderedQueryable<StockMaterial>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
