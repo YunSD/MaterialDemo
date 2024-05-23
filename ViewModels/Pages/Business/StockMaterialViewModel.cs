@@ -113,6 +113,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             else {
                 repository.Update(entity);
             }
+
             _unitOfWork.SaveChanges();
             repository.ChangeEntityState(entity, Microsoft.EntityFrameworkCore.EntityState.Detached);
             this.OnSearch();
