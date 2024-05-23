@@ -1,4 +1,5 @@
-﻿using MaterialDemo.ViewModels.Pages.Business;
+﻿using MaterialDemo.Utils;
+using MaterialDemo.ViewModels.Pages.Business;
 using System.Windows.Controls;
 
 namespace MaterialDemo.Views.Pages.Business
@@ -15,11 +16,20 @@ namespace MaterialDemo.Views.Pages.Business
             this.ViewModel = viewModel;
             this.DataContext = this;
             InitializeComponent();
+
+            BasePageUtil.ShowImageSelector(MaterialImageSelector, ViewModel.Image);
         }
 
         private void ImageSelector_ImageSelected(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine();
+            if (sender is HandyControl.Controls.ImageSelector)
+            {
+                Uri imageUri = ((HandyControl.Controls.ImageSelector)sender).Uri;
+                if (imageUri != null)
+                {
+                    this.ViewModel.Image = imageUri.LocalPath;
+                }
+            }
         }
     }
 }

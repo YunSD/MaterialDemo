@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaterialDemo.Security.Messages
+namespace MaterialDemo.Config.Security.Messages
 {
     public sealed class LogoutMessage
     {

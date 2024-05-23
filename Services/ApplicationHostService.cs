@@ -3,13 +3,8 @@
 // Copyright (C) Leszek Pomianowski and WPF UI Contributors.
 // All Rights Reserved.
 
-using MaterialDemo.Views.Pages.Login;
 using MaterialDemo.Views.Windows;
-using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.Hosting;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Media;
 
 
 namespace MaterialDemo.Services
@@ -21,7 +16,7 @@ namespace MaterialDemo.Services
     {
         private readonly IServiceProvider _serviceProvider = serviceProvider;
 
-        private MainWindow _mainWindow;
+        private MainWindow? _mainWindow;
 
         /// <summary>
         /// Triggered when the application host is ready to start the service.

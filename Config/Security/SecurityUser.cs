@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
+using MaterialDemo.Config.Security.Messages;
 using MaterialDemo.Domain.Models.Entity;
-using MaterialDemo.Security.Messages;
 using System;
 using System.Collections.Generic;
 using System.Linq;

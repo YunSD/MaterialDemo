@@ -15,11 +15,11 @@ using MaterialDemo.Config;
 using MaterialDemo.Security;
 using MaterialDemo.Views.Pages.Base;
 using MaterialDemo.ViewModels.Pages.Home;
-using Wpf.Ui;
 using UiDesktopApp1.Services;
 using MaterialDemo.Config.DependencyModel;
 using log4net;
 using MaterialDemo.ViewModels.Pages.Base;
+using Wpf.Ui;
 
 
 namespace MaterialDemo

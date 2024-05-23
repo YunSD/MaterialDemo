@@ -7,7 +7,9 @@ using MaterialDemo.Domain.Models;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Utils;
 using MaterialDemo.Views.Pages.Upms;
+using System.DirectoryServices;
 using System.Linq.Expressions;
+using Windows.ApplicationModel.Search;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
 
@@ -39,13 +41,13 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         [RelayCommand]
         private void OnSearch() {
-            Expression<Func<SysUser, bool>> pre = null;
-            if(!String.IsNullOrEmpty(Username)) pre = p => p.Username != null && p.Username.Contains(Username);
-            if(!String.IsNullOrEmpty(Name)) pre = p => p.Name != null && p.Name.Contains(Name);
+            Expression<Func<SysUser, bool>> query = null;
+            if (!String.IsNullOrEmpty(Username)) query = p => p.Username != null && p.Username.Contains(Username);
+            if (!String.IsNullOrEmpty(Name)) query = p => p.Name != null && p.Name.Contains(Name);
 
             Func<IQueryable<SysUser>, IOrderedQueryable<SysUser>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
-            IPagedList<SysUser> pageList = sys_db.GetPagedList(predicate: pre, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
+            IPagedList<SysUser> pageList = sys_db.GetPagedList(query, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);
         }
 
@@ -84,7 +86,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             if (user != null) data = user; 
             UserEditorViewModel editorViewModel = new UserEditorViewModel(data, SubmitEventHandler);
             var form = new UserEditorView(editorViewModel);
-            var result = await DialogHost.Show(form, SystemConstant.RootDialog);
+            var result = await DialogHost.Show(form, BaseConstant.RootDialog);
             logger.Debug(result);
         }
 
@@ -111,7 +113,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             _unitOfWork.SaveChanges();
             sys_db.ChangeEntityState(sysUser, Microsoft.EntityFrameworkCore.EntityState.Detached);
             this.OnSearch();
-            DialogHost.Close(SystemConstant.RootDialog);
+            DialogHost.Close(BaseConstant.RootDialog);
         }
 
 
@@ -125,7 +127,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             if (!sys.UserId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = sys.UserId;
-            var result = await DialogHost.Show(confirm, SystemConstant.RootDialog, DeleteRowData);
+            var result = await DialogHost.Show(confirm, BaseConstant.RootDialog, DeleteRowData);
         }
 
         // key

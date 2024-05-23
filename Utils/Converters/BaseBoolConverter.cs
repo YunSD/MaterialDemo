@@ -14,13 +14,13 @@ namespace MaterialDemo.Utils.Converters
         //如果value为0，则返回false，否则返回true
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return String.Equals((string)value, SystemConstant.SUCCESS);
+            return String.Equals((string)value, BaseConstant.SUCCESS);
         }
         //ConvertBack方法的value参数，为绑定目标数据，此例中为bool类型
         //如果value为true，则返回1，否则返回0
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (bool)value ? SystemConstant.SUCCESS : SystemConstant.FAIL;
+            return (bool)value ? BaseConstant.SUCCESS : BaseConstant.FAIL;
         }
     }
 }

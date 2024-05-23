@@ -17,7 +17,7 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Resources/Themes/Common/CommonGrid.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Resources/Common/CommonGrid.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>

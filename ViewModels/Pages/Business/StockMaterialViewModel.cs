@@ -1,4 +1,5 @@
 ﻿using HandyControl.Data;
+using Linq.PredicateBuilder;
 using log4net;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Config.UnitOfWork.Collections;
@@ -6,9 +7,7 @@ using MaterialDemo.Controls;
 using MaterialDemo.Domain.Models;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Utils;
-using MaterialDemo.ViewModels.Pages.Upms;
 using MaterialDemo.Views.Pages.Business;
-using MaterialDemo.Views.Pages.Upms;
 using System.Linq.Expressions;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
@@ -41,13 +40,16 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         [RelayCommand]
         private void OnSearch() {
-            Expression<Func<StockMaterial, bool>> pre = null;
-            if(!String.IsNullOrEmpty(SearchName)) pre = p => p.Name != null && p.Name.Contains(SearchName);
+            IQueryable<StockMaterial> Persons = repository.GetAll();
+            Expression<Func<StockMaterial, bool>> expression = (Expression<Func<StockMaterial, bool>>)Persons.Build(e => e.Equals(x => x.Code, "11")).Expression;
+            Expression<Func<StockMaterial, bool>> pre = p => p.Name != null && p.Name.Contains(SearchName);
+            if (!String.IsNullOrEmpty(SearchName)) pre = p => p.Name != null && p.Name.Contains(SearchName);
             if(!String.IsNullOrEmpty(SearchCode)) pre = p => p.Name != null && p.Name.Contains(SearchCode);
+            
 
             Func<IQueryable<StockMaterial>, IOrderedQueryable<StockMaterial>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
-            IPagedList<StockMaterial> pageList = repository.GetPagedList(predicate: pre, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
+            IPagedList<StockMaterial> pageList = repository.GetPagedList(predicate: expression, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);
         }
 
@@ -85,7 +87,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (entity != null) data = entity;
             StockMaterialEditorViewModel editorViewModel = new StockMaterialEditorViewModel(data, SubmitEventHandler);
             var form = new StockMaterialEditorView(editorViewModel);
-            var result = await DialogHost.Show(form, SystemConstant.RootDialog);
+            var result = await DialogHost.Show(form, BaseConstant.RootDialog);
             logger.Debug(result);
         }
 
@@ -94,14 +96,17 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// form save command
         /// </summary>
         private void SubmitEventHandler(StockMaterial entity) {
+
+            Expression<Func<StockMaterial, bool>> pre = p => p.Code == entity.Code && p.MaterialId != entity.MaterialId;
+            
+            if (repository.Exists(pre))
+            {
+                SnackbarService.ShowError("物料编码：" + entity.Code + " 不能重复");
+                return;
+            }
+
             if (!entity.MaterialId.HasValue)
             {
-                Expression<Func<StockMaterial, bool>> pre = p => p.Code == entity.Code;
-                if (repository.Exists(pre))
-                {
-                    SnackbarService.ShowError("物料编码：" + entity.Code + " 不能重复");
-                    return;
-                }
                 entity.MaterialId = SnowflakeIdWorker.Singleton.nextId();
                 repository.Insert(entity);
             }
@@ -111,7 +116,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             _unitOfWork.SaveChanges();
             repository.ChangeEntityState(entity, Microsoft.EntityFrameworkCore.EntityState.Detached);
             this.OnSearch();
-            DialogHost.Close(SystemConstant.RootDialog);
+            DialogHost.Close(BaseConstant.RootDialog);
         }
 
 
@@ -124,7 +129,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (!entity.MaterialId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.MaterialId;
-            var result = await DialogHost.Show(confirm, SystemConstant.RootDialog, DeleteRowData);
+            var result = await DialogHost.Show(confirm, BaseConstant.RootDialog, DeleteRowData);
         }
 
         // key

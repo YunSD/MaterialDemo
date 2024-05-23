@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaterialDemo.Utils
 {
-    public sealed class SystemConstant
+    public sealed class BaseConstant
     {
         public static readonly string RootDialog = "RootDialog";
 

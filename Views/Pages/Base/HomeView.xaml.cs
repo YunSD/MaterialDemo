@@ -1,22 +1,6 @@
-﻿using MaterialDemo.Domain;
-using MaterialDemo.ViewModels.Pages;
-using MaterialDemo.ViewModels.Pages.Home;
-using MaterialDemo.ViewModels.Pages.Upms;
+﻿using MaterialDemo.ViewModels.Pages.Home;
 using MaterialDemo.ViewModels.Windows;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
 

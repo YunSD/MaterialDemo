@@ -1,4 +1,4 @@
-﻿namespace MaterialDemo.Security.Messages
+﻿namespace MaterialDemo.Config.Security.Messages
 {
     public sealed class LoginCompletedRedirectionMessage
     {
