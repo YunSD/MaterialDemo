@@ -41,6 +41,7 @@
 
         <ui:NavigationView x:Name="RootNavigation"
                            Grid.Row="1"
+                           OpenPaneLength="200"
                            Padding="10,5,10,0"
                            FooterMenuItemsSource="{Binding NavigationItems.FooterMenuItems, Mode=OneWay}"
                            FrameMargin="0"

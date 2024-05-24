@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,11 @@ namespace MaterialDemo.Config.Extensions
 {
     public static class ObjectExtensions
     {
-        public static void IfPresent<T>(this T obj, Action<T> action) where T : class
+        public static void GetFirstIfPresent<TSource>(this IEnumerable<TSource> source, Action<TSource> action) where TSource : class
         {
-            if (obj != null)
-            {
+            if (source != null && source.Any())
+            {   
+                TSource obj = source.First();
                 action(obj);
             }
         }

@@ -64,14 +64,14 @@ namespace MaterialDemo.ViewModels.Pages.Business
                 this.key = entity.MaterialId;
                 editModel = false;
             }
-            this.Name = entity.Name;
-            this.Code = entity.Code;
-            this.model = entity.Model;
-            this.unit = entity.Unit;
-            this.Image = entity.Image;
-            if(entity.MaxQuantity.HasValue) this.MaxQuantity = entity.MaxQuantity.Value;
-            if(entity.MinQuantity.HasValue) this.MinQuantity = entity.MinQuantity.Value;
-            this.Remark = entity.Remark;
+            //this.Name = entity.Name;
+            //this.Code = entity.Code;
+            //this.model = entity.Model;
+            //this.unit = entity.Unit;
+            //this.Image = entity.Image;
+            //if(entity.MaxQuantity.HasValue) this.MaxQuantity = entity.MaxQuantity.Value;
+            //if(entity.MinQuantity.HasValue) this.MinQuantity = entity.MinQuantity.Value;
+            //this.Remark = entity.Remark;
         }
 
         [RelayCommand]

@@ -42,9 +42,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         #region View Field
 
-        // 仓库名称
+        // 货位号
         [ObservableProperty]
-        private string? _searchWarehouse;
+        private string? _searchCode;
 
         // 货架号
         [ObservableProperty]
@@ -55,7 +55,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private void OnSearch() {
 
             Expression<Func<StockShelf, bool>> expression = ex => true;
-            if (!string.IsNullOrWhiteSpace(SearchWarehouse)) expression = expression.MergeAnd(expression, exp => exp.WarehouseName != null && exp.WarehouseName.Contains(SearchWarehouse));
+            if (!string.IsNullOrWhiteSpace(SearchCode)) expression = expression.MergeAnd(expression, exp => exp.Code != null && exp.Code.Contains(SearchCode));
             if (!string.IsNullOrWhiteSpace(SearchShelvesCode)) expression = expression.MergeAnd(expression, exp => exp.ShelvesCode != null && exp.ShelvesCode.Contains(SearchShelvesCode));
 
             Func<IQueryable<StockShelf>, IOrderedQueryable<StockShelf>> orderBy = q => q.OrderBy(u => u.CreateTime);
@@ -65,20 +65,20 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
             List<ElectronicTag> electronicTags = new ();
             List<StockMaterial> stockMaterials = new ();
-            if (!pageList.Items.Any()) {
+            if (pageList.Items.Any()) {
                 List<long?> tag_ids = pageList.Items.ToList().Select(x => x.TagId).Where(x => x.HasValue).ToList();
                 List<long?> material_ids = pageList.Items.ToList().Select(x => x.MaterialId).Where(x => x.HasValue).ToList();
-                if(!tag_ids.Any())
+                if(tag_ids.Any())
                     electronicTags.AddRange(tag_repository.GetAll(predicate: pre => tag_ids.Contains(pre.TagId)).ToList());
-                if (!material_ids.Any())
+                if (material_ids.Any())
                     stockMaterials.AddRange(material_repository.GetAll(predicate: pre => material_ids.Contains(pre.MaterialId)).ToList());
             }
 
 
             var date = pageList.Items.Select(ss => {
                 StockShelfViewInfo viewInfo = MapperUtil.Map<StockShelf,StockShelfViewInfo>(ss);
-                electronicTags.Where(tag => tag.TagId == viewInfo.TagId).First().IfPresent(entity => viewInfo.ElectronicTag = entity);
-                stockMaterials.Where(tag => tag.MaterialId == viewInfo.MaterialId).First().IfPresent(entity => viewInfo.StockMaterial = entity);
+                electronicTags.Where(tag => tag.TagId == viewInfo.TagId).GetFirstIfPresent(entity => viewInfo.ElectronicTag = entity);
+                stockMaterials.Where(tag => tag.MaterialId == viewInfo.MaterialId).GetFirstIfPresent(entity => viewInfo.StockMaterial = entity);
                 return viewInfo;
             }).ToList();
 
@@ -88,7 +88,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [RelayCommand]
         private void OnRefresh()
         {
-            this.SearchWarehouse = null;
+            this.SearchCode = null;
             this.SearchShelvesCode = null;
             this.OnSearch();
         }
@@ -115,12 +115,16 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [RelayCommand]
         private async Task OpenEditForm(StockShelfViewInfo? entity)
         {
-            StockShelfViewInfo data = new ();
-            if (entity != null) data = entity;
-            StockShelfEditorViewModel editorViewModel = new StockShelfEditorViewModel(data, SubmitEventHandler);
-            var form = new ElectronicTagEditorView(editorViewModel);
-            var result = await DialogHost.Show(form, BaseConstant.RootDialog);
-            logger.Debug(result);
+            var confirm1 = new ConfirmDialog("确认删除1？");
+            DialogHost.Show(confirm1, BaseConstant.RootDialog, DeleteRowData);
+            var confirm2 = new ConfirmDialog("确认删除2？");
+            DialogHost.Show(confirm2, BaseConstant.RootDialog, DeleteRowData);
+            //StockShelfViewInfo data = new ();
+            //if (entity != null) data = entity;
+            //StockShelfEditorViewModel editorViewModel = new StockShelfEditorViewModel(data, SubmitEventHandler);
+            //var form = new ElectronicTagEditorView(editorViewModel);
+            //var result = await DialogHost.Show(form, BaseConstant.RootDialog);
+            //logger.Debug(result);
         }
 
 
@@ -166,7 +170,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// </summary>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(ElectronicTag entity) {
+        private async Task DelConfirm(StockShelf entity) {
             if (!entity.TagId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.TagId;

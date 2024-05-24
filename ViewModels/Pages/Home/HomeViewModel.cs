@@ -31,6 +31,12 @@ namespace MaterialDemo.ViewModels.Pages.Home
                 Content = "标签管理",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.TagMultiple24 },
                 TargetPageType = typeof(Views.Pages.Business.ElectronicTagView),
+            },
+            new NavigationViewItem()
+            {
+                Content = "货位管理",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.AppFolder24 },
+                TargetPageType = typeof(Views.Pages.Business.StockShelfView),
             }
         };
 
