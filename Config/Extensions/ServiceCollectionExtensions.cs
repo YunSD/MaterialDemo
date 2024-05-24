@@ -6,7 +6,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace MaterialDemo.Config.DependencyModel;
+namespace MaterialDemo.Config.Extensions;
 
 internal static class ServiceCollectionExtensions
 {

@@ -1,5 +1,6 @@
 ﻿using HandyControl.Data;
 using log4net;
+using MaterialDemo.Config.Extensions;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Config.UnitOfWork.Collections;
 using MaterialDemo.Controls;
@@ -41,13 +42,14 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         [RelayCommand]
         private void OnSearch() {
-            Expression<Func<SysUser, bool>> query = null;
-            if (!String.IsNullOrEmpty(Username)) query = p => p.Username != null && p.Username.Contains(Username);
-            if (!String.IsNullOrEmpty(Name)) query = p => p.Name != null && p.Name.Contains(Name);
+
+            Expression<Func<SysUser, bool>> expression = ex => true;
+            if (!string.IsNullOrWhiteSpace(Username)) { expression = expression.MergeAnd(expression, exp => exp.Username != null && exp.Username.Contains(Username)); }
+            if (!string.IsNullOrWhiteSpace(Name)) { expression = expression.MergeAnd(expression, exp => exp.Name != null && exp.Name.Contains(Name)); }
 
             Func<IQueryable<SysUser>, IOrderedQueryable<SysUser>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
-            IPagedList<SysUser> pageList = sys_db.GetPagedList(query, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
+            IPagedList<SysUser> pageList = sys_db.GetPagedList(expression, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);
         }
 
