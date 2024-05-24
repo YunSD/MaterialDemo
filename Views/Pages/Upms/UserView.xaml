@@ -125,11 +125,11 @@
                                             <Style TargetType="TextBlock">
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding LockFlag}" Value="0">
-                                                        <Setter Property="Background" Value="Green" />
+                                                        <Setter Property="Background" Value="{StaticResource BaseSuccessBrush}" />
                                                         <Setter Property="Text" Value="正常" />
                                                     </DataTrigger>
                                                     <DataTrigger Binding="{Binding LockFlag}" Value="1">
-                                                        <Setter Property="Background" Value="Red" />
+                                                        <Setter Property="Background" Value="{StaticResource BaseErrorBrush}" />
                                                         <Setter Property="Text" Value="异常" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
@@ -145,7 +145,7 @@
                     <DataGridTemplateColumn Width="*" CanUserResize="False" Header="操作">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                                     <Button Background="White" Command="{Binding DataContext.ViewModel.OpenEditFormCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="{StaticResource TableRowEditBrush}" Style="{StaticResource BaseTableGirdRowButton}" ToolTip="编辑">
                                         <materialDesign:PackIcon Kind="FileDocumentEditOutline" Style="{StaticResource BaseTableGirdRowButtonPackIcon}" />
 

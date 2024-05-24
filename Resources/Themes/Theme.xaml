@@ -20,6 +20,11 @@
     <SolidColorBrush x:Key="InputBorderBrush" Color="#CACACA" />
     <SolidColorBrush x:Key="InputForeground" Color="#0D062D" />
 
+    <SolidColorBrush x:Key="BaseSuccessBrush" Color="DarkGreen" />
+    <SolidColorBrush x:Key="BaseErrorBrush" Color="#DB261D" />
+
+
+
 
     <!--  PAGE  -->
     <SolidColorBrush x:Key="PageBackgroundBrush" Color="#F5F5F5" />
@@ -27,7 +32,7 @@
     <SolidColorBrush x:Key="TableHeadAddBrush" Color="#2E7D32" />
 
     <SolidColorBrush x:Key="TableRowEditBrush" Color="#2E7D32" />
-    <SolidColorBrush x:Key="TableRowDeleteBrush" Color="red" />
+    <SolidColorBrush x:Key="TableRowDeleteBrush" Color="#DB261D" />
 
     <!--  FORM  -->
     <SolidColorBrush x:Key="FormBackgroundBrush" Color="#FFFFFF" />

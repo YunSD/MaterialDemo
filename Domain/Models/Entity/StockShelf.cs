@@ -24,6 +24,7 @@ namespace MaterialDemo.Domain.Models.Entity
         [Column("tag_id")]
         public long? TagId { get; set; }
 
+        // 货位号
         public string? Code { get; set; }
 
         [Column("bar_code")]

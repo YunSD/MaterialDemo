@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="HandyControl" Version="3.5.1" />
     <PackageReference Include="HotChocolate" Version="13.9.0" />
@@ -55,6 +56,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Pages\Business\ElectronicTagView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Business\ElectronicTagEditorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Business\StockMaterialView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

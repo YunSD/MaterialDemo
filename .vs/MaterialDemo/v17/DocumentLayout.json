@@ -1,70 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\",
+  "WorkspaceRootPath": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\utils\\converters\\basefilepathconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:utils\\converters\\basefilepathconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\business\\stockshelfviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\business\\stockshelfviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\pages\\business\\stockmaterialview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\business\\stockmaterialview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\business\\stockshelfeditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\business\\stockshelfeditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\common\\commonform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\common\\commonform.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\domain\\models\\entity\\stockshelf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\models\\entity\\stockshelf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\resources\\common\\commongrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:resources\\common\\commongrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:domain\\models\\pageviewmodelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\upms\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\viewmodels\\pages\\business\\vobject\\stockshelfviewinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\business\\vobject\\stockshelfviewinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\viewmodels\\pages\\business\\stockmaterialviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\business\\stockmaterialviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\config\\extensions\\objectextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:config\\extensions\\objectextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\config\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:config\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\utils\\mapperutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:utils\\mapperutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\config\\extensions\\predicateextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:config\\extensions\\predicateextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\config\\db\\basedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:config\\db\\basedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\viewmodels\\pages\\business\\stockmaterialeditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:viewmodels\\pages\\business\\stockmaterialeditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\usings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:usings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\services\\pageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:services\\pageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\component\\controls\\wpfui\\titlebar\\titlebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:component\\controls\\wpfui\\titlebar\\titlebar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\utils\\basepageutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:utils\\basepageutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\yun\\desktop\\code\\materialdemo\\views\\pages\\business\\stockmaterialeditorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:views\\pages\\business\\stockmaterialeditorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|c:\\users\\zzz\\desktop\\code\\win\\c#\\materialdemo\\config\\db\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB38C2C8-9101-4B2E-81F0-EE17ACF2955D}|MaterialDemo.csproj|solutionrelative:config\\db\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -73,224 +45,143 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 49,
+          "SelectedChildIndex": 9,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StockShelfEditorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Business\\StockShelfEditorViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Pages\\Business\\StockShelfEditorViewModel.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Business\\StockShelfEditorViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Pages\\Business\\StockShelfEditorViewModel.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAswDsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T08:54:07.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StockShelf.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\Entity\\StockShelf.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\Entity\\StockShelf.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\Entity\\StockShelf.cs",
+              "RelativeToolTip": "Domain\\Models\\Entity\\StockShelf.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAUwBsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T08:39:51.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PageViewModelBase.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs",
+              "RelativeDocumentMoniker": "Domain\\Models\\PageViewModelBase.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Domain\\Models\\PageViewModelBase.cs",
+              "RelativeToolTip": "Domain\\Models\\PageViewModelBase.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAADwvy4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T08:29:12.45Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BaseFilePathConverter.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Utils\\Converters\\BaseFilePathConverter.cs",
-              "RelativeDocumentMoniker": "Utils\\Converters\\BaseFilePathConverter.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Utils\\Converters\\BaseFilePathConverter.cs",
-              "RelativeToolTip": "Utils\\Converters\\BaseFilePathConverter.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAADwvw4AAAArAAAA",
+              "DocumentIndex": 5,
+              "Title": "ObjectExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\Extensions\\ObjectExtensions.cs",
+              "RelativeDocumentMoniker": "Config\\Extensions\\ObjectExtensions.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\Extensions\\ObjectExtensions.cs",
+              "RelativeToolTip": "Config\\Extensions\\ObjectExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T15:15:04.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CommonGrid.xaml",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Common\\CommonGrid.xaml",
-              "RelativeDocumentMoniker": "Resources\\Common\\CommonGrid.xaml",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Common\\CommonGrid.xaml",
-              "RelativeToolTip": "Resources\\Common\\CommonGrid.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T15:12:45.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CommonForm.xaml",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Common\\CommonForm.xaml",
-              "RelativeDocumentMoniker": "Resources\\Common\\CommonForm.xaml",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Resources\\Common\\CommonForm.xaml",
-              "RelativeToolTip": "Resources\\Common\\CommonForm.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T15:12:25.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StockMaterialView.xaml",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Business\\StockMaterialView.xaml",
-              "RelativeDocumentMoniker": "Views\\Pages\\Business\\StockMaterialView.xaml",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Business\\StockMaterialView.xaml",
-              "RelativeToolTip": "Views\\Pages\\Business\\StockMaterialView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T15:10:32.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "RelativeToolTip": "ViewModels\\Pages\\Upms\\UserViewModel.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAAADcAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T14:59:39.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-23T14:35:56.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PageService.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Services\\PageService.cs",
-              "RelativeDocumentMoniker": "Services\\PageService.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Services\\PageService.cs",
-              "RelativeToolTip": "Services\\PageService.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAEwCEAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T14:35:47.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "TitleBar.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Component\\Controls\\WPFUI\\TitleBar\\TitleBar.cs",
-              "RelativeDocumentMoniker": "Component\\Controls\\WPFUI\\TitleBar\\TitleBar.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Component\\Controls\\WPFUI\\TitleBar\\TitleBar.cs",
-              "RelativeToolTip": "Component\\Controls\\WPFUI\\TitleBar\\TitleBar.cs",
-              "ViewState": "AQIAADIBAAAAAAAAAAD4v0QBAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T14:34:49.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Usings.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Usings.cs",
-              "RelativeDocumentMoniker": "Usings.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Usings.cs",
-              "RelativeToolTip": "Usings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwIAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T14:33:44.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T14:32:14.368Z",
+              "WhenOpened": "2024-05-24T08:26:53.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Config\\Extensions\\ServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "Config\\Extensions\\ServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Config\\Extensions\\ServiceCollectionExtensions.cs",
-              "RelativeToolTip": "Config\\Extensions\\ServiceCollectionExtensions.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAADwvxUAAAAbAAAA",
+              "Title": "MapperUtil.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Utils\\MapperUtil.cs",
+              "RelativeDocumentMoniker": "Utils\\MapperUtil.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Utils\\MapperUtil.cs",
+              "RelativeToolTip": "Utils\\MapperUtil.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T14:31:27.072Z",
+              "WhenOpened": "2024-05-24T07:56:16.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "PredicateExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Config\\Extensions\\PredicateExtensions.cs",
-              "RelativeDocumentMoniker": "Config\\Extensions\\PredicateExtensions.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Config\\Extensions\\PredicateExtensions.cs",
-              "RelativeToolTip": "Config\\Extensions\\PredicateExtensions.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAmwCsAAAARAAAA",
+              "Title": "BaseDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\Db\\BaseDbContext.cs",
+              "RelativeDocumentMoniker": "Config\\Db\\BaseDbContext.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\Db\\BaseDbContext.cs",
+              "RelativeToolTip": "Config\\Db\\BaseDbContext.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA+wCkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T14:30:52.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StockMaterialViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Business\\StockMaterialViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Pages\\Business\\StockMaterialViewModel.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Business\\StockMaterialViewModel.cs",
-              "RelativeToolTip": "ViewModels\\Pages\\Business\\StockMaterialViewModel.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAUwC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T13:58:23.564Z",
+              "WhenOpened": "2024-05-24T07:21:32.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "StockMaterialEditorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Business\\StockMaterialEditorViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Pages\\Business\\StockMaterialEditorViewModel.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\ViewModels\\Pages\\Business\\StockMaterialEditorViewModel.cs",
-              "RelativeToolTip": "ViewModels\\Pages\\Business\\StockMaterialEditorViewModel.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAcwDEAAAAAAAAA",
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\Db\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Config\\Db\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\Config\\Db\\BaseEntity.cs",
+              "RelativeToolTip": "Config\\Db\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T16:27:54.1Z",
+              "WhenOpened": "2024-05-24T07:21:31.355Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "BasePageUtil.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Utils\\BasePageUtil.cs",
-              "RelativeDocumentMoniker": "Utils\\BasePageUtil.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Utils\\BasePageUtil.cs",
-              "RelativeToolTip": "Utils\\BasePageUtil.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAACsAAABVAAAA",
+              "DocumentIndex": 4,
+              "Title": "StockShelfViewInfo.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Business\\VObject\\StockShelfViewInfo.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Pages\\Business\\VObject\\StockShelfViewInfo.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Business\\VObject\\StockShelfViewInfo.cs",
+              "RelativeToolTip": "ViewModels\\Pages\\Business\\VObject\\StockShelfViewInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T16:02:42.669Z"
+              "WhenOpened": "2024-05-24T06:59:39.946Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "StockMaterialEditorView.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Business\\StockMaterialEditorView.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\Pages\\Business\\StockMaterialEditorView.xaml.cs",
-              "ToolTip": "C:\\Users\\Yun\\Desktop\\code\\MaterialDemo\\Views\\Pages\\Business\\StockMaterialEditorView.xaml.cs",
-              "RelativeToolTip": "Views\\Pages\\Business\\StockMaterialEditorView.xaml.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAswBUAAAAiAAAA",
+              "DocumentIndex": 0,
+              "Title": "StockShelfViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Business\\StockShelfViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Pages\\Business\\StockShelfViewModel.cs",
+              "ToolTip": "C:\\Users\\zzz\\Desktop\\code\\win\\C#\\MaterialDemo\\ViewModels\\Pages\\Business\\StockShelfViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Pages\\Business\\StockShelfViewModel.cs",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAG4AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T15:31:39.594Z"
+              "WhenOpened": "2024-05-24T06:49:17.644Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 174,
+          "DockedWidth": 325,
           "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{2d7728c2-de0a-45b5-99aa-89b609dfde73}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
