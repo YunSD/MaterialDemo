@@ -33,6 +33,9 @@ namespace MaterialDemo.Config.EFDB
                 e.Property(e => e.Type).HasConversion(v => v.ToString(), v => (MaterialStatementTypeEnum)Enum.Parse(typeof(MaterialStatementTypeEnum), v));
             });
 
+            modelBuilder.Entity<StockShelf>(e => {
+                e.Property(e => e.ScalesStatus).HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));
+            });
 
             modelBuilder.Entity<ElectronicTag>(e => {
                 e.Property(e => e.ConnectStatus).HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));

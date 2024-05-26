@@ -88,7 +88,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             if (user != null) data = user; 
             UserEditorViewModel editorViewModel = new UserEditorViewModel(data, SubmitEventHandler);
             var form = new UserEditorView(editorViewModel);
-            var result = await DialogHost.Show(form, BaseConstant.RootDialog);
+            var result = await DialogHost.Show(form, BaseConstant.BaseDialog);
             logger.Debug(result);
         }
 
@@ -115,7 +115,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             _unitOfWork.SaveChanges();
             sys_db.ChangeEntityState(sysUser, Microsoft.EntityFrameworkCore.EntityState.Detached);
             this.OnSearch();
-            DialogHost.Close(BaseConstant.RootDialog);
+            DialogHost.Close(BaseConstant.BaseDialog);
         }
 
 
@@ -129,7 +129,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             if (!sys.UserId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = sys.UserId;
-            var result = await DialogHost.Show(confirm, BaseConstant.RootDialog, DeleteRowData);
+            var result = await DialogHost.Show(confirm, BaseConstant.BaseDialog, DeleteRowData);
         }
 
         // key

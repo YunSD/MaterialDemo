@@ -26,7 +26,9 @@
     <!--  WindowStyle="None" AllowsTransparency="True"  WindowState="Maximized"  -->
     <Grid>
         <materialDesign:DialogHost Name="HostDialog" DialogTheme="Inherit" Identifier="RootDialog" Style="{StaticResource MaterialDesignEmbeddedDialogHost}">
-            <Frame x:Name="MainFrame" BorderThickness="0" NavigationUIVisibility="Hidden" />
+            <materialDesign:DialogHost DialogTheme="Inherit" Identifier="BaseDialog" Style="{StaticResource MaterialDesignEmbeddedDialogHost}">
+                <Frame x:Name="MainFrame" BorderThickness="0" NavigationUIVisibility="Hidden" />
+            </materialDesign:DialogHost>
         </materialDesign:DialogHost>
         <ui:SnackbarPresenter x:Name="SnackbarPresenter" />
     </Grid>

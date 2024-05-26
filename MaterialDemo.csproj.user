@@ -192,10 +192,16 @@
     <Page Update="Views\Pages\Base\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Pages\Business\StockShelfElectronicTagSelectedView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\Business\ElectronicTagView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Business\ElectronicTagEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Business\StockShelfEditorView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Business\StockShelfView.xaml">

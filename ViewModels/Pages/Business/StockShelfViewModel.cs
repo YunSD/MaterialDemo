@@ -31,12 +31,18 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private readonly IRepository<ElectronicTag> tag_repository;
         private readonly IRepository<StockMaterial> material_repository;
 
-        public StockShelfViewModel(IUnitOfWork unitOfWork)
+        private ElectronicTagViewModel TagViewModel { get; }
+        private StockMaterialViewModel MaterialViewModel { get; }
+
+        public StockShelfViewModel(IUnitOfWork unitOfWork, ElectronicTagViewModel tagViewModel, StockMaterialViewModel materialViewModel)
         {
             _unitOfWork = unitOfWork;
             repository = _unitOfWork.GetRepository<StockShelf>();
             tag_repository = _unitOfWork.GetRepository<ElectronicTag>();
             material_repository = _unitOfWork.GetRepository<StockMaterial>();
+            
+            TagViewModel = tagViewModel;
+            MaterialViewModel = materialViewModel;
         }
 
 
@@ -115,16 +121,12 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [RelayCommand]
         private async Task OpenEditForm(StockShelfViewInfo? entity)
         {
-            var confirm1 = new ConfirmDialog("确认删除1？");
-            DialogHost.Show(confirm1, BaseConstant.RootDialog, DeleteRowData);
-            var confirm2 = new ConfirmDialog("确认删除2？");
-            DialogHost.Show(confirm2, BaseConstant.RootDialog, DeleteRowData);
-            //StockShelfViewInfo data = new ();
-            //if (entity != null) data = entity;
-            //StockShelfEditorViewModel editorViewModel = new StockShelfEditorViewModel(data, SubmitEventHandler);
-            //var form = new ElectronicTagEditorView(editorViewModel);
-            //var result = await DialogHost.Show(form, BaseConstant.RootDialog);
-            //logger.Debug(result);
+            StockShelfViewInfo data = new();
+            if (entity != null) data = entity;
+            StockShelfEditorViewModel editorViewModel = new StockShelfEditorViewModel(data, SubmitEventHandler);
+            var form = new StockShelfEditorView(editorViewModel, TagViewModel, MaterialViewModel);
+            var result = await DialogHost.Show(form, BaseConstant.BaseDialog);
+            logger.Debug(result);
         }
 
 
@@ -161,7 +163,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             _unitOfWork.SaveChanges();
             repository.ChangeEntityState(entity, Microsoft.EntityFrameworkCore.EntityState.Detached);
             this.OnSearch();
-            DialogHost.Close(BaseConstant.RootDialog);
+            DialogHost.Close(BaseConstant.BaseDialog);
         }
 
 
@@ -174,7 +176,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (!entity.TagId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.TagId;
-            var result = await DialogHost.Show(confirm, BaseConstant.RootDialog, DeleteRowData);
+            var result = await DialogHost.Show(confirm, BaseConstant.BaseDialog, DeleteRowData);
         }
 
         // key

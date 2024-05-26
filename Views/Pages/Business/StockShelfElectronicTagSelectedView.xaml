@@ -1,0 +1,171 @@
+﻿<UserControl x:Class="MaterialDemo.Views.Pages.Business.StockShelfElectronicTagSelectedView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:local="clr-namespace:MaterialDemo.ViewModels.Pages.Business"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      d:DataContext="{d:DesignInstance Type=local:ElectronicTagViewModel}"
+      d:DesignHeight="450"
+      d:DesignWidth="1000"
+      Background="Transparent"
+      ScrollViewer.CanContentScroll="False"
+      mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Common/CommonGrid.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Width="800" Height="400">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Style="{StaticResource BaseTableSearchBorder}">
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <hc:TextBox Width="260"
+                                Margin="30,18,0,15"
+                                hc:FontWeight="Bold"
+                                hc:InfoElement.Placeholder="请输入..."
+                                hc:InfoElement.ShowClearButton="True"
+                                hc:InfoElement.Title="标签编码"
+                                hc:InfoElement.TitlePlacement="Left"
+                                hc:InfoElement.TitleWidth="60"
+                                Foreground="{DynamicResource InputForeground}"
+                                Text="{Binding ViewModel.SearchCode}" />
+
+                        <GridSplitter Margin="20,0,50,0" />
+                        <Button Command="{Binding ViewModel.SearchCommand}" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="通过查询条件检索">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="MagnifyExpand" Style="{StaticResource BaseTableSearchButtonPackIcon}" />
+                                <TextBlock Style="{StaticResource BaseTableSearchButtonTextBlock}" Text="查询" />
+                            </StackPanel>
+                        </Button>
+                        <GridSplitter Margin="10,0,10,0" />
+                        <Button Command="{Binding ViewModel.RefreshCommand}" Style="{StaticResource MaterialDesignOutlinedDarkButton}" ToolTip="重置查询条件">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Refresh" Style="{StaticResource BaseTableSearchButtonPackIcon}" />
+                                <TextBlock Style="{StaticResource BaseTableSearchButtonTextBlock}" Text="重置" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Border>
+
+                <Grid Grid.Row="1" ScrollViewer.CanContentScroll="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <DataGrid Grid.Row="0"
+                      x:Name="DataGrid"
+                      SelectionMode="Single"
+                      HorizontalAlignment="Stretch"
+                      AutoGenerateColumns="False"
+                      CellStyle="{StaticResource DataGridCellStyle}"
+                      HeadersVisibility="All"
+                      IsReadOnly="True"
+                      ColumnHeaderHeight="20"
+                      ItemsSource="{Binding ViewModel.DataList}"
+                      RowHeaderWidth="60"
+                      RowStyle="{StaticResource DataGridRowStyle}"
+                      ScrollViewer.CanContentScroll="True">
+                        <DataGrid.RowHeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox HorizontalAlignment="Center" IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=DataGridRow}}" />
+                            </DataTemplate>
+                        </DataGrid.RowHeaderTemplate>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Binding="{Binding Code}" CanUserSort="False" Header="编码" />
+                            <DataGridTextColumn Width="*" Binding="{Binding Ip}" CanUserSort="False" Header="IP地址" />
+                            <DataGridTemplateColumn Width="*" CanUserResize="False" Header="连接状态">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Width="Auto" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">
+                                            <TextBlock Padding="10,2,10,2" FontSize="12" Foreground="white">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ConnectStatus}" Value="0">
+                                                                <Setter Property="Background" Value="{StaticResource BaseSuccessBrush}" />
+                                                                <Setter Property="Text" Value="正常" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding ConnectStatus}" Value="1">
+                                                                <Setter Property="Background" Value="{StaticResource BaseErrorBrush}" />
+                                                                <Setter Property="Text" Value="异常" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="*" CanUserResize="False" Header="工作状态">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border Width="Auto" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">
+                                            <TextBlock Padding="10,2,10,2" FontSize="12" Foreground="white">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding WorkStatus}" Value="0">
+                                                                <Setter Property="Background" Value="{StaticResource BaseSuccessBrush}" />
+                                                                <Setter Property="Text" Value="正常" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding WorkStatus}" Value="1">
+                                                                <Setter Property="Background" Value="{StaticResource BaseErrorBrush}" />
+                                                                <Setter Property="Text" Value="异常" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Width="*" Binding="{Binding Remark}" CanUserSort="False" Header="备注" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+                <Grid Grid.Row="2" Style="{StaticResource BaseTablePaginationGrid}">
+                    <hc:Pagination DataCountPerPage="{Binding ViewModel.PageSize}" IsJumpEnabled="True" MaxPageCount="{Binding ViewModel.TotalPage}" PageIndex="{Binding ViewModel.PageIndex}">
+                        <hc:Interaction.Triggers>
+                            <hc:EventTrigger EventName="PageUpdated">
+                                <hc:EventToCommand Command="{Binding ViewModel.PageUpdatedCommand}" PassEventArgsToCommand="True" />
+                            </hc:EventTrigger>
+                        </hc:Interaction.Triggers>
+                    </hc:Pagination>
+                </Grid>
+            </Grid>
+
+        <StackPanel Grid.Row="1" Margin="0,10,35,25" HorizontalAlignment="Right" Orientation="Horizontal">
+
+            <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandParameter="false" Style="{StaticResource MaterialDesignOutlinedDarkButton}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0,0,0,0" Padding="5,0,5,0" FontSize="14" FontWeight="Bold" Text="取消" />
+                </StackPanel>
+            </Button>
+            <GridSplitter Margin="5,0,5,0" />
+            <!--<Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandParameter="true" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="通过查询条件检索">-->
+            <Button Click="Submit_Button_Click" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0,0,0,0" Padding="5,0,5,0" FontSize="14" FontWeight="Bold" Text="确定" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

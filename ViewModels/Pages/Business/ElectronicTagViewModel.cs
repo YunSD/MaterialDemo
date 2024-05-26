@@ -84,7 +84,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (entity != null) data = entity;
             ElectronicTagEditorViewModel editorViewModel = new ElectronicTagEditorViewModel(data, SubmitEventHandler);
             var form = new ElectronicTagEditorView(editorViewModel);
-            var result = await DialogHost.Show(form, BaseConstant.RootDialog);
+            var result = await DialogHost.Show(form, BaseConstant.BaseDialog);
             logger.Debug(result);
         }
 
@@ -114,7 +114,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             _unitOfWork.SaveChanges();
             repository.ChangeEntityState(entity, Microsoft.EntityFrameworkCore.EntityState.Detached);
             this.OnSearch();
-            DialogHost.Close(BaseConstant.RootDialog);
+            DialogHost.Close(BaseConstant.BaseDialog);
         }
 
 
@@ -127,7 +127,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (!entity.TagId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.TagId;
-            var result = await DialogHost.Show(confirm, BaseConstant.RootDialog, DeleteRowData);
+            var result = await DialogHost.Show(confirm, BaseConstant.BaseDialog, DeleteRowData);
         }
 
         // key

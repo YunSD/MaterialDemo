@@ -29,7 +29,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Style="{StaticResource BaseTableSearchBorder}">
+        <Border Grid.Row="0" Style="{StaticResource BaseTableSearchBorder}" Margin=" 0,0,0,0">
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <hc:TextBox Width="260"
                             Margin="30,18,0,15"

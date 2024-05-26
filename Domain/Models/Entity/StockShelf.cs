@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaterialDemo.Domain.Enums;
 
 namespace MaterialDemo.Domain.Models.Entity
 {
@@ -45,7 +46,7 @@ namespace MaterialDemo.Domain.Models.Entity
         public int? ScalesAddress { get; set; }
 
         [Column("scales_status")]
-        public string? ScalesStatus { get; set; }
+        public BaseStatusEnum ScalesStatus { get; set; }
 
         [Column("scales_model")]
         public string? ScalesModel { get; set; }

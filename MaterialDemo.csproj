@@ -56,10 +56,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Pages\Business\StockShelfElectronicTagSelectedView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Business\ElectronicTagView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\Business\ElectronicTagEditorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Business\StockShelfEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\Business\StockShelfView.xaml.cs">
