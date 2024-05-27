@@ -5,7 +5,7 @@ namespace MaterialDemo.Utils
     public class BaseFileUtil
     {
         private static readonly string BaseFilePath = AppDomain.CurrentDomain.BaseDirectory
-            + "BaseFile" + Path.DirectorySeparatorChar.ToString();
+            + "Cache" + Path.DirectorySeparatorChar.ToString();
 
         private static readonly SnowflakeIdWorker IdWorker = SnowflakeIdWorker.Singleton;
 

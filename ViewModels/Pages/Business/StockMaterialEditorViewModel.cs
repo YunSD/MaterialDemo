@@ -52,8 +52,6 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private string? remark;
 
 
-        public delegate bool SaveEventHandler(object sender, DialogOpenedEventArgs eventArgs);
-
         private FormSubmitEventHandler<StockMaterial> SubmitEvent;
 
         public StockMaterialEditorViewModel(StockMaterial entity, FormSubmitEventHandler<StockMaterial> submitEvent) {
@@ -79,9 +77,6 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
             ValidateAllProperties();
             if (HasErrors) return;
-
-            // image copy
-            Image = BaseFileUtil.UpdateFile(Image);
 
             StockMaterial entity = new()
             {

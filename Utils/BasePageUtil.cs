@@ -25,25 +25,9 @@ namespace MaterialDemo.Utils
             {
                 element = VisualTreeHelper.GetParent(element);
             }
-
             return element as DialogHost;
         }
 
-
-        public static void ShowHostDialog(object param)
-        {
-            DialogHost.Show(param, BaseConstant.BaseDialog);
-        }
-
-        public static void ShowHostDialog(string identifier, object param)
-        {
-            DialogHost.Show(param, identifier);
-        }
-
-        public static void CloseHostDialog()
-        {
-            DialogHost.Close(BaseConstant.BaseDialog);
-        }
 
         public static void ShowImageSelector(HandyControl.Controls.ImageSelector imageSelector, string? imagePath)
         {

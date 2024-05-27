@@ -38,8 +38,6 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private string? remark;
 
 
-        public delegate bool SaveEventHandler(object sender, DialogOpenedEventArgs eventArgs);
-
         private FormSubmitEventHandler<ElectronicTag> SubmitEvent;
 
         public ElectronicTagEditorViewModel(ElectronicTag entity, FormSubmitEventHandler<ElectronicTag> submitEvent) {

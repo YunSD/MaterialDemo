@@ -135,7 +135,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// </summary>
         private void SubmitEventHandler(StockShelf entity) {
 
-            Expression<Func<StockShelf, bool>> pre = p => p.Code == entity.Code && p.TagId != entity.TagId;
+            Expression<Func<StockShelf, bool>> pre = p => p.Code == entity.Code && p.ShelfId != entity.ShelfId;
             
             if (repository.Exists(pre))
             {
@@ -143,7 +143,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
                 return;
             }
 
-            pre = p => p.TagId != null && p.TagId == entity.TagId;
+            pre = p => p.TagId == entity.TagId && p.ShelfId != entity.ShelfId;
 
             if (repository.Exists(pre))
             {
@@ -151,9 +151,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
                 return;
             }
 
-            if (!entity.TagId.HasValue)
+            if (!entity.ShelfId.HasValue)
             {
-                entity.TagId = SnowflakeIdWorker.Singleton.nextId();
+                entity.ShelfId = SnowflakeIdWorker.Singleton.nextId();
                 repository.Insert(entity);
             }
             else {
@@ -173,9 +173,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// <returns></returns>
         [RelayCommand]
         private async Task DelConfirm(StockShelf entity) {
-            if (!entity.TagId.HasValue) return;
+            if (!entity.ShelfId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
-            this.rowId = entity.TagId;
+            this.rowId = entity.ShelfId;
             var result = await DialogHost.Show(confirm, BaseConstant.BaseDialog, DeleteRowData);
         }
 

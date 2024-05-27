@@ -10,16 +10,11 @@ namespace MaterialDemo.ViewModels.Pages.Home
         {
             new NavigationViewItem()
             {
-                Content = "Home",
+                Content = "首页",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Home24 },
                 TargetPageType = typeof(Views.Pages.Login.LoginView)
             },
-            new NavigationViewItem()
-            {
-                Content = "用户管理",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.Person24 },
-                TargetPageType = typeof(Views.Pages.Upms.UserView),
-            },
+            
             new NavigationViewItem()
             {
                 Content = "物料管理",
@@ -45,10 +40,10 @@ namespace MaterialDemo.ViewModels.Pages.Home
         {
             new NavigationViewItem()
             {
-                Content = "Settings",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.Settings24 },
-                TargetPageType = typeof(Views.Pages.Login.LoginView)
-            }
+                Content = "用户管理",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Person24 },
+                TargetPageType = typeof(Views.Pages.Upms.UserView),
+            },
         };
 
         [ObservableProperty]

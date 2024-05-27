@@ -192,6 +192,9 @@
     <Page Update="Views\Pages\Base\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Pages\Business\StockShelfMaterialSelectedView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\Business\StockShelfElectronicTagSelectedView.xaml">
       <SubType>Designer</SubType>
     </Page>

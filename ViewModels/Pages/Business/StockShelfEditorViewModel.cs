@@ -43,6 +43,12 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "请输入数字")]
         [ObservableProperty]
+        public int? quantity;
+        partial void OnQuantityChanged(int? value) => ValidateProperty(value, nameof(Quantity));
+
+
+        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "请输入数字")]
+        [ObservableProperty]
         public int? scalesAddress;
         partial void OnScalesAddressChanged(int? value) => ValidateProperty(value, nameof(ScalesAddress));
 
@@ -71,15 +77,13 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private string? electronicTagInfo;
 
 
-        public delegate bool SaveEventHandler(object sender, DialogOpenedEventArgs eventArgs);
-
         private FormSubmitEventHandler<StockShelf> SubmitEvent;
 
         public StockShelfEditorViewModel(StockShelfViewInfo entity, FormSubmitEventHandler<StockShelf> submitEvent) {
             
             this.SubmitEvent = submitEvent;
             
-            if (entity.MaterialId.HasValue) {
+            if (entity.ShelfId.HasValue) {
                 this.key = entity.ShelfId;
                 editModel = false;
             }
@@ -113,14 +117,27 @@ namespace MaterialDemo.ViewModels.Pages.Business
             ValidateAllProperties();
             if (HasErrors) return;
 
-
-
             StockShelf entity = new()
             {
-                
+                ShelfId = this.key,
+                MaterialId = this.StockMaterialId,
+                TagId = this.ElectronicTagId,
+
+                Code = this.Code,
+                BarCode = this.BarCode,
+                WarehouseName = this.WarehouseName,
+                ShelvesCode = this.ShelvesCode,
+                ShelvesType = this.ShelvesType,
+                Quantity = this.Quantity,
+
+                ScalesAddress = this.ScalesAddress,
+                ScalesModel = this.ScalesModel,
+                ScalesStatus = this.ScalesSatus,
+
+                Remark = this.Remark
             };
 
-           // SubmitEvent(entity);
+            SubmitEvent(entity);
         }
 
     }

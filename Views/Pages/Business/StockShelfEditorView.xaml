@@ -66,7 +66,7 @@
 
                 <StackPanel Grid.Row="1" Grid.Column="2" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="货架类型:" />
-                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.ShelvesType}"/>
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.ShelvesType}" />
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="电子秤地址:" />
@@ -79,7 +79,7 @@
 
                 <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="电子秤量程:" />
-                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.ScalesModel }"/>
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.ScalesModel}" />
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="2" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="电子秤状态:" />
@@ -91,21 +91,45 @@
                     <TextBox Width="810" materialDesign:HintAssist.Hint="请输入..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Remark}" />
                 </StackPanel>
 
-                <GridSplitter Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Height="1" HorizontalAlignment="Stretch" Background="{StaticResource ThemeBrush}"/>
+                <GridSplitter Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Height="1" HorizontalAlignment="Stretch" Background="{StaticResource ThemeBrush}" />
 
                 <StackPanel Grid.Row="5" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="电子标签:" />
-                    <hc:ElementGroup  Orientation="Horizontal" Layout="Stack">
-                        <TextBox IsEnabled="False" HorizontalAlignment="Stretch" DockPanel.Dock="Left" Width="140" materialDesign:HintAssist.Hint="请选择电子标签" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.StockMaterialInfo}" />
-                        <Button Click="Tag_Button_Click" Grid.Column="1" Width="70" Content="选择" DockPanel.Dock="Right" Style="{StaticResource ButtonPrimary}" Height="37"/>
+                    <hc:ElementGroup Layout="Stack" Orientation="Horizontal">
+                        <TextBox Width="140"
+                                 HorizontalAlignment="Stretch"
+                                 materialDesign:HintAssist.Hint="请选择电子标签"
+                                 DockPanel.Dock="Left"
+                                 IsEnabled="False"
+                                 Style="{StaticResource BaseFormTextBox}"
+                                 Text="{Binding ViewModel.ElectronicTagInfo}" />
+                        <Button Grid.Column="1"
+                                Width="70"
+                                Height="37"
+                                Click="Tag_Button_Click"
+                                Content="选择"
+                                DockPanel.Dock="Right"
+                                Style="{StaticResource ButtonPrimary}" />
                     </hc:ElementGroup>
                 </StackPanel>
 
                 <StackPanel Grid.Row="5" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="绑定物料:" />
-                    <hc:ElementGroup  Orientation="Horizontal" Layout="Stack">
-                        <TextBox IsEnabled="False" HorizontalAlignment="Stretch" DockPanel.Dock="Left" Width="140" materialDesign:HintAssist.Hint="请选择物料" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.ElectronicTagInfo}" />
-                        <Button Grid.Column="1" Width="70" Content="选择" DockPanel.Dock="Right" Style="{StaticResource ButtonPrimary}" Height="37"/>
+                    <hc:ElementGroup Layout="Stack" Orientation="Horizontal">
+                        <TextBox Width="140"
+                                 HorizontalAlignment="Stretch"
+                                 materialDesign:HintAssist.Hint="请选择物料"
+                                 DockPanel.Dock="Left"
+                                 IsEnabled="False"
+                                 Style="{StaticResource BaseFormTextBox}"
+                                 Text="{Binding ViewModel.StockMaterialInfo}" />
+                        <Button Grid.Column="1"
+                                Width="70"
+                                Height="37"
+                                Click="Material_Button_Click"
+                                Content="选择"
+                                DockPanel.Dock="Right"
+                                Style="{StaticResource ButtonPrimary}" />
                     </hc:ElementGroup>
                 </StackPanel>
 
@@ -120,7 +144,6 @@
                 </StackPanel>
             </Button>
             <GridSplitter Margin="5,0,5,0" />
-            <!--<Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" CommandParameter="true" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="通过查询条件检索">-->
             <Button Command="{Binding ViewModel.submitCommand}" CommandParameter="true" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Margin="0,0,0,0" Padding="5,0,5,0" FontSize="14" FontWeight="Bold" Text="确定" />

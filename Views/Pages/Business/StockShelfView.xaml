@@ -116,13 +116,42 @@
                     <DataGridTextColumn Width="*" Binding="{Binding ShelvesCode}" CanUserSort="False" Header="货架号" />
                     <DataGridTextColumn Width="*" Binding="{Binding ShelvesType}" CanUserSort="False" Header="货架类型" />
                     <DataGridTextColumn Width="*" Binding="{Binding Code}" CanUserSort="False" Header="货位号" />
-                    <DataGridTextColumn Width="*" Binding="{Binding BarCode}" CanUserSort="False" Header="货位条码编号" />
-                    <DataGridTextColumn Width="*" Binding="{Binding ElectronicTag.Code}" CanUserSort="False" Header="标签编号" />
-                    <DataGridTextColumn Width="*" Binding="{Binding ElectronicTag.ConnectStatus}" CanUserSort="False" Header="标签状态" />
+                    <DataGridTextColumn Width="*" Binding="{Binding BarCode}" CanUserSort="False" Header="货位条码" />
+                    <DataGridTextColumn Width="*" CanUserSort="False" Header="物料信息">
+                        <DataGridTextColumn.Binding>
+                            <MultiBinding StringFormat="{}{0}({1})">
+                                <Binding Path="StockMaterial.Name" />
+                                <Binding Path="StockMaterial.Code" />
+                            </MultiBinding>
+                        </DataGridTextColumn.Binding>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Binding="{Binding ElectronicTag.Code}" CanUserSort="False" Header="电子标签" />
                     <DataGridTextColumn Width="*" Binding="{Binding ScalesModel}" CanUserSort="False" Header="电子秤量程" />
-                    <DataGridTextColumn Width="*" Binding="{Binding ScalesAddress}" CanUserSort="False" Header="电子秤地址位" />
-                    <DataGridTextColumn Width="*" Binding="{Binding ScalesStatus}" CanUserSort="False" Header="电子秤状态" />
-                    <DataGridTextColumn Width="*" Binding="{Binding CreateTime}" CanUserSort="False" Header="创建时间" />
+                    <DataGridTextColumn Width="*" Binding="{Binding ScalesAddress}" CanUserSort="False" Header="地址位" />
+                    <DataGridTemplateColumn Width="*" CanUserResize="False" Header="电子秤状态">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Width="Auto" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">
+                                    <TextBlock Padding="10,2,10,2" FontSize="12" Foreground="white">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ScalesStatus}" Value="0">
+                                                        <Setter Property="Background" Value="{StaticResource BaseSuccessBrush}" />
+                                                        <Setter Property="Text" Value="正常" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding ScalesStatus}" Value="1">
+                                                        <Setter Property="Background" Value="{StaticResource BaseErrorBrush}" />
+                                                        <Setter Property="Text" Value="异常" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTemplateColumn Width="*" CanUserResize="False" Header="操作">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

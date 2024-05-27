@@ -24,7 +24,8 @@ namespace MaterialDemo.Views.Pages.Business
                 Uri imageUri = ((HandyControl.Controls.ImageSelector)sender).Uri;
                 if (imageUri != null)
                 {
-                    this.ViewModel.Image = imageUri.LocalPath;
+                    // image copy
+                    this.ViewModel.Image = BaseFileUtil.UpdateFile(imageUri.LocalPath);
                 }
             }
         }

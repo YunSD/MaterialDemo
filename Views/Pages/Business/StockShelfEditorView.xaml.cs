@@ -6,7 +6,7 @@ namespace MaterialDemo.Views.Pages.Business
 {
     public partial class StockShelfEditorView : UserControl
     {
-        private StockShelfEditorViewModel ViewModel { get; }
+        public StockShelfEditorViewModel ViewModel { get; }
         private ElectronicTagViewModel TagViewModel { get; }
         private StockMaterialViewModel MaterialViewModel { get; }
 
@@ -21,7 +21,35 @@ namespace MaterialDemo.Views.Pages.Business
 
         private void Tag_Button_Click(object sender, RoutedEventArgs e)
         {
-            var confirm = new StockShelfElectronicTagSelectedView(TagViewModel);
+            var confirm = new StockShelfElectronicTagSelectedView(TagViewModel, (row) => { 
+                if (row != null)
+                {
+                    ViewModel.ElectronicTagId = row.TagId;
+                    ViewModel.ElectronicTagInfo = row.Code;
+                }
+                else
+                {
+                    ViewModel.ElectronicTagId = null;
+                    ViewModel.ElectronicTagInfo = null;
+                }
+            });
+            DialogHost.Show(confirm, BaseConstant.RootDialog);
+        }
+
+        private void Material_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var confirm = new StockShelfMaterialSelectedView(MaterialViewModel, (row) => {
+                if (row != null)
+                {
+                    ViewModel.StockMaterialId = row.MaterialId;
+                    ViewModel.StockMaterialInfo = row.Name;
+                }
+                else
+                {
+                    ViewModel.ElectronicTagId = null;
+                    ViewModel.ElectronicTagInfo = null;
+                }
+            });
             DialogHost.Show(confirm, BaseConstant.RootDialog);
         }
     }

@@ -33,30 +33,13 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <ContentPresenter x:Name="IconContentPresenter"
-                                      Grid.Row="0"
-                                      Margin="0"
-                                      Content="{TemplateBinding Icon}"
-                                      TextElement.FontSize="{StaticResource NavigationViewFluentIconSize}"
-                                      TextElement.Foreground="{DynamicResource NavigationViewItemForegroundLeftFluent}" />
+                    <ContentPresenter x:Name="IconContentPresenter" Grid.Row="0" Margin="0" Content="{TemplateBinding Icon}" TextElement.FontSize="{StaticResource NavigationViewFluentIconSize}" TextElement.Foreground="{DynamicResource NavigationViewItemForegroundLeftFluent}" />
 
-                    <Grid x:Name="ContentGrid"
-                          Grid.Row="1"
-                          Height="{StaticResource NavigationViewFluentIconSize}"
-                          Margin="0,2,0,0">
-                        <ContentPresenter x:Name="ElementContentPresenter"
-                                          HorizontalAlignment="Center"
-                                          Content="{TemplateBinding Content}"
-                                          TextElement.FontSize="{TemplateBinding FontSize}"
-                                          TextElement.Foreground="{DynamicResource NavigationViewItemForegroundLeftFluent}" />
+                    <Grid x:Name="ContentGrid" Grid.Row="1" Height="{StaticResource NavigationViewFluentIconSize}" Margin="0,2,0,0">
+                        <ContentPresenter x:Name="ElementContentPresenter" HorizontalAlignment="Center" Content="{TemplateBinding Content}" TextElement.FontSize="{TemplateBinding FontSize}" TextElement.Foreground="{DynamicResource NavigationViewItemForegroundLeftFluent}" />
                     </Grid>
 
-                    <ContentPresenter x:Name="PART_InfoBadge"
-                                      Grid.Row="0"
-                                      Margin="0"
-                                      HorizontalAlignment="Right"
-                                      VerticalAlignment="Top"
-                                      Content="{TemplateBinding InfoBadge}" />
+                    <ContentPresenter x:Name="PART_InfoBadge" Grid.Row="0" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Top" Content="{TemplateBinding InfoBadge}" />
                 </Grid>
             </Grid>
         </Border>
@@ -69,42 +52,18 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="ContentGrid"
-                                             Storyboard.TargetProperty="Height"
-                                             From="{StaticResource NavigationViewFluentIconSize}"
-                                             To="0"
-                                             Duration="0:0:.16" />
-                            <DoubleAnimation Storyboard.TargetName="ContentGrid"
-                                             Storyboard.TargetProperty="Opacity"
-                                             From="1"
-                                             To="0"
-                                             Duration="0:0:.16" />
-                            <DoubleAnimation Storyboard.TargetName="MainBorder"
-                                             Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Opacity)"
-                                             From="0"
-                                             To="1"
-                                             Duration="0:0:.16" />
+                            <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Height" From="{StaticResource NavigationViewFluentIconSize}" To="0" Duration="0:0:.16" />
+                            <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:.16" />
+                            <DoubleAnimation Storyboard.TargetName="MainBorder" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Opacity)" From="0" To="1" Duration="0:0:.16" />
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.EnterActions>
                 <Trigger.ExitActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="ContentGrid"
-                                             Storyboard.TargetProperty="Height"
-                                             From="0"
-                                             To="{StaticResource NavigationViewFluentIconSize}"
-                                             Duration="0:0:.16" />
-                            <DoubleAnimation Storyboard.TargetName="ContentGrid"
-                                             Storyboard.TargetProperty="Opacity"
-                                             From="0"
-                                             To="1"
-                                             Duration="0:0:.16" />
-                            <DoubleAnimation Storyboard.TargetName="MainBorder"
-                                             Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Opacity)"
-                                             From="1"
-                                             To="0"
-                                             Duration="0:0:.16" />
+                            <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Height" From="0" To="{StaticResource NavigationViewFluentIconSize}" Duration="0:0:.16" />
+                            <DoubleAnimation Storyboard.TargetName="ContentGrid" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:.16" />
+                            <DoubleAnimation Storyboard.TargetName="MainBorder" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Opacity)" From="1" To="0" Duration="0:0:.16" />
                         </Storyboard>
                     </BeginStoryboard>
                 </Trigger.ExitActions>
