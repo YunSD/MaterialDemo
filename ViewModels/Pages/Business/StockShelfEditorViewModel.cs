@@ -98,6 +98,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.ScalesModel = entity.ScalesModel;
             this.ScalesSatus = entity.ScalesStatus;
 
+            this.Quantity = entity.Quantity;   
             this.Remark = entity.Remark;
 
             if (entity.StockMaterial != null) {

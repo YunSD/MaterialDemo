@@ -46,7 +46,6 @@ namespace MaterialDemo.Services
                 _mainWindow = (
                     _serviceProvider.GetService(typeof(MainWindow)) as MainWindow
                 )!;
-                // _mainWindow.Navigate(_serviceProvider.GetService(typeof(LoginView)) as Page);
                 _mainWindow!.ShowWindow();
             }
 

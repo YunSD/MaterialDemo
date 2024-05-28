@@ -1,5 +1,6 @@
 ﻿using MaterialDemo.ViewModels.Pages.Home;
 using MaterialDemo.ViewModels.Windows;
+using MaterialDemo.Views.Pages.Business;
 using System.Windows.Controls;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
@@ -21,11 +22,10 @@ namespace MaterialDemo.Views.Pages.Base
             this.NavigationItems = homeViewModel;
             DataContext = this;
             InitializeComponent();
-            
+            this.Loaded += OnHomePageLoaded;
+
             SetPageService(pageService);
             navigationService.SetNavigationControl(RootNavigation);
-
-           
         }
 
         #region INavigationWindow methods
@@ -48,5 +48,17 @@ namespace MaterialDemo.Views.Pages.Base
         {
             RootNavigation.IsPaneOpen = !RootNavigation.IsPaneOpen;
         }
+
+
+        private void OnHomePageLoaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is not HomeView)
+            {
+                return;
+            }
+
+            _ = Navigate(typeof(StockMaterialEditorView));
+        }
+
     }
 }

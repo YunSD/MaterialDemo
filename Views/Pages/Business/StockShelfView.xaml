@@ -125,10 +125,11 @@
                             </MultiBinding>
                         </DataGridTextColumn.Binding>
                     </DataGridTextColumn>
+                    <DataGridTextColumn Width="0.7*" Binding="{Binding Quantity}" CanUserSort="False" Header="数量" />
                     <DataGridTextColumn Width="*" Binding="{Binding ElectronicTag.Code}" CanUserSort="False" Header="电子标签" />
-                    <DataGridTextColumn Width="*" Binding="{Binding ScalesModel}" CanUserSort="False" Header="电子秤量程" />
-                    <DataGridTextColumn Width="*" Binding="{Binding ScalesAddress}" CanUserSort="False" Header="地址位" />
-                    <DataGridTemplateColumn Width="*" CanUserResize="False" Header="电子秤状态">
+                    <DataGridTextColumn Width="*" Binding="{Binding ScalesModel}" CanUserSort="False" Header="秤量程" />
+                    <DataGridTextColumn Width="0.7*" Binding="{Binding ScalesAddress}" CanUserSort="False" Header="秤地址" />
+                    <DataGridTemplateColumn Width="*" CanUserResize="False" Header="秤状态">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Border Width="Auto" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">

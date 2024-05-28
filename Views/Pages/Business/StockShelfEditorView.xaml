@@ -133,6 +133,15 @@
                     </hc:ElementGroup>
                 </StackPanel>
 
+                <StackPanel Grid.Row="5" Grid.Column="2" Margin="0,15,0,15" Orientation="Horizontal">
+                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="物料数量:" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Quantity, Converter={StaticResource BaseNullZeroConverter}}">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericOnlyBehavior />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </StackPanel>
+
             </Grid>
         </GroupBox>
 

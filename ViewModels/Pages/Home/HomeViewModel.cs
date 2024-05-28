@@ -32,6 +32,12 @@ namespace MaterialDemo.ViewModels.Pages.Home
                 Content = "货位管理",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.AppFolder24 },
                 TargetPageType = typeof(Views.Pages.Business.StockShelfView),
+            },
+            new NavigationViewItem()
+            {
+                Content = "存取日志",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.DocumentTable24 },
+                TargetPageType = typeof(Views.Pages.Business.StockMaterialStatementView),
             }
         };
 

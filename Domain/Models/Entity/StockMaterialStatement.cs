@@ -39,7 +39,7 @@ namespace MaterialDemo.Domain.Models.Entity
         public string? BeforeStock { get; set; }
 
         [Column("amount")]
-        public string? amount { get; set; }
+        public string? Amount { get; set; }
 
         [Column("after_stock")]
         public string? AfterStock { get; set; }
