@@ -2,7 +2,6 @@
 using MaterialDemo.Config.Security.Messages;
 using MaterialDemo.ViewModels.Windows;
 using MaterialDemo.Views.Pages.Base;
-using MaterialDemo.Views.Pages.Login;
 using System.Windows.Controls;
 using Wpf.Ui;
 
@@ -18,11 +17,11 @@ namespace MaterialDemo.Views.Windows
         #endregion
 
         #region Fields
-        private LoginView LoginViewPage;
-        private HomeView HomeViewPage;
+        private LoginViewPage LoginViewPage;
+        private HomeViewPage HomeViewPage;
         #endregion
 
-        public MainWindow(MainWindowViewModel viewModel, LoginView loginView, HomeView HomeView)
+        public MainWindow(MainWindowViewModel viewModel, LoginViewPage loginView, HomeViewPage HomeView)
         {
             this.ViewModel = viewModel;
             this.LoginViewPage = loginView;

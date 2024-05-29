@@ -61,7 +61,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Pages\Business\StockMaterialStatementView.xaml.cs">
+    <Compile Update="Views\Pages\Base\FolderViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Business\StockMaterialStatementViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\Business\StockShelfMaterialSelectedView.xaml.cs">
@@ -70,7 +73,7 @@
     <Compile Update="Views\Pages\Business\StockShelfElectronicTagSelectedView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Business\ElectronicTagView.xaml.cs">
+    <Compile Update="Views\Pages\Business\ElectronicTagViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\Business\ElectronicTagEditorView.xaml.cs">
@@ -79,10 +82,10 @@
     <Compile Update="Views\Pages\Business\StockShelfEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Business\StockShelfView.xaml.cs">
+    <Compile Update="Views\Pages\Business\StockShelfViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Business\StockMaterialView.xaml.cs">
+    <Compile Update="Views\Pages\Business\StockMaterialViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\Business\StockMaterialEditorView.xaml.cs">

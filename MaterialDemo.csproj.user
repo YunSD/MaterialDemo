@@ -7,16 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\Pages\Base\HomeView.xaml.cs">
+    <Compile Update="Views\Pages\Base\HomeViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Login\LoginView.xaml.cs">
+    <Compile Update="Views\Pages\Base\LoginViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\Upms\UserEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Upms\UserView.xaml.cs">
+    <Compile Update="Views\Pages\Upms\UserViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -27,10 +27,22 @@
     <Page Update="Component\Controls\Common\ConfirmDialog\ConfirmDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Component\Controls\Common\GalleryNavigationPresenter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Component\Controls\WPFUI\AutoSuggestBox\AutoSuggestBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Controls\WPFUI\Button\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\CardAction\CardAction.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\CardControl\CardControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\CardExpander\CardExpander.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Controls\WPFUI\DynamicScrollBar\DynamicScrollBar.xaml">
@@ -102,7 +114,13 @@
     <Page Update="Component\Controls\WPFUI\Snackbar\Snackbar.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Component\Controls\WPFUI\TextBlock\TextBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Component\Controls\WPFUI\TitleBar\TitleBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\VirtualizingWrapPanel\VirtualizingWrapPanel.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Resources\Accent.xaml">
@@ -189,10 +207,13 @@
     <Page Update="Resources\Themes\Theme.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Base\HomeView.xaml">
+    <Page Update="Views\Pages\Base\HomeViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Business\StockMaterialStatementView.xaml">
+    <Page Update="Views\Pages\Base\FolderViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Business\StockMaterialStatementViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Business\StockShelfMaterialSelectedView.xaml">
@@ -201,7 +222,7 @@
     <Page Update="Views\Pages\Business\StockShelfElectronicTagSelectedView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Business\ElectronicTagView.xaml">
+    <Page Update="Views\Pages\Business\ElectronicTagViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Business\ElectronicTagEditorView.xaml">
@@ -210,22 +231,22 @@
     <Page Update="Views\Pages\Business\StockShelfEditorView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Business\StockShelfView.xaml">
+    <Page Update="Views\Pages\Business\StockShelfViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Business\StockMaterialView.xaml">
+    <Page Update="Views\Pages\Business\StockMaterialViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Business\StockMaterialEditorView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Login\LoginView.xaml">
+    <Page Update="Views\Pages\Base\LoginViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Upms\UserEditorView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Upms\UserView.xaml">
+    <Page Update="Views\Pages\Upms\UserViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Windows\MainWindow.xaml">

@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Wpf.Ui.Controls;
 
-namespace MaterialDemo.ViewModels.Pages.Home
+namespace MaterialDemo.ViewModels.Pages.Base
 {
     public partial class HomeViewModel : ObservableObject
     {
@@ -12,32 +12,32 @@ namespace MaterialDemo.ViewModels.Pages.Home
             {
                 Content = "首页",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Home24 },
-                TargetPageType = typeof(Views.Pages.Login.LoginView)
+                TargetPageType = typeof(Views.Pages.Base.LoginViewPage)
             },
             
             new NavigationViewItem()
             {
                 Content = "物料管理",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.BoxMultipleSearch24 },
-                TargetPageType = typeof(Views.Pages.Business.StockMaterialView),
+                TargetPageType = typeof(Views.Pages.Business.StockMaterialViewPage),
             },
             new NavigationViewItem()
             {
                 Content = "标签管理",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.TagMultiple24 },
-                TargetPageType = typeof(Views.Pages.Business.ElectronicTagView),
+                TargetPageType = typeof(Views.Pages.Business.ElectronicTagViewPage),
             },
             new NavigationViewItem()
             {
                 Content = "货位管理",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.AppFolder24 },
-                TargetPageType = typeof(Views.Pages.Business.StockShelfView),
+                TargetPageType = typeof(Views.Pages.Business.StockShelfViewPage),
             },
             new NavigationViewItem()
             {
                 Content = "存取日志",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.DocumentTable24 },
-                TargetPageType = typeof(Views.Pages.Business.StockMaterialStatementView),
+                TargetPageType = typeof(Views.Pages.Business.StockMaterialStatementViewPage),
             }
         };
 
@@ -48,14 +48,8 @@ namespace MaterialDemo.ViewModels.Pages.Home
             {
                 Content = "用户管理",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Person24 },
-                TargetPageType = typeof(Views.Pages.Upms.UserView),
+                TargetPageType = typeof(Views.Pages.Upms.UserViewPage),
             },
-        };
-
-        [ObservableProperty]
-        private ObservableCollection<MenuItem> _trayMenuItems = new()
-        {
-            new MenuItem { Header = "Home", Tag = "tray_home" }
         };
     }
 }

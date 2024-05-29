@@ -5,7 +5,6 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Threading;
 using MaterialDemo.Services;
-using MaterialDemo.Views.Pages.Login;
 using MaterialDemo.Views.Windows;
 using MaterialDemo.ViewModels.Windows;
 using Microsoft.Extensions.Logging;
@@ -14,7 +13,6 @@ using Microsoft.EntityFrameworkCore;
 using MaterialDemo.Config;
 using MaterialDemo.Security;
 using MaterialDemo.Views.Pages.Base;
-using MaterialDemo.ViewModels.Pages.Home;
 using UiDesktopApp1.Services;
 using log4net;
 using MaterialDemo.ViewModels.Pages.Base;
@@ -64,10 +62,10 @@ namespace MaterialDemo
 
                 services.AddSingleton(SecurityUser.SECURITY_USER);
 
-                services.AddSingleton<LoginView>();
+                services.AddSingleton<HomeViewPage>();
                 services.AddSingleton<LoginViewModel>();
 
-                services.AddSingleton<HomeView>();
+                services.AddSingleton<HomeViewPage>();
                 services.AddSingleton<HomeViewModel>();
 
                 services.AddTransientFromNamespace("MaterialDemo.ViewModels", Assembly.GetExecutingAssembly());
@@ -80,6 +78,11 @@ namespace MaterialDemo
         public static T? GetService<T>() where T : class
         {
             return _host.Services.GetService(typeof(T)) as T;
+        }
+
+        public static T GetRequiredService<T>() where T : class
+        {
+            return _host.Services.GetRequiredService<T>();
         }
 
         /// <summary>

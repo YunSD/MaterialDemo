@@ -3,11 +3,11 @@ using Wpf.Ui.Controls;
 
 namespace MaterialDemo.Views.Pages.Business
 {
-    public partial class StockMaterialStatementView : INavigableView<StockMaterialStatementViewModel>
+    public partial class ElectronicTagViewPage : INavigableView<ElectronicTagViewModel>
     {
-        public StockMaterialStatementViewModel ViewModel { get; }
+        public ElectronicTagViewModel ViewModel { get; }
 
-        public StockMaterialStatementView(StockMaterialStatementViewModel viewModel)
+        public ElectronicTagViewPage(ElectronicTagViewModel viewModel)
         {
             this.ViewModel = viewModel;
             DataContext = this;

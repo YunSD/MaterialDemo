@@ -1,6 +1,5 @@
-﻿using MaterialDemo.ViewModels.Pages.Home;
+﻿using MaterialDemo.ViewModels.Pages.Base;
 using MaterialDemo.ViewModels.Windows;
-using MaterialDemo.Views.Pages.Business;
 using System.Windows.Controls;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
@@ -10,13 +9,13 @@ namespace MaterialDemo.Views.Pages.Base
     /// <summary>
     /// HomeView.xaml 的交互逻辑
     /// </summary>
-    public partial class HomeView : Page, INavigationWindow
+    public partial class HomeViewPage : Page, INavigationWindow
     {
 
         public MainWindowViewModel WindowViewModel { get; set; }
         public HomeViewModel NavigationItems { get; set; }
 
-        public HomeView(IPageService pageService, INavigationService navigationService, MainWindowViewModel windowViewModel, HomeViewModel homeViewModel)
+        public HomeViewPage(IPageService pageService, INavigationService navigationService, MainWindowViewModel windowViewModel, HomeViewModel homeViewModel)
         {
             this.WindowViewModel = windowViewModel;
             this.NavigationItems = homeViewModel;
@@ -52,12 +51,12 @@ namespace MaterialDemo.Views.Pages.Base
 
         private void OnHomePageLoaded(object sender, RoutedEventArgs e)
         {
-            if (sender is not HomeView)
+            if (sender is not HomeViewPage)
             {
                 return;
             }
 
-            _ = Navigate(typeof(StockMaterialEditorView));
+            _ = Navigate(typeof(Upms.UserViewPage));
         }
 
     }

@@ -1,4 +1,4 @@
-﻿<Page x:Class="MaterialDemo.Views.Pages.Business.StockMaterialStatementView"
+﻿<Page x:Class="MaterialDemo.Views.Pages.Business.StockMaterialStatementViewPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:converters="clr-namespace:MaterialDemo.Utils.Converters"

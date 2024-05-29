@@ -4,12 +4,12 @@ using MaterialDemo.ViewModels.Windows;
 using System.Diagnostics;
 using System.Windows.Controls;
 
-namespace MaterialDemo.Views.Pages.Login
+namespace MaterialDemo.Views.Pages.Base
 {
     /// <summary>
     /// LoginView.xaml 的交互逻辑
     /// </summary>
-    public partial class LoginView : Page
+    public partial class LoginViewPage : Page
     {
 
         #region ViewModel
@@ -17,9 +17,9 @@ namespace MaterialDemo.Views.Pages.Login
         public LoginViewModel LoginViewModel { get; }
         #endregion
 
-        private ILog logger = LogManager.GetLogger(nameof(LoginView));
+        private ILog logger = LogManager.GetLogger(nameof(LoginViewPage));
 
-        public LoginView(MainWindowViewModel mainViewModel, LoginViewModel loginViewModel)
+        public LoginViewPage(MainWindowViewModel mainViewModel, LoginViewModel loginViewModel)
         {
             this.MainViewModel = mainViewModel;
             this.LoginViewModel = loginViewModel;
