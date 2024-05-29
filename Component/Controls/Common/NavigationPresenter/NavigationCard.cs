@@ -11,7 +11,7 @@
 
 using Wpf.Ui.Controls;
 
-namespace MaterialDemo.Component.Controls.Common;
+namespace MaterialDemo.Controls;
 
 public record NavigationCard
 {

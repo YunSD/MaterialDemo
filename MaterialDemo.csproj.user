@@ -27,7 +27,7 @@
     <Page Update="Component\Controls\Common\ConfirmDialog\ConfirmDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Component\Controls\Common\GalleryNavigationPresenter.xaml">
+    <Page Update="Component\Controls\Common\NavigationPresenter\GalleryNavigationPresenter.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Controls\WPFUI\AutoSuggestBox\AutoSuggestBox.xaml">

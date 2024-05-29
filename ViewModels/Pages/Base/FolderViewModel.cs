@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using MaterialDemo.Controls;
+using System.Collections.ObjectModel;
 using Wpf.Ui.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Base
@@ -6,25 +7,25 @@ namespace MaterialDemo.ViewModels.Pages.Base
     public partial class FolderViewModel : ObservableObject
     {
         [ObservableProperty]
-        private ObservableCollection<object> menuItems = new(){
-            new NavigationViewItem()
+        private ObservableCollection<object> navigationCards = new(){
+            new NavigationCard()
             {
-                Content = "首页",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.Home24 },
-                TargetPageType = typeof(Views.Pages.Base.LoginViewPage)
+                Name = "首页",
+                Icon = SymbolRegular.Home24,
+                PageType = typeof(Views.Pages.Base.LoginViewPage)
             },
 
-            new NavigationViewItem()
+            new NavigationCard()
             {
-                Content = "物料管理",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.BoxMultipleSearch24 },
-                TargetPageType = typeof(Views.Pages.Business.StockMaterialViewPage),
+                Name = "物料管理",
+                Icon = SymbolRegular.BoxMultipleSearch24,
+                PageType = typeof(Views.Pages.Business.StockMaterialViewPage),
             },
-            new NavigationViewItem()
+            new NavigationCard()
             {
-                Content = "标签管理",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.TagMultiple24 },
-                TargetPageType = typeof(Views.Pages.Business.ElectronicTagViewPage),
+                Name = "标签管理",
+                Icon = SymbolRegular.TagMultiple24,
+                PageType = typeof(Views.Pages.Business.ElectronicTagViewPage),
             },
         };
     }

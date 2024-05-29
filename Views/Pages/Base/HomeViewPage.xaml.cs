@@ -56,7 +56,7 @@ namespace MaterialDemo.Views.Pages.Base
                 return;
             }
 
-            _ = Navigate(typeof(Upms.UserViewPage));
+            _ = Navigate(typeof(FolderViewPage));
         }
 
     }

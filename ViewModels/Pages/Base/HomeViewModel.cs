@@ -38,6 +38,12 @@ namespace MaterialDemo.ViewModels.Pages.Base
                 Content = "存取日志",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.DocumentTable24 },
                 TargetPageType = typeof(Views.Pages.Business.StockMaterialStatementViewPage),
+            },
+            new NavigationViewItem()
+            {
+                Content = "存取日志2",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.DocumentTable24 },
+                TargetPageType = typeof(Views.Pages.Base.FolderViewPage),
             }
         };
 
