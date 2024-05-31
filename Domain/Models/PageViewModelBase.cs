@@ -36,6 +36,11 @@ namespace MaterialDemo.Domain.Models
             dataList = new List<T>();
         }
 
+        protected void RefreshPageInfo(List<T> items)
+        {
+            this.DataList = items;
+        }
+
         protected void RefreshPageInfo(IPagedList<T> pagedList) {
             this.DataList = pagedList.Items;
             this.TotalCount = pagedList.TotalCount;

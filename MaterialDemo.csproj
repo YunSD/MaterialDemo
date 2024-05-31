@@ -91,6 +91,9 @@
     <Compile Update="Views\Pages\Business\StockMaterialEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Upms\MenuViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

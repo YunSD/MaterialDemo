@@ -120,6 +120,12 @@
     <Page Update="Component\Controls\WPFUI\TitleBar\TitleBar.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Component\Controls\WPFUI\TreeView\TreeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\TreeView\TreeViewItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Component\Controls\WPFUI\VirtualizingWrapPanel\VirtualizingWrapPanel.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -169,6 +175,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Resources\Wpf.Ui.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Common\CommonTreeGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\Themes\Basic\Basic.xaml">
@@ -244,6 +253,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Upms\UserEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Upms\MenuViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Upms\UserViewPage.xaml">

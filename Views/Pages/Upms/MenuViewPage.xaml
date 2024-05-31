@@ -1,0 +1,74 @@
+﻿<Page x:Class="MaterialDemo.Views.Pages.Upms.MenuViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:converters="clr-namespace:MaterialDemo.Utils.Converters"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ui="clr-namespace:Wpf.Ui.Controls"
+      d:DesignHeight="450"
+      d:DesignWidth="1000"
+      Background="Transparent"
+      ScrollViewer.CanContentScroll="False"
+      mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Common/CommonTreeGrid.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Resources/Common/CommonForm.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:TableLevelConverter x:Key="TableLevelConverter" LevelWidth="10" />
+            <converters:TableVisibilityConverter x:Key="TableVisibilityConverter" />
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid ScrollViewer.CanContentScroll="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Style="{StaticResource BaseTableToolBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Style="{StaticResource MaterialDesignTitleLargeTextBlock}" Text="菜单列表" />
+                <Button HorizontalAlignment="Right"
+                        Background="{StaticResource TableHeadAddBrush}"
+                        BorderBrush="{StaticResource TableHeadAddBrush}"
+                        Command="{Binding ViewModel.OpenEditFormCommand}"
+                        Foreground="{DynamicResource ButtonForegroundBrush}"
+                        Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                        ToolTip="新增数据">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Add" Style="{StaticResource BaseTableSearchButtonPackIcon}" />
+                        <TextBlock Style="{StaticResource BaseTableToolButtonTextBlock}" Text="新增" />
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <materialDesign:TreeListView Grid.Column="0" Background="{StaticResource FormBackgroundBrush}" ItemsSource="{Binding ViewModel.DataList}" SelectionChanged="TreeListView_SelectionChanged">
+                <materialDesign:TreeListView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children, Mode=OneWay}">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Filled="True" Symbol="{Binding Icon}" />
+                            <GridSplitter Margin="10,0,10,0" />
+                            <TextBlock Margin="3,2" Text="{Binding Name, Mode=OneWay}" />
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </materialDesign:TreeListView.ItemTemplate>
+            </materialDesign:TreeListView>
+        </Grid>
+    </Grid>
+</Page>
