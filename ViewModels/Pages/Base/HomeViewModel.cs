@@ -50,6 +50,11 @@ namespace MaterialDemo.ViewModels.Pages.Base
                 Content = "存取日志2",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.DocumentTable24 },
                 TargetPageType = typeof(Views.Pages.Upms.MenuViewPage),
+            },new NavigationViewItem()
+            {
+                Content = "角色管理",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.DocumentTable24 },
+                TargetPageType = typeof(Views.Pages.Upms.RoleViewPage),
             }
         };
 

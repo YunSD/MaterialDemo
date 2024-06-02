@@ -91,7 +91,19 @@
     <Compile Update="Views\Pages\Business\StockMaterialEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Upms\RoleMenuEditorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Upms\RoleEditorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Upms\RoleViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Upms\MenuViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\Upms\MenuEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

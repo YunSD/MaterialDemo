@@ -1,4 +1,5 @@
 ﻿using log4net;
+using MaterialDemo.Config.Extensions;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Controls;
 using MaterialDemo.Domain.Models;
@@ -10,7 +11,7 @@ using Wpf.Ui.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
-    public partial class MenuViewModel : PageViewModelBase<MenuTreeViewInfo>, INavigationAware
+    public partial class MenuViewModel : PageViewModelBase<SysMenuViewInfo>, INavigationAware
     {
 
         private ILog logger = LogManager.GetLogger(nameof(MenuViewModel));
@@ -29,24 +30,13 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         [RelayCommand]
         private void OnSearch() {
-            base.RefreshPageInfo(MenuTreeViewInfo.build(repository.GetAll().ToList()));
-            //Expression<Func<SysUser, bool>> expression = ex => true;
-            //if (!string.IsNullOrWhiteSpace(Username)) { expression = expression.MergeAnd(expression, exp => exp.Username != null && exp.Username.Contains(Username)); }
-            //if (!string.IsNullOrWhiteSpace(Name)) { expression = expression.MergeAnd(expression, exp => exp.Name != null && exp.Name.Contains(Name)); }
-
-            //Func<IQueryable<SysUser>, IOrderedQueryable<SysUser>> orderBy = q => q.OrderBy(u => u.CreateTime);
-
-            //IPagedList<SysUser> pageList = sys_db.GetPagedList(expression, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
-            //base.RefreshPageInfo(pageList);
+            List<SysMenuViewInfo> menus =  repository.GetAll().OrderBy(e => e.Seq).ToList().Select(e => MapperUtil.Map<SysMenu, SysMenuViewInfo>(e)).ToList();
+            menus.ForEach(e => { menus.Where(m => m.MenuId == e.ParentId).GetFirstIfPresent(m => e.ParentName = m.Name); });
+            base.RefreshPageInfo(menus);
         }
 
         [RelayCommand]
-        private void OnRefresh()
-        {
-            //this.Username = null;
-            //this.Name = null;
-            //this.OnSearch();
-        }
+        private void OnRefresh() => this.OnSearch();
 
 
         #endregion
@@ -56,56 +46,47 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         /// <summary>
         /// edit form command
         /// </summary>
-        /// <param name="user"></param>
         /// <returns></returns>
         [RelayCommand]
-        private async Task OpenEditForm(SysUser? user)
+        private async Task OpenEditForm(SysMenuViewInfo? entity)
         {
-            SysUser data = new SysUser();
-            if (user != null) data = user; 
-            UserEditorViewModel editorViewModel = new UserEditorViewModel(data, SubmitEventHandler);
-            var form = new UserEditorView(editorViewModel);
+            SysMenuViewInfo data = new SysMenuViewInfo();
+            if (entity != null) data = entity; 
+            MenuEditorViewModel editorViewModel = new MenuEditorViewModel(data, DataList, SubmitEventHandler);
+            var form = new MenuEditorView(editorViewModel);
             var result = await DialogHost.Show(form, BaseConstant.BaseDialog);
-            logger.Debug(result);
         }
 
 
         /// <summary>
         /// form save command
         /// </summary>
-        /// <param name="sysUser"></param>
-        private void SubmitEventHandler(SysUser sysUser) {
-            //if (!sysUser.UserId.HasValue)
-            //{
-            //    Expression<Func<SysUser, bool>> pre = p => p.Username == sysUser.Username;
-            //    if (sys_db.Exists(pre))
-            //    {
-            //        SnackbarService.ShowError("用户登录名：" + sysUser.Username + " 不能重复");
-            //        return;
-            //    }
-            //    sysUser.UserId = SnowflakeIdWorker.Singleton.nextId();
-            //    sys_db.Insert(sysUser);
-            //}
-            //else {
-            //    sys_db.Update(sysUser);
-            //}
-            //_unitOfWork.SaveChanges();
-            //sys_db.ChangeEntityState(sysUser, Microsoft.EntityFrameworkCore.EntityState.Detached);
-            //this.OnSearch();
-            //DialogHost.Close(BaseConstant.BaseDialog);
+        private void SubmitEventHandler(SysMenu entity) {
+            if (!entity.MenuId.HasValue)
+            {
+                entity.MenuId = SnowflakeIdWorker.Singleton.nextId();
+                repository.Insert(entity);
+            }
+            else
+            {
+                repository.Update(entity);
+            }
+            _unitOfWork.SaveChanges();
+            repository.ChangeEntityState(entity, Microsoft.EntityFrameworkCore.EntityState.Detached);
+            this.OnSearch();
+            DialogHost.Close(BaseConstant.BaseDialog);
         }
 
 
         /// <summary>
         ///  删除 command
         /// </summary>
-        /// <param name="sys"></param>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(SysUser sys) {
-            if (!sys.UserId.HasValue) return;
+        private async Task DelConfirm(SysMenuViewInfo entity) {
+            if (!entity.MenuId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
-            this.rowId = sys.UserId;
+            this.rowId = entity.MenuId;
             var result = await DialogHost.Show(confirm, BaseConstant.BaseDialog, DeleteRowData);
         }
 
@@ -115,13 +96,13 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         // reference method
         private void DeleteRowData(object sender, DialogClosingEventArgs eventArgs)
         {
-            //if (Equals(eventArgs.Parameter, "false")) return;
-            //if (rowId == null) return;
-            //sys_db.Delete(rowId);
-            //_unitOfWork.SaveChanges();
+            if (Equals(eventArgs.Parameter, "false")) return;
+            if (rowId == null) return;
+            repository.Delete(rowId);
+            _unitOfWork.SaveChanges();
 
-            //// 刷新
-            //this.OnSearch();
+            // 刷新
+            this.OnSearch();
         }
 
         #endregion

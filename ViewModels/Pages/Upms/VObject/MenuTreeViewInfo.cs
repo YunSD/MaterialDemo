@@ -2,24 +2,57 @@
 using MaterialDemo.Domain.Models.Entity.Upms;
 using MaterialDemo.Utils;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Upms.VObject
 {
-    public class MenuTreeViewInfo : SysMenu
+    public class MenuTreeViewInfo : SysMenu, INotifyPropertyChanged
     {
+
+        public bool _isSelected;
+        public bool IsSelected { get { return _isSelected; } set {
+                this._isSelected = value;
+                OnPropertyChanged(nameof(IsSelected));
+                if (this.Children != null) {
+                    foreach (var item in this.Children)
+                    {
+                        item.IsSelected = value;
+                    }
+                }
+            } }
         public ObservableCollection<MenuTreeViewInfo>? Children { get; set; } // 子节点集合
 
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        public static List<MenuTreeViewInfo> build(List<SysMenu> menus, long? root = 0) {
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public static List<MenuTreeViewInfo> build(List<SysMenu> menus, long? root = 0, List<long?> selected = null) {
             var list = menus.Where(m => m.ParentId == root).OrderBy(m => m.Seq)
                 .Select(m=> {
                     MenuTreeViewInfo info = MapperUtil.Map<SysMenu, MenuTreeViewInfo>(m);
-                    List<MenuTreeViewInfo> list = build(menus, m.MenuId);
+                    if(selected != null && info.MenuId != null && selected.Contains(info.MenuId.Value)) info._isSelected = true;
+                    List<MenuTreeViewInfo> list = build(menus, m.MenuId, selected);
                     if(list.Any()) info.Children = new ObservableCollection<MenuTreeViewInfo>(list);
                     return info;
                 }).ToList();
             return list;
+        }
+
+        public IEnumerable<MenuTreeViewInfo> GetAllNodes()
+        {
+            yield return this;
+            if(Children != null)
+                foreach (var child in Children)
+                {
+                    foreach (var node in child.GetAllNodes())
+                    {
+                        yield return node;
+                    }
+                }
         }
 
         //private static ObservableCollection<MenuTreeViewInfo> findNodes(MenuTreeViewInfo menu, ObservableCollection<SysMenu> menus) {

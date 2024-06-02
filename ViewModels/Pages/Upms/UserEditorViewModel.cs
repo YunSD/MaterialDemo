@@ -39,8 +39,6 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         private string? remark;
 
 
-        public delegate bool SaveEventHandler(object sender, DialogOpenedEventArgs eventArgs);
-
         private FormSubmitEventHandler<SysUser> SubmitEvent;
 
         public UserEditorViewModel(SysUser sysUser, FormSubmitEventHandler<SysUser> submitEvent) {

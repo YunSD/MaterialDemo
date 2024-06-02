@@ -252,6 +252,18 @@
     <Page Update="Views\Pages\Base\LoginViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Pages\Upms\RoleMenuEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Upms\RoleEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Upms\RoleViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Upms\MenuEditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Pages\Upms\UserEditorView.xaml">
       <SubType>Designer</SubType>
     </Page>

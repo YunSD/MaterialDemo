@@ -11,6 +11,8 @@ namespace MaterialDemo.Config.EFDB
 
         public DbSet<SysUser> Users { get; set; }
         public DbSet<SysMenu> Menus { get; set; }
+        public DbSet<SysRole> Roles { get; set; }
+        public DbSet<SysRoleMenu> roleMenus { get; set; }
         public DbSet<StockMaterial> StockMaterials { get; set; }
         public DbSet<StockMaterialStatement> StockMaterialStatements { get; set; }
         public DbSet<StockShelf> StockShelves { get; set; }
@@ -29,7 +31,7 @@ namespace MaterialDemo.Config.EFDB
             });
 
             modelBuilder.Entity<SysMenu>(e => {
-                e.Property(e => e.Type).HasConversion(v => v.ToString(), v => (MenuTypeEnum)Enum.Parse(typeof(MenuTypeEnum), v));
+                e.Property(e => e.Position).HasConversion(v => v.ToString(), v => (MenuPositionEnum)Enum.Parse(typeof(MenuPositionEnum), v));
             });
 
 

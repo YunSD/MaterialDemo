@@ -25,12 +25,12 @@ namespace MaterialDemo.Domain.Models.Entity
         public string? Name { get; set; }
         public string? Icon { get; set; }
         public string? Router { get; set; }
-        public MenuTypeEnum Type { get; set; }
+        public MenuPositionEnum Position { get; set; }
         public int? Seq { get; set; }
 
     }
 
-    public enum MenuTypeEnum { 
-        ITEM, FOLDER
+    public enum MenuPositionEnum { 
+        TOP,BOTTOM
     }
 }
