@@ -1,8 +1,10 @@
 ﻿using log4net;
+using MaterialDemo.Controls;
+using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages.Base;
 using MaterialDemo.ViewModels.Windows;
-using System.Diagnostics;
 using System.Windows.Controls;
+using Wpf.Ui;
 
 namespace MaterialDemo.Views.Pages.Base
 {
@@ -27,14 +29,16 @@ namespace MaterialDemo.Views.Pages.Base
             InitializeComponent();
         }
 
+        private async void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            DialogHost.Show(new WaitingDialog(), BaseConstant.BaseDialog);
 
-        // Used for DialogHost.DialogClosingAttached
-        private void Sample2_DialogHost_OnDialogClosing(object sender, DialogClosingEventArgs eventArgs)
-            => Debug.WriteLine($"SAMPLE 2: Closing dialog with parameter: {eventArgs.Parameter ?? string.Empty}");
+            string password = PasswordBox.Password;
 
-        private void Sample2_DialogHost_OnDialogClosed(object sender, DialogClosedEventArgs eventArgs)
-            => Debug.WriteLine($"SAMPLE 2: Closed dialog with parameter: {eventArgs.Parameter ?? string.Empty}");
+            bool flag = await LoginViewModel.Login(password);
+            if (!flag) SnackbarService.ShowError("密码错误");
 
-
+            if (DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) DialogHost.Close(BaseConstant.BaseDialog);
+        }
     }
 }

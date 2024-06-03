@@ -14,27 +14,21 @@ namespace MaterialDemo.Views.Windows
     {
         #region ViewModel
         public MainWindowViewModel ViewModel { get; }
+        public IServiceProvider ServiceProvider { get; }
         #endregion
 
-        #region Fields
-        private LoginViewPage LoginViewPage;
-        private HomeViewPage HomeViewPage;
-        #endregion
-
-        public MainWindow(MainWindowViewModel viewModel, LoginViewPage loginView, HomeViewPage HomeView)
+        public MainWindow(MainWindowViewModel viewModel, IServiceProvider serviceProvider)
         {
             this.ViewModel = viewModel;
-            this.LoginViewPage = loginView;
-            this.HomeViewPage = HomeView;
+            this.ServiceProvider = serviceProvider;
 
             this.DataContext = this;
-
             InitializeComponent();
 
             // default
             MainFrame.Navigated += (sender, e) => { while (MainFrame.NavigationService.RemoveBackEntry() != null); };
 
-            this.Navigate(LoginViewPage);
+            this.Navigate(ServiceProvider.GetService(typeof(LoginViewPage)) as LoginViewPage);
 
             // register message
             WeakReferenceMessenger.Default.Register<LoginCompletedRedirectionMessage>(this);
@@ -73,12 +67,12 @@ namespace MaterialDemo.Views.Windows
 
         public void Receive(LoginCompletedRedirectionMessage message)
         {
-            this.Navigate(HomeViewPage);
+            this.Navigate(ServiceProvider.GetService(typeof(HomeViewPage)) as HomeViewPage);
         }
 
         public void Receive(LogoutMessage message)
         {
-            this.Navigate(LoginViewPage);
+            this.Navigate(ServiceProvider.GetService(typeof(LoginViewPage)) as LoginViewPage);
         }
     }
 

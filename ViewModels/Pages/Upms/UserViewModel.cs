@@ -6,8 +6,10 @@ using MaterialDemo.Config.UnitOfWork.Collections;
 using MaterialDemo.Controls;
 using MaterialDemo.Domain.Models;
 using MaterialDemo.Domain.Models.Entity;
+using MaterialDemo.Domain.Models.Entity.Upms;
 using MaterialDemo.Utils;
 using MaterialDemo.Views.Pages.Upms;
+using Microsoft.EntityFrameworkCore;
 using System.DirectoryServices;
 using System.Linq.Expressions;
 using Windows.ApplicationModel.Search;
@@ -85,8 +87,9 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         private async Task OpenEditForm(SysUser? user)
         {
             SysUser data = new SysUser();
-            if (user != null) data = user; 
-            UserEditorViewModel editorViewModel = new UserEditorViewModel(data, SubmitEventHandler);
+            if (user != null) data = user;
+            IRepository<SysRole> roleRepository = _unitOfWork.GetRepository<SysRole>();
+            UserEditorViewModel editorViewModel = new UserEditorViewModel(data, roleRepository.GetAll().AsNoTracking().ToList(), SubmitEventHandler);
             var form = new UserEditorView(editorViewModel);
             var result = await DialogHost.Show(form, BaseConstant.BaseDialog);
             logger.Debug(result);

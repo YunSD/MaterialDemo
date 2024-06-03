@@ -30,6 +30,9 @@
     <Page Update="Component\Controls\Common\NavigationPresenter\GalleryNavigationPresenter.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Component\Controls\Common\WaitingDialog\WaitingDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Component\Controls\WPFUI\AutoSuggestBox\AutoSuggestBox.xaml">
       <SubType>Designer</SubType>
     </Page>

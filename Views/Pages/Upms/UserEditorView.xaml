@@ -34,6 +34,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -60,15 +61,20 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
+                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="角色:" />
+                    <ComboBox x:Name="RoleCombo" Width="210" DisplayMemberPath="Name" ItemsSource="{Binding ViewModel.Roles}" SelectionChanged="RoleCombo_SelectionChanged" Style="{StaticResource BaseComboBoxFormTextBox}" />
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="电子邮件:" />
                     <TextBox Width="210" materialDesign:HintAssist.Hint="请输入电子邮件" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Email}" />
                 </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
+
+                <StackPanel Grid.Row="3" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="状态:" />
                     <ToggleButton IsChecked="{Binding ViewModel.LockFlag, Converter={StaticResource BaseStatusEnumConverter}, Mode=TwoWay}" Style="{StaticResource MaterialDesignSwitchToggleButton}" ToolTip="是否允许登录" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,15" Orientation="Horizontal">
+                <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Padding="15,0,15,0" Style="{StaticResource BaseFormTextBlock}" Text="备注:" />
                     <TextBox Width="510" materialDesign:HintAssist.Hint="请输入备注..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Remark}" />
                 </StackPanel>

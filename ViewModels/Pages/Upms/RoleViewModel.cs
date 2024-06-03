@@ -122,7 +122,17 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         {
             if (Equals(eventArgs.Parameter, "false")) return;
             if (rowId == null) return;
+
+            // 删除角色数据
+            IRepository<SysRoleMenu> rmRepository = _unitOfWork.GetRepository<SysRoleMenu>();
+            List<SysRoleMenu> roleMenus = rmRepository.GetAll(predicate: m => m.RoleId == rowId).ToList();
+            if (roleMenus.Any())
+            {
+                rmRepository.Delete(roleMenus);
+            }
+
             repository.Delete(rowId);
+
             _unitOfWork.SaveChanges();
 
             // 刷新

@@ -24,8 +24,9 @@ namespace MaterialDemo.Views.Pages.Business
 
         private void Submit_Button_Click(object sender, RoutedEventArgs e)
         {
+            if (!DialogHost.IsDialogOpen(BaseConstant.RootDialog)) return;
             var selectedRow = DataGrid.SelectedItem as StockMaterial;
-            if (selectedRow == null) selectedRow = new ();
+            if (selectedRow == null) selectedRow = new();
             SubmitEvent(selectedRow);
             DialogHost.Close(BaseConstant.RootDialog);
         }

@@ -57,7 +57,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         [RelayCommand]
         private void submit() {
-
+            if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
             ValidateAllProperties();
             if (HasErrors) return;
 

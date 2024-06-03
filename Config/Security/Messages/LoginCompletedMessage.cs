@@ -4,9 +4,8 @@ namespace MaterialDemo.Config.Security.Messages
 {
     public sealed class LoginCompletedMessage
     {
-        public LoginCompletedMessage(SysUser user) => SysUser = user;
+        public LoginCompletedMessage(SecurityUser user) => User = user;
 
-
-        public SysUser SysUser { get; set; }
+        public SecurityUser User { get; set; }
     }
 }

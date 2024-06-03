@@ -19,6 +19,9 @@ namespace MaterialDemo.Domain.Models.Entity
         [Key]
         [Column("user_id")]
         public long? UserId { get; set; }
+
+        [Column("role_id")]
+        public long? RoleId { get; set; }
         public string? Username { get; set; }
         public string? Password { get; set; }
         public string? Name { get; set; }

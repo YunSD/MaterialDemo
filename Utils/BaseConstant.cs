@@ -14,5 +14,7 @@ namespace MaterialDemo.Utils
         public static readonly string SUCCESS = "0";
         public static readonly string FAIL = "1";
 
+        public static readonly string BCRYPT_SALT = "MATERIAL_DEMO";
+
     }
 }

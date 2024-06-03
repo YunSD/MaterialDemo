@@ -88,20 +88,11 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <materialDesign:PackIcon Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Kind="LockPlusOutline" />
-                            <PasswordBox x:Name="password" hc:InfoElement.Placeholder="请输入密码." Style="{StaticResource PasswordBoxControl}" />
+                            <PasswordBox x:Name="PasswordBox" hc:InfoElement.Placeholder="请输入密码." Style="{StaticResource PasswordBoxControl}" />
                         </Grid>
                     </Border>
 
-                    <Button Command="{Binding LoginViewModel.SubmitByPasswordCommand}" Content="Sign In" Style="{StaticResource submitButton}">
-                        <Button.CommandParameter>
-                            <StackPanel Margin="16">
-                                <ProgressBar Margin="16" HorizontalAlignment="Center" IsIndeterminate="True" Style="{StaticResource MaterialDesignCircularProgressBar}" Value="0" />
-                                <TextBlock Margin="0,0,0,5" HorizontalAlignment="Center" Text="正在登录..." />
-                                <!--  -Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"  -->
-                                <Button HorizontalAlignment="Center" Content="CANCEL" IsCancel="True" Style="{StaticResource MaterialDesignFlatButton}" />
-                            </StackPanel>
-                        </Button.CommandParameter>
-                    </Button>
+                    <Button x:Name="SignIn" Click="SignIn_Click" Content="Sign In" Style="{StaticResource submitButton}" />
                 </StackPanel>
             </Grid>
 

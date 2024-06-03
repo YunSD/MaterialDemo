@@ -60,13 +60,7 @@ namespace MaterialDemo
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainWindowViewModel>();
 
-                services.AddSingleton(SecurityUser.SECURITY_USER);
-
-                services.AddSingleton<HomeViewPage>();
-                services.AddSingleton<LoginViewModel>();
-
-                services.AddSingleton<HomeViewPage>();
-                services.AddSingleton<HomeViewModel>();
+                services.AddSingleton(SecurityContext.Singleton);
 
                 services.AddTransientFromNamespace("MaterialDemo.ViewModels", Assembly.GetExecutingAssembly());
                 services.AddTransientFromNamespace("MaterialDemo.Views", Assembly.GetExecutingAssembly());

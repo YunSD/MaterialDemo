@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using MaterialDemo.Config.Security;
+using MaterialDemo.Security;
+using System.Collections.ObjectModel;
 using Wpf.Ui.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Base
@@ -14,7 +16,11 @@ namespace MaterialDemo.ViewModels.Pages.Base
                 Icon = new SymbolIcon { Symbol = SymbolRegular.Home24 },
                 TargetPageType = typeof(Views.Pages.Base.LoginViewPage)
             },
-            
+            new NavigationViewItem() {
+                Content = "首页2",
+                Icon = new SymbolIcon { Symbol = SymbolRegular.Home24 },
+                TargetPageType = typeof(Views.Pages.Base.LoginViewPage)
+            },
             new NavigationViewItem()
             {
                 Content = "物料管理",
@@ -68,5 +74,12 @@ namespace MaterialDemo.ViewModels.Pages.Base
                 TargetPageType = typeof(Views.Pages.Upms.UserViewPage),
             },
         };
+
+        public HomeViewModel(){
+            SecurityUser? user = SecurityContext.Singleton.getUserInfo();
+            if (user != null && user.menus.Any()) { 
+
+            }
+        }
     }
 }

@@ -20,12 +20,12 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Lime.xaml" />
                 <materialDesign:CustomColorTheme BaseTheme="Light" PrimaryColor="{StaticResource ThemeColor}" SecondaryColor="{StaticResource ThemeForeColor}" />
 
+                <wpfui:ThemesDictionary Theme="Light" />
+                <wpfui:ControlsDictionary />
+
                 <!--  HandyControl  -->
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
-
-                <wpfui:ThemesDictionary Theme="Light" />
-                <wpfui:ControlsDictionary />
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

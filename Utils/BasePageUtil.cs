@@ -1,16 +1,7 @@
-﻿using ControlzEx.Standard;
-using HandyControl.Controls;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using HandyControl.Controls;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Windows.System;
 
 namespace MaterialDemo.Utils
 {

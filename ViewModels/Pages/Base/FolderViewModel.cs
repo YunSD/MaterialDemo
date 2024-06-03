@@ -24,9 +24,9 @@ namespace MaterialDemo.ViewModels.Pages.Base
             NavigationCards.Add(
                 new NavigationCard()
                 {
-                    Name = "物料管理",
+                    Name = "首页2",
                     Icon = SymbolRegular.BoxMultipleSearch24,
-                    PageType = typeof(Views.Pages.Business.StockMaterialViewPage),
+                    PageType = typeof(Views.Pages.Base.LoginViewPage),
                 }
             );
         }

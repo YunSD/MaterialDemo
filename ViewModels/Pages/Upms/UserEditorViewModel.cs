@@ -2,6 +2,7 @@
 using MaterialDemo.Domain.Models.Entity;
 using System.ComponentModel.DataAnnotations;
 using MaterialDemo.Domain.Enums;
+using MaterialDemo.Domain.Models.Entity.Upms;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
@@ -10,7 +11,10 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private bool editModel = true;
 
-        private long? userId;
+        private SysUser entity;
+
+        [ObservableProperty]
+        private long? roleId;
 
         [Required(ErrorMessage ="该字段不能为空")]
         [ObservableProperty]
@@ -38,17 +42,21 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private string? remark;
 
+        [ObservableProperty]
+        private IList<SysRole> roles;
 
         private FormSubmitEventHandler<SysUser> SubmitEvent;
 
-        public UserEditorViewModel(SysUser sysUser, FormSubmitEventHandler<SysUser> submitEvent) {
+        public UserEditorViewModel(SysUser sysUser, IList<SysRole> roles, FormSubmitEventHandler<SysUser> submitEvent) {
             this.SubmitEvent = submitEvent;
+            this.roles = roles;
+            entity = sysUser;
 
             if (sysUser.UserId.HasValue) {
-                this.userId = sysUser.UserId;
                 editModel = false;
             }
             
+            this.RoleId = sysUser.RoleId;
             this.Username = sysUser.Username;
             this.InfoCard = sysUser.InfoCard;
             this.Name = sysUser.Name;
@@ -60,23 +68,20 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         [RelayCommand]
         private void submit() {
-
             ValidateAllProperties();
             if (HasErrors) return;
-            SysUser entity = new()
-            {
-                UserId = userId,
-                Username = Username,
-                Name = Name,
-                Phone = Phone,
-                InfoCard = InfoCard,
-                Email = Email,
-                Remark = Remark,
-                LockFlag = LockFlag
-            };
+
+            entity.RoleId = RoleId;
+            entity.Username = Username;
+            entity.Name = Name;
+            entity.RoleId = RoleId;
+            entity.Phone = Phone;
+            entity.InfoCard = InfoCard;
+            entity.Email = Email;
+            entity.Remark = Remark;
+            entity.LockFlag = LockFlag;
 
             SubmitEvent(entity);
-           
         }
 
     }

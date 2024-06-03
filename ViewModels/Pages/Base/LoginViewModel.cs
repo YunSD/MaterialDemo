@@ -1,70 +1,62 @@
 ﻿namespace MaterialDemo.ViewModels.Pages.Base
 {
     using CommunityToolkit.Mvvm.Messaging;
+    using MaterialDemo.Config.Security;
     using MaterialDemo.Config.Security.Messages;
     using MaterialDemo.Config.UnitOfWork;
     using MaterialDemo.Domain.Models.Entity;
-    using MaterialDemo.Utils;
+    using MaterialDemo.Domain.Models.Entity.Upms;
     using System;
-    using System.Security;
 
     /// <summary>
     /// Defines the <see cref="LoginViewModel" />
     /// </summary>
     public partial class LoginViewModel : ObservableObject
     {
-        /// <summary>
-        /// Defines the _unitOfWork
-        /// </summary>
+
         private IUnitOfWork _unitOfWork;
 
-        /// <summary>
-        /// Defines the username
-        /// </summary>
+
         [ObservableProperty]
         public string? username;
 
-        /// <summary>
-        /// Sets the password
-        /// </summary>
-        public SecureString? password { private get; set; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LoginViewModel"/> class.
-        /// </summary>
-        /// <param name="unitOfWork">The unitOfWork<see cref="IUnitOfWork"/></param>
         public LoginViewModel(IUnitOfWork unitOfWork)
         {
             this._unitOfWork = unitOfWork;
         }
 
-        //[RelayCommand]
-        //public void LoginMethod() {
-        //    if (this.DataContext != null)
-        //    { ((dynamic)this.DataContext).SecurePassword = ((PasswordBox)sender).SecurePassword; }
+        public async Task<bool> Login(string password) {
+            await Task.Delay(1500);
+            if (Username == null) return false;
+            SysUser user = LoadUser(Username);
+            if (user == null || !SecurityUtil.Verify(password, user.Password)) return false;
+            WeakReferenceMessenger.Default.Send(new LoginCompletedMessage(LoadSecurityUser(user)));
+            return true;
+        }
 
-        //    var repository = _unitOfWork.GetRepository<SysUser>();
-        //    List<SysUser> users = _unitOfWork.GetRepository<SysUser>().GetAll().ToList();
-        //    Console.WriteLine("1");
+        private SysUser LoadUser(string username) {
+            return _unitOfWork.GetRepository<SysUser>().GetFirstOrDefault(predicate: u=> u.Username != null && u.Username.Equals(username));
+        }
 
-        //}
+        private SecurityUser LoadSecurityUser(SysUser user) { 
+           
+            string? roleName = default;
+            List<SysMenu>? menus = default;
 
-        /// <summary>
-        /// The SubmitByPassword
-        /// </summary>
-        /// <param name="param">The param<see cref="Object"/></param>
-        [RelayCommand]
-        public void SubmitByPassword(Object param)
-        {
-            DialogHost.Show(param, BaseConstant.BaseDialog);
-            SysUser user = new SysUser();
-            user.Username = "admin";
-            user.Name = "admin";
-            user.Avatar = "admin_avatar";
-            user.Email = "admin email";
-            user.Phone = "admin phone";
-            WeakReferenceMessenger.Default.Send(new LoginCompletedMessage(user));
-            DialogHost.Close(BaseConstant.BaseDialog);
+            if (user.RoleId != null)
+            {
+                SysRole role = _unitOfWork.GetRepository<SysRole>().Find(user.RoleId);
+                if (role != null) roleName = role.Name;
+
+                List<SysRoleMenu> roleMenus = _unitOfWork.GetRepository<SysRoleMenu>().GetAll(predicate: e=>e.RoleId == user.RoleId).ToList();
+                if (roleMenus.Any()) { 
+                    menus = _unitOfWork.GetRepository<SysMenu>().GetAll(predicate:e=>roleMenus.Select(e=>e.MenuId)
+                        .Contains(e.MenuId)).ToList();
+                }
+            }
+
+            return new SecurityUser(user, roleName, menus);
         }
     }
 }
