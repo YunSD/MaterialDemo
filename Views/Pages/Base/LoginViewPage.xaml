@@ -7,6 +7,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:pages="clr-namespace:MaterialDemo.ViewModels.Pages.Base"
       Title="LOGIN"
+      KeyDown="Page_KeyDown"
       Background="{DynamicResource WindowBackground}"
       mc:Ignorable="d">
 
@@ -78,7 +79,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <materialDesign:PackIcon Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Kind="Account" />
-                            <TextBox x:Name="username" hc:InfoElement.Placeholder="请输入用户名." Style="{StaticResource LoginBoxControl}" Text="{Binding LoginViewModel.Username}" />
+                            <TextBox x:Name="username" InputMethod.IsInputMethodEnabled="False" hc:InfoElement.Placeholder="请输入用户名." Style="{StaticResource LoginBoxControl}" Text="{Binding LoginViewModel.Username}" />
                         </Grid>
                     </Border>
 
@@ -88,7 +89,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <materialDesign:PackIcon Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Kind="LockPlusOutline" />
-                            <PasswordBox x:Name="PasswordBox" hc:InfoElement.Placeholder="请输入密码." Style="{StaticResource PasswordBoxControl}" />
+                            <PasswordBox x:Name="PasswordBox" InputMethod.IsInputMethodEnabled="False" hc:InfoElement.Placeholder="请输入密码." Style="{StaticResource PasswordBoxControl}" />
                         </Grid>
                     </Border>
 

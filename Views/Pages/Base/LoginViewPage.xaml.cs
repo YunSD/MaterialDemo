@@ -4,6 +4,7 @@ using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages.Base;
 using MaterialDemo.ViewModels.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Wpf.Ui;
 
 namespace MaterialDemo.Views.Pages.Base
@@ -39,6 +40,12 @@ namespace MaterialDemo.Views.Pages.Base
             if (!flag) SnackbarService.ShowError("密码错误");
 
             if (DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) DialogHost.Close(BaseConstant.BaseDialog);
+        }
+
+        private void Page_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            
+            if (e.Key == Key.Enter) SignIn_Click(sender, e);
         }
     }
 }

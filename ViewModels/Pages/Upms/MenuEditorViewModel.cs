@@ -15,7 +15,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private IList<SysMenuViewInfo> parents;
 
-        private long? menuId;
+        private SysMenu entity;
 
         [ObservableProperty]
         private long? parentId;
@@ -49,9 +49,9 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         public MenuEditorViewModel(SysMenuViewInfo entity, IList<SysMenuViewInfo> sysMenuVOs, FormSubmitEventHandler<SysMenu> submitEvent) {
             this.SubmitEvent = submitEvent;
+            this.entity = entity;
 
             if (entity.MenuId.HasValue) {
-                this.menuId = entity.MenuId;
                 editModel = false;
             }
             this.Parents = sysMenuVOs;
@@ -72,17 +72,13 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
             if (HasErrors) return;
 
-            SysMenu entity = new()
-            {
-                MenuId = menuId,
-                ParentId = ParentId == null ? 0 : ParentId,
-                Name = Name,
-                Icon = Icon,
-                Router = Router,
-                Position = Position,
-                Seq = Seq,
-                Remark = Remark,
-            };
+            this.entity.ParentId = ParentId == null ? 0 : ParentId;
+            this.entity.Name = Name;
+            this.entity.Icon = Icon;
+            this.entity.Router = Router;
+            this.entity.Position = Position;
+            this.entity.Seq = Seq;
+            this.entity.Remark = Remark;
             SubmitEvent(entity);
         }
     }

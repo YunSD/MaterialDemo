@@ -28,9 +28,17 @@ namespace MaterialDemo.Domain.Models.Entity
         public MenuPositionEnum Position { get; set; }
         public int? Seq { get; set; }
 
+
+        public bool isRoot()
+        {
+            if (ParentId == 0) return true;
+            return false;
+        }
     }
 
     public enum MenuPositionEnum { 
         TOP,BOTTOM
     }
+
+
 }

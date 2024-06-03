@@ -1,6 +1,4 @@
 ﻿using MaterialDemo.ViewModels.Pages.Base;
-using MaterialDemo.ViewModels.Pages.Upms;
-using System.Windows.Navigation;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
 

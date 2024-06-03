@@ -14,7 +14,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [ObservableProperty]
         private bool editModel = true;
 
-        private long? key;
+        private StockShelfViewInfo entity;
 
         [Required(ErrorMessage ="该字段不能为空")]
         [ObservableProperty]
@@ -82,9 +82,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
         public StockShelfEditorViewModel(StockShelfViewInfo entity, FormSubmitEventHandler<StockShelf> submitEvent) {
             
             this.SubmitEvent = submitEvent;
-            
+            this.entity = entity;
+
             if (entity.ShelfId.HasValue) {
-                this.key = entity.ShelfId;
                 editModel = false;
             }
             this.Code = entity.Code;
@@ -118,25 +118,21 @@ namespace MaterialDemo.ViewModels.Pages.Business
             ValidateAllProperties();
             if (HasErrors) return;
 
-            StockShelf entity = new()
-            {
-                ShelfId = this.key,
-                MaterialId = this.StockMaterialId,
-                TagId = this.ElectronicTagId,
+            this.entity.MaterialId = this.StockMaterialId;
+            this.entity.TagId = this.ElectronicTagId;
 
-                Code = this.Code,
-                BarCode = this.BarCode,
-                WarehouseName = this.WarehouseName,
-                ShelvesCode = this.ShelvesCode,
-                ShelvesType = this.ShelvesType,
-                Quantity = this.Quantity,
+            this.entity.Code = this.Code;
+            this.entity.BarCode = this.BarCode;
+            this.entity.WarehouseName = this.WarehouseName;
+            this.entity.ShelvesCode = this.ShelvesCode;
+            this.entity.ShelvesType = this.ShelvesType;
+            this.entity.Quantity = this.Quantity;
 
-                ScalesAddress = this.ScalesAddress,
-                ScalesModel = this.ScalesModel,
-                ScalesStatus = this.ScalesSatus,
+            this.entity.ScalesAddress = this.ScalesAddress;
+            this.entity.ScalesModel = this.ScalesModel;
+            this.entity.ScalesStatus = this.ScalesSatus;
 
-                Remark = this.Remark
-            };
+            this.entity.Remark = this.Remark;
 
             SubmitEvent(entity);
         }

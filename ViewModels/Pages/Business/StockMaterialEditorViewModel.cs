@@ -11,7 +11,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [ObservableProperty]
         private bool editModel = true;
 
-        private long? key;
+        private StockMaterial entity;
 
         [Required(ErrorMessage ="该字段不能为空")]
         [ObservableProperty]
@@ -57,11 +57,12 @@ namespace MaterialDemo.ViewModels.Pages.Business
         public StockMaterialEditorViewModel(StockMaterial entity, FormSubmitEventHandler<StockMaterial> submitEvent) {
             
             this.SubmitEvent = submitEvent;
-            
+            this.entity = entity;
+
             if (entity.MaterialId.HasValue) {
-                this.key = entity.MaterialId;
                 editModel = false;
             }
+
             this.Name = entity.Name;
             this.Code = entity.Code;
             this.model = entity.Model;
@@ -80,18 +81,14 @@ namespace MaterialDemo.ViewModels.Pages.Business
             ValidateAllProperties();
             if (HasErrors) return;
 
-            StockMaterial entity = new()
-            {
-                MaterialId = this.key,
-                Name = this.Name,
-                Code = this.Code,
-                Model = this.Model,
-                Unit = this.Unit,
-                Image = this.Image,
-                MaxQuantity = this.MaxQuantity,
-                MinQuantity = this.MinQuantity,
-                Remark = this.Remark
-            };
+            this.entity.Name = this.Name;
+            this.entity.Code = this.Code;
+            this.entity.Model = this.Model;
+            this.entity.Unit = this.Unit;
+            this.entity.Image = this.Image;
+            this.entity.MaxQuantity = this.MaxQuantity;
+            this.entity.MinQuantity = this.MinQuantity;
+            this.entity.Remark = this.Remark;
 
             SubmitEvent(entity);
         }

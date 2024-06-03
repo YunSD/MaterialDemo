@@ -12,7 +12,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [ObservableProperty]
         private bool editModel = true;
 
-        private long? key;
+        private ElectronicTag entity;
 
 
         [Required(ErrorMessage = "该字段不能为空")]
@@ -43,9 +43,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
         public ElectronicTagEditorViewModel(ElectronicTag entity, FormSubmitEventHandler<ElectronicTag> submitEvent) {
             
             this.SubmitEvent = submitEvent;
-            
+            this.entity = entity;
+
             if (entity.TagId.HasValue) {
-                this.key = entity.TagId;
                 editModel = false;
             }
             this.Code = entity.Code;
@@ -61,15 +61,11 @@ namespace MaterialDemo.ViewModels.Pages.Business
             ValidateAllProperties();
             if (HasErrors) return;
 
-            ElectronicTag entity = new()
-            {
-                TagId = this.key,
-                Code = this.Code,
-                Ip = this.Ip,
-                ConnectStatus = this.ConnectStatus,
-                WorkStatus = this.WorkStatus,
-                Remark = this.Remark
-            };
+            this.entity.Code = this.Code;
+            this.entity.Ip = this.Ip;
+            this.entity.ConnectStatus = this.ConnectStatus;
+            this.entity.WorkStatus = this.WorkStatus;
+            this.entity.Remark = this.Remark;
 
             SubmitEvent(entity);
         }

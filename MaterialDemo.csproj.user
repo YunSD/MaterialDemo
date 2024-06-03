@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\Pages\Base\EmptyViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Base\HomeViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -217,6 +220,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\Themes\Theme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Base\EmptyViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Base\HomeViewPage.xaml">

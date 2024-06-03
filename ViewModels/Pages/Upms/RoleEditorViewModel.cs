@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using MaterialDemo.Utils;
 using MaterialDemo.Domain.Models.Entity.Upms;
+using MaterialDemo.Domain.Models.Entity;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
@@ -10,7 +11,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private bool editModel = true;
 
-        private long? roleId;
+        private SysRole entity;
 
         [Required(ErrorMessage = "该字段不能为空")]
         [ObservableProperty]
@@ -30,9 +31,9 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         public RoleEditorViewModel(SysRole entity, FormSubmitEventHandler<SysRole> submitEvent) {
             this.SubmitEvent = submitEvent;
+            this.entity = entity;
 
             if (entity.RoleId.HasValue) {
-                this.roleId = entity.RoleId;
                 editModel = false;
             }
             this.Name = entity.Name;
@@ -47,13 +48,10 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
             if (HasErrors) return;
 
-            SysRole entity = new()
-            {
-                RoleId = roleId,
-                Name = Name,
-                Code = Code,
-                Remark = Remark,
-            };
+            this.entity.Name = Name;
+            this.entity.Code = Code;
+            this.entity.Remark = Remark;
+
             SubmitEvent(entity);
         }
     }

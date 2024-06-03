@@ -1,13 +1,16 @@
 ﻿using HandyControl.Controls;
+using log4net;
+using MaterialDemo.ViewModels.Pages.Business;
 using System.IO;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Wpf.Ui.Controls;
 
 namespace MaterialDemo.Utils
 {
     public class BasePageUtil
     {
-
+        private static ILog logger = LogManager.GetLogger(nameof(BasePageUtil));
         public static DialogHost? GetDialogHost(DependencyObject ob)
         {
             DependencyObject element = VisualTreeHelper.GetParent(ob);
@@ -30,6 +33,30 @@ namespace MaterialDemo.Utils
                 Stretch = imageSelector.Stretch
             });
             imageSelector.SetValue(ImageSelector.HasValuePropertyKey, true);
+        }
+
+
+        public static SymbolRegular ParseSymbolIcon(string? symbol)
+        {
+            SymbolRegular symbolRegular = SymbolRegular.ErrorCircle24;
+            try {
+                symbolRegular = (SymbolRegular)Enum.Parse(typeof(SymbolRegular), symbol);
+            } catch (Exception e) {
+                logger.Error(e);
+            }
+            return symbolRegular;
+        }
+
+        public static Type ParseClassType(string? clazz){
+            Type type = typeof(Views.Pages.Base.EmptyViewPage);
+            if (clazz == null) return type;
+            try {
+                Type? cur = Type.GetType(clazz);
+                if (cur != null) type = cur;
+            } catch (Exception e) {
+                logger.Error(e);
+            }
+            return type;
         }
 
     }
