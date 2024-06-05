@@ -24,7 +24,7 @@ namespace MaterialDemo.Views.Pages.Base
             INavigationViewItem? navigationView = NavigationService.GetNavigationControl().SelectedItem;
             if(navigationView != null)
             {
-                ViewModel.LoadNavigationItems(navigationView.TargetPageType);
+                ViewModel.LoadNavigationItems(navigationView);
             }
         }
     }

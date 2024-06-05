@@ -23,9 +23,9 @@
         <BitmapImage UriSource="pack://application:,,,/Assets/icon.png" />
     </Window.Icon>
 
-    <Grid>
-        <materialDesign:DialogHost Name="HostDialog" Identifier="RootDialog" Style="{StaticResource MaterialDesignEmbeddedDialogHost}">
-            <materialDesign:DialogHost DialogTheme="Inherit" Identifier="BaseDialog" Style="{StaticResource MaterialDesignEmbeddedDialogHost}">
+    <Grid KeyboardNavigation.TabNavigation="None">
+        <materialDesign:DialogHost Name="HostDialog" Focusable="False" Identifier="RootDialog" IsTabStop="False" KeyboardNavigation.TabNavigation="None" Style="{StaticResource MaterialDesignEmbeddedDialogHost}">
+            <materialDesign:DialogHost DialogTheme="Inherit" Focusable="False" Identifier="BaseDialog" IsTabStop="False" KeyboardNavigation.TabNavigation="None" Style="{StaticResource MaterialDesignEmbeddedDialogHost}">
                 <Frame x:Name="MainFrame" BorderThickness="0" NavigationUIVisibility="Hidden" />
             </materialDesign:DialogHost>
         </materialDesign:DialogHost>

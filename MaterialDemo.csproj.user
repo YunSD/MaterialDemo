@@ -39,6 +39,9 @@
     <Page Update="Component\Controls\WPFUI\AutoSuggestBox\AutoSuggestBox.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Component\Controls\WPFUI\BreadcrumbBar\BreadcrumbBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Component\Controls\WPFUI\Button\Button.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -223,6 +226,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Base\EmptyViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Upms\PersonViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Base\HomeViewPage.xaml">

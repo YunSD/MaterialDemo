@@ -3,6 +3,7 @@ using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Domain.Models.Entity.Upms;
 using MaterialDemo.ViewModels.Pages.Business;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace MaterialDemo.Config.EFDB
 {

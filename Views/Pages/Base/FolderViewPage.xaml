@@ -4,15 +4,16 @@
       xmlns:controls="clr-namespace:MaterialDemo.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ui="clr-namespace:Wpf.Ui.Controls"
       xmlns:upms="clr-namespace:MaterialDemo.ViewModels.Pages.Upms"
       Title="UserView"
-      d:DataContext="{d:DesignInstance Type=upms:UserViewModel}"
       d:DesignHeight="450"
       d:DesignWidth="1000"
       Background="Transparent"
       ScrollViewer.CanContentScroll="False"
       mc:Ignorable="d">
     <StackPanel Margin="0,0,0,24">
+        <TextBlock Margin="20,32,0,17" FontSize="28" FontWeight="Bold" Text="{Binding ViewModel.Title}" />
         <controls:GalleryNavigationPresenter Margin="0" Padding="0" ItemsSource="{Binding ViewModel.NavigationCards, Mode=OneWay}" />
     </StackPanel>
 </Page>

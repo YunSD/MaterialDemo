@@ -18,6 +18,7 @@ using log4net;
 using MaterialDemo.ViewModels.Pages.Base;
 using Wpf.Ui;
 using MaterialDemo.Config.Extensions;
+using MaterialDemo.Config.Db;
 
 
 namespace MaterialDemo
@@ -53,6 +54,7 @@ namespace MaterialDemo
                     .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution)
                     .EnableDetailedErrors()
                     .EnableSensitiveDataLogging()
+                    .AddInterceptors(new BaseMetaDateInterceptor())
                     .LogTo(Console.WriteLine, LogLevel.Debug));
                 services.AddUnitOfWork<BaseDbContext>();
 

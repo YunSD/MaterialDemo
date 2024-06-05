@@ -40,6 +40,7 @@
         <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/VirtualizingWrapPanel/VirtualizingWrapPanel.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/TreeView/TreeView.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/TreeView/TreeViewItem.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/BreadcrumbBar/BreadcrumbBar.xaml" />
 
         <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/WPFUI/MessageBox/MessageBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MaterialDemo;component/Component/Controls/Common/NavigationPresenter/GalleryNavigationPresenter.xaml" />

@@ -33,10 +33,29 @@
         </hc:Watermark>
 
         <materialDesign:ColorZone Grid.Row="0" Padding="8" materialDesign:ElevationAssist.Elevation="Dp4" Mode="SecondaryMid" Style="{DynamicResource TopBar}">
-            <StackPanel Orientation="Horizontal">
-                <ToggleButton Click="NavigationToggle" Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
-                <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="Material Design In XAML Toolkit" />
-            </StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <ToggleButton Click="NavigationToggle" Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                    <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="{Binding WindowViewModel.ApplicationTitle}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" />
+                <Button Grid.Column="2"
+                        Width="37"
+                        Height="37"
+                        Margin="0,0,5,0"
+                        Command="{Binding NavigationItems.LogOutCommand}"
+                        Content="{materialDesign:PackIcon Kind=ExitToApp,
+                                                          Size=32}"
+                        Foreground="DimGray"
+                        Style="{StaticResource MaterialDesignToolButton}"
+                        ToolTip="Exit" />
+            </Grid>
         </materialDesign:ColorZone>
 
         <ui:NavigationView x:Name="RootNavigation"

@@ -61,6 +61,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Pages\Upms\PersonViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Base\FolderViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

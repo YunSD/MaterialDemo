@@ -3,6 +3,7 @@ using MaterialDemo.Domain.Models.Entity;
 using System.ComponentModel.DataAnnotations;
 using MaterialDemo.Domain.Enums;
 using MaterialDemo.Domain.Models.Entity.Upms;
+using MaterialDemo.Utils;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
@@ -68,6 +69,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         [RelayCommand]
         private void submit() {
+            if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
             ValidateAllProperties();
             if (HasErrors) return;
 

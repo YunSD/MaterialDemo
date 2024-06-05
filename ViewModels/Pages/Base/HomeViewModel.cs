@@ -1,8 +1,11 @@
-﻿using MaterialDemo.Config.Security;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using MaterialDemo.Config.Security;
+using MaterialDemo.Config.Security.Messages;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Security;
 using MaterialDemo.Utils;
 using System.Collections.ObjectModel;
+using Windows.System;
 using Wpf.Ui.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Base
@@ -114,5 +117,8 @@ namespace MaterialDemo.ViewModels.Pages.Base
             }
         }
 
+
+        [RelayCommand]
+        private void LogOut() => WeakReferenceMessenger.Default.Send(new LogoutMessage());
     }
 }

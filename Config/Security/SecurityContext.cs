@@ -19,6 +19,13 @@ namespace MaterialDemo.Security
             return null;
         }
 
+       
+        public static long? GetUserId() => Singleton.SecurityUser?.UserId;
+        public static string? GetUserLoginName() => Singleton.SecurityUser == null ? "anonymous" : Singleton.SecurityUser.UserName;
+        public static string? GetUserName() => Singleton.SecurityUser?.Name;
+
+
+
         #region field
         private volatile SecurityUser? SecurityUser;
         private volatile bool Sign = false;
