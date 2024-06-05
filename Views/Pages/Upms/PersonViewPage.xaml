@@ -6,9 +6,8 @@
       xmlns:hc="https://handyorg.github.io/handycontrol"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:ui="clr-namespace:Wpf.Ui.Controls"
-      xmlns:upms="clr-namespace:MaterialDemo.ViewModels.Pages.Upms"
       Title="UserView"
-      d:DesignHeight="450"
+      d:DesignHeight="650"
       d:DesignWidth="1000"
       Background="Transparent"
       ScrollViewer.CanContentScroll="False"
@@ -44,7 +43,7 @@
                                 <TextBox Margin="0,6,0,0" hc:TitleElement.Title="电话：" hc:TitleElement.TitlePlacement="Left" Style="{StaticResource TextBoxExtend}" Text="{Binding ViewModel.Phone, Mode=TwoWay}" />
                                 <TextBox Margin="0,6,0,0" hc:TitleElement.Title="邮箱：" hc:TitleElement.TitlePlacement="Left" Style="{StaticResource TextBoxExtend}" Text="{Binding ViewModel.Email, Mode=TwoWay}" />
                                 <GroupBox Margin="0,20,0,0" hc:TitleElement.TitlePlacement="Left" Header="头像" Style="{StaticResource GroupBoxOriginal}">
-                                    <hc:ImageSelector Width="150" Height="150" HorizontalAlignment="Left" Filter="All Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp" />
+                                    <hc:ImageSelector x:Name="AvasterImageSelector" ImageSelected="ImageSelector_ImageSelected" Width="150" Height="150" HorizontalAlignment="Left" Filter="All Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp" />
                                     <!--<hc:Gravatar HorizontalAlignment="Left" Source="{Binding DemoModel.ImageSource}" />-->
                                 </GroupBox>
                             </StackPanel>
@@ -74,7 +73,7 @@
                         <Grid>
                             <StackPanel Grid.Row="1" MinWidth="500" Margin="20,16,17,10" HorizontalAlignment="Left" VerticalAlignment="Stretch" hc:TitleElement.TitleWidth="120">
                                 <TextBlock Style="{StaticResource TextBlockLargeBold}" />
-                                <hc:PasswordBox x:Name="Password" Margin="0,6,0,0" hc:InfoElement.ShowClearButton="True" hc:InfoElement.Title="新密码" hc:InfoElement.TitlePlacement="Left" />
+                                <hc:PasswordBox x:Name="Password" hc:InfoElement.ShowClearButton="True" hc:InfoElement.Title="新密码" hc:InfoElement.TitlePlacement="Left" />
                                 <hc:PasswordBox x:Name="RepeatPassword" Margin="0,6,0,0" hc:InfoElement.ShowClearButton="True" hc:InfoElement.Title="确认新密码" hc:InfoElement.TitlePlacement="Left" />
                             </StackPanel>
                             <StackPanel Grid.Row="1" Margin="0,10,35,25" HorizontalAlignment="Left" VerticalAlignment="Bottom" Orientation="Horizontal">

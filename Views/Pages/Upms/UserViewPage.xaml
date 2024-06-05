@@ -154,6 +154,10 @@
                                     <Button Command="{Binding DataContext.ViewModel.DelConfirmCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="{StaticResource TableRowDeleteBrush}" Style="{StaticResource BaseTableGirdRowButton}" ToolTip="删除">
                                         <materialDesign:PackIcon Kind="DeleteSweepOutline" Style="{StaticResource BaseTableGirdRowButtonPackIcon}" />
                                     </Button>
+                                    <GridSplitter Style="{StaticResource BaseTableGirdRowGridSplitter}" />
+                                    <Button Command="{Binding DataContext.ViewModel.ResetPasswordCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="{StaticResource TableRowWarnBrush}" Style="{StaticResource BaseTableGirdRowButton}" ToolTip="密码重置">
+                                        <materialDesign:PackIcon Kind="LockReset" Style="{StaticResource BaseTableGirdRowButtonPackIcon}" />
+                                    </Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

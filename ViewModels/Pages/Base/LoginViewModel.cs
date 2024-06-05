@@ -31,6 +31,7 @@
             if (Username == null) return false;
             SysUser user = LoadUser(Username);
             if (user == null || !SecurityUtil.Verify(password, user.Password)) return false;
+            if (user.IsLocked()) return false;
             WeakReferenceMessenger.Default.Send(new LoginCompletedMessage(LoadSecurityUser(user)));
             return true;
         }
@@ -39,7 +40,7 @@
             return _unitOfWork.GetRepository<SysUser>().GetFirstOrDefault(predicate: u=> u.Username != null && u.Username.Equals(username));
         }
 
-        private SecurityUser LoadSecurityUser(SysUser user) { 
+        public SecurityUser LoadSecurityUser(SysUser user) { 
            
             string? roleName = default;
             List<SysMenu>? menus = default;

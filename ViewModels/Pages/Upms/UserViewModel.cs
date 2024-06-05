@@ -1,6 +1,7 @@
 ﻿using HandyControl.Data;
 using log4net;
 using MaterialDemo.Config.Extensions;
+using MaterialDemo.Config.Security.Messages;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Config.UnitOfWork.Collections;
 using MaterialDemo.Controls;
@@ -146,6 +147,15 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
             // 刷新
             this.OnSearch();
+        }
+
+        [RelayCommand]
+        private void ResetPassword(SysUser user)
+        {
+            user.Password = SecurityUtil.Encrypt("123456");
+            sys_db.Update(user);
+            _unitOfWork.SaveChanges();
+            SnackbarService.ShowSuccess("用户密码重置成功。");
         }
 
         #endregion

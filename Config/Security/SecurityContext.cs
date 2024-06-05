@@ -5,7 +5,7 @@ using MaterialDemo.Config.Security.Messages;
 namespace MaterialDemo.Security
 {
 
-    public partial class SecurityContext : ObservableRecipient, IRecipient<LoginCompletedMessage>, IRecipient<LogoutMessage>
+    public partial class SecurityContext : ObservableRecipient, IRecipient<LoginCompletedMessage>, IRecipient<LogoutMessage>, IRecipient<RefreshUserMessage>
     {
 
         private static readonly SecurityContext SECURITY_USER = new SecurityContext();
@@ -58,6 +58,14 @@ namespace MaterialDemo.Security
         public void Receive(LogoutMessage message)
         {
             this.logout();
+        }
+
+        public void Receive(RefreshUserMessage message)
+        {
+            lock (this)
+            {
+                this.SecurityUser = message.User;
+            }
         }
     }
 }

@@ -40,5 +40,8 @@ namespace MaterialDemo.Domain.Models.Entity
 
         [Column("lock_flag")]
         public BaseStatusEnum LockFlag { get; set; }
+
+
+        public bool IsLocked() { return BaseStatusEnum.EXCEPTION.Equals(LockFlag); }
     }
 }

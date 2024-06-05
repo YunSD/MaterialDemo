@@ -1,10 +1,12 @@
-﻿using HandyControl.Tools.Extension;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using HandyControl.Tools.Extension;
 using log4net;
 using MaterialDemo.Config.Security;
 using MaterialDemo.Config.Security.Messages;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Security;
+using MaterialDemo.ViewModels.Pages.Base;
 using System.ComponentModel.DataAnnotations;
 using Wpf.Ui;
 
@@ -18,10 +20,13 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRepository<SysUser> repository;
 
-        public PersonViewModel(IUnitOfWork unitOfWork)
+        private readonly LoginViewModel loginViewModel;
+
+        public PersonViewModel(IUnitOfWork unitOfWork, LoginViewModel loginViewModel)
         {
             _unitOfWork = unitOfWork;
             repository = _unitOfWork.GetRepository<SysUser>();
+            this.loginViewModel = loginViewModel;
             // init
             this.initInfo();
         }
@@ -77,6 +82,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             repository.Update(user);
             _unitOfWork.SaveChanges();
             SnackbarService.ShowSuccess("用户信息更新成功。");
+
+            WeakReferenceMessenger.Default.Send(new RefreshUserMessage(loginViewModel.LoadSecurityUser(user)));
         }
 
         [RelayCommand]
