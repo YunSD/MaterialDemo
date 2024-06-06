@@ -18,5 +18,26 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"></StackPanel>
+        <Grid  Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding ViewModel.Items}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="8"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1 1 1 1" BorderBrush="gray">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding Name}" Margin="5 10" Foreground="Blue"/>
+                                <TextBlock Text="{Binding Text}" Margin="5 10" Foreground="Black" TextWrapping="WrapWithOverflow"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+        <StackPanel Grid.Row="2"></StackPanel>
     </Grid>
 </Page>
