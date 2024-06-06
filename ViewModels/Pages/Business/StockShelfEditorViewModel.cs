@@ -1,5 +1,4 @@
-﻿using HotChocolate.Types.Relay;
-using MaterialDemo.Domain;
+﻿using MaterialDemo.Domain;
 using MaterialDemo.Domain.Enums;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Utils;
@@ -45,6 +44,23 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [ObservableProperty]
         public int? quantity;
         partial void OnQuantityChanged(int? value) => ValidateProperty(value, nameof(Quantity));
+
+        [Range(minimum: 1, maximum: int.MaxValue, ErrorMessage = "请输入数字")]
+        [ObservableProperty]
+        public int? takeSize;
+        partial void OnTakeSizeChanged(int? value) => ValidateProperty(value, nameof(TakeSize));
+
+        [GreaterThan(nameof(QuantityLowerLimit), ErrorMessage = "数量上限不能低于数量下限")]
+        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "请输入数字")]
+        [ObservableProperty]
+        private int? quantityUpperLimit = 0;
+        partial void OnQuantityUpperLimitChanged(int? value) => ValidateProperty(value, nameof(QuantityUpperLimit));
+
+
+        [Range(minimum: 0, int.MaxValue, ErrorMessage = "请输入数字")]
+        [ObservableProperty]
+        private int? quantityLowerLimit = 0;
+        partial void OnQuantityLowerLimitChanged(int? value) => ValidateProperty(value, nameof(QuantityLowerLimit));
 
 
         [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "请输入数字")]
@@ -101,6 +117,10 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.Quantity = entity.Quantity;   
             this.Remark = entity.Remark;
 
+            if(entity.QuantityUpperLimit.HasValue) this.QuantityUpperLimit = entity.QuantityUpperLimit.Value;
+            if(entity.QuantityLowerLimit.HasValue) this.QuantityLowerLimit = entity.QuantityLowerLimit.Value;
+            if(entity.TakeSize.HasValue) this.TakeSize = entity.TakeSize.Value;
+
             if (entity.StockMaterial != null) {
                 this.StockMaterialId = entity.StockMaterial.MaterialId;
                 this.StockMaterialInfo = entity.StockMaterial.Name;
@@ -127,6 +147,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.entity.ShelvesCode = this.ShelvesCode;
             this.entity.ShelvesType = this.ShelvesType;
             this.entity.Quantity = this.Quantity;
+            this.entity.QuantityUpperLimit = this.QuantityUpperLimit;
+            this.entity.QuantityLowerLimit = this.QuantityLowerLimit;
+            this.entity.TakeSize = this.TakeSize;
 
             this.entity.ScalesAddress = this.ScalesAddress;
             this.entity.ScalesModel = this.ScalesModel;

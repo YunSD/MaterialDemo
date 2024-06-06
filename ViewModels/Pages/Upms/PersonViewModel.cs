@@ -82,7 +82,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             repository.Update(user);
             _unitOfWork.SaveChanges();
             SnackbarService.ShowSuccess("用户信息更新成功。");
-
+            repository.ChangeEntityState(user, Microsoft.EntityFrameworkCore.EntityState.Detached);
             WeakReferenceMessenger.Default.Send(new RefreshUserMessage(loginViewModel.LoadSecurityUser(user)));
         }
 
@@ -116,6 +116,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             repository.Update(user);
             _unitOfWork.SaveChanges();
             SnackbarService.ShowSuccess("用户密码更新成功。");
+            repository.ChangeEntityState(user, Microsoft.EntityFrameworkCore.EntityState.Detached);
         }
 
 

@@ -1,11 +1,6 @@
 ﻿using MaterialDemo.Config.Db;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MaterialDemo.Domain.Enums;
 
 namespace MaterialDemo.Domain.Models.Entity
@@ -40,7 +35,16 @@ namespace MaterialDemo.Domain.Models.Entity
         [Column("shelves_type")]
         public string? ShelvesType { get; set; }
 
+        [Column("take_size")]
+        public int? TakeSize { get; set; }
+
         public int? Quantity { get; set; }
+
+        [Column("quantity_upper_limit")]
+        public int? QuantityUpperLimit { get; set; }
+
+        [Column("quantity_lower_limit")]
+        public int? QuantityLowerLimit { get; set; }
 
         [Column("scales_address")]
         public int? ScalesAddress { get; set; }

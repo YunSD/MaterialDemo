@@ -1,0 +1,22 @@
+﻿<Page x:Class="MaterialDemo.Views.Pages.Business.StockIndex"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:MaterialDemo.Views.Pages.Business"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Title="StockIndex"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary />
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+    </Grid>
+</Page>

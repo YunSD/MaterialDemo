@@ -32,8 +32,7 @@
             <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,2" />
         </hc:Watermark>
 
-        <materialDesign:ColorZone Grid.Row="0" Padding="8" materialDesign:ElevationAssist.Elevation="Dp4" Mode="SecondaryMid" Style="{DynamicResource TopBar}">
-
+        <materialDesign:ColorZone Grid.Row="0" Height="50" Padding="8,0,8,0" materialDesign:ElevationAssist.Elevation="Dp4" Mode="SecondaryMid" Style="{DynamicResource TopBar}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" />
@@ -45,16 +44,36 @@
                     <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" Text="{Binding WindowViewModel.ApplicationTitle}" />
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Horizontal" />
-                <Button Grid.Column="2"
-                        Width="37"
-                        Height="37"
-                        Margin="0,0,5,0"
-                        Command="{Binding NavigationItems.LogOutCommand}"
-                        Content="{materialDesign:PackIcon Kind=ExitToApp,
-                                                          Size=32}"
-                        Foreground="DimGray"
-                        Style="{StaticResource MaterialDesignToolButton}"
-                        ToolTip="Exit" />
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Menu Background="Transparent">
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <Border Padding="10,0,10,0" BorderThickness="0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <hc:Gravatar Width="35"
+                                                     Height="35"
+                                                     Margin="0,0,0,0"
+                                                     Padding="0,0,0,0"
+                                                     VerticalAlignment="Center"
+                                                     Source="{Binding NavigationItems.UserAvaster}"
+                                                     Style="{StaticResource GravatarCircleImg}" />
+                                        <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontSize="15" Text="{Binding NavigationItems.UserName}" />
+                                    </StackPanel>
+                                </Border>
+                            </MenuItem.Header>
+                            <MenuItem Width="120" Command="{Binding NavigationItems.ToPersonViewCommand}" Header="个人信息">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="AccountCircle" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Width="120" Command="{Binding NavigationItems.LogOutCommand}" Header="退出">
+                                <MenuItem.Icon>
+                                    <materialDesign:PackIcon Kind="ExitToApp" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+                </StackPanel>
             </Grid>
         </materialDesign:ColorZone>
 

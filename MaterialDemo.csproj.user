@@ -16,6 +16,9 @@
     <Compile Update="Views\Pages\Base\LoginViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Business\StockIndex.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Upms\UserEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -226,6 +229,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Base\EmptyViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Business\StockExceptionViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Business\StockIndex.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Upms\PersonViewPage.xaml">

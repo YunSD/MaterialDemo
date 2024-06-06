@@ -38,6 +38,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -136,6 +137,32 @@
                 <StackPanel Grid.Row="5" Grid.Column="2" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="物料数量:" />
                     <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Quantity, Converter={StaticResource BaseNullZeroConverter}}">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericOnlyBehavior />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="6" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
+                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="数量上限:" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.QuantityUpperLimit, Converter={StaticResource BaseNullZeroConverter}}">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericOnlyBehavior />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
+                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="数量下限:" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.QuantityLowerLimit, Converter={StaticResource BaseNullZeroConverter}}">
+                        <i:Interaction.Behaviors>
+                            <behaviors:NumericOnlyBehavior />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="6" Grid.Column="2" Margin="0,15,0,15" Orientation="Horizontal">
+                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="单次取用量:" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.TakeSize, Converter={StaticResource BaseNullZeroConverter}}">
                         <i:Interaction.Behaviors>
                             <behaviors:NumericOnlyBehavior />
                         </i:Interaction.Behaviors>

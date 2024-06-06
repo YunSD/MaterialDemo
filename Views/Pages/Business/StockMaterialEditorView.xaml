@@ -63,7 +63,7 @@
                     <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Unit}" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
+                <!--<StackPanel Grid.Row="2" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="数量上限:" />
                     <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.MaxQuantity, Converter={StaticResource BaseNullZeroConverter}}">
                         <i:Interaction.Behaviors>
@@ -78,7 +78,7 @@
                             <behaviors:NumericOnlyBehavior />
                         </i:Interaction.Behaviors>
                     </TextBox>
-                </StackPanel>
+                </StackPanel>-->
 
                 <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Padding="10,0,10,0" Style="{StaticResource BaseFormTextBlock}" Text="备注:" />

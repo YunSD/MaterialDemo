@@ -35,17 +35,17 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [ObservableProperty]
         private string? image;
 
-        [GreaterThan(nameof(MinQuantity), ErrorMessage ="数量上限不能低于数量下限")]
-        [Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "请输入数字")]
-        [ObservableProperty]
-        private int? maxQuantity = 0;
-        partial void OnMaxQuantityChanged(int? value) => ValidateProperty(value, nameof(MaxQuantity));
+        //[GreaterThan(nameof(MinQuantity), ErrorMessage ="数量上限不能低于数量下限")]
+        //[Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "请输入数字")]
+        //[ObservableProperty]
+        //private int? maxQuantity = 0;
+        //partial void OnMaxQuantityChanged(int? value) => ValidateProperty(value, nameof(MaxQuantity));
 
 
-        [Range(minimum: 0, int.MaxValue, ErrorMessage = "请输入数字")]
-        [ObservableProperty]
-        private int? minQuantity = 0;
-        partial void OnMinQuantityChanged(int? value) => ValidateProperty(value, nameof(MinQuantity));
+        //[Range(minimum: 0, int.MaxValue, ErrorMessage = "请输入数字")]
+        //[ObservableProperty]
+        //private int? minQuantity = 0;
+        //partial void OnMinQuantityChanged(int? value) => ValidateProperty(value, nameof(MinQuantity));
 
 
         [ObservableProperty]
@@ -68,8 +68,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.model = entity.Model;
             this.unit = entity.Unit;
             this.Image = entity.Image;
-            if(entity.MaxQuantity.HasValue) this.MaxQuantity = entity.MaxQuantity.Value;
-            if(entity.MinQuantity.HasValue) this.MinQuantity = entity.MinQuantity.Value;
+            //if(entity.MaxQuantity.HasValue) this.MaxQuantity = entity.MaxQuantity.Value;
+            //if(entity.MinQuantity.HasValue) this.MinQuantity = entity.MinQuantity.Value;
             this.Remark = entity.Remark;
         }
 
@@ -86,8 +86,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.entity.Model = this.Model;
             this.entity.Unit = this.Unit;
             this.entity.Image = this.Image;
-            this.entity.MaxQuantity = this.MaxQuantity;
-            this.entity.MinQuantity = this.MinQuantity;
+            //this.entity.MaxQuantity = this.MaxQuantity;
+            //this.entity.MinQuantity = this.MinQuantity;
             this.entity.Remark = this.Remark;
 
             SubmitEvent(entity);

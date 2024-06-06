@@ -1,9 +1,7 @@
 ﻿using MaterialDemo.Domain.Enums;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Domain.Models.Entity.Upms;
-using MaterialDemo.ViewModels.Pages.Business;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 namespace MaterialDemo.Config.EFDB
 {
@@ -18,6 +16,8 @@ namespace MaterialDemo.Config.EFDB
         public DbSet<StockMaterialStatement> StockMaterialStatements { get; set; }
         public DbSet<StockShelf> StockShelves { get; set; }
         public DbSet<ElectronicTag> ElectronicTags { get; set; }
+
+        public DbSet<StockException> StockExceptions { get; set; }
 
 
         public BaseDbContext(DbContextOptions options) : base(options)
@@ -47,6 +47,10 @@ namespace MaterialDemo.Config.EFDB
             modelBuilder.Entity<ElectronicTag>(e => {
                 e.Property(e => e.ConnectStatus).HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));
                 e.Property(e => e.WorkStatus).HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));
+            });
+
+            modelBuilder.Entity<StockException>(e => {
+                e.Property(e => e.Type).HasConversion(v => v.ToString(), v => (StockExceptionTypeEnum)Enum.Parse(typeof(StockExceptionTypeEnum), v));
             });
 
 

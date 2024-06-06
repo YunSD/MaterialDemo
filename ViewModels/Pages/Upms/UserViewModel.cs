@@ -156,6 +156,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
             sys_db.Update(user);
             _unitOfWork.SaveChanges();
             SnackbarService.ShowSuccess("用户密码重置成功。");
+            sys_db.ChangeEntityState(user, Microsoft.EntityFrameworkCore.EntityState.Detached);
         }
 
         #endregion
