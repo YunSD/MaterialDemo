@@ -1,24 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaterialDemo.ViewModels.Pages.Business.VObject
+﻿namespace MaterialDemo.ViewModels.Pages.Business.VObject
 {
-    public class StockIndexItem
+    public class StockIndexItem: StockShelfViewInfo
     {
-        private readonly string Id;
 
-        private readonly string Name;
+        private int ori_quantity { get; set; }
 
-        private readonly string Code;
+        private int difference { get; set; }
 
-        private readonly string Model;
-
-        private volatile int quantity;
-
-
+        private int quantity { get; set; }
 
     }
 }

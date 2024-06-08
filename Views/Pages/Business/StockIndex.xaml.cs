@@ -1,27 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using MaterialDemo.ViewModels.Pages.Business;
+using Wpf.Ui.Controls;
 
 namespace MaterialDemo.Views.Pages.Business
 {
     /// <summary>
     /// StockIndex.xaml 的交互逻辑
     /// </summary>
-    public partial class StockIndex : Page
+    public partial class StockIndex : INavigableView<StockIndexViewModel>
     {
-        public StockIndex()
+        public StockIndexViewModel ViewModel { get; }
+
+        public StockIndex(StockIndexViewModel viewModel)
         {
+            this.ViewModel = viewModel;
+            DataContext = this;
             InitializeComponent();
         }
     }
