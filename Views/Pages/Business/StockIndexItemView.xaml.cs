@@ -7,13 +7,13 @@ namespace MaterialDemo.Views.Pages.Business
     /// <summary>
     /// StockIndex.xaml 的交互逻辑
     /// </summary>
-    public partial class StockIndex : INavigableView<StockIndexViewModel>
+    public partial class StockIndexItemView : INavigableView<StockIndexViewModel>
     {
 
         private DispatcherTimer timer;
         public StockIndexViewModel ViewModel { get; }
 
-        public StockIndex(StockIndexViewModel viewModel)
+        public StockIndexItemView(StockIndexViewModel viewModel)
         {
             this.ViewModel = viewModel;
             DataContext = this;

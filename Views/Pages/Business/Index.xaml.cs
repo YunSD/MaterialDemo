@@ -4,16 +4,13 @@ using Wpf.Ui.Controls;
 
 namespace MaterialDemo.Views.Pages.Business
 {
-    /// <summary>
-    /// StockIndex.xaml 的交互逻辑
-    /// </summary>
-    public partial class StockIndex : INavigableView<StockIndexViewModel>
+    public partial class Index : INavigableView<IndexViewModel>
     {
 
         private DispatcherTimer timer;
-        public StockIndexViewModel ViewModel { get; }
+        public IndexViewModel ViewModel { get; }
 
-        public StockIndex(StockIndexViewModel viewModel)
+        public Index(IndexViewModel viewModel)
         {
             this.ViewModel = viewModel;
             DataContext = this;
@@ -26,11 +23,6 @@ namespace MaterialDemo.Views.Pages.Business
             this.Timer_Tick(null, null);
             // 启动定时器
             timer.Start();
-        }
-
-        private void Border_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-
         }
 
         private void Timer_Tick(object? sender, EventArgs? e)

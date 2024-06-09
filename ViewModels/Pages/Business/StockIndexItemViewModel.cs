@@ -8,20 +8,24 @@ using Wpf.Ui.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Business
 {
-    public partial class StockIndexViewModel: ObservableObject, INavigationAware
+    public partial class StockIndexItemViewModel : ObservableObject, INavigationAware
     {
+        [ObservableProperty]
+        private string _MaterialName;
+        [ObservableProperty]
+        private string _MaterialCode;
+        [ObservableProperty]
+        private string _MaterialModel;
+        [ObservableProperty]
+        private string _Quantity;
+        [ObservableProperty]
+        private string _CurrentQuantity;
+
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IRepository<StockShelf> repository;
-        private readonly IRepository<ElectronicTag> tag_repository;
-        private readonly IRepository<StockMaterial> material_repository;
 
-
-        public StockIndexViewModel(IUnitOfWork unitOfWork )
+        public StockIndexItemViewModel(IUnitOfWork unitOfWork, StockIndexItem item)
         {
             _unitOfWork = unitOfWork;
-            repository = _unitOfWork.GetRepository<StockShelf>();
-            tag_repository = _unitOfWork.GetRepository<ElectronicTag>();
-            material_repository = _unitOfWork.GetRepository<StockMaterial>();
         }
 
 

@@ -66,6 +66,9 @@
     <Compile Update="Views\Pages\Business\StockExceptionViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Business\Index.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Upms\PersonViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
