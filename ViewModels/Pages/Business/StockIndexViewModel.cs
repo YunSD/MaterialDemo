@@ -4,6 +4,7 @@ using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Domain.Models.Entity.Upms;
 using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages.Business.VObject;
+using MaterialDemo.Views.Pages.Business;
 using Wpf.Ui.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Business
@@ -58,6 +59,15 @@ namespace MaterialDemo.ViewModels.Pages.Business
             Items = AllData.Skip(24 * (PageIndex - 1)).Take(Math.Min(24, AllData.Count - 24 * (PageIndex - 1))).ToList();
         }
 
+        [RelayCommand]
+        public void ItemView(StockIndexItem? entity)
+        {
+            if (entity == null) return;
+            StockIndexItemViewModel itemViewModel = new StockIndexItemViewModel(_unitOfWork, entity);
+            var view = new StockIndexItemView(itemViewModel);
+            DialogHost.Show(view, BaseConstant.BaseDialog);
+        }
+
         public void OnNavigatedTo()
         {
             List<StockShelf> shelves = repository.GetAll().ToList();
@@ -90,5 +100,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         public void OnNavigatedFrom()
         {
         }
+
+        
     }
 }
