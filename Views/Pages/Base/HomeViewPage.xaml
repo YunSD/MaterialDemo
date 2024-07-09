@@ -83,8 +83,8 @@
                            FooterMenuItemsSource="{Binding NavigationItems.FooterMenuItems, Mode=OneWay}"
                            FrameMargin="0"
                            IsBackButtonVisible="Collapsed"
-                           IsPaneOpen="False"
-                           IsPaneToggleVisible="False"
+                           IsPaneOpen="True"
+                           IsPaneToggleVisible="True"
                            IsPaneVisible="True"
                            MenuItemsSource="{Binding NavigationItems.MenuItems, Mode=OneWay}"
                            PaneDisplayMode="LeftFluent" />
