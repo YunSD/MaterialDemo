@@ -225,5 +225,45 @@ namespace HI.label
         }
 
 
+        public void RequestTextContent(int index, string text1, string text2, string text3) {
+
+            string[] text = {text1,text2, text3};
+            byte[] data_format = new byte[13] { 0x08, 0x00, 0x00, 0x00, (byte)index, 0x01, (byte)index, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            Encoding gb2312 = Encoding.GetEncoding("GB2312");
+
+            int while_index = 11;
+            while (while_index < 14) {
+                char[] chars = text[(14 - while_index) % 3].ToCharArray();
+                for (int i = 0; i < 15; i++)
+                {
+                    byte hi = 255;
+                    byte lo = 255;
+                    if (i < chars.Length)
+                    {
+                        byte[] bytes = gb2312.GetBytes(new char[] { chars[i] });
+                        hi = 0;
+                        lo = bytes[0];
+                        if (bytes.Length > 1)
+                        {
+                            hi = bytes[0];
+                            lo = bytes[1];
+                        }
+                    }
+
+                    data_format[2 + 5] = (byte)while_index;
+                    data_format[3 + 5] = (byte)i;
+                    data_format[4 + 5] = hi;
+                    data_format[5 + 5] = lo;
+                    int parity_bit = (byte)(1 + index + data_format[2 + 5] + data_format[3 + 5] + data_format[4 + 5] + data_format[5 + 5]) & 0xFF;
+                    data_format[7 + 5] = (byte)parity_bit;
+                    this.SendMessage(data_format);
+                    Thread.Sleep(100);
+                }
+                while_index++;
+                
+            }
+        }
+
+
     }
 }
