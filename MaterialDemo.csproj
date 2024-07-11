@@ -39,6 +39,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="8.0.0" />
     <PackageReference Include="NModbus" Version="3.0.81" />
+    <PackageReference Include="NModbus.Serial" Version="3.0.81" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.IO" Version="4.3.0" />
@@ -119,5 +120,7 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
+
+  <Import Project="..\HI\HI.projitems" Label="Shared" />
 
 </Project>

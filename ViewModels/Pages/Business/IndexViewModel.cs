@@ -12,12 +12,12 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         [RelayCommand]
         private void ToPageView(string PageType)  {
-            Type type = default;
+            Type? type = default;
             if("1".Equals(PageType)) type = typeof(StockIndex);
             if("2".Equals(PageType)) type = typeof(StockShelfViewPage);
             if("3".Equals(PageType)) type = typeof(StockMaterialStatementViewPage);
             if("4".Equals(PageType)) type = typeof(FolderViewPage);
-             App.GetRequiredService<INavigationService>().Navigate(type);
+            if(type != null) App.GetRequiredService<INavigationService>().Navigate(type);
         }
 
         [RelayCommand]
