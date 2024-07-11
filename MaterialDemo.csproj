@@ -121,6 +121,4 @@
     </Compile>
   </ItemGroup>
 
-  <Import Project="..\HI\HI.projitems" Label="Shared" />
-
 </Project>
