@@ -1,4 +1,5 @@
-﻿using MaterialDemo.ViewModels.Pages.Business;
+﻿using MaterialDemo.ViewModels;
+using MaterialDemo.ViewModels.Pages.Business;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using Wpf.Ui.Controls;
@@ -13,10 +14,13 @@ namespace MaterialDemo.Views.Pages.Business
 
         private DispatcherTimer timer;
         public StockIndexViewModel ViewModel { get; }
+        public DataAcquisitionService DataAcquisition { get; }
 
-        public StockIndex(StockIndexViewModel viewModel)
+        public StockIndex(StockIndexViewModel viewModel, DataAcquisitionService dataAcquisitionService)
         {
             this.ViewModel = viewModel;
+            this.DataAcquisition = dataAcquisitionService;
+
             DataContext = this;
             InitializeComponent();
             this.Unloaded += Page_Unloaded;
@@ -35,13 +39,16 @@ namespace MaterialDemo.Views.Pages.Business
             {
                 this.ViewModel.ItemViewCommand.Execute(((Border)sender).DataContext);
             }
-                
+
         }
 
         private void Timer_Tick(object? sender, EventArgs? e)
         {
             // 更新当前时间文本
             CurrentTime.Text = DateTime.Now.ToString("HH:mm:ss  yyyy年MM月dd日  dddd");
+            // 更新控制器状态
+            this.ViewModel.ScaleConnectStatus = DataAcquisition.RequestScaleConnectStatus();
+            this.ViewModel.ETagConnectStatus = DataAcquisition.RequestEtagConnectStatus();
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)

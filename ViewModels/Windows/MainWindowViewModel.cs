@@ -8,7 +8,7 @@ namespace MaterialDemo.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = System.Configuration.ConfigurationManager.AppSettings["name"];
+        private string _applicationTitle = System.Configuration.ConfigurationManager.AppSettings["PROJECT_NAME"];
 
     }
 }

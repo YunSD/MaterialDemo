@@ -14,7 +14,7 @@ namespace MaterialDemo.Utils.Converters
         {
             if (value == null) return 0;
             int val;
-            return int.TryParse((string)value,out val) ? val : 0;
+            return int.TryParse((string)value, out val) ? val : 0;
         }
     }
 }

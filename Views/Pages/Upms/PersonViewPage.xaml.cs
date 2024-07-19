@@ -12,7 +12,7 @@ namespace MaterialDemo.Views.Pages.Upms
         {
             this.ViewModel = viewModel;
             DataContext = this;
-            InitializeComponent(); 
+            InitializeComponent();
             BasePageUtil.ShowImageSelector(AvasterImageSelector, ViewModel.Avaster);
         }
 

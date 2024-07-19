@@ -14,12 +14,13 @@ namespace MaterialDemo.Security
 
         public static SecurityContext Singleton { get { return SECURITY_USER; } }
 
-        public SecurityUser? getUserInfo() {
+        public SecurityUser? GetUserInfo()
+        {
             if (Sign) return SecurityUser;
             return null;
         }
 
-       
+
         public static long? GetUserId() => Singleton.SecurityUser?.UserId;
         public static string? GetUserLoginName() => Singleton.SecurityUser == null ? "anonymous" : Singleton.SecurityUser.UserName;
         public static string? GetUserName() => Singleton.SecurityUser?.Name;
@@ -32,7 +33,8 @@ namespace MaterialDemo.Security
         #endregion
 
 
-        private bool recycleStatement(LoginCompletedMessage message) {
+        private bool RecycleStatement(LoginCompletedMessage message)
+        {
             lock (this)
             {
                 if (Sign == true) return false;
@@ -42,22 +44,24 @@ namespace MaterialDemo.Security
             }
         }
 
-        private void logout() {
-            lock (this) { 
+        private void Logout()
+        {
+            lock (this)
+            {
                 if (Sign == false) return;
                 this.Sign = false;
-                this.SecurityUser = null ;
+                this.SecurityUser = null;
             }
         }
 
         public void Receive(LoginCompletedMessage message)
         {
-            if(recycleStatement(message))  Messenger.Send<LoginCompletedRedirectionMessage>();
+            if (RecycleStatement(message)) Messenger.Send<LoginCompletedRedirectionMessage>();
         }
 
         public void Receive(LogoutMessage message)
         {
-            this.logout();
+            this.Logout();
         }
 
         public void Receive(RefreshUserMessage message)

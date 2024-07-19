@@ -44,7 +44,7 @@ namespace MaterialDemo.Views.Pages.Base
 
         private void Page_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            
+
             if (e.Key == Key.Enter) SignIn_Click(sender, e);
         }
     }

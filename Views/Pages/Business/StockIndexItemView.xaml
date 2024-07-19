@@ -34,15 +34,15 @@
     </UserControl.Resources>
 
     <Border>
-        <Grid Margin="30" VerticalAlignment="Stretch">
+        <Grid Margin="20" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
                 <RowDefinition Height="3*" />
-                <RowDefinition Height="2*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <hc:ImageBlock Grid.Row="0" Source="{Binding ViewModel.MaterialImage, Converter={StaticResource BaseFilePathConverter}}" />
-            <StackPanel Grid.Row="1" Margin="0,15,0,15">
+            <StackPanel Grid.Row="1" Margin="0,15,0,15" VerticalAlignment="Center">
                 <TextBlock Grid.Row="0" Padding="0,5,0,0" FontSize="24">
                     <Run Text="物料名称：" />
                     <Run Text="{Binding ViewModel.MaterialName}" />
@@ -55,11 +55,16 @@
                     <Run Text="规格：" />
                     <Run Text="{Binding ViewModel.MaterialModel}" />
                 </TextBlock>
+                <TextBlock Grid.Row="2" Padding="0,5,0,0" FontSize="24">
+                    <Run Text="单次取用量：" />
+                    <Run Text="{Binding ViewModel.TakeSize}" />
+                </TextBlock>
             </StackPanel>
 
             <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" FontSize="24" Foreground="{StaticResource ThemeBrush}" Text="当前库存:" />
-                <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontSize="38" Foreground="red" Text="{Binding ViewModel.Quantity}" />
+                <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontSize="48" Foreground="red" Text="{Binding ViewModel.CurrentQuantity}" />
+                <TextBlock Margin="50,0,0,0" VerticalAlignment="Center" FontSize="48" Foreground="Green" Text="{Binding ViewModel.Different}" />
             </StackPanel>
 
             <Button Grid.Row="3" Height="45" Command="{Binding ViewModel.CloseViewCommand}" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}">

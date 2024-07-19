@@ -1,6 +1,4 @@
-﻿using System.Security;
-
-namespace MaterialDemo.Config.Security.Messages
+﻿namespace MaterialDemo.Config.Security.Messages
 {
     public class SecurityUtil
     {

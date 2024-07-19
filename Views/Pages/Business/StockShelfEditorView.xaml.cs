@@ -21,7 +21,8 @@ namespace MaterialDemo.Views.Pages.Business
 
         private void Tag_Button_Click(object sender, RoutedEventArgs e)
         {
-            var confirm = new StockShelfElectronicTagSelectedView(TagViewModel, (row) => { 
+            var confirm = new StockShelfElectronicTagSelectedView(TagViewModel, (row) =>
+            {
                 if (row != null)
                 {
                     ViewModel.ElectronicTagId = row.TagId;
@@ -38,7 +39,8 @@ namespace MaterialDemo.Views.Pages.Business
 
         private void Material_Button_Click(object sender, RoutedEventArgs e)
         {
-            var confirm = new StockShelfMaterialSelectedView(MaterialViewModel, (row) => {
+            var confirm = new StockShelfMaterialSelectedView(MaterialViewModel, (row) =>
+            {
                 if (row != null)
                 {
                     ViewModel.StockMaterialId = row.MaterialId;

@@ -1,5 +1,4 @@
-﻿using MaterialDemo.Utils;
-using MaterialDemo.ViewModels.Pages.Business;
+﻿using MaterialDemo.ViewModels.Pages.Business;
 using System.Windows.Controls;
 
 namespace MaterialDemo.Views.Pages.Business

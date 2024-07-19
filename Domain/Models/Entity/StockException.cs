@@ -27,7 +27,7 @@ namespace MaterialDemo.Domain.Models.Entity
         [Column("shelf_info")]
         public string? ShelfInfo { get; set; }
 
-        public StockExceptionTypeEnum Type {  get; set; }
+        public StockExceptionTypeEnum Type { get; set; }
 
 
         [Column("before_stock")]
@@ -39,9 +39,6 @@ namespace MaterialDemo.Domain.Models.Entity
         [Column("after_stock")]
         public string? AfterStock { get; set; }
 
-        [Column("operator_id")]
-        public long? OperatorId { get; set; }
-
         [Column("operator_name")]
         public string? OperatorName { get; set; }
 
@@ -51,9 +48,10 @@ namespace MaterialDemo.Domain.Models.Entity
 
     public enum StockExceptionTypeEnum
     {
-    
+
         TAKE,
-        SAVE
+        UPPER_LIMIT,
+        LOWER_LIMIT
 
     }
 }

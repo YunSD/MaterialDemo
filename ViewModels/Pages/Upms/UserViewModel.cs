@@ -42,7 +42,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
 
         [RelayCommand]
-        private void OnSearch() {
+        private void OnSearch()
+        {
 
             Expression<Func<SysUser, bool>> expression = ex => true;
             if (!string.IsNullOrWhiteSpace(Username)) { expression = expression.MergeAnd(expression, exp => exp.Username != null && exp.Username.Contains(Username)); }
@@ -50,7 +51,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
             Func<IQueryable<SysUser>, IOrderedQueryable<SysUser>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
-            IPagedList<SysUser> pageList = sys_db.GetPagedList(expression, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
+            IPagedList<SysUser> pageList = sys_db.GetPagedList(expression, orderBy: orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);
         }
 
@@ -99,7 +100,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         /// form save command
         /// </summary>
         /// <param name="sysUser"></param>
-        private void SubmitEventHandler(SysUser sysUser) {
+        private void SubmitEventHandler(SysUser sysUser)
+        {
             if (!sysUser.UserId.HasValue)
             {
                 Expression<Func<SysUser, bool>> pre = p => p.Username == sysUser.Username;
@@ -111,7 +113,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
                 sysUser.UserId = SnowflakeIdWorker.Singleton.nextId();
                 sys_db.Insert(sysUser);
             }
-            else {
+            else
+            {
                 sys_db.Update(sysUser);
             }
             _unitOfWork.SaveChanges();
@@ -127,7 +130,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         /// <param name="sys"></param>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(SysUser sys) {
+        private async Task DelConfirm(SysUser sys)
+        {
             if (!sys.UserId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = sys.UserId;

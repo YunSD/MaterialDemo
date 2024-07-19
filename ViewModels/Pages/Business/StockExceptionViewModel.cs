@@ -43,18 +43,19 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
 
         [RelayCommand]
-        private void OnSearch() {
+        private void OnSearch()
+        {
 
             Expression<Func<StockException, bool>> expression = ex => true;
             if (!string.IsNullOrWhiteSpace(SearchMaterialName)) { expression = expression.MergeAnd(expression, exp => exp.MaterialName != null && exp.MaterialName.Contains(SearchMaterialName)); }
             if (!string.IsNullOrWhiteSpace(SearchMaterialCode)) { expression = expression.MergeAnd(expression, exp => exp.MaterialCode != null && exp.MaterialCode.Contains(SearchMaterialCode)); }
-            if(SearchStartDate != null) { expression = expression.MergeAnd(expression, exp => exp.CreateTime != null && exp.CreateTime >= SearchStartDate); }
-            if(SearchEndDate != null) { expression = expression.MergeAnd(expression, exp => exp.CreateTime != null && exp.CreateTime <= SearchEndDate.Value.AddDays(1)); }
+            if (SearchStartDate != null) { expression = expression.MergeAnd(expression, exp => exp.CreateTime != null && exp.CreateTime >= SearchStartDate); }
+            if (SearchEndDate != null) { expression = expression.MergeAnd(expression, exp => exp.CreateTime != null && exp.CreateTime <= SearchEndDate.Value.AddDays(1)); }
 
 
             Func<IQueryable<StockException>, IOrderedQueryable<StockException>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
-            IPagedList<StockException> pageList = repository.GetPagedList(predicate: expression, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
+            IPagedList<StockException> pageList = repository.GetPagedList(predicate: expression, orderBy: orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);
         }
 
@@ -88,7 +89,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// </summary>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(StockException entity) {
+        private async Task DelConfirm(StockException entity)
+        {
             if (!entity.ExceptionId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.ExceptionId;

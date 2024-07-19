@@ -1,6 +1,5 @@
 ﻿using HandyControl.Controls;
 using log4net;
-using MaterialDemo.ViewModels.Pages.Business;
 using System.IO;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -39,21 +38,28 @@ namespace MaterialDemo.Utils
         public static SymbolRegular ParseSymbolIcon(string? symbol)
         {
             SymbolRegular symbolRegular = SymbolRegular.ErrorCircle24;
-            try {
+            try
+            {
                 symbolRegular = (SymbolRegular)Enum.Parse(typeof(SymbolRegular), symbol);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 logger.Error(e);
             }
             return symbolRegular;
         }
 
-        public static Type ParseClassType(string? clazz){
+        public static Type ParseClassType(string? clazz)
+        {
             Type type = typeof(Views.Pages.Base.EmptyViewPage);
             if (clazz == null) return type;
-            try {
+            try
+            {
                 Type? cur = Type.GetType(clazz);
                 if (cur != null) type = cur;
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 logger.Error(e);
             }
             return type;

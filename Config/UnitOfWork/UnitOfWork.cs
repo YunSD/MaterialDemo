@@ -1,15 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Transactions;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace MaterialDemo.Config.UnitOfWork
 {
@@ -85,7 +79,7 @@ namespace MaterialDemo.Config.UnitOfWork
             // what's the best way to support custom reposity?
             if (hasCustomRepository)
             {
-                var customRepo = _context.GetService<IRepository<TEntity>>();
+                var customRepo = App.GetService<IRepository<TEntity>>();
                 if (customRepo != null)
                 {
                     return customRepo;
@@ -197,6 +191,11 @@ namespace MaterialDemo.Config.UnitOfWork
         public void TrackGraph(object rootEntity, Action<EntityEntryGraphNode> callback)
         {
             _context.ChangeTracker.TrackGraph(rootEntity, callback);
+        }
+
+        public void TrackClear()
+        {
+            _context.ChangeTracker.Clear();
         }
     }
 }

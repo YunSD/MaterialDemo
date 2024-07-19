@@ -37,7 +37,8 @@ namespace MaterialDemo.Config.Extensions
             foreach (var curExpression in arrayExpress)
             {
                 //表达式树内容
-                if (result != null && curExpression != null) {
+                if (result != null && curExpression != null)
+                {
                     System.Linq.Expressions.Expression left = visitor.Visit(result.Body);
                     System.Linq.Expressions.Expression right = visitor.Visit(curExpression.Body);
                     result = System.Linq.Expressions.Expression.Lambda<Func<T, bool>>(System.Linq.Expressions.Expression.AndAlso(left, right), parameter);

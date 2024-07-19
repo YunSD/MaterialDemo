@@ -5,9 +5,10 @@ namespace MaterialDemo.Controls;
 public partial class WaitingDialog : UserControl
 {
 
-    public WaitingDialog()
+    public WaitingDialog(string text = "waiting")
     {
         DataContext = this;
         InitializeComponent();
+        TextBlock.Text = text;
     }
 }

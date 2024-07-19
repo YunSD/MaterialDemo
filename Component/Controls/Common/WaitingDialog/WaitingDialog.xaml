@@ -10,7 +10,7 @@
              mc:Ignorable="d">
     <StackPanel Margin="16">
         <ProgressBar Margin="16" HorizontalAlignment="Center" IsIndeterminate="True" Style="{StaticResource MaterialDesignCircularProgressBar}" Value="0" />
-        <TextBlock x:Name="TextBlock" Margin="0,0,0,5" HorizontalAlignment="Center" Text="waiting..." />
+        <TextBlock x:Name="TextBlock" Margin="0,0,0,5" HorizontalAlignment="Center" />
         <Button HorizontalAlignment="Center"
                 Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
                 Content="CANCEL"

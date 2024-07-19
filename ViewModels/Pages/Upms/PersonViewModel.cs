@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
-using HandyControl.Tools.Extension;
 using log4net;
 using MaterialDemo.Config.Security;
 using MaterialDemo.Config.Security.Messages;
@@ -41,7 +40,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private string? _roleName;
 
-        [Required(ErrorMessage ="名称不能为空")]
+        [Required(ErrorMessage = "名称不能为空")]
         [ObservableProperty]
         private string? _name;
 
@@ -64,7 +63,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
 
         [RelayCommand]
-        private void UpdateInfo() {
+        private void UpdateInfo()
+        {
             this.ValidateAllProperties();
             if (HasErrors) return;
 
@@ -87,21 +87,26 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         }
 
         [RelayCommand]
-        private void ResetInfo() { 
+        private void ResetInfo()
+        {
             initInfo();
         }
 
         [RelayCommand]
-        private void UpdatePassword() {
-            if (String.IsNullOrEmpty(Password) || String.IsNullOrEmpty(RepeatPassword)) {
+        private void UpdatePassword()
+        {
+            if (String.IsNullOrEmpty(Password) || String.IsNullOrEmpty(RepeatPassword))
+            {
                 SnackbarService.ShowError("密码不能为空");
                 return;
             }
-            if (!Password.Equals(RepeatPassword)) {
+            if (!Password.Equals(RepeatPassword))
+            {
                 SnackbarService.ShowError("两次输入不一致");
                 return;
             }
-            if (Password.Length < 6) {
+            if (Password.Length < 6)
+            {
                 SnackbarService.ShowError("密码长度至少六位");
                 return;
             }
@@ -120,8 +125,9 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         }
 
 
-        private void initInfo() {
-            SecurityUser? user = SecurityContext.Singleton.getUserInfo();
+        private void initInfo()
+        {
+            SecurityUser? user = SecurityContext.Singleton.GetUserInfo();
             userId = user?.UserId ?? 0;
             Username = user?.UserName;
             RoleName = user?.RoleName;

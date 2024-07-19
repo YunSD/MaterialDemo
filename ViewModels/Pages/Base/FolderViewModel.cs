@@ -30,14 +30,13 @@ namespace MaterialDemo.ViewModels.Pages.Base
 
 
 
-
-
-        public void LoadNavigationItems(INavigationViewItem item) {
+        public void LoadNavigationItems(INavigationViewItem item)
+        {
 
             // 获取当前角色所有的菜单
-            SecurityUser? user = SecurityContext.Singleton.getUserInfo();
+            SecurityUser? user = SecurityContext.Singleton.GetUserInfo();
             if (user == null) return;
-            List<long?> userMenu = user.menus.Select(m=>m.MenuId).ToList();
+            List<long?> userMenu = user.menus.Select(m => m.MenuId).ToList();
 
             string name = (string)item.Content;
             this.Title = name;
@@ -45,11 +44,12 @@ namespace MaterialDemo.ViewModels.Pages.Base
             if (curMenu == null) return;
             List<SysMenu> childrenMenu = repository.GetAll(predicate: m => m.ParentId == curMenu.MenuId).ToList();
 
-            childrenMenu.Where(m=> userMenu.Contains(m.MenuId)).ToList().ForEach(item =>
+            childrenMenu.Where(m => userMenu.Contains(m.MenuId)).ToList().ForEach(item =>
             {
-                NavigationCards.Add(new NavigationCard() 
-                {   Name = item.Name, 
-                    Icon = BasePageUtil.ParseSymbolIcon(item.Icon), 
+                NavigationCards.Add(new NavigationCard()
+                {
+                    Name = item.Name,
+                    Icon = BasePageUtil.ParseSymbolIcon(item.Icon),
                     PageType = BasePageUtil.ParseClassType(item.Router),
                     Description = item.Remark,
                 });

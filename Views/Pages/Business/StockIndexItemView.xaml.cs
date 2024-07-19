@@ -1,6 +1,4 @@
 ﻿using MaterialDemo.ViewModels.Pages.Business;
-using System.Windows.Threading;
-using Wpf.Ui.Controls;
 
 namespace MaterialDemo.Views.Pages.Business
 {

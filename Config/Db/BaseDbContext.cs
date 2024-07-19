@@ -19,40 +19,44 @@ namespace MaterialDemo.Config.EFDB
 
         public DbSet<StockException> StockExceptions { get; set; }
 
-
         public BaseDbContext(DbContextOptions options) : base(options)
         {
         }
 
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SysUser>(e => {
+            modelBuilder.Entity<SysUser>(e =>
+            {
                 e.Property(e => e.LockFlag).HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));
             });
 
-            modelBuilder.Entity<SysMenu>(e => {
+            modelBuilder.Entity<SysMenu>(e =>
+            {
                 e.Property(e => e.Position).HasConversion(v => v.ToString(), v => (MenuPositionEnum)Enum.Parse(typeof(MenuPositionEnum), v));
             });
 
 
-            modelBuilder.Entity<StockMaterialStatement>(e => {
+            modelBuilder.Entity<StockMaterialStatement>(e =>
+            {
                 e.Property(e => e.Type).HasConversion(v => v.ToString(), v => (MaterialStatementTypeEnum)Enum.Parse(typeof(MaterialStatementTypeEnum), v));
             });
 
-            modelBuilder.Entity<StockShelf>(e => {
+            modelBuilder.Entity<StockShelf>(e =>
+            {
                 e.Property(e => e.ScalesStatus).HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));
             });
 
-            modelBuilder.Entity<ElectronicTag>(e => {
+            modelBuilder.Entity<ElectronicTag>(e =>
+            {
                 e.Property(e => e.ConnectStatus).HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));
                 e.Property(e => e.WorkStatus).HasConversion(v => v.ToString(), v => (BaseStatusEnum)Enum.Parse(typeof(BaseStatusEnum), v));
             });
 
-            modelBuilder.Entity<StockException>(e => {
+            modelBuilder.Entity<StockException>(e =>
+            {
                 e.Property(e => e.Type).HasConversion(v => v.ToString(), v => (StockExceptionTypeEnum)Enum.Parse(typeof(StockExceptionTypeEnum), v));
             });
-
 
             base.OnModelCreating(modelBuilder);
         }

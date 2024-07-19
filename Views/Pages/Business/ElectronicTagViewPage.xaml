@@ -70,19 +70,16 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Style="{StaticResource MaterialDesignTitleLargeTextBlock}" Text="标签列表" />
-                    <Button HorizontalAlignment="Right"
-                            Background="{StaticResource TableHeadAddBrush}"
-                            BorderBrush="{StaticResource TableHeadAddBrush}"
-                            Command="{Binding ViewModel.OpenEditFormCommand}"
-                            Foreground="{DynamicResource ButtonForegroundBrush}"
-                            Style="{StaticResource MaterialDesignFlatMidBgButton}"
-                            ToolTip="新增数据">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Add" Style="{StaticResource BaseTableSearchButtonPackIcon}" />
-                            <TextBlock Style="{StaticResource BaseTableToolButtonTextBlock}" Text="新增" />
-                        </StackPanel>
-                    </Button>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Left" FontWeight="Bold" Style="{StaticResource MaterialDesignTitleLargeTextBlock}" Text="标签列表" />
+
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Button Background="{StaticResource TableHeadAddBrush}" BorderBrush="{StaticResource TableHeadAddBrush}" Command="{Binding ViewModel.OpenEditFormCommand}" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="新增数据">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Add" Style="{StaticResource BaseTableSearchButtonPackIcon}" />
+                                <TextBlock Style="{StaticResource BaseTableToolButtonTextBlock}" Text="新增" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Border>
 
@@ -103,7 +100,8 @@
                 </DataGrid.RowHeaderTemplate>
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="*" Binding="{Binding Code}" CanUserSort="False" Header="编码" />
-                    <DataGridTextColumn Width="*" Binding="{Binding Ip}" CanUserSort="False" Header="IP地址" />
+                    <DataGridTextColumn Width="*" Binding="{Binding Ip}" CanUserSort="False" Header="IP" />
+                    <DataGridTextColumn Width="*" Binding="{Binding Address}" CanUserSort="False" Header="地址" />
                     <DataGridTemplateColumn Width="*" CanUserResize="False" Header="连接状态">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaterialDemo.ViewModels.Windows
+﻿namespace MaterialDemo.ViewModels.Windows
 {
-
-    
 
     public class ScaleDataCollection
     {
@@ -17,7 +9,8 @@ namespace MaterialDemo.ViewModels.Windows
 
         private readonly Dictionary<string, int> scaleValuePairs = [];
 
-        public ScaleDataCollection() {
+        public ScaleDataCollection()
+        {
             workThread = new Thread(CollectTask);
         }
 
@@ -25,7 +18,7 @@ namespace MaterialDemo.ViewModels.Windows
         {
             while (workDone)
             {
-                
+
             }
         }
     }

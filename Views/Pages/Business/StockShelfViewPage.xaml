@@ -81,18 +81,28 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Style="{StaticResource MaterialDesignTitleLargeTextBlock}" Text="货位列表" />
-                    <Button HorizontalAlignment="Right"
-                            Background="{StaticResource TableHeadAddBrush}"
-                            BorderBrush="{StaticResource TableHeadAddBrush}"
-                            Command="{Binding ViewModel.OpenEditFormCommand}"
-                            Foreground="{DynamicResource ButtonForegroundBrush}"
-                            Style="{StaticResource MaterialDesignFlatMidBgButton}"
-                            ToolTip="新增数据">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Add" Style="{StaticResource BaseTableSearchButtonPackIcon}" />
-                            <TextBlock Style="{StaticResource BaseTableToolButtonTextBlock}" Text="新增" />
-                        </StackPanel>
-                    </Button>
+
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Button HorizontalAlignment="Right"
+                                Background="{StaticResource TableHeadAddBrush}"
+                                BorderBrush="{StaticResource TableHeadAddBrush}"
+                                Command="{Binding ViewModel.OpenEditFormCommand}"
+                                Foreground="{DynamicResource ButtonForegroundBrush}"
+                                Style="{StaticResource MaterialDesignFlatMidBgButton}"
+                                ToolTip="新增数据">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Add" Style="{StaticResource BaseTableSearchButtonPackIcon}" />
+                                <TextBlock Style="{StaticResource BaseTableToolButtonTextBlock}" Text="新增" />
+                            </StackPanel>
+                        </Button>
+                        <GridSplitter Margin="5,0,5,0" />
+                        <Button Background="{StaticResource TableRowWarnBrush}" BorderBrush="{StaticResource TableRowWarnBrush}" Command="{Binding ViewModel.IssueAllLabelContextConfirmCommand}" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="数据同步">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Refresh" Style="{StaticResource BaseTableSearchButtonPackIcon}" />
+                                <TextBlock Style="{StaticResource BaseTableToolButtonTextBlock}" Text="数据同步" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Border>
 
@@ -159,11 +169,16 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Button Background="White" Command="{Binding DataContext.ViewModel.OpenEditFormCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="{StaticResource TableRowEditBrush}" Style="{StaticResource BaseTableGirdRowButton}" ToolTip="编辑">
                                         <materialDesign:PackIcon Kind="FileDocumentEditOutline" Style="{StaticResource BaseTableGirdRowButtonPackIcon}" />
-
                                     </Button>
+
                                     <GridSplitter Style="{StaticResource BaseTableGirdRowGridSplitter}" />
                                     <Button Command="{Binding DataContext.ViewModel.DelConfirmCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="{StaticResource TableRowDeleteBrush}" Style="{StaticResource BaseTableGirdRowButton}" ToolTip="删除">
                                         <materialDesign:PackIcon Kind="DeleteSweepOutline" Style="{StaticResource BaseTableGirdRowButtonPackIcon}" />
+                                    </Button>
+
+                                    <GridSplitter Style="{StaticResource BaseTableGirdRowGridSplitter}" />
+                                    <Button Command="{Binding DataContext.ViewModel.IssueLabelContextConfirmCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="{StaticResource TableRowWarnBrush}" Style="{StaticResource BaseTableGirdRowButton}" ToolTip="标签同步">
+                                        <materialDesign:PackIcon Kind="TransferRight" Style="{StaticResource BaseTableGirdRowButtonPackIcon}" />
                                     </Button>
                                 </StackPanel>
                             </DataTemplate>

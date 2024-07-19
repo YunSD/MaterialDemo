@@ -1,9 +1,8 @@
 ﻿using MaterialDemo.Domain;
 using MaterialDemo.Domain.Models.Entity;
-using System.ComponentModel.DataAnnotations;
-using MaterialDemo.ViewModels.Pages.Upms.VObject;
-using MaterialDemo.Domain.Enums;
 using MaterialDemo.Utils;
+using MaterialDemo.ViewModels.Pages.Upms.VObject;
+using System.ComponentModel.DataAnnotations;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
@@ -23,7 +22,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private string? parentName;
 
-        [Required(ErrorMessage ="该字段不能为空")]
+        [Required(ErrorMessage = "该字段不能为空")]
         [ObservableProperty]
         private string? name;
 
@@ -47,11 +46,13 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         private FormSubmitEventHandler<SysMenu> SubmitEvent;
 
-        public MenuEditorViewModel(SysMenuViewInfo entity, IList<SysMenuViewInfo> sysMenuVOs, FormSubmitEventHandler<SysMenu> submitEvent) {
+        public MenuEditorViewModel(SysMenuViewInfo entity, IList<SysMenuViewInfo> sysMenuVOs, FormSubmitEventHandler<SysMenu> submitEvent)
+        {
             this.SubmitEvent = submitEvent;
             this.entity = entity;
 
-            if (entity.MenuId.HasValue) {
+            if (entity.MenuId.HasValue)
+            {
                 editModel = false;
             }
             this.Parents = sysMenuVOs;
@@ -66,7 +67,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         }
 
         [RelayCommand]
-        private void Submit() {
+        private void Submit()
+        {
             if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
             ValidateAllProperties();
 

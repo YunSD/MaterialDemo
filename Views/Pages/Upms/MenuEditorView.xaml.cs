@@ -16,9 +16,10 @@ namespace MaterialDemo.Views.Pages.Upms
             InitializeComponent();
 
             // combox index
-            if (ViewModel.Parents != null && ViewModel.ParentId != null) {
+            if (ViewModel.Parents != null && ViewModel.ParentId != null)
+            {
                 int index = ViewModel.Parents.Select(p => p.MenuId).ToList().IndexOf(ViewModel.ParentId);
-                if (index > -1) ParentCombo.SelectedIndex = index;  
+                if (index > -1) ParentCombo.SelectedIndex = index;
             }
 
             PositionCombo.SelectedIndex = ((int)ViewModel.Position);
@@ -29,13 +30,14 @@ namespace MaterialDemo.Views.Pages.Upms
             var comboBox = sender as ComboBox;
             if (comboBox == null) return;
             var selectedParent = comboBox.SelectedItem as SysMenuViewInfo;
-            if (selectedParent == null) {
+            if (selectedParent == null)
+            {
                 ViewModel.ParentId = 0;
                 ViewModel.ParentName = null;
                 return;
             }
             ViewModel.ParentId = selectedParent.MenuId;
-            ViewModel.ParentName = selectedParent.Name; 
+            ViewModel.ParentName = selectedParent.Name;
         }
 
         private void PositionCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)

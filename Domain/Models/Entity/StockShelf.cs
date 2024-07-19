@@ -1,7 +1,7 @@
 ﻿using MaterialDemo.Config.Db;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using MaterialDemo.Domain.Enums;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MaterialDemo.Domain.Models.Entity
 {
@@ -54,9 +54,5 @@ namespace MaterialDemo.Domain.Models.Entity
 
         [Column("scales_model")]
         public string? ScalesModel { get; set; }
-
-
-
-
     }
 }

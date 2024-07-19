@@ -26,22 +26,30 @@
             this._unitOfWork = unitOfWork;
         }
 
-        public async Task<bool> Login(string password) {
-            await Task.Delay(1500);
-            if (Username == null) return false;
-            SysUser user = LoadUser(Username);
-            if (user == null || !SecurityUtil.Verify(password, user.Password)) return false;
-            if (user.IsLocked()) return false;
-            WeakReferenceMessenger.Default.Send(new LoginCompletedMessage(LoadSecurityUser(user)));
-            return true;
+        public async Task<bool> Login(string password)
+        {
+            SysUser? user = new SysUser();
+            bool status = await Task.Delay(1500).ContinueWith((t) =>
+            {
+                if (Username == null) return false;
+                user = LoadUser(Username);
+                if (user == null || !SecurityUtil.Verify(password, user.Password)) return false;
+                if (user.IsLocked()) return false;
+                return true;
+            });
+
+            if (status) WeakReferenceMessenger.Default.Send(new LoginCompletedMessage(LoadSecurityUser(user)));
+            return status;
         }
 
-        private SysUser LoadUser(string username) {
-            return _unitOfWork.GetRepository<SysUser>().GetFirstOrDefault(predicate: u=> u.Username != null && u.Username.Equals(username));
+        private SysUser LoadUser(string username)
+        {
+            return _unitOfWork.GetRepository<SysUser>().GetFirstOrDefault(predicate: u => u.Username != null && u.Username.Equals(username));
         }
 
-        public SecurityUser LoadSecurityUser(SysUser user) { 
-           
+        public SecurityUser LoadSecurityUser(SysUser user)
+        {
+
             string? roleName = default;
             List<SysMenu>? menus = default;
 
@@ -50,9 +58,10 @@
                 SysRole role = _unitOfWork.GetRepository<SysRole>().Find(user.RoleId);
                 if (role != null) roleName = role.Name;
 
-                List<SysRoleMenu> roleMenus = _unitOfWork.GetRepository<SysRoleMenu>().GetAll(predicate: e=>e.RoleId == user.RoleId).ToList();
-                if (roleMenus.Any()) { 
-                    menus = _unitOfWork.GetRepository<SysMenu>().GetAll(predicate:e=>roleMenus.Select(e=>e.MenuId)
+                List<SysRoleMenu> roleMenus = _unitOfWork.GetRepository<SysRoleMenu>().GetAll(predicate: e => e.RoleId == user.RoleId).ToList();
+                if (roleMenus.Any())
+                {
+                    menus = _unitOfWork.GetRepository<SysMenu>().GetAll(predicate: e => roleMenus.Select(e => e.MenuId)
                         .Contains(e.MenuId)).ToList();
                 }
             }

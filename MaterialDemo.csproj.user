@@ -16,6 +16,9 @@
     <Compile Update="Views\Pages\Base\LoginViewPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Business\ScaleConfigViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Business\StockIndex.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -123,13 +126,22 @@
     <Page Update="Component\Controls\WPFUI\NavigationView\NavigationViewTop.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Component\Controls\WPFUI\NumberBox\NumberBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Component\Controls\WPFUI\Snackbar\Snackbar.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Controls\WPFUI\TextBlock\TextBlock.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Component\Controls\WPFUI\TextBox\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Component\Controls\WPFUI\TitleBar\TitleBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Component\Controls\WPFUI\ToggleSwitch\ToggleSwitch.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Component\Controls\WPFUI\TreeView\TreeView.xaml">
@@ -229,6 +241,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Base\EmptyViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Business\ScaleConfigViewPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Business\StockExceptionViewPage.xaml">

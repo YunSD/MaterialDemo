@@ -1,8 +1,8 @@
 ﻿using MaterialDemo.Config.UnitOfWork.Collections;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -1025,6 +1025,23 @@ namespace MaterialDemo.Config.UnitOfWork
         public void ChangeEntityState(TEntity entity, EntityState state)
         {
             _dbContext.Entry(entity).State = state;
+        }
+
+
+        public void excludeEntityField(IList<TEntity> entities, List<string> properties)
+        {
+            foreach (var item in entities)
+            {
+                this.excludeEntityField(item, properties);
+            }
+        }
+
+        public void excludeEntityField(TEntity entity, List<string> properties)
+        {
+            foreach (PropertyEntry item in _dbContext.Entry(entity).Properties)
+            {
+                if (!properties.Contains(item.Metadata.Name)) item.IsModified = false;
+            }
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using HandyControl.Data;
-using Linq.PredicateBuilder;
 using log4net;
 using MaterialDemo.Config.Extensions;
 using MaterialDemo.Config.UnitOfWork;
@@ -40,7 +39,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
 
         [RelayCommand]
-        private void OnSearch() {
+        private void OnSearch()
+        {
 
             Expression<Func<StockMaterial, bool>> expression = ex => true;
             if (!string.IsNullOrWhiteSpace(SearchName)) { expression = expression.MergeAnd(expression, exp => exp.Name != null && exp.Name.Contains(SearchName)); }
@@ -48,7 +48,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
             Func<IQueryable<StockMaterial>, IOrderedQueryable<StockMaterial>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
-            IPagedList<StockMaterial> pageList = repository.GetPagedList(predicate: expression, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
+            IPagedList<StockMaterial> pageList = repository.GetPagedList(predicate: expression, orderBy: orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);
         }
 
@@ -94,10 +94,11 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// <summary>
         /// form save command
         /// </summary>
-        private void SubmitEventHandler(StockMaterial entity) {
+        private void SubmitEventHandler(StockMaterial entity)
+        {
 
             Expression<Func<StockMaterial, bool>> pre = p => p.Code == entity.Code && p.MaterialId != entity.MaterialId;
-            
+
             if (repository.Exists(pre))
             {
                 SnackbarService.ShowError("物料编码：" + entity.Code + " 不能重复");
@@ -109,7 +110,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
                 entity.MaterialId = SnowflakeIdWorker.Singleton.nextId();
                 repository.Insert(entity);
             }
-            else {
+            else
+            {
                 repository.Update(entity);
             }
 
@@ -125,7 +127,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// </summary>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(StockMaterial entity) {
+        private async Task DelConfirm(StockMaterial entity)
+        {
             if (!entity.MaterialId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.MaterialId;

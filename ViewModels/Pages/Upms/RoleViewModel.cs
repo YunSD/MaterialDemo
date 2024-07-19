@@ -39,7 +39,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
 
         [RelayCommand]
-        private void OnSearch() {
+        private void OnSearch()
+        {
             Expression<Func<SysRole, bool>> expression = ex => true;
             if (!string.IsNullOrWhiteSpace(SearchName)) { expression = expression.MergeAnd(expression, exp => exp.Name != null && exp.Name.Contains(SearchName)); }
             if (!string.IsNullOrWhiteSpace(SearchCode)) { expression = expression.MergeAnd(expression, exp => exp.Code != null && exp.Code.Contains(SearchCode)); }
@@ -51,7 +52,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         }
 
         [RelayCommand]
-        private void OnRefresh() {
+        private void OnRefresh()
+        {
             SearchName = null;
             SearchCode = null;
             this.OnSearch();
@@ -75,7 +77,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         private async Task OpenEditForm(SysRole? entity)
         {
             SysRole data = new SysRole();
-            if (entity != null) data = entity; 
+            if (entity != null) data = entity;
             RoleEditorViewModel editorViewModel = new RoleEditorViewModel(data, SubmitEventHandler);
             var form = new RoleEditorView(editorViewModel);
             var result = await DialogHost.Show(form, BaseConstant.BaseDialog);
@@ -85,7 +87,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         /// <summary>
         /// form save command
         /// </summary>
-        private void SubmitEventHandler(SysRole entity) {
+        private void SubmitEventHandler(SysRole entity)
+        {
             if (!entity.RoleId.HasValue)
             {
                 entity.RoleId = SnowflakeIdWorker.Singleton.nextId();
@@ -107,7 +110,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         /// </summary>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(SysRole entity) {
+        private async Task DelConfirm(SysRole entity)
+        {
             if (!entity.RoleId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.RoleId;
@@ -140,9 +144,10 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         }
 
         [RelayCommand]
-        private async Task Config(SysRole entity) {
+        private async Task Config(SysRole entity)
+        {
             if (!entity.RoleId.HasValue) return;
-            RoleMenuSelectViewModel model = new (entity, _unitOfWork);
+            RoleMenuSelectViewModel model = new(entity, _unitOfWork);
             RoleMenuEditorView view = new RoleMenuEditorView(model);
             var result = await DialogHost.Show(view, BaseConstant.BaseDialog);
         }

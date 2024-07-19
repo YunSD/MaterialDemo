@@ -25,7 +25,8 @@ namespace MaterialDemo.ViewModels.Pages.Base
         [ObservableProperty]
         private string? _userName;
 
-        public HomeViewModel(){
+        public HomeViewModel()
+        {
             this.IsActive = true;
             this.loadIndexData();
         }
@@ -44,8 +45,9 @@ namespace MaterialDemo.ViewModels.Pages.Base
 
 
 
-        private void loadIndexData() {
-            SecurityUser? user = SecurityContext.Singleton.getUserInfo();
+        private void loadIndexData()
+        {
+            SecurityUser? user = SecurityContext.Singleton.GetUserInfo();
             if (user != null)
             {
                 this.UserAvaster = BaseFileUtil.GetOriFilePath(user.Avatar);

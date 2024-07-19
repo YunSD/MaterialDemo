@@ -1,6 +1,6 @@
 ﻿using MaterialDemo.Config.Db;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MaterialDemo.Domain.Models.Entity.Upms
 {

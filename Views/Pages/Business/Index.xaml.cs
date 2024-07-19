@@ -1,5 +1,4 @@
-﻿using MaterialDemo.ViewModels.Pages.Base;
-using MaterialDemo.ViewModels.Pages.Business;
+﻿using MaterialDemo.ViewModels.Pages.Business;
 using MaterialDemo.ViewModels.Windows;
 using System.Windows.Threading;
 using Wpf.Ui.Controls;

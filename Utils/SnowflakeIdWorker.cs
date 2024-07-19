@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaterialDemo.Utils
+﻿namespace MaterialDemo.Utils
 {
     public class SnowflakeIdWorker
     {
@@ -51,28 +45,31 @@ namespace MaterialDemo.Utils
         /// <returns></returns>
         public long nextId()
         {
-            long currStmp = getNewstmp();
-            if (currStmp < lastStmp) throw new Exception("时钟倒退，Id生成失败！");
-
-            if (currStmp == lastStmp)
+            lock (SnowflakeIdWorker.Singleton)
             {
-                //相同毫秒内，序列号自增
-                sequence = (sequence + 1) & MAX_SEQUENCE;
-                //同一毫秒的序列数已经达到最大
-                if (sequence == 0L) currStmp = getNextMill();
-            }
-            else
-            {
-                //不同毫秒内，序列号置为0
-                sequence = 0L;
-            }
+                long currStmp = getNewstmp();
+                if (currStmp < lastStmp) throw new Exception("时钟倒退，Id生成失败！");
 
-            lastStmp = currStmp;
+                if (currStmp == lastStmp)
+                {
+                    //相同毫秒内，序列号自增
+                    sequence = (sequence + 1) & MAX_SEQUENCE;
+                    //同一毫秒的序列数已经达到最大
+                    if (sequence == 0L) currStmp = getNextMill();
+                }
+                else
+                {
+                    //不同毫秒内，序列号置为0
+                    sequence = 0L;
+                }
 
-            return (currStmp - START_STMP) << TIMESTMP_LEFT       //时间戳部分
-                          | datacenterId << DATACENTER_LEFT       //数据中心部分
-                          | machineId << MACHINE_LEFT             //机器标识部分
-                          | sequence;                             //序列号部分
+                lastStmp = currStmp;
+
+                return (currStmp - START_STMP) << TIMESTMP_LEFT       //时间戳部分
+                              | datacenterId << DATACENTER_LEFT       //数据中心部分
+                              | machineId << MACHINE_LEFT             //机器标识部分
+                              | sequence;                             //序列号部分
+            }
         }
 
         private long getNextMill()

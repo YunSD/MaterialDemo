@@ -22,7 +22,7 @@ namespace MaterialDemo.Views.Pages.Base
         private void OnHomePageLoaded(object sender, RoutedEventArgs e)
         {
             INavigationViewItem? navigationView = NavigationService.GetNavigationControl().SelectedItem;
-            if(navigationView != null)
+            if (navigationView != null)
             {
                 ViewModel.LoadNavigationItems(navigationView);
             }

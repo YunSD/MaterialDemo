@@ -9,7 +9,7 @@
              d:DesignWidth="600"
              Background="{DynamicResource FormBackgroundBrush}"
              mc:Ignorable="d">
-    <Grid Width="400" Margin="15">
+    <Grid MinWidth="400" Margin="15">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

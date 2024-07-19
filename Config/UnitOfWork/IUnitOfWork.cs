@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MaterialDemo.Config.UnitOfWork
 {
@@ -61,5 +56,10 @@ namespace MaterialDemo.Config.UnitOfWork
         /// <param name="rootEntity"> Root entity</param>
         /// <param name="callback">Delegate to convert Object's State properities to Entities entry state.</param>
         void TrackGraph(object rootEntity, Action<EntityEntryGraphNode> callback);
+
+        /// <summary>
+        /// Uses TrakGrap Api to clear ChangeTracker
+        /// </summary>
+        void TrackClear();
     }
 }

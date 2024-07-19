@@ -1,9 +1,7 @@
 ﻿using MaterialDemo.Domain.Models.Entity;
-using MaterialDemo.Domain.Models.Entity.Upms;
 using MaterialDemo.Utils;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Controls;
 
 namespace MaterialDemo.ViewModels.Pages.Upms.VObject
 {
@@ -11,16 +9,22 @@ namespace MaterialDemo.ViewModels.Pages.Upms.VObject
     {
 
         public bool _isSelected;
-        public bool IsSelected { get { return _isSelected; } set {
+        public bool IsSelected
+        {
+            get { return _isSelected; }
+            set
+            {
                 this._isSelected = value;
                 OnPropertyChanged(nameof(IsSelected));
-                if (this.Children != null) {
+                if (this.Children != null)
+                {
                     foreach (var item in this.Children)
                     {
                         item.IsSelected = value;
                     }
                 }
-            } }
+            }
+        }
         public ObservableCollection<MenuTreeViewInfo>? Children { get; set; } // 子节点集合
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -30,13 +34,15 @@ namespace MaterialDemo.ViewModels.Pages.Upms.VObject
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public static List<MenuTreeViewInfo> build(List<SysMenu> menus, long? root = 0, List<long?> selected = null) {
+        public static List<MenuTreeViewInfo> build(List<SysMenu> menus, long? root = 0, List<long?> selected = null)
+        {
             var list = menus.Where(m => m.ParentId == root).OrderBy(m => m.Seq)
-                .Select(m=> {
+                .Select(m =>
+                {
                     MenuTreeViewInfo info = MapperUtil.Map<SysMenu, MenuTreeViewInfo>(m);
-                    if(selected != null && info.MenuId != null && selected.Contains(info.MenuId.Value)) info._isSelected = true;
+                    if (selected != null && info.MenuId != null && selected.Contains(info.MenuId.Value)) info._isSelected = true;
                     List<MenuTreeViewInfo> list = build(menus, m.MenuId, selected);
-                    if(list.Any()) info.Children = new ObservableCollection<MenuTreeViewInfo>(list);
+                    if (list.Any()) info.Children = new ObservableCollection<MenuTreeViewInfo>(list);
                     return info;
                 }).ToList();
             return list;
@@ -45,7 +51,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms.VObject
         public IEnumerable<MenuTreeViewInfo> GetAllNodes()
         {
             yield return this;
-            if(Children != null)
+            if (Children != null)
                 foreach (var child in Children)
                 {
                     foreach (var node in child.GetAllNodes())

@@ -15,7 +15,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         private StockShelfViewInfo entity;
 
-        [Required(ErrorMessage ="该字段不能为空")]
+        [Required(ErrorMessage = "该字段不能为空")]
         [ObservableProperty]
         private string? code;
         partial void OnCodeChanged(string? value) => ValidateProperty(value, nameof(Code));
@@ -95,12 +95,14 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         private FormSubmitEventHandler<StockShelf> SubmitEvent;
 
-        public StockShelfEditorViewModel(StockShelfViewInfo entity, FormSubmitEventHandler<StockShelf> submitEvent) {
-            
+        public StockShelfEditorViewModel(StockShelfViewInfo entity, FormSubmitEventHandler<StockShelf> submitEvent)
+        {
+
             this.SubmitEvent = submitEvent;
             this.entity = entity;
 
-            if (entity.ShelfId.HasValue) {
+            if (entity.ShelfId.HasValue)
+            {
                 editModel = false;
             }
             this.Code = entity.Code;
@@ -114,14 +116,15 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.ScalesModel = entity.ScalesModel;
             this.ScalesSatus = entity.ScalesStatus;
 
-            this.Quantity = entity.Quantity;   
+            this.Quantity = entity.Quantity;
             this.Remark = entity.Remark;
 
-            if(entity.QuantityUpperLimit.HasValue) this.QuantityUpperLimit = entity.QuantityUpperLimit.Value;
-            if(entity.QuantityLowerLimit.HasValue) this.QuantityLowerLimit = entity.QuantityLowerLimit.Value;
-            if(entity.TakeSize.HasValue) this.TakeSize = entity.TakeSize.Value;
+            if (entity.QuantityUpperLimit.HasValue) this.QuantityUpperLimit = entity.QuantityUpperLimit.Value;
+            if (entity.QuantityLowerLimit.HasValue) this.QuantityLowerLimit = entity.QuantityLowerLimit.Value;
+            if (entity.TakeSize.HasValue) this.TakeSize = entity.TakeSize.Value;
 
-            if (entity.StockMaterial != null) {
+            if (entity.StockMaterial != null)
+            {
                 this.StockMaterialId = entity.StockMaterial.MaterialId;
                 this.StockMaterialInfo = entity.StockMaterial.Name;
             }
@@ -133,7 +136,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
         }
 
         [RelayCommand]
-        private void submit() {
+        private void submit()
+        {
             if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
             ValidateAllProperties();
             if (HasErrors) return;

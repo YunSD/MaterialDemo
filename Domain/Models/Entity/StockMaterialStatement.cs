@@ -1,11 +1,6 @@
 ﻿using MaterialDemo.Config.Db;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MaterialDemo.Domain.Models.Entity
 {
@@ -32,7 +27,7 @@ namespace MaterialDemo.Domain.Models.Entity
         [Column("shelf_info")]
         public string? ShelfInfo { get; set; }
 
-        public MaterialStatementTypeEnum Type {  get; set; }
+        public MaterialStatementTypeEnum Type { get; set; }
 
 
         [Column("before_stock")]
@@ -44,9 +39,6 @@ namespace MaterialDemo.Domain.Models.Entity
         [Column("after_stock")]
         public string? AfterStock { get; set; }
 
-        [Column("operator_id")]
-        public long? OperatorId { get; set; }
-
         [Column("operator_name")]
         public string? OperatorName { get; set; }
 
@@ -54,8 +46,9 @@ namespace MaterialDemo.Domain.Models.Entity
 
     }
 
-    public enum MaterialStatementTypeEnum{
-    
+    public enum MaterialStatementTypeEnum
+    {
+
         TAKE,
         SAVE
 

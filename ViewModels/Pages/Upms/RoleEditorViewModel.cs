@@ -1,8 +1,7 @@
 ﻿using MaterialDemo.Domain;
-using System.ComponentModel.DataAnnotations;
-using MaterialDemo.Utils;
 using MaterialDemo.Domain.Models.Entity.Upms;
-using MaterialDemo.Domain.Models.Entity;
+using MaterialDemo.Utils;
+using System.ComponentModel.DataAnnotations;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
@@ -29,11 +28,13 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         private FormSubmitEventHandler<SysRole> SubmitEvent;
 
-        public RoleEditorViewModel(SysRole entity, FormSubmitEventHandler<SysRole> submitEvent) {
+        public RoleEditorViewModel(SysRole entity, FormSubmitEventHandler<SysRole> submitEvent)
+        {
             this.SubmitEvent = submitEvent;
             this.entity = entity;
 
-            if (entity.RoleId.HasValue) {
+            if (entity.RoleId.HasValue)
+            {
                 editModel = false;
             }
             this.Name = entity.Name;
@@ -42,7 +43,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         }
 
         [RelayCommand]
-        private void Submit() {
+        private void Submit()
+        {
             if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
             ValidateAllProperties();
 

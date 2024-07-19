@@ -14,7 +14,7 @@ namespace MaterialDemo.Config.Security
 
         public readonly string? RoleName;
         public readonly List<SysMenu> menus = new();
-        
+
         public SecurityUser(SysUser sysUser, string? RoleName, List<SysMenu>? menus)
         {
             UserId = sysUser.UserId;

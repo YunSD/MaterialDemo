@@ -1,7 +1,6 @@
 ﻿using MaterialDemo.Domain;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Utils;
-using MaterialDemo.Utils.Validation;
 using System.ComponentModel.DataAnnotations;
 
 namespace MaterialDemo.ViewModels.Pages.Business
@@ -13,17 +12,17 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         private StockMaterial entity;
 
-        [Required(ErrorMessage ="该字段不能为空")]
+        [Required(ErrorMessage = "该字段不能为空")]
         [ObservableProperty]
         private string? name;
 
-        partial void OnNameChanged(string? value)=>ValidateProperty(value,nameof(Name));
+        partial void OnNameChanged(string? value) => ValidateProperty(value, nameof(Name));
 
 
         [Required(ErrorMessage = "该字段不能为空")]
         [ObservableProperty]
         private string? code;
-        partial void OnCodeChanged(string? value) =>  ValidateProperty(value, nameof(Code));
+        partial void OnCodeChanged(string? value) => ValidateProperty(value, nameof(Code));
 
         [ObservableProperty]
         public string? model;
@@ -54,12 +53,14 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         private FormSubmitEventHandler<StockMaterial> SubmitEvent;
 
-        public StockMaterialEditorViewModel(StockMaterial entity, FormSubmitEventHandler<StockMaterial> submitEvent) {
-            
+        public StockMaterialEditorViewModel(StockMaterial entity, FormSubmitEventHandler<StockMaterial> submitEvent)
+        {
+
             this.SubmitEvent = submitEvent;
             this.entity = entity;
 
-            if (entity.MaterialId.HasValue) {
+            if (entity.MaterialId.HasValue)
+            {
                 editModel = false;
             }
 
@@ -74,7 +75,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
         }
 
         [RelayCommand]
-        private void submit() {
+        private void submit()
+        {
 
             if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
 

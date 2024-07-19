@@ -1,13 +1,13 @@
 ﻿using MaterialDemo.Domain;
-using MaterialDemo.Domain.Models.Entity;
-using System.ComponentModel.DataAnnotations;
 using MaterialDemo.Domain.Enums;
+using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Domain.Models.Entity.Upms;
 using MaterialDemo.Utils;
+using System.ComponentModel.DataAnnotations;
 
 namespace MaterialDemo.ViewModels.Pages.Upms
 {
-    public partial class UserEditorViewModel:ObservableValidator
+    public partial class UserEditorViewModel : ObservableValidator
     {
         [ObservableProperty]
         private bool editModel = true;
@@ -17,16 +17,16 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         [ObservableProperty]
         private long? roleId;
 
-        [Required(ErrorMessage ="该字段不能为空")]
+        [Required(ErrorMessage = "该字段不能为空")]
         [ObservableProperty]
         private string? username;
 
-        partial void OnUsernameChanged(string? value)=>ValidateProperty(value,nameof(Username));
+        partial void OnUsernameChanged(string? value) => ValidateProperty(value, nameof(Username));
 
         [Required(ErrorMessage = "该字段不能为空")]
         [ObservableProperty]
         private string? name;
-        partial void OnNameChanged(string? value) =>  ValidateProperty(value, nameof(Name));
+        partial void OnNameChanged(string? value) => ValidateProperty(value, nameof(Name));
 
         [ObservableProperty]
         public string? infoCard;
@@ -48,15 +48,17 @@ namespace MaterialDemo.ViewModels.Pages.Upms
 
         private FormSubmitEventHandler<SysUser> SubmitEvent;
 
-        public UserEditorViewModel(SysUser sysUser, IList<SysRole> roles, FormSubmitEventHandler<SysUser> submitEvent) {
+        public UserEditorViewModel(SysUser sysUser, IList<SysRole> roles, FormSubmitEventHandler<SysUser> submitEvent)
+        {
             this.SubmitEvent = submitEvent;
             this.roles = roles;
             entity = sysUser;
 
-            if (sysUser.UserId.HasValue) {
+            if (sysUser.UserId.HasValue)
+            {
                 editModel = false;
             }
-            
+
             this.RoleId = sysUser.RoleId;
             this.Username = sysUser.Username;
             this.InfoCard = sysUser.InfoCard;
@@ -68,7 +70,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         }
 
         [RelayCommand]
-        private void submit() {
+        private void submit()
+        {
             if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
             ValidateAllProperties();
             if (HasErrors) return;

@@ -29,7 +29,7 @@ namespace MaterialDemo.Utils
         public static string? GetOriFilePath(string? fileName)
         {
             if (String.IsNullOrEmpty(fileName)) return null;
-            string oriFileAddress =  Path.Combine(BaseFilePath, fileName);
+            string oriFileAddress = Path.Combine(BaseFilePath, fileName);
             if (File.Exists(oriFileAddress)) return oriFileAddress;
             return "pack://application:,,,/Assets/icon.png";
         }

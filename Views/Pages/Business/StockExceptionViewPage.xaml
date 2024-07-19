@@ -123,11 +123,37 @@
                     <DataGridTextColumn Width="*" Binding="{Binding MaterialName}" CanUserSort="False" Header="物料名称" />
                     <DataGridTextColumn Width="*" Binding="{Binding MaterialCode}" CanUserSort="False" Header="物料编码" />
                     <DataGridTextColumn Width="*" Binding="{Binding ShelfInfo}" CanUserSort="False" Header="货位" />
-                    <DataGridTextColumn Width="*" Binding="{Binding Type}" CanUserSort="False" Header="类型" />
-                    <DataGridTextColumn Width="*" Binding="{Binding Remark}" CanUserSort="False" Header="原因" />
-                    <DataGridTextColumn Width="*" Binding="{Binding BeforeStock}" CanUserSort="False" Header="前置库存" />
-                    <DataGridTextColumn Width="*" Binding="{Binding Amount}" CanUserSort="False" Header="数目" />
-                    <DataGridTextColumn Width="*" Binding="{Binding AfterStock}" CanUserSort="False" Header="后置库存" />
+                    <DataGridTemplateColumn Width="*" CanUserResize="False" CanUserSort="False" Header="类型">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Width="Auto" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">
+                                    <TextBlock Padding="10,2,10,2" FontSize="12" Foreground="white">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Type}" Value="0">
+                                                        <Setter Property="Background" Value="{StaticResource BaseSuccessBrush}" />
+                                                        <Setter Property="Text" Value="取用数量不符" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Type}" Value="1">
+                                                        <Setter Property="Background" Value="{StaticResource BaseWarnBrush}" />
+                                                        <Setter Property="Text" Value="高于安全库存" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Type}" Value="2">
+                                                        <Setter Property="Background" Value="{StaticResource BaseErrorBrush}" />
+                                                        <Setter Property="Text" Value="低于安全库存" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Width="0.5*" Binding="{Binding BeforeStock}" CanUserSort="False" Header="前置库存" />
+                    <DataGridTextColumn Width="0.5*" Binding="{Binding Amount}" CanUserSort="False" Header="数目" />
+                    <DataGridTextColumn Width="0.5*" Binding="{Binding AfterStock}" CanUserSort="False" Header="后置库存" />
                     <DataGridTextColumn Width="*" Binding="{Binding OperatorName}" CanUserSort="False" Header="操作人" />
                     <DataGridTextColumn Width="*" Binding="{Binding CreateTime}" CanUserSort="False" Header="操作时间" />
                 </DataGrid.Columns>

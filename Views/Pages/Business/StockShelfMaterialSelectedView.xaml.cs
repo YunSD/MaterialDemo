@@ -1,9 +1,8 @@
-﻿using MaterialDemo.Domain.Models.Entity;
-using MaterialDemo.Domain;
-using MaterialDemo.Domain.Models.Entity.Upms;
+﻿using MaterialDemo.Domain;
+using MaterialDemo.Domain.Models.Entity;
+using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages.Business;
 using System.Windows.Controls;
-using MaterialDemo.Utils;
 
 namespace MaterialDemo.Views.Pages.Business
 {

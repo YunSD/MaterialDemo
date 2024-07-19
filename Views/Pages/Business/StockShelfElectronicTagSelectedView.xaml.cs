@@ -1,8 +1,8 @@
 ﻿using MaterialDemo.Domain;
 using MaterialDemo.Domain.Models.Entity.Upms;
+using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages.Business;
 using System.Windows.Controls;
-using MaterialDemo.Utils;
 
 namespace MaterialDemo.Views.Pages.Business
 {
@@ -25,7 +25,7 @@ namespace MaterialDemo.Views.Pages.Business
         {
             if (!DialogHost.IsDialogOpen(BaseConstant.RootDialog)) return;
             var selectedRow = DataGrid.SelectedItem as ElectronicTag;
-            if (selectedRow == null) selectedRow = new ();
+            if (selectedRow == null) selectedRow = new();
             SubmitEvent(selectedRow);
             DialogHost.Close(BaseConstant.RootDialog);
         }

@@ -1,12 +1,4 @@
 ﻿using MaterialDemo.Config.UnitOfWork.Collections;
-using MaterialDemo.Domain.Models.Entity;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MaterialDemo.Domain.Models
 {
@@ -41,7 +33,8 @@ namespace MaterialDemo.Domain.Models
             this.DataList = items;
         }
 
-        protected void RefreshPageInfo(IPagedList<T> pagedList) {
+        protected void RefreshPageInfo(IPagedList<T> pagedList)
+        {
             this.DataList = pagedList.Items;
             this.TotalCount = pagedList.TotalCount;
             this.PageIndex = pagedList.PageIndex;

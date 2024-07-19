@@ -36,6 +36,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -53,7 +54,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
-                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="IP地址:" />
+                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="IP:" />
                     <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Ip}" />
                 </StackPanel>
 
@@ -62,7 +63,12 @@
                     <ToggleButton IsChecked="{Binding ViewModel.WorkStatus, Converter={StaticResource BaseStatusEnumConverter}, Mode=TwoWay}" Style="{StaticResource MaterialDesignSwitchToggleButton}" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,15" Orientation="Horizontal">
+                <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
+                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="地址:" />
+                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Address}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Padding="10,0,10,0" Style="{StaticResource BaseFormTextBlock}" Text="备注:" />
                     <TextBox Width="510" materialDesign:HintAssist.Hint="请输入..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Remark}" />
                 </StackPanel>

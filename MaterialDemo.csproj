@@ -9,10 +9,19 @@
     <UseWindowsForms>False</UseWindowsForms>
     <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
     <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <StartupObject>MaterialDemo.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="packages\**" />
+    <EmbeddedResource Remove="packages\**" />
+    <None Remove="packages\**" />
+    <Page Remove="packages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Assets\background.png" />
+    <None Remove="Assets\cover.png" />
     <None Remove="Assets\icon.png" />
   </ItemGroup>
 
@@ -48,10 +57,12 @@
     <PackageReference Include="System.Net.Sockets" Version="4.3.0" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
     <PackageReference Include="System.Security.SecureString" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Assets\background.png" />
+    <Resource Include="Assets\cover.png" />
     <Resource Include="Assets\icon.png" />
     <Resource Include="Component\Resources\Fonts\FluentSystemIcons-Filled.ttf" />
     <Resource Include="Component\Resources\Fonts\FluentSystemIcons-Regular.ttf" />
@@ -120,5 +131,7 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
+
+  <Import Project="..\HI\HI.projitems" Label="Shared" />
 
 </Project>

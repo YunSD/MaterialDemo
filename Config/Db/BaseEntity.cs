@@ -15,8 +15,8 @@ namespace MaterialDemo.Config.Db
         public string? CreateBy { get; set; }
 
         [Column("update_by")]
-        public string? UpdateBy {  get; set; }
-        public string? Remark {  get; set; }
+        public string? UpdateBy { get; set; }
+        public string? Remark { get; set; }
 
     }
 }

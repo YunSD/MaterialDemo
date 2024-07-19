@@ -1,12 +1,10 @@
 ﻿using HandyControl.Data;
-using Linq.PredicateBuilder;
 using log4net;
 using MaterialDemo.Config.Extensions;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Config.UnitOfWork.Collections;
 using MaterialDemo.Controls;
 using MaterialDemo.Domain.Models;
-using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Domain.Models.Entity.Upms;
 using MaterialDemo.Utils;
 using MaterialDemo.Views.Pages.Business;
@@ -40,14 +38,15 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
 
         [RelayCommand]
-        private void OnSearch() {
+        private void OnSearch()
+        {
 
             Expression<Func<ElectronicTag, bool>> expression = ex => true;
             if (!string.IsNullOrWhiteSpace(SearchCode)) { expression = expression.MergeAnd(expression, exp => exp.Code != null && exp.Code.Contains(SearchCode)); }
 
             Func<IQueryable<ElectronicTag>, IOrderedQueryable<ElectronicTag>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
-            IPagedList<ElectronicTag> pageList = repository.GetPagedList(predicate: expression, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
+            IPagedList<ElectronicTag> pageList = repository.GetPagedList(predicate: expression, orderBy: orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);
         }
 
@@ -92,10 +91,11 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// <summary>
         /// form save command
         /// </summary>
-        private void SubmitEventHandler(ElectronicTag entity) {
+        private void SubmitEventHandler(ElectronicTag entity)
+        {
 
             Expression<Func<ElectronicTag, bool>> pre = p => p.Code == entity.Code && p.TagId != entity.TagId;
-            
+
             if (repository.Exists(pre))
             {
                 SnackbarService.ShowError("标签编码：" + entity.Code + " 不能重复");
@@ -107,7 +107,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
                 entity.TagId = SnowflakeIdWorker.Singleton.nextId();
                 repository.Insert(entity);
             }
-            else {
+            else
+            {
                 repository.Update(entity);
             }
 
@@ -123,7 +124,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// </summary>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(ElectronicTag entity) {
+        private async Task DelConfirm(ElectronicTag entity)
+        {
             if (!entity.TagId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.TagId;

@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.EntityFrameworkCore.Query;
+﻿using MaterialDemo.Config.UnitOfWork.Collections;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
-using MaterialDemo.Config.UnitOfWork.Collections;
 
 namespace MaterialDemo.Config.UnitOfWork
 {
@@ -481,5 +481,14 @@ namespace MaterialDemo.Config.UnitOfWork
         /// <param name="entity">The entity.</param>
         /// /// <param name="state">The entity state.</param>
         void ChangeEntityState(TEntity entity, EntityState state);
+
+        /// <summary>
+        /// Change entity property state.
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <param name="properties"></param>
+        void excludeEntityField(IList<TEntity> entities, List<string> properties);
+
+        void excludeEntityField(TEntity entity, List<string> properties);
     }
 }

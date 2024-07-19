@@ -1,6 +1,4 @@
-﻿using MaterialDemo.Domain.Models.Entity;
-
-namespace MaterialDemo.Config.Security.Messages
+﻿namespace MaterialDemo.Config.Security.Messages
 {
     public sealed class LoginCompletedMessage
     {

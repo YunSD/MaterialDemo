@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using HandyControl.Data;
+﻿using HandyControl.Data;
 using Linq.PredicateBuilder;
 using log4net;
 using MaterialDemo.Config.Extensions;
@@ -12,8 +11,6 @@ using MaterialDemo.Domain.Models.Entity.Upms;
 using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages.Business.VObject;
 using MaterialDemo.Views.Pages.Business;
-using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq.Expressions;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
@@ -40,7 +37,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             repository = _unitOfWork.GetRepository<StockShelf>();
             tag_repository = _unitOfWork.GetRepository<ElectronicTag>();
             material_repository = _unitOfWork.GetRepository<StockMaterial>();
-            
+
             TagViewModel = tagViewModel;
             MaterialViewModel = materialViewModel;
         }
@@ -58,7 +55,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
 
         [RelayCommand]
-        private void OnSearch() {
+        private void OnSearch()
+        {
 
             Expression<Func<StockShelf, bool>> expression = ex => true;
             if (!string.IsNullOrWhiteSpace(SearchCode)) expression = expression.MergeAnd(expression, exp => exp.Code != null && exp.Code.Contains(SearchCode));
@@ -66,23 +64,25 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
             Func<IQueryable<StockShelf>, IOrderedQueryable<StockShelf>> orderBy = q => q.OrderBy(u => u.CreateTime);
 
-            IPagedList<StockShelf> pageList = repository.GetPagedList(predicate: expression, orderBy:orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
+            IPagedList<StockShelf> pageList = repository.GetPagedList(predicate: expression, orderBy: orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
 
 
-            List<ElectronicTag> electronicTags = new ();
-            List<StockMaterial> stockMaterials = new ();
-            if (pageList.Items.Any()) {
+            List<ElectronicTag> electronicTags = new();
+            List<StockMaterial> stockMaterials = new();
+            if (pageList.Items.Any())
+            {
                 List<long?> tag_ids = pageList.Items.ToList().Select(x => x.TagId).Where(x => x.HasValue).ToList();
                 List<long?> material_ids = pageList.Items.ToList().Select(x => x.MaterialId).Where(x => x.HasValue).ToList();
-                if(tag_ids.Any())
+                if (tag_ids.Any())
                     electronicTags.AddRange(tag_repository.GetAll(predicate: pre => tag_ids.Contains(pre.TagId)).ToList());
                 if (material_ids.Any())
                     stockMaterials.AddRange(material_repository.GetAll(predicate: pre => material_ids.Contains(pre.MaterialId)).ToList());
             }
 
 
-            var date = pageList.Items.Select(ss => {
-                StockShelfViewInfo viewInfo = MapperUtil.Map<StockShelf,StockShelfViewInfo>(ss);
+            var date = pageList.Items.Select(ss =>
+            {
+                StockShelfViewInfo viewInfo = MapperUtil.Map<StockShelf, StockShelfViewInfo>(ss);
                 electronicTags.Where(tag => tag.TagId == viewInfo.TagId).GetFirstIfPresent(entity => viewInfo.ElectronicTag = entity);
                 stockMaterials.Where(tag => tag.MaterialId == viewInfo.MaterialId).GetFirstIfPresent(entity => viewInfo.StockMaterial = entity);
                 return viewInfo;
@@ -133,10 +133,11 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// <summary>
         /// form save command
         /// </summary>
-        private void SubmitEventHandler(StockShelf entity) {
+        private void SubmitEventHandler(StockShelf entity)
+        {
 
             Expression<Func<StockShelf, bool>> pre = p => p.Code == entity.Code && p.ShelfId != entity.ShelfId;
-            
+
             if (repository.Exists(pre))
             {
                 SnackbarService.ShowError("货位编号：" + entity.Code + " 不能重复");
@@ -156,7 +157,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
                 entity.ShelfId = SnowflakeIdWorker.Singleton.nextId();
                 repository.Insert(entity);
             }
-            else {
+            else
+            {
                 repository.Update(entity);
             }
 
@@ -172,11 +174,12 @@ namespace MaterialDemo.ViewModels.Pages.Business
         /// </summary>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(StockShelf entity) {
+        private async Task DelConfirm(StockShelf entity)
+        {
             if (!entity.ShelfId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.ShelfId;
-            var result = await DialogHost.Show(confirm, BaseConstant.BaseDialog, DeleteRowData);
+            await DialogHost.Show(confirm, BaseConstant.BaseDialog, DeleteRowData);
         }
 
         // key
@@ -193,6 +196,69 @@ namespace MaterialDemo.ViewModels.Pages.Business
             // 刷新
             this.OnSearch();
         }
+
+        [RelayCommand]
+        private async Task IssueLabelContextConfirm(StockShelfViewInfo entity)
+        {
+            if (!entity.ShelfId.HasValue) return;
+            var confirm = new ConfirmDialog("确认对该标签数据进行下发？");
+            var result = await DialogHost.Show(confirm, BaseConstant.BaseDialog);
+            if (Equals(result, "false")) return;
+            if (DataAcquisitionService.Singleton.RequestEtagConnectStatus())
+            {
+                var waiting = new WaitingDialog("正在下发指令，请稍微。");
+                _ = DialogHost.Show(waiting, BaseConstant.BaseDialog);
+                await DataAcquisitionService.Singleton.LabelRequestTextContent(entity);
+                DialogHost.Close(BaseConstant.BaseDialog);
+                SnackbarService.ShowSuccess("指令下发完成!");
+                return;
+            }
+            SnackbarService.ShowError("标签控制器未连接!");
+
+        }
+
+        [RelayCommand]
+        private async Task IssueAllLabelContextConfirm()
+        {
+            var confirm = new ConfirmDialog("确认对所有标签数据进行下发？该操作通常需要较长时间。");
+            var result = await DialogHost.Show(confirm, BaseConstant.BaseDialog);
+            if (Equals(result, "false")) return;
+            if (DataAcquisitionService.Singleton.RequestEtagConnectStatus())
+            {
+                var waiting = new WaitingDialog("正在下发指令，请稍微。");
+                _ = DialogHost.Show(waiting, BaseConstant.BaseDialog);
+
+                IList<StockShelf> pageList = (await repository.GetAllAsync()).ToList();
+
+                List<ElectronicTag> electronicTags = new();
+                List<StockMaterial> stockMaterials = new();
+                if (pageList.Any())
+                {
+                    List<long?> tag_ids = pageList.ToList().Select(x => x.TagId).Where(x => x.HasValue).ToList();
+                    List<long?> material_ids = pageList.ToList().Select(x => x.MaterialId).Where(x => x.HasValue).ToList();
+                    if (tag_ids.Any())
+                        electronicTags.AddRange((await tag_repository.GetAllAsync(predicate: pre => tag_ids.Contains(pre.TagId))).ToList());
+                    if (material_ids.Any())
+                        stockMaterials.AddRange((await material_repository.GetAllAsync(predicate: pre => material_ids.Contains(pre.MaterialId))).ToList());
+                }
+
+                var date = pageList.Select(ss =>
+                {
+                    StockShelfViewInfo viewInfo = MapperUtil.Map<StockShelf, StockShelfViewInfo>(ss);
+                    electronicTags.Where(tag => tag.TagId == viewInfo.TagId).GetFirstIfPresent(entity => viewInfo.ElectronicTag = entity);
+                    stockMaterials.Where(tag => tag.MaterialId == viewInfo.MaterialId).GetFirstIfPresent(entity => viewInfo.StockMaterial = entity);
+                    return viewInfo;
+                }).ToList();
+
+                await DataAcquisitionService.Singleton.LabelRequestTextContent(date);
+                DialogHost.Close(BaseConstant.BaseDialog);
+                SnackbarService.ShowSuccess("指令下发完成!");
+                return;
+            }
+            SnackbarService.ShowError("标签控制器未连接!");
+        }
+
+
 
         #endregion
 

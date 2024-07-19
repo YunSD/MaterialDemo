@@ -29,8 +29,9 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         #region View Field
 
         [RelayCommand]
-        private void OnSearch() {
-            List<SysMenuViewInfo> menus =  repository.GetAll().OrderBy(e => e.Seq).ToList().Select(e => MapperUtil.Map<SysMenu, SysMenuViewInfo>(e)).ToList();
+        private void OnSearch()
+        {
+            List<SysMenuViewInfo> menus = repository.GetAll().OrderBy(e => e.Seq).ToList().Select(e => MapperUtil.Map<SysMenu, SysMenuViewInfo>(e)).ToList();
             menus.ForEach(e => { menus.Where(m => m.MenuId == e.ParentId).GetFirstIfPresent(m => e.ParentName = m.Name); });
             base.RefreshPageInfo(menus);
         }
@@ -51,7 +52,7 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         private async Task OpenEditForm(SysMenuViewInfo? entity)
         {
             SysMenuViewInfo data = new SysMenuViewInfo();
-            if (entity != null) data = entity; 
+            if (entity != null) data = entity;
             MenuEditorViewModel editorViewModel = new MenuEditorViewModel(data, DataList, SubmitEventHandler);
             var form = new MenuEditorView(editorViewModel);
             var result = await DialogHost.Show(form, BaseConstant.BaseDialog);
@@ -61,7 +62,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         /// <summary>
         /// form save command
         /// </summary>
-        private void SubmitEventHandler(SysMenu entity) {
+        private void SubmitEventHandler(SysMenu entity)
+        {
             if (!entity.MenuId.HasValue)
             {
                 entity.MenuId = SnowflakeIdWorker.Singleton.nextId();
@@ -83,7 +85,8 @@ namespace MaterialDemo.ViewModels.Pages.Upms
         /// </summary>
         /// <returns></returns>
         [RelayCommand]
-        private async Task DelConfirm(SysMenuViewInfo entity) {
+        private async Task DelConfirm(SysMenuViewInfo entity)
+        {
             if (!entity.MenuId.HasValue) return;
             var confirm = new ConfirmDialog("确认删除？");
             this.rowId = entity.MenuId;

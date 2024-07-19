@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaterialDemo.Config.UnitOfWork.Collections
+﻿namespace MaterialDemo.Config.UnitOfWork.Collections
 {
     public interface IPagedList<T>
     {

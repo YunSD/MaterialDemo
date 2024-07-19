@@ -12,7 +12,8 @@ namespace MaterialDemo.Config.Db
             if (eventData.Context == null) return result;
             foreach (var entry in eventData.Context.ChangeTracker.Entries())
             {
-                if (entry.Entity is BaseEntity entity) {
+                if (entry.Entity is BaseEntity entity)
+                {
                     // 修改插入对象的数据    
                     if (entry.State == EntityState.Added)
                     {
