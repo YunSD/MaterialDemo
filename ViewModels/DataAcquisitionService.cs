@@ -90,6 +90,7 @@ namespace MaterialDemo.ViewModels
         /// <returns> bool：状态 </returns>
         public bool RequestEtagConnectStatus() => _ETagClient.RequestConnectStatus();
         public bool RequestScaleConnectStatus() => _ScaleClient.RequestConnectStatus();
+        public bool RequestWorkeerStatus() => this.WorkDone;
 
 
         /// <summary>
@@ -320,15 +321,98 @@ namespace MaterialDemo.ViewModels
                     string? shelf_code = item.Code;
                     if (slaveId == null) continue;
                     _ETagClient.RequestTextContent((int)slaveId, name, model, shelf_code);
-                    _ETagClient.RequestUpdateCount((int)slaveId, stockShelves.Count);
                     _ETagClient.RequestSaveContent((int)slaveId);
+                    _ETagClient.RequestUpdateCount((int)slaveId, item.Quantity != null ? (int)item.Quantity: 0);
                 }
             });
         }
 
+
+        /// <summary>
+        /// 读取秤传感器所有重要数据
+        /// </summary>
+        /// <param name="slaveId"></param>
+        /// <returns></returns>
+        public async Task<IList<int>> ScaleRequestAllData(int slaveId) {
+            IList<int> result = await _ScaleClient.RequestAllData(slaveId);
+            return result;
+        }
+        /// <summary>
+        /// 零点标定
+        /// </summary>
+        /// <param name="slaveId"></param>
+        /// <returns></returns>
+        public async Task<bool> RequestWriteZeroDemarcate(int slaveId)
+        {
+            return await _ScaleClient.RequestWriteZeroDemarcate(slaveId);
+        }
+
+        /// <summary>
+        /// 满载标定
+        /// </summary>
+        /// <param name="slaveId"></param>
+        /// <returns></returns>
+        public async Task<bool> RequestWriteFullDemarcate(int slaveId)
+        {
+            return await _ScaleClient.RequestWriteFullDemarcate(slaveId);
+        }
+
+        /// <summary>
+        /// 砝码标定
+        /// </summary>
+        /// <param name="slaveId"></param>
+        /// <param name="weight"></param>
+        /// <returns></returns>
+        public async Task<bool> RequestWriteWeightDemarcate(int slaveId, int weight)
+        {
+            return await _ScaleClient.RequestWriteWeightDemarcate(slaveId, weight);
+        }
+
+        /// <summary>
+        /// 计数开关
+        /// </summary>
+        /// <param name="slaveId"></param>
+        /// <param name="flag"></param>
+        /// <returns></returns>
+        public async Task<bool> RequestWriteCountSwitch(int slaveId, int flag)
+        {
+            return await _ScaleClient.RequestWriteCountSwitch(slaveId, flag);
+        }
+
+        /// <summary>
+        /// 单体倍率
+        /// </summary>
+        /// <param name="slaveId"></param>
+        /// <param name="magnification"></param>
+        /// <returns></returns>
+        public async Task<bool> RequestWriteMonomerMagnification(int slaveId, int magnification)
+        {
+            return await _ScaleClient.RequestWriteMonomerMagnification(slaveId, magnification);
+        }
+
+        /// <summary>
+        /// 单体重量
+        /// </summary>
+        /// <param name="slaveId"></param>
+        /// <param name="weight"></param>
+        /// <returns></returns>
+        public async Task<bool> RequestWriteMonomerWeight(int slaveId, int weight)
+        {
+            return await _ScaleClient.RequestWriteMonomerWeight(slaveId, weight);
+        }
+
+        /// <summary>
+        /// 当前数量
+        /// </summary>
+        /// <param name="slaveId"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        public async Task<bool> RequestWriteCurrentCount(int slaveId, int count)
+        {
+            return await _ScaleClient.RequestWriteCurrentCount(slaveId, count);
+        }
+
         #endregion
-
-
     }
 
 

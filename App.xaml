@@ -20,6 +20,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Secondary/MaterialDesignColor.Lime.xaml" />
                 <materialDesign:CustomColorTheme BaseTheme="Light" PrimaryColor="{StaticResource ThemeColor}" SecondaryColor="{StaticResource ThemeForeColor}" />
 
+
                 <ui:ThemesDictionary Theme="Light" />
                 <ui:ControlsDictionary />
 

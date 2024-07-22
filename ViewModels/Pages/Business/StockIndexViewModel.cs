@@ -80,7 +80,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         public void OnNavigatedTo()
         {
-            List<StockShelf> shelves = repository.GetAll().ToList();
+            List<StockShelf> shelves = repository.GetAll().OrderBy(e=>e.Code).ToList();
 
             List<ElectronicTag> electronicTags = new();
             List<StockMaterial> stockMaterials = new();

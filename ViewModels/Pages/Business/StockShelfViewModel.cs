@@ -62,7 +62,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (!string.IsNullOrWhiteSpace(SearchCode)) expression = expression.MergeAnd(expression, exp => exp.Code != null && exp.Code.Contains(SearchCode));
             if (!string.IsNullOrWhiteSpace(SearchShelvesCode)) expression = expression.MergeAnd(expression, exp => exp.ShelvesCode != null && exp.ShelvesCode.Contains(SearchShelvesCode));
 
-            Func<IQueryable<StockShelf>, IOrderedQueryable<StockShelf>> orderBy = q => q.OrderBy(u => u.CreateTime);
+            Func<IQueryable<StockShelf>, IOrderedQueryable<StockShelf>> orderBy = q => q.OrderBy(u => u.Code);
 
             IPagedList<StockShelf> pageList = repository.GetPagedList(predicate: expression, orderBy: orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
 

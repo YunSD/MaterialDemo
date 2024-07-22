@@ -3,21 +3,216 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:MaterialDemo.Views.Pages.Business"
+      xmlns:mark="clr-namespace:Wpf.Ui.Markup"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:system="clr-namespace:System;assembly=System.Runtime"
-      xmlns:ui="https://github.com/materialDemo/xaml"
+      xmlns:ui="clr-namespace:Wpf.Ui.Controls"
       Title="ScaleConfigViewPage"
       d:DesignHeight="450"
       d:DesignWidth="800"
       mc:Ignorable="d">
-    <Grid>
+    <StackPanel Margin="20">
+
+
+
+        <TextBlock Margin="0,12,0,12" FontSize="28" FontWeight="Bold" Text="测量控制器配置" />
         <StackPanel>
-            <ui:CardExpander />
-            <!--<ui:ToggleSwitch OffContent="Off" OnContent="On" />
-            <ui:Button Appearance="Primary" Content="撒旦大苏打" Icon="{ui:SymbolIcon Fluent24}" />
-            <ui:TextBox PlaceholderText="Type something..." />
-            <ui:NumberBox Icon="NumberSymbolSquare24" PlaceholderText="Enter your age" />
-            <ui:NumberBox MaxDecimalPlaces="0" Maximum="100" Minimum="0" PlaceholderText="Enter your age" SmallChange="1" Value="12" />-->
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ViewModel.SensorConnectionStatus}" Value="true">
+                            <Setter Property="IsEnabled" Value="true" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ViewModel.SensorConnectionStatus}" Value="false">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <StackPanel Margin="10">
+                <ui:TextBlock Margin="10,24,0,8" FontTypography="BodyStrong" Text="控制器配置" />
+                <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon AlignSpaceEvenlyVertical20}">
+                    <ui:CardControl.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="控制器状态：" />
+                            <Border Width="Auto" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">
+                                <TextBlock Padding="10,2,10,2" FontSize="12" Foreground="white">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ViewModel.SensorConnectionStatus}" Value="true">
+                                                    <Setter Property="Background" Value="{StaticResource BaseSuccessBrush}" />
+                                                    <Setter Property="Text" Value="正常" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding ViewModel.SensorConnectionStatus}" Value="false">
+                                                    <Setter Property="Background" Value="{StaticResource BaseErrorBrush}" />
+                                                    <Setter Property="Text" Value="异常" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Border>
+                        </StackPanel>
+                    </ui:CardControl.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <ui:NumberBox Width="200"
+                                      Icon="{mark:SymbolIcon SerialPort16}"
+                                      MaxDecimalPlaces="0"
+                                      Minimum="0"
+                                      PlaceholderText="请输入节点ID"
+                                      SpinButtonPlacementMode="Hidden"
+                                      Value="{Binding ViewModel.SlaveId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <GridSplitter Margin="20,0" />
+                        <ui:Button Appearance="Primary" Background="{StaticResource ThemeBrush}" Command="{Binding ViewModel.RequestAllDataCommand}" Content="数据刷新" Icon="{mark:SymbolIcon ArrowSync24}" />
+                    </StackPanel>
+
+
+                </ui:CardControl>
+
+                <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon AlignSpaceEvenlyVertical20}">
+                    <ui:CardControl.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="采集程序状态：" />
+                        </StackPanel>
+                    </ui:CardControl.Header>
+
+                    <ui:ToggleSwitch Margin="15,0" IsChecked="{Binding ViewModel.DataAcquisitionProgramStatus}" IsEnabled="False" OffContent="关闭" OnContent="开启" />
+                </ui:CardControl>
+            </StackPanel>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Margin="10">
+                    <ui:TextBlock Margin="10" FontTypography="BodyStrong" Text="控制器校验" />
+                    <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon VideoClipOptimize28}">
+                        <ui:CardControl.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="称重值：" />
+                                <ui:TextBlock FontTypography="Body" Foreground="{StaticResource PrimaryBrush}" Text="{Binding ViewModel.Weight}" />
+                            </StackPanel>
+                        </ui:CardControl.Header>
+                    </ui:CardControl>
+
+                    <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon VideoClipOptimize28}">
+                        <ui:CardControl.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="零点标定：" />
+                                <ui:TextBlock FontTypography="Body" Foreground="{StaticResource PrimaryBrush}" Text="{Binding ViewModel.ZeroDemarcate}" />
+                            </StackPanel>
+                        </ui:CardControl.Header>
+
+                        <ui:Button Grid.Column="3" Appearance="Primary" Background="{StaticResource ThemeBrush}" Command="{Binding ViewModel.RequestWriteZeroDemarcateCommand}" Content="指令下发" Icon="{mark:SymbolIcon ArrowDown24}" />
+                    </ui:CardControl>
+
+                    <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon AlignSpaceEvenlyVertical20}">
+                        <ui:CardControl.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="满载标定：" />
+                                <ui:TextBlock FontTypography="Body" Foreground="{StaticResource PrimaryBrush}" Text="{Binding ViewModel.FullDemarcate}" />
+                            </StackPanel>
+                        </ui:CardControl.Header>
+
+                        <ui:Button Appearance="Primary" Background="{StaticResource ThemeBrush}" Command="{Binding ViewModel.RequestWriteFullDemarcateCommand}" Content="指令下发" Icon="{mark:SymbolIcon ArrowDown24}" />
+                    </ui:CardControl>
+
+                    <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon Scales24}">
+                        <ui:CardControl.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="砝码标定：" />
+                            </StackPanel>
+                        </ui:CardControl.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:NumberBox Width="200"
+                                          Icon="{mark:SymbolIcon SlideGrid24}"
+                                          MaxDecimalPlaces="0"
+                                          Minimum="0"
+                                          PlaceholderText="请输入砝码值"
+                                          SpinButtonPlacementMode="Hidden"
+                                          Value="{Binding ViewModel.WeightDemarcate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <GridSplitter Margin="20,0" />
+                            <ui:Button Appearance="Primary" Background="{StaticResource ThemeBrush}" Command="{Binding ViewModel.RequestWriteWeightDemarcateCommand}" Content="指令下发" Icon="{mark:SymbolIcon ArrowDown24}" />
+                        </StackPanel>
+                    </ui:CardControl>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="10">
+                    <ui:TextBlock Margin="10" FontTypography="BodyStrong" Text="控制器计数功能配置" />
+                    <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon AlignSpaceEvenlyVertical20}">
+                        <ui:CardControl.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="计数功能开关：" />
+                            </StackPanel>
+                        </ui:CardControl.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:ToggleSwitch Margin="0,0,73,0" IsChecked="{Binding ViewModel.CountSwitch, Mode=TwoWay}" OffContent="关闭" OnContent="开启" />
+                            <GridSplitter Margin="20,0" />
+                            <ui:Button Appearance="Primary" Background="{StaticResource ThemeBrush}" Command="{Binding ViewModel.RequestWriteCountSwitchCommand}" Content="指令下发" Icon="{mark:SymbolIcon ArrowDown24}" />
+                        </StackPanel>
+                    </ui:CardControl>
+
+                    <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon AlignSpaceEvenlyVertical20}">
+                        <ui:CardControl.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="单体比率：" />
+                            </StackPanel>
+                        </ui:CardControl.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:NumberBox Width="200"
+                                          Icon="{mark:SymbolIcon NumberSymbolSquare24}"
+                                          MaxDecimalPlaces="0"
+                                          Minimum="0"
+                                          PlaceholderText="请输入单体比率"
+                                          SpinButtonPlacementMode="Hidden"
+                                          Value="{Binding ViewModel.MonomerMagnification, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <GridSplitter Margin="20,0" />
+                            <ui:Button Appearance="Primary" Background="{StaticResource ThemeBrush}" Command="{Binding ViewModel.RequestWriteMonomerMagnificationCommand}" Content="指令下发" Icon="{mark:SymbolIcon ArrowDown24}" />
+                        </StackPanel>
+                    </ui:CardControl>
+
+                    <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon AlignSpaceEvenlyVertical20}">
+                        <ui:CardControl.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="单体重量值：" />
+                            </StackPanel>
+                        </ui:CardControl.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:NumberBox Width="200"
+                                          Icon="{mark:SymbolIcon CheckboxIndeterminate24}"
+                                          MaxDecimalPlaces="0"
+                                          Minimum="0"
+                                          PlaceholderText="请输入单体重量值"
+                                          SpinButtonPlacementMode="Hidden"
+                                          Value="{Binding ViewModel.MonomerWeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <GridSplitter Margin="20,0" />
+                            <ui:Button Appearance="Primary" Background="{StaticResource ThemeBrush}" Command="{Binding ViewModel.RequestWriteMonomerWeightCommand}" Content="指令下发" Icon="{mark:SymbolIcon ArrowDown24}" />
+                        </StackPanel>
+                    </ui:CardControl>
+
+                    <ui:CardControl Height="65" Margin="0,0,0,12" Icon="{mark:SymbolIcon AlignSpaceEvenlyVertical20}">
+                        <ui:CardControl.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:TextBlock FontTypography="Body" FontWeight="Bold" Text="当前数量：" />
+                            </StackPanel>
+                        </ui:CardControl.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:NumberBox Width="200"
+                                          Icon="{mark:SymbolIcon NumberRow24}"
+                                          MaxDecimalPlaces="0"
+                                          Minimum="0"
+                                          PlaceholderText="请输入当前数量"
+                                          SmallChange="1"
+                                          SpinButtonPlacementMode="Hidden"
+                                          Value="{Binding ViewModel.CurrentCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <GridSplitter Margin="20,0" />
+                            <ui:Button Width="102" Appearance="Primary" Background="{StaticResource ThemeBrush}" Command="{Binding ViewModel.RequestWriteCurrentCountCommand}" Content="清零" Icon="{mark:SymbolIcon ArrowDown24}" />
+                        </StackPanel>
+                    </ui:CardControl>
+                </StackPanel>
+            </Grid>
         </StackPanel>
-    </Grid>
+    </StackPanel>
 </Page>
