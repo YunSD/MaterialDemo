@@ -68,9 +68,15 @@ namespace MaterialDemo.ViewModels.Pages.Business
             DataAcquisitionService.Singleton.ItemChangeNotice -= ItemChangeNotice;
             if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
             DialogHost.Close(BaseConstant.BaseDialog);
-
-            // 记录存取数量
-            if (Quantity != CurrentQuantity) Task.Run(saveOperationDetails);
+            
+            if (Quantity != CurrentQuantity) Task.Delay(550).ContinueWith((t) => {
+                // 记录存取数量
+                saveOperationDetails();
+                // 再次更新标签数量
+                if (Item.ShelfId != null && LabelSlaveId != null)
+                _ = DataAcquisitionService.Singleton.LabelRequestEditCount((long)Item.ShelfId, (int) LabelSlaveId);
+            });
+            
         }
 
         public void ItemChangeNotice(object? sender, ItemChangeNotice notice)

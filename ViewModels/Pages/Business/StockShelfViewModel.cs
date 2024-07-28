@@ -214,7 +214,6 @@ namespace MaterialDemo.ViewModels.Pages.Business
                 return;
             }
             SnackbarService.ShowError("标签控制器未连接!");
-
         }
 
         [RelayCommand]

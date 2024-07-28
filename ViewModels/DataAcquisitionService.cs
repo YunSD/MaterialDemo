@@ -296,6 +296,17 @@ namespace MaterialDemo.ViewModels
         }
 
         /// <summary>
+        /// 更新电子标签数量
+        /// </summary>
+        /// <param name="index">slaveId</param>
+        public async Task LabelRequestEditCount(long shelfId, int tagIndex) {
+            if (NumberOfPartPairs.TryGetValue(shelfId, out int count)) { 
+                _ETagClient.RequestUpdateCount(tagIndex, count);
+            }
+            await Task.CompletedTask;
+        }
+
+        /// <summary>
         /// 更新电子标签内容
         /// </summary>
         /// <param name="stockShelves"></param>
@@ -321,7 +332,6 @@ namespace MaterialDemo.ViewModels
                     string? shelf_code = item.Code;
                     if (slaveId == null) continue;
                     _ETagClient.RequestTextContent((int)slaveId, name, model, shelf_code);
-                    _ETagClient.RequestSaveContent((int)slaveId);
                     _ETagClient.RequestUpdateCount((int)slaveId, item.Quantity != null ? (int)item.Quantity: 0);
                 }
             });

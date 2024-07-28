@@ -80,26 +80,26 @@
                                     </Grid.RowDefinitions>
                                     <hc:ImageBlock Grid.Row="0" Source="{Binding StockMaterial.Image, Converter={StaticResource BaseFilePathConverter}}" />
                                     <StackPanel Grid.Row="1" Margin="0">
-                                        <TextBlock Padding="0,2,0,0" FontSize="13">
+                                        <TextBlock Padding="0,2,0,0" FontSize="10">
                                             <Run Text="货位号：" />
                                             <Run Text="{Binding Code}" />
                                         </TextBlock>
-                                        <TextBlock Padding="0,2,0,0" FontSize="13">
+                                        <TextBlock Padding="0,2,0,0" FontSize="10">
                                             <Run Text="物料名称：" />
                                             <Run Text="{Binding StockMaterial.Name}" />
                                         </TextBlock>
-                                        <TextBlock Padding="0,2,0,0" FontSize="13">
+                                        <TextBlock Padding="0,2,0,0" FontSize="10">
                                             <Run Text="物料编码：" />
                                             <Run Text="{Binding StockMaterial.Code}" />
                                         </TextBlock>
-                                        <TextBlock Padding="0,2,0,0" FontSize="13">
+                                        <TextBlock Padding="0,2,0,0" FontSize="10">
                                             <Run Text="规格：" />
                                             <Run Text="{Binding StockMaterial.Model}" />
                                         </TextBlock>
                                     </StackPanel>
                                     <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal">
-                                        <TextBlock VerticalAlignment="Center" FontSize="13" Foreground="{StaticResource ThemeBrush}" Text="当前库存:" />
-                                        <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" FontSize="28" Foreground="red" Text="{Binding Quantity}" />
+                                        <TextBlock VerticalAlignment="Center" FontSize="10" Foreground="{StaticResource ThemeBrush}" Text="当前库存:" />
+                                        <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" FontSize="21" Foreground="red" Text="{Binding Quantity}" />
                                     </StackPanel>
                                 </Grid>
                             </Border>

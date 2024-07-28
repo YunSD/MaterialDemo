@@ -143,8 +143,7 @@ namespace MaterialDemo
         private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
             e.Handled = true;
-            logger.Error(e);
-            MessageBox.Show(e.Exception.Message);
+            logger.Error("程序发送错误：", e.Exception);
         }
     }
 

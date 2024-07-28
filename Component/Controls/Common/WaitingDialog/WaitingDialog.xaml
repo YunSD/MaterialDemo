@@ -15,6 +15,7 @@
                 Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
                 Content="CANCEL"
                 IsCancel="False"
+                IsEnabled="False"
                 IsTabStop="False"
                 KeyboardNavigation.TabNavigation="None"
                 Style="{StaticResource MaterialDesignFlatButton}" />
