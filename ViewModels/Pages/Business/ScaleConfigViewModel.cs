@@ -95,7 +95,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         public async Task RequestWriteZeroDemarcate() {
             var waiting = new WaitingDialog("正在下发指令，请稍微...");
             _ = DialogHost.Show(waiting, BaseConstant.BaseDialog);
-            await DataAcquisitionService.Singleton.ScaleRequestAllData(SlaveId);
+            await DataAcquisitionService.Singleton.RequestWriteZeroDemarcate(SlaveId);
             await this.RequestData();
             DialogHost.Close(BaseConstant.BaseDialog);
         }

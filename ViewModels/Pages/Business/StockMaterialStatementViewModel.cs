@@ -53,7 +53,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (SearchEndDate != null) { expression = expression.MergeAnd(expression, exp => exp.CreateTime != null && exp.CreateTime <= SearchEndDate.Value.AddDays(1)); }
 
 
-            Func<IQueryable<StockMaterialStatement>, IOrderedQueryable<StockMaterialStatement>> orderBy = q => q.OrderBy(u => u.CreateTime);
+            Func<IQueryable<StockMaterialStatement>, IOrderedQueryable<StockMaterialStatement>> orderBy = q => q.OrderByDescending(u => u.CreateTime);
 
             IPagedList<StockMaterialStatement> pageList = repository.GetPagedList(predicate: expression, orderBy: orderBy, pageIndex: this.PageIndex, pageSize: PageSize);
             base.RefreshPageInfo(pageList);

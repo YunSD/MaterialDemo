@@ -114,29 +114,36 @@ namespace MaterialDemo.ViewModels
                             long key = (long)item.ShelfId;
 
                             int newValue = 0;
+                            int weight = 0;
                             if (item.ScalesAddress != null)
                             {
-                                newValue = await _ScaleClient.RequestNumberOfParts((int)item.ScalesAddress);
+                                weight = await _ScaleClient.RequestWeightOfParts((int)item.ScalesAddress);
+                                //newValue = await _ScaleClient.RequestNumberOfParts((int)item.ScalesAddress);
                                 //newValue = (new Random()).Next(10,12);
+                                // 重量换算
+                                if (item.MaterialId != null && StockMaterialKeyPairs.TryGetValue((long)item.MaterialId, out StockMaterial? material)){
+                                    if (material != null && material.Weight != null && material.Magnification != null) {
+                                        newValue = CalculatePartNumber(weight, (int)material.Weight, (int)material.Magnification);
+                                    }
+                                }
                             }
 
-                            if (NumberOfPartPairs.TryGetValue(key, out int oldValue) && newValue != oldValue)
+                            if (NumberOfPartPairs.TryGetValue(key, out int oldValue))
                             {
-                                ItemChangeNotice itemChange = new ItemChangeNotice(key, oldValue, newValue);
-                                changeNotices.Add(itemChange);
-
-                                // update pair
-                                NumberOfPartPairs.TryUpdate(key, newValue, oldValue);
-
                                 // notice
+                                ItemChangeNotice itemChange = new ItemChangeNotice(key, oldValue, newValue, weight);
                                 m_ItemChangeNotice?.Invoke(this, itemChange);
-
-                                // update etag
-                                if (ElectronicTagKeyPairs.TryGetValue((long)item.TagId, out ElectronicTag? tag))
-                                {
-                                    if (tag != null && tag.Address != null && _ETagClient.RequestConnectStatus())
+                                if (newValue != oldValue) {
+                                    changeNotices.Add(itemChange);
+                                    // update pair
+                                    NumberOfPartPairs.TryUpdate(key, newValue, oldValue);
+                                    // update etag
+                                    if (ElectronicTagKeyPairs.TryGetValue((long)item.TagId, out ElectronicTag? tag))
                                     {
-                                        _ETagClient.RequestUpdateCount((int)tag.Address, newValue);
+                                        if (tag != null && tag.Address != null && _ETagClient.RequestConnectStatus() && VolatileShelfId != key)
+                                        {
+                                            _ETagClient.RequestUpdateCount((int)tag.Address, newValue);
+                                        }
                                     }
                                 }
                             }
@@ -151,7 +158,7 @@ namespace MaterialDemo.ViewModels
                 }
                 stopwatch.Stop();
                 //logger.DebugFormat("测量传感器采集执行时间：{0}", stopwatch.Elapsed);
-                Thread.Sleep(200);
+                Thread.Sleep(100);
             }
         }
 
@@ -184,6 +191,16 @@ namespace MaterialDemo.ViewModels
 
             await Task.CompletedTask;
         }
+        /// <summary>
+        /// 更新指定的物料信息
+        /// </summary>
+        /// <param name="stockMaterial"></param>
+        public void UpdateMaterialWeight(StockMaterial stockMaterial) {
+            if (stockMaterial.MaterialId == null) return;
+            if(StockMaterialKeyPairs.TryGetValue((long)stockMaterial.MaterialId, out StockMaterial? material)){
+                StockMaterialKeyPairs.TryUpdate((long)stockMaterial.MaterialId, material, stockMaterial);
+            }
+        }
 
 
         private long _ShelfId;
@@ -210,11 +227,10 @@ namespace MaterialDemo.ViewModels
                 List<StockShelf> shelvesSet = [];
                 foreach (var item in notice)
                 {
-                    if (item.key == VolatileShelfId) return;
                     StockShelf? shelf = StockShelfKeyPairs.GetValueOrDefault(item.key, null);
-                    if (shelf == null || shelf.MaterialId == null) return;
+                    if (shelf == null || shelf.MaterialId == null) continue;
                     StockMaterial? material = StockMaterialKeyPairs.GetValueOrDefault((long)shelf.MaterialId, null);
-                    if (material == null) return;
+                    if (material == null) continue;
 
                     StockMaterialStatement statement = new();
                     statement.StatementId = SnowflakeIdWorker.Singleton.nextId();
@@ -229,7 +245,7 @@ namespace MaterialDemo.ViewModels
                     statement.AfterStock = Convert.ToString(item.after);
                     statement.Amount = Convert.ToString(item.value);
                     statement.OperatorName = SecurityContext.GetUserName();
-                    statementsSet.Add(statement);
+                    if (item.key != VolatileShelfId) statementsSet.Add(statement);
 
                     shelf.Quantity = item.after;
                     shelvesSet.Add(shelf);
@@ -296,15 +312,30 @@ namespace MaterialDemo.ViewModels
         }
 
         /// <summary>
-        /// 更新电子标签数量
+        /// 通过查询值更新电子标签数量
         /// </summary>
         /// <param name="index">slaveId</param>
-        public async Task LabelRequestEditCount(long shelfId, int tagIndex) {
-            if (NumberOfPartPairs.TryGetValue(shelfId, out int count)) { 
+        public async Task LabelRequestEditAcquiredCount(long shelfId, int tagIndex) {
+            if (NumberOfPartPairs.TryGetValue(shelfId, out int count)) {
+                logger.Debug("通过查询值更新电子标签数量" + count);
                 _ETagClient.RequestUpdateCount(tagIndex, count);
             }
             await Task.CompletedTask;
         }
+
+        /// <summary>
+        /// 通过差异值更新电子标签数量
+        /// </summary>
+        /// <param name="shelfId"></param>
+        /// <param name="tagIndex"></param>
+        /// <returns></returns>
+        public async Task LabelRequestEditDifferentCount(int tagIndex, int count)
+        {
+            logger.Debug("通过差异值更新电子标签数量" + count);
+            _ETagClient.RequestUpdateCount(tagIndex, count, false);
+            await Task.CompletedTask;
+        }
+
 
         /// <summary>
         /// 更新电子标签内容
@@ -329,7 +360,7 @@ namespace MaterialDemo.ViewModels
                     int? slaveId = item.ElectronicTag?.Address;
                     string? name = item.StockMaterial?.Name;
                     string? model = item.StockMaterial?.Model;
-                    string? shelf_code = item.Code;
+                    string? shelf_code = item.StockMaterial.Code;
                     if (slaveId == null) continue;
                     _ETagClient.RequestTextContent((int)slaveId, name, model, shelf_code);
                     _ETagClient.RequestUpdateCount((int)slaveId, item.Quantity != null ? (int)item.Quantity: 0);
@@ -423,22 +454,39 @@ namespace MaterialDemo.ViewModels
         }
 
         #endregion
+
+
+        private static int CalculatePartNumber(int weight, int m_weight, int naginication) {
+            if (weight <= 0 || m_weight < 1) return 0;
+            weight = weight * 1000;
+            int number = (int) Math.Abs(weight * (1.0 / m_weight));
+            
+            if (m_weight * naginication / 100 < weight % m_weight) {
+                number++;
+            }
+
+            return number; 
+        }
     }
 
 
     public class ItemChangeNotice
     {
-        public ItemChangeNotice(long key, int before, int after)
+        public ItemChangeNotice(long key, int before, int after, int weight)
         {
+            
             this.key = key;
             this.before = before;
             this.after = after;
             this.value = Math.Abs(before - after);
+            this.weight = weight;
         }
 
+        
         public long key { get; set; }
         public int value { get; set; }
         public int before { get; set; }
         public int after { get; set; }
+        public long weight { get; set; }
     }
 }

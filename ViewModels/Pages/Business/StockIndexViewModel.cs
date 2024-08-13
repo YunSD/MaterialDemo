@@ -1,4 +1,5 @@
-﻿using MaterialDemo.Config.Extensions;
+﻿using log4net.Repository.Hierarchy;
+using MaterialDemo.Config.Extensions;
 using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Domain.Models.Entity.Upms;
@@ -72,11 +73,18 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [RelayCommand]
         public void ItemView(StockIndexItem? entity)
         {
+            this.ShowItemView(entity, null);
+        }
+
+        private void ShowItemView(StockIndexItem? entity, ItemChangeNotice? notice)
+        {
             if (entity == null) return;
-            StockIndexItemViewModel itemViewModel = new StockIndexItemViewModel(_unitOfWork, entity);
+            StockIndexItemViewModel itemViewModel = new StockIndexItemViewModel(entity);
             var view = new StockIndexItemView(itemViewModel);
             DialogHost.Show(view, BaseConstant.BaseDialog);
+            if(notice != null) itemViewModel.ItemChangeNotice(this, notice);
         }
+
 
         public void OnNavigatedTo()
         {
@@ -119,6 +127,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
         {
             StockIndexItem? item = Items.FirstOrDefault(x => x.ShelfId == notice.key);
             if (item == null || item.Quantity == notice.after) return;
+            if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) {
+                Application.Current.Dispatcher.Invoke(()=>this.ShowItemView(item, notice));
+            }
             item.Quantity = notice.after;
         }
 

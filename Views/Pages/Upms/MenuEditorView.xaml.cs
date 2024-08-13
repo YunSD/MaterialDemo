@@ -44,7 +44,7 @@ namespace MaterialDemo.Views.Pages.Upms
         {
             var comboBox = sender as ComboBox;
             if (comboBox == null) return;
-            ComboBoxItem selectedItem = comboBox.SelectedItem as ComboBoxItem;
+            ComboBoxItem? selectedItem = comboBox.SelectedItem as ComboBoxItem;
             if (selectedItem == null) return;
             var selectedParent = selectedItem.Content as string;
             if (selectedParent != null)

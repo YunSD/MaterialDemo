@@ -36,6 +36,11 @@ namespace MaterialDemo.Config.EFDB
                 e.Property(e => e.Position).HasConversion(v => v.ToString(), v => (MenuPositionEnum)Enum.Parse(typeof(MenuPositionEnum), v));
             });
 
+            modelBuilder.Entity<StockMaterial>(e =>
+            {
+                e.Property(e => e.DynamicCalibration).HasConversion(v => v.ToString(), v => (MaterialDynamicCalibrationEnum)Enum.Parse(typeof(MaterialDynamicCalibrationEnum), v));
+            });
+
 
             modelBuilder.Entity<StockMaterialStatement>(e =>
             {

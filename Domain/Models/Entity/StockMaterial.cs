@@ -22,12 +22,23 @@ namespace MaterialDemo.Domain.Models.Entity
 
         public string? Image { get; set; }
 
+        public int? Weight { get; set; }
+
+        public int? Magnification { get; set; }
+
         [Column("max_quantity")]
         public int? MaxQuantity { get; set; }
 
         [Column("min_quantity")]
         public int? MinQuantity { get; set; }
 
-
+        [Column("dynamic_calibration")]
+        public MaterialDynamicCalibrationEnum DynamicCalibration { get; set; }
+    }
+    
+    public enum MaterialDynamicCalibrationEnum
+    {
+        OPEN,
+        CLOSE
     }
 }
