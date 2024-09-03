@@ -17,7 +17,6 @@
         TextOptions.TextRenderingMode="ClearType"
         UseLayoutRounding="True"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized"
         mc:Ignorable="d">
     <Window.Icon>
         <BitmapImage UriSource="pack://application:,,,/Assets/icon.png" />

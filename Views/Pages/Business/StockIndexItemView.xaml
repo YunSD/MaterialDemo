@@ -8,8 +8,8 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ui="clr-namespace:Wpf.Ui.Controls"
-             Width="450"
-             Height="600"
+             Width="500"
+             Height="650"
              d:DesignHeight="500"
              d:DesignWidth="350"
              mc:Ignorable="d">
@@ -43,13 +43,19 @@
                     <DataTrigger Binding="{Binding ViewModel.Status}" Value="1">
                         <Setter Property="BorderBrush" Value="{StaticResource BaseWarnBrush}" />
                     </DataTrigger>
+                    <DataTrigger Binding="{Binding ViewModel.Warning}" Value="0">
+                        <Setter Property="Background" Value="{StaticResource PageBackgroundBrush}" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding ViewModel.Warning}" Value="1">
+                        <Setter Property="Background" Value="DarkRed" />
+                    </DataTrigger>
                 </Style.Triggers>
             </Style>
         </Border.Style>
         <Grid Margin="20" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*" />
                 <RowDefinition Height="3*" />
+                <RowDefinition Height="2.5*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
@@ -79,11 +85,14 @@
                 <TextBlock Margin="50,0,0,0" VerticalAlignment="Center" FontSize="48" Foreground="Green" Text="{Binding ViewModel.Different}" />
             </StackPanel>
 
-            <Button Grid.Row="3" Height="45" Command="{Binding ViewModel.CloseViewCommand}" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="0,0,0,0" Padding="5,0,5,0" FontSize="16" FontWeight="Bold" Text="请点击屏幕任意位置确认" />
-                </StackPanel>
-            </Button>
+            <StackPanel Grid.Row="3" Margin="0,5,0,5">
+                <Button Height="45" Command="{Binding ViewModel.CloseViewCommand}" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,0,0" Padding="5,0,5,0" FontSize="16" FontWeight="Bold" Text="请点击屏幕任意位置确认" />
+                    </StackPanel>
+                </Button>
+                <TextBlock Margin="0,5,0,0" FontSize="12" Foreground="LightSlateGray" Text="{Binding ViewModel.DebugInfo}" />
+            </StackPanel>
 
         </Grid>
     </Border>

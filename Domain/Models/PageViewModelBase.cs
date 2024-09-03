@@ -9,7 +9,7 @@ namespace MaterialDemo.Domain.Models
 
         // 每页显示多少条
         [ObservableProperty]
-        public int pageSize = 20;
+        public int pageSize = 8;
 
         // 总条目数
         [ObservableProperty]

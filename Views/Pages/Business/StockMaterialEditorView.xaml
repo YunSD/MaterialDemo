@@ -38,7 +38,6 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -81,37 +80,12 @@
                     </TextBox>
                 </StackPanel>
 
-                <StackPanel Grid.Row="3" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
-                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="动态基准:" />
-                    <ComboBox x:Name="DynamicCalibrationCombo" Width="210" SelectionChanged="DynamicCalibrationCombo_SelectionChanged" Style="{StaticResource BaseComboBoxFormTextBox}">
-                        <ComboBoxItem IsSelected="True">启用</ComboBoxItem>
-                        <ComboBoxItem>关闭</ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
-
-                <!--<StackPanel Grid.Row="2" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
-                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="数量上限:" />
-                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.MaxQuantity, Converter={StaticResource BaseNullZeroConverter}}">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericOnlyBehavior />
-                        </i:Interaction.Behaviors>
-                    </TextBox>
-                </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,15,0,15" Orientation="Horizontal">
-                    <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="数量下限:" />
-                    <TextBox Width="210" materialDesign:HintAssist.Hint="请输入..." InputMethod.IsInputMethodEnabled="False" Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.MinQuantity, Converter={StaticResource BaseNullZeroConverter}}">
-                        <i:Interaction.Behaviors>
-                            <behaviors:NumericOnlyBehavior />
-                        </i:Interaction.Behaviors>
-                    </TextBox>
-                </StackPanel>-->
-
-                <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,15" Orientation="Horizontal">
+                <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Padding="10,0,10,0" Style="{StaticResource BaseFormTextBlock}" Text="备注:" />
                     <TextBox Width="510" materialDesign:HintAssist.Hint="请输入..." Style="{StaticResource BaseFormTextBox}" Text="{Binding ViewModel.Remark}" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="5" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
+                <StackPanel Grid.Row="4" Grid.Column="0" Margin="0,15,0,15" Orientation="Horizontal">
                     <TextBlock Width="90" Style="{StaticResource BaseFormTextBlock}" Text="物料图片:" />
                     <hc:ImageSelector x:Name="MaterialImageSelector"
                                       Width="100"

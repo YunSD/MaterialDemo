@@ -36,15 +36,10 @@ namespace MaterialDemo.Config.EFDB
                 e.Property(e => e.Position).HasConversion(v => v.ToString(), v => (MenuPositionEnum)Enum.Parse(typeof(MenuPositionEnum), v));
             });
 
-            modelBuilder.Entity<StockMaterial>(e =>
-            {
-                e.Property(e => e.DynamicCalibration).HasConversion(v => v.ToString(), v => (MaterialDynamicCalibrationEnum)Enum.Parse(typeof(MaterialDynamicCalibrationEnum), v));
-            });
-
-
-            modelBuilder.Entity<StockMaterialStatement>(e =>
+            modelBuilder.Entity<StockMaterialStatement>(e => 
             {
                 e.Property(e => e.Type).HasConversion(v => v.ToString(), v => (MaterialStatementTypeEnum)Enum.Parse(typeof(MaterialStatementTypeEnum), v));
+                e.Property(e => e.Way).HasConversion(v => v.ToString(), v => (MaterialStatementWayEnum)Enum.Parse(typeof(MaterialStatementWayEnum), v));
             });
 
             modelBuilder.Entity<StockShelf>(e =>

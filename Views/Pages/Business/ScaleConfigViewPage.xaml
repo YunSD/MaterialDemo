@@ -59,7 +59,7 @@
                         <ui:NumberBox Width="200"
                                       Icon="{mark:SymbolIcon SerialPort16}"
                                       MaxDecimalPlaces="0"
-                                      Minimum="0"
+                                      Minimum="1"
                                       PlaceholderText="请输入节点ID"
                                       SpinButtonPlacementMode="Hidden"
                                       Value="{Binding ViewModel.SlaveId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />

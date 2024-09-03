@@ -130,30 +130,6 @@
                     <DataGridTextColumn Width="*" Binding="{Binding CreateTime, StringFormat='yyyy-MM-dd HH:mm'}" CanUserSort="False" Header="创建时间" />
                     <DataGridTextColumn Width="*" Binding="{Binding Weight}" CanUserSort="False" Header="单体重量" />
                     <DataGridTextColumn Width="*" Binding="{Binding Magnification}" CanUserSort="False" Header="单体比率" />
-                    <DataGridTemplateColumn Width="*" CanUserResize="False" Header="动态基准">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Width="Auto" HorizontalAlignment="Left" BorderBrush="LightGray" BorderThickness="1" CornerRadius="4">
-                                    <TextBlock Padding="10,2,10,2" FontSize="12" Foreground="white">
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding DynamicCalibration}" Value="0">
-                                                        <Setter Property="Background" Value="{StaticResource BaseSuccessBrush}" />
-                                                        <Setter Property="Text" Value="启用" />
-                                                    </DataTrigger>
-                                                    <DataTrigger Binding="{Binding DynamicCalibration}" Value="1">
-                                                        <Setter Property="Background" Value="{StaticResource BaseWarnBrush}" />
-                                                        <Setter Property="Text" Value="关闭" />
-                                                    </DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBlock.Style>
-                                    </TextBlock>
-                                </Border>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
                     <DataGridTemplateColumn Width="*" CanUserResize="False" Header="操作">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

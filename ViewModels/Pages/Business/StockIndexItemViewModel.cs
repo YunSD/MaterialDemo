@@ -1,10 +1,12 @@
-﻿using MaterialDemo.Config.UnitOfWork;
+﻿using Linq.PredicateBuilder;
+using MaterialDemo.Config.UnitOfWork;
 using MaterialDemo.Domain.Enums;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Security;
 using MaterialDemo.Utils;
 using MaterialDemo.ViewModels.Pages.Business.VObject;
 using System.Windows.Media.Media3D;
+using System.Xml.Linq;
 
 namespace MaterialDemo.ViewModels.Pages.Business
 {
@@ -14,8 +16,12 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private volatile bool Active = true;
 
         private readonly long? Key;
-        private readonly StockIndexItem Item;
 
+        private readonly StockIndexItem Item;
+        
+        // 电子标签地址
+        private readonly int? LabelSlaveId;
+        
         [ObservableProperty]
         private string? _MaterialName;
         [ObservableProperty]
@@ -24,6 +30,10 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private string? _MaterialModel;
         [ObservableProperty]
         private string? _MaterialImage;
+        [ObservableProperty]
+        private int? _MaterialWeight;
+        [ObservableProperty]
+        private int? _MaterialMagnification; 
 
         [ObservableProperty]
         private int? _TakeSize;
@@ -34,16 +44,26 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [ObservableProperty]
         private int? _Different;
 
-        private readonly int? LabelSlaveId;
+        [ObservableProperty]
+        private string _DebugInfo = "";
 
+        // 界面稳定指示
         [ObservableProperty]
         private volatile BaseStatusEnum status = BaseStatusEnum.EXCEPTION;
 
-        private static readonly int Interval = 5;
+        // 临近点指示
+        [ObservableProperty]
+        private volatile BaseStatusEnum warning = BaseStatusEnum.NORMAL;
 
+
+        // 间隔
+        private static readonly int Interval = 3;
         private volatile int Frequency = Interval;
 
-        public StockIndexItemViewModel(StockIndexItem item)
+        // 初次界面重量
+        private int Weight;
+
+        public StockIndexItemViewModel(StockIndexItem item, int? Weight)
         {
             Key = item.ShelfId;
             Item = item;
@@ -52,15 +72,19 @@ namespace MaterialDemo.ViewModels.Pages.Business
             MaterialCode = item.StockMaterial?.Code;
             MaterialModel = item.StockMaterial?.Model;
             MaterialImage = item.StockMaterial?.Image;
+            MaterialWeight = item.StockMaterial?.Weight;
+            _MaterialMagnification = item.StockMaterial?.Magnification;
             TakeSize = item.TakeSize;
             Quantity = item.Quantity;
             CurrentQuantity = item.Quantity;
 
             LabelSlaveId = item.ElectronicTag?.Address;
+            
+            if (Weight == null) { this.Weight = 0; } else { this.Weight = Weight.Value; }  
 
             // 注册通知
+            DataAcquisitionService.Singleton.WeightChangeNotice += ItemWeightChangeNotice;
             if (item.ShelfId != null) DataAcquisitionService.Singleton.VolatileShelfId = (long)item.ShelfId;
-            DataAcquisitionService.Singleton.ItemChangeNotice += ItemChangeNotice;
             // 点亮标签
             //if (LabelSlaveId != null) DataAcquisitionService.Singleton.LabelRequestOpenLight((int)LabelSlaveId, (int)TakeSize);
         }
@@ -70,10 +94,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private void CloseView()
         {
             lock(this){
-                //if (LabelSlaveId != null) DataAcquisitionService.Singleton.LabelRequestCloseLight((int)LabelSlaveId);
                 Active = false;
                 DataAcquisitionService.Singleton.VolatileShelfId = -1L;
-                DataAcquisitionService.Singleton.ItemChangeNotice -= ItemChangeNotice;
+                DataAcquisitionService.Singleton.ItemChangeNotice -= ItemWeightChangeNotice;
                 if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) return;
                 DialogHost.Close(BaseConstant.BaseDialog);
 
@@ -87,16 +110,36 @@ namespace MaterialDemo.ViewModels.Pages.Business
             }
         }
 
-        public void ItemChangeNotice(object? sender, ItemChangeNotice notice)
+        /// <summary>
+        /// 重量发生变动时进行通知
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="notice"></param>
+        public void ItemWeightChangeNotice(object? sender, ItemChangeNotice notice)
         {
             lock (this) {
                 int? OLD_DIFFERENT = 0;
                 if (this.Different != null) OLD_DIFFERENT = this.Different;
-                if (this.Key == notice.key && Active)
+                if (this.Weight == 0) this.Weight = notice.Weight;
+                if (this.Key == notice.Key && Active)
                 {
-                    this.CurrentQuantity = notice.after;
-                    this.Different = this.CurrentQuantity - Quantity;
-                   
+                    int weight_different = Weight - notice.Weight;
+                    
+                    // 判断正负号, 默认为正数, 这里需要区分拿取与放入
+                    // 放入较少零件时，一次放入的重量可能会被分解为多次微小重量波动，导致无法区分起始点。
+                    bool isTake = true;
+                    if (weight_different < 0) isTake = false;
+
+                    if (isTake) {
+                        // 拿取过程采用计重运算，因为人手介入时波动较大
+                        int dif = DataAcquisitionService.CalculatePartNumber(Math.Abs(weight_different), MaterialWeight.Value, MaterialMagnification.Value);
+                        this.Different = 0 - dif;
+                    }
+                    else
+                    {
+                        this.Different = notice.After - Quantity;
+                    }
+
                     if (OLD_DIFFERENT == Different) {
                         // frequency
                         if(Frequency != 0) Frequency--;
@@ -104,34 +147,25 @@ namespace MaterialDemo.ViewModels.Pages.Business
                         {
                             Status = BaseStatusEnum.NORMAL;
                             Frequency = Interval;
-                            if (MaterialDynamicCalibrationEnum.OPEN == Item.StockMaterial?.DynamicCalibration)
-                            {
-                                // 触发更新测量
-                                int cur_weight = (int)Math.Abs(notice.weight * 1000 / notice.after);
+                            DebugInfo = string.Format("总重: {0}, 当前重: {1}, 重量差: {2}000, 单体重: {3} , {4}", Weight, notice.Weight, weight_different, MaterialWeight, Math.Round((double)(weight_different * 1000.00 / MaterialWeight),3));
 
-                                if (cur_weight > Item.StockMaterial?.Weight)
+                            // 判断当前重量值是否处于临界值 ±5%
+                            if (isTake) {
+                                int remainder = weight_different * 1000 % MaterialWeight.Value;
+                                if (Math.Abs(MaterialWeight.Value * MaterialMagnification.Value * 0.01 - remainder) <= MaterialWeight.Value * 0.03)
                                 {
-                                    if(cur_weight - Item.StockMaterial?.Weight < 1) return;
-                                    //int dif = (int)(cur_weight - Item.StockMaterial?.Weight);
-                                    //if (dif > 5) { dif = 5; }
-                                    Item.StockMaterial.Weight = (int)Item.StockMaterial?.Weight + 1;
+                                    Warning = BaseStatusEnum.EXCEPTION;
                                 }
-                                else {
-                                    if (Item.StockMaterial?.Weight - cur_weight < 1) return;
-                                    //int dif = (int)(Item.StockMaterial?.Weight - cur_weight);
-                                    //if (dif > 5) { dif = 5; }
-                                    Item.StockMaterial.Weight = (int)Item.StockMaterial?.Weight - 1;
+                                else
+                                {
+                                    Warning = BaseStatusEnum.NORMAL;
                                 }
-                                
-                                // 通知更改
-                                DataAcquisitionService.Singleton.UpdateMaterialWeight(Item.StockMaterial);
-                                // 存储当前值
-                                SaveMaterialDynamicCalibration(Item.StockMaterial);
                             }
                         }
                     }
                     else
                     {
+                        CurrentQuantity = Quantity + Different;
                         _ = DataAcquisitionService.Singleton.LabelRequestEditDifferentCount((int)LabelSlaveId, Math.Abs((int)this.Different));
                         Frequency = Interval;
                         Status = BaseStatusEnum.EXCEPTION;
@@ -142,6 +176,8 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         public void SaveOperationDetails()
         {
+            // 未变动情况下不再记录
+            if (CurrentQuantity - Quantity == 0) return;
             using (IServiceScope scope = App.CreateServiceScope()) {
                 IUnitOfWork? _unitOfWork = scope.ServiceProvider.GetService<IUnitOfWork>();
                 if (_unitOfWork == null) return;
@@ -157,6 +193,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
                     MaterialUnit = this.Item.StockMaterial?.Unit,
                     ShelfInfo = this.Item.WarehouseName + "-" + this.Item.ShelvesCode + "-" + this.Item.Code,
                     Type = MaterialStatementTypeEnum.TAKE,
+                    Way = MaterialStatementWayEnum.NORMAL, 
                     BeforeStock = Convert.ToString(Quantity),
                     AfterStock = Convert.ToString(CurrentQuantity),
                     Amount = Convert.ToString(Math.Abs((int)(Quantity - CurrentQuantity))),
@@ -188,6 +225,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
                     exception_repository.Insert(stockException);
                 }
 
+                // 在当前数量低于上下限的时候触发
                 if (Quantity > this.Item.QuantityUpperLimit || Quantity < Item.QuantityLowerLimit)
                 {
 
@@ -214,6 +252,10 @@ namespace MaterialDemo.ViewModels.Pages.Business
             }
         }
 
+        /// <summary>
+        /// 废弃方法
+        /// </summary>
+        /// <param name="stockMaterial"></param>
         public void SaveMaterialDynamicCalibration(StockMaterial stockMaterial)
         {
             using (IServiceScope scope = App.CreateServiceScope())

@@ -29,6 +29,8 @@ namespace MaterialDemo.Domain.Models.Entity
 
         public MaterialStatementTypeEnum Type { get; set; }
 
+        public MaterialStatementWayEnum? Way { get; set; }
+
 
         [Column("before_stock")]
         public string? BeforeStock { get; set; }
@@ -48,9 +50,13 @@ namespace MaterialDemo.Domain.Models.Entity
 
     public enum MaterialStatementTypeEnum
     {
-
         TAKE,
         SAVE
+    }
 
+    public enum MaterialStatementWayEnum
+    {
+        NORMAL,
+        AUTO
     }
 }

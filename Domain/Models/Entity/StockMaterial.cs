@@ -32,13 +32,6 @@ namespace MaterialDemo.Domain.Models.Entity
         [Column("min_quantity")]
         public int? MinQuantity { get; set; }
 
-        [Column("dynamic_calibration")]
-        public MaterialDynamicCalibrationEnum DynamicCalibration { get; set; }
     }
     
-    public enum MaterialDynamicCalibrationEnum
-    {
-        OPEN,
-        CLOSE
-    }
 }

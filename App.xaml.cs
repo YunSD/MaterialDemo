@@ -65,8 +65,6 @@ namespace MaterialDemo
 
                 services.AddSingleton(SecurityContext.Singleton);
 
-                services.AddSingleton(DataAcquisitionService.Singleton);
-
                 services.AddTransientFromNamespace("MaterialDemo.ViewModels", Assembly.GetExecutingAssembly());
                 services.AddTransientFromNamespace("MaterialDemo.Views", Assembly.GetExecutingAssembly());
             }).Build();
@@ -97,7 +95,6 @@ namespace MaterialDemo
             {
                 splashScreen.Show(false);
                 _host.Start();
-                DataAcquisitionService.Singleton.StartUp();
             }
             catch (Exception ex)
             {
@@ -129,7 +126,6 @@ namespace MaterialDemo
         /// </summary>
         private async void OnExit(object sender, ExitEventArgs e)
         {
-            DataAcquisitionService.Singleton.Shutdown();
             await _host.StopAsync();
             _host.Dispose();
         }
