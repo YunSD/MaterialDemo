@@ -79,10 +79,10 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private void ShowItemView(StockIndexItem? entity, ItemChangeNotice? notice)
         {
             if (entity == null) return;
-            StockIndexItemViewModel itemViewModel = new StockIndexItemViewModel(entity);
+            StockIndexItemViewModel itemViewModel = new StockIndexItemViewModel(entity, notice?.OldWeight);
             var view = new StockIndexItemView(itemViewModel);
             DialogHost.Show(view, BaseConstant.BaseDialog);
-            if(notice != null) itemViewModel.ItemChangeNotice(this, notice);
+            if(notice != null) itemViewModel.ItemWeightChangeNotice(this, notice);
         }
 
 
@@ -125,12 +125,12 @@ namespace MaterialDemo.ViewModels.Pages.Business
 
         public void ItemChangeNotice(object? sender, ItemChangeNotice notice)
         {
-            StockIndexItem? item = Items.FirstOrDefault(x => x.ShelfId == notice.key);
-            if (item == null || item.Quantity == notice.after) return;
+            StockIndexItem? item = Items.FirstOrDefault(x => x.ShelfId == notice.Key);
+            if (item == null || item.Quantity == notice.After) return;
             if (!DialogHost.IsDialogOpen(BaseConstant.BaseDialog)) {
                 Application.Current.Dispatcher.Invoke(()=>this.ShowItemView(item, notice));
             }
-            item.Quantity = notice.after;
+            item.Quantity = notice.After;
         }
 
         public void OnNavigatedFrom()

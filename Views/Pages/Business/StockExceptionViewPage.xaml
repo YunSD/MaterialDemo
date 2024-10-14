@@ -49,7 +49,8 @@
                             hc:InfoElement.Title="物料编码"
                             hc:InfoElement.TitlePlacement="Left"
                             hc:InfoElement.TitleWidth="60"
-                            Foreground="{DynamicResource InputForeground}" />
+                            Foreground="{DynamicResource InputForeground}"
+                            Text="{Binding ViewModel.SearchMaterialCode}" />
                 <DatePicker Width="260"
                             Margin="30,18,0,15"
                             hc:InfoElement.Title="起始日期"

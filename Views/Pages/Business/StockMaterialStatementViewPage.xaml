@@ -49,7 +49,8 @@
                             hc:InfoElement.Title="物料编码"
                             hc:InfoElement.TitlePlacement="Left"
                             hc:InfoElement.TitleWidth="60"
-                            Foreground="{DynamicResource InputForeground}" />
+                            Foreground="{DynamicResource InputForeground}"
+                            Text="{Binding ViewModel.SearchMaterialCode}" />
                 <DatePicker Width="260"
                             Margin="30,18,0,15"
                             hc:InfoElement.Title="起始日期"
@@ -70,7 +71,21 @@
                             SelectedDate="{Binding ViewModel.SearchEndDate}"
                             Style="{StaticResource DatePickerExtend}" />
 
-                <GridSplitter Margin="20,0,50,0" />
+                <ComboBox Width="260"
+                          Margin="30,18,0,15"
+                          hc:InfoElement.Title="操作类型"
+                          hc:InfoElement.TitlePlacement="Left"
+                          hc:InfoElement.TitleWidth="60"
+                          FontWeight="Bold"
+                          SelectedIndex="{Binding ViewModel.SearchWay, Converter={StaticResource EnumIndexConverter}, Mode=OneWay}"
+                          SelectionChanged="RecordWayComboBox_SelectionChanged"
+                          Style="{StaticResource ComboBoxExtend}">
+                    <ComboBoxItem Content="正常存取" Tag="NORMAL" />
+                    <ComboBoxItem Content="自动记录" Tag="AUTO" />
+                </ComboBox>
+
+
+                <GridSplitter Margin="40,0,50,0" />
                 <Button Command="{Binding ViewModel.SearchCommand}" Foreground="{DynamicResource ButtonForegroundBrush}" Style="{StaticResource MaterialDesignFlatMidBgButton}" ToolTip="通过查询条件检索">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="MagnifyExpand" Style="{StaticResource BaseTableSearchButtonPackIcon}" />

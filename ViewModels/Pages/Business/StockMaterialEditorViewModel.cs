@@ -1,5 +1,4 @@
 ﻿using MaterialDemo.Domain;
-using MaterialDemo.Domain.Enums;
 using MaterialDemo.Domain.Models.Entity;
 using MaterialDemo.Utils;
 using System.ComponentModel.DataAnnotations;
@@ -47,10 +46,6 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private int? magnification;
         partial void OnMagnificationChanged(int? value) => ValidateProperty(value, nameof(Magnification));
 
-        [ObservableProperty]
-        public MaterialDynamicCalibrationEnum dynamicCalibration = MaterialDynamicCalibrationEnum.OPEN;
-
-
         //[GreaterThan(nameof(MinQuantity), ErrorMessage ="数量上限不能低于数量下限")]
         //[Range(minimum: 0, maximum: int.MaxValue, ErrorMessage = "请输入数字")]
         //[ObservableProperty]
@@ -88,9 +83,6 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.Image = entity.Image;
             this.Weight = entity.Weight;
             this.Magnification = entity.Magnification;
-            this.DynamicCalibration = entity.DynamicCalibration;
-            //if(entity.MaxQuantity.HasValue) this.MaxQuantity = entity.MaxQuantity.Value;
-            //if(entity.MinQuantity.HasValue) this.MinQuantity = entity.MinQuantity.Value;
             this.Remark = entity.Remark;
         }
 
@@ -110,9 +102,6 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.entity.Image = this.Image;
             this.entity.Weight = this.Weight;
             this.entity.Magnification = this.Magnification;
-            this.entity.DynamicCalibration = this.DynamicCalibration;
-            //this.entity.MaxQuantity = this.MaxQuantity;
-            //this.entity.MinQuantity = this.MinQuantity;
             this.entity.Remark = this.Remark;
 
             SubmitEvent(entity);

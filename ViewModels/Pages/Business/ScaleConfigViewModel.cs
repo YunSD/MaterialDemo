@@ -26,7 +26,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
         private bool _DataAcquisitionProgramStatus;
 
         [ObservableProperty]
-        private int _SlaveId;
+        private int _SlaveId = 1;
 
         [ObservableProperty]
         private int _ZeroDemarcate;

@@ -41,6 +41,9 @@ namespace MaterialDemo.ViewModels.Pages.Business
         [ObservableProperty]
         private DateTime? _searchEndDate;
 
+        [ObservableProperty]
+        private MaterialStatementWayEnum _searchWay = MaterialStatementWayEnum.NORMAL;
+
 
         [RelayCommand]
         private void OnSearch()
@@ -51,7 +54,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             if (!string.IsNullOrWhiteSpace(SearchMaterialCode)) { expression = expression.MergeAnd(expression, exp => exp.MaterialCode != null && exp.MaterialCode.Contains(SearchMaterialCode)); }
             if (SearchStartDate != null) { expression = expression.MergeAnd(expression, exp => exp.CreateTime != null && exp.CreateTime >= SearchStartDate); }
             if (SearchEndDate != null) { expression = expression.MergeAnd(expression, exp => exp.CreateTime != null && exp.CreateTime <= SearchEndDate.Value.AddDays(1)); }
-
+            expression = expression.MergeAnd(expression, exp => exp.Way != null && exp.Way.Equals(SearchWay));
 
             Func<IQueryable<StockMaterialStatement>, IOrderedQueryable<StockMaterialStatement>> orderBy = q => q.OrderByDescending(u => u.CreateTime);
 
@@ -66,6 +69,7 @@ namespace MaterialDemo.ViewModels.Pages.Business
             this.SearchMaterialCode = null;
             this.SearchStartDate = null;
             this.SearchEndDate = null;
+            this.SearchWay = MaterialStatementWayEnum.NORMAL;
             this.OnSearch();
         }
 

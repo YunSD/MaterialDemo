@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Net;
+using Wpf.Ui.Controls;
 
 namespace MaterialDemo.ViewModels
 {
@@ -27,7 +28,10 @@ namespace MaterialDemo.ViewModels
 
         private volatile bool WorkDone = false;
 
+        // 数量
         private static readonly ConcurrentDictionary<long, int> NumberOfPartPairs = new();
+        // 重量
+        private static readonly ConcurrentDictionary<long, int> WeightOfPartPairs = new();
 
         private static readonly ConcurrentDictionary<long, ElectronicTag> ElectronicTagKeyPairs = new();
 
@@ -113,36 +117,57 @@ namespace MaterialDemo.ViewModels
                             while (WorkDone) break;
                             long key = (long)item.ShelfId;
 
-                            int newValue = 0;
-                            int weight = 0;
+                            int curValue = 0;
+                            int curWeight = 0;
+                            int oldWeight = 0;
                             if (item.ScalesAddress != null)
                             {
-                                weight = await _ScaleClient.RequestWeightOfParts((int)item.ScalesAddress);
-                                //newValue = await _ScaleClient.RequestNumberOfParts((int)item.ScalesAddress);
+                                // 读取传感器的重量值，并对重量进行缓存进行去抖
+                                curWeight = await _ScaleClient.RequestWeightOfParts((int)item.ScalesAddress);
+
+                                if (WeightOfPartPairs.TryGetValue(key, out oldWeight))
+                                {
+                                    // 去颤：如果当前的重量变化绝对值小于2，忽略本次循环
+                                    if (Math.Abs(curWeight - oldWeight) <= 2 && !key.Equals(VolatileShelfId)) continue;
+                                    WeightOfPartPairs.AddOrUpdate(key, curWeight, (key, value) => curWeight);
+                                }
+                                else {
+                                    WeightOfPartPairs.AddOrUpdate(key, curWeight, (key, value) => curWeight);
+                                }
+                                
                                 //newValue = (new Random()).Next(10,12);
+
                                 // 重量换算
                                 if (item.MaterialId != null && StockMaterialKeyPairs.TryGetValue((long)item.MaterialId, out StockMaterial? material)){
                                     if (material != null && material.Weight != null && material.Magnification != null) {
-                                        newValue = CalculatePartNumber(weight, (int)material.Weight, (int)material.Magnification);
+                                        curValue = CalculatePartNumber(curWeight, (int)material.Weight, (int)material.Magnification);
                                     }
                                 }
                             }
 
+                            // 通知及变动记录
                             if (NumberOfPartPairs.TryGetValue(key, out int oldValue))
                             {
-                                // notice
-                                ItemChangeNotice itemChange = new ItemChangeNotice(key, oldValue, newValue, weight);
-                                m_ItemChangeNotice?.Invoke(this, itemChange);
-                                if (newValue != oldValue) {
+                                ItemChangeNotice itemChange = new ItemChangeNotice(key, oldValue, curValue, oldWeight, curWeight);
+                                
+                                // 重量变动通知
+                                if (key.Equals(VolatileShelfId)) {
+                                    m_WeightChangeNotice?.Invoke(this, itemChange);
+                                }
+
+                                if (curValue != oldValue) {
+                                    // 数量变动通知
+                                    m_ItemChangeNotice?.Invoke(this, itemChange);
+                                    // 汇总
                                     changeNotices.Add(itemChange);
                                     // update pair
-                                    NumberOfPartPairs.TryUpdate(key, newValue, oldValue);
+                                    NumberOfPartPairs.TryUpdate(key, curValue, oldValue);
                                     // update etag
                                     if (ElectronicTagKeyPairs.TryGetValue((long)item.TagId, out ElectronicTag? tag))
                                     {
-                                        if (tag != null && tag.Address != null && _ETagClient.RequestConnectStatus() && VolatileShelfId != key)
+                                        if (tag != null && tag.Address != null && _ETagClient.RequestConnectStatus() && !key.Equals(VolatileShelfId))
                                         {
-                                            _ETagClient.RequestUpdateCount((int)tag.Address, newValue);
+                                            _ETagClient.RequestUpdateCount((int)tag.Address, curValue);
                                         }
                                     }
                                 }
@@ -158,7 +183,7 @@ namespace MaterialDemo.ViewModels
                 }
                 stopwatch.Stop();
                 //logger.DebugFormat("测量传感器采集执行时间：{0}", stopwatch.Elapsed);
-                Thread.Sleep(100);
+                Thread.Sleep(200);
             }
         }
 
@@ -191,6 +216,7 @@ namespace MaterialDemo.ViewModels
 
             await Task.CompletedTask;
         }
+
         /// <summary>
         /// 更新指定的物料信息
         /// </summary>
@@ -203,18 +229,16 @@ namespace MaterialDemo.ViewModels
         }
 
 
-        private long _ShelfId;
+        private long _VolatileShelfId;
 
         public long VolatileShelfId
         {
-            get => Volatile.Read(ref _ShelfId);
-            set => Volatile.Write(ref _ShelfId, value);
+            get => Volatile.Read(ref _VolatileShelfId);
+            set => Volatile.Write(ref _VolatileShelfId, value);
         }
 
         /// <summary>
-        /// 该事件为通知保底操作，当物料数量发生变化时，判断当前物料是否正常操作
-        /// 如果非正常操作，那么就按照异常进行记录，如果为正常操作，就停止记录
-        /// 正常情况下，同一时间只能操作一类物料
+        /// 对物料变更进行记录
         /// </summary>
         /// <returns></returns>
         /// 
@@ -227,7 +251,7 @@ namespace MaterialDemo.ViewModels
                 List<StockShelf> shelvesSet = [];
                 foreach (var item in notice)
                 {
-                    StockShelf? shelf = StockShelfKeyPairs.GetValueOrDefault(item.key, null);
+                    StockShelf? shelf = StockShelfKeyPairs.GetValueOrDefault(item.Key, null);
                     if (shelf == null || shelf.MaterialId == null) continue;
                     StockMaterial? material = StockMaterialKeyPairs.GetValueOrDefault((long)shelf.MaterialId, null);
                     if (material == null) continue;
@@ -240,14 +264,15 @@ namespace MaterialDemo.ViewModels
                     statement.MaterialUnit = material.Unit;
                     statement.ShelfInfo = shelf.WarehouseName + "-" + shelf.ShelvesCode + "-" + shelf.Code;
                     statement.Type = MaterialStatementTypeEnum.TAKE;
-                    if (item.after > item.before) statement.Type = MaterialStatementTypeEnum.SAVE;
-                    statement.BeforeStock = Convert.ToString(item.before);
-                    statement.AfterStock = Convert.ToString(item.after);
-                    statement.Amount = Convert.ToString(item.value);
+                    if (item.After > item.Before) statement.Type = MaterialStatementTypeEnum.SAVE;
+                    statement.Way = MaterialStatementWayEnum.AUTO;
+                    statement.BeforeStock = Convert.ToString(item.Before);
+                    statement.AfterStock = Convert.ToString(item.After);
+                    statement.Amount = Convert.ToString(item.Value);
                     statement.OperatorName = SecurityContext.GetUserName();
-                    if (item.key != VolatileShelfId) statementsSet.Add(statement);
+                    statementsSet.Add(statement);
 
-                    shelf.Quantity = item.after;
+                    shelf.Quantity = item.After;
                     shelvesSet.Add(shelf);
                 }
 
@@ -281,13 +306,23 @@ namespace MaterialDemo.ViewModels
 
 
         /// <summary>
-        /// 外部注册的通知事件管理器
+        /// 外部注册的通知事件管理器：数量变动时通知
         /// </summary>
         private event EventHandler<ItemChangeNotice>? m_ItemChangeNotice;
         public event EventHandler<ItemChangeNotice> ItemChangeNotice
         {
             add { m_ItemChangeNotice += value; }
             remove { m_ItemChangeNotice -= value; }
+        }
+
+        /// <summary>
+        /// 外部注册的通知事件管理器：重量变动时通知
+        /// </summary>
+        private event EventHandler<ItemChangeNotice>? m_WeightChangeNotice;
+        public event EventHandler<ItemChangeNotice> WeightChangeNotice
+        {
+            add { m_WeightChangeNotice += value; }
+            remove { m_WeightChangeNotice -= value; }
         }
 
         #region hardware operation
@@ -317,7 +352,6 @@ namespace MaterialDemo.ViewModels
         /// <param name="index">slaveId</param>
         public async Task LabelRequestEditAcquiredCount(long shelfId, int tagIndex) {
             if (NumberOfPartPairs.TryGetValue(shelfId, out int count)) {
-                logger.Debug("通过查询值更新电子标签数量" + count);
                 _ETagClient.RequestUpdateCount(tagIndex, count);
             }
             await Task.CompletedTask;
@@ -331,7 +365,6 @@ namespace MaterialDemo.ViewModels
         /// <returns></returns>
         public async Task LabelRequestEditDifferentCount(int tagIndex, int count)
         {
-            logger.Debug("通过差异值更新电子标签数量" + count);
             _ETagClient.RequestUpdateCount(tagIndex, count, false);
             await Task.CompletedTask;
         }
@@ -456,15 +489,21 @@ namespace MaterialDemo.ViewModels
         #endregion
 
 
-        private static int CalculatePartNumber(int weight, int m_weight, int naginication) {
+        /// <summary>
+        /// 计算当前称对应的物料数量
+        /// </summary>
+        /// <param name="weight"></param>
+        /// <param name="m_weight"></param>
+        /// <param name="naginication"></param>
+        /// <returns></returns>
+        public static int CalculatePartNumber(int weight, int m_weight, int naginication) {
             if (weight <= 0 || m_weight < 1) return 0;
             weight = weight * 1000;
             int number = (int) Math.Abs(weight * (1.0 / m_weight));
             
-            if (m_weight * naginication / 100 < weight % m_weight) {
+            if (m_weight * naginication / 100 <= weight % m_weight) {
                 number++;
             }
-
             return number; 
         }
     }
@@ -472,21 +511,23 @@ namespace MaterialDemo.ViewModels
 
     public class ItemChangeNotice
     {
-        public ItemChangeNotice(long key, int before, int after, int weight)
+        public ItemChangeNotice(long Key, int Before, int After, int OldWeight, int Weight)
         {
             
-            this.key = key;
-            this.before = before;
-            this.after = after;
-            this.value = Math.Abs(before - after);
-            this.weight = weight;
+            this.Key = Key;
+            this.Before = Before;
+            this.After = After;
+            this.Value = Math.Abs(Before - After);
+            this.OldWeight = OldWeight;
+            this.Weight = Weight;
         }
 
         
-        public long key { get; set; }
-        public int value { get; set; }
-        public int before { get; set; }
-        public int after { get; set; }
-        public long weight { get; set; }
+        public long Key { get; set; }
+        public int Value { get; set; }
+        public int Before { get; set; }
+        public int After { get; set; }
+        public int OldWeight { get; set; }
+        public int Weight { get; set; }
     }
 }
